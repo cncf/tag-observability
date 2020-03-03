@@ -101,13 +101,14 @@ topics such as:
 - Best practices for meaningful alerting, queries, and operational dashboards
   including how to manage things including rules, definitions, thresholds and
   policies.
-- How developers, operators, SRE, IT, and other actors comprehend, process, and
-  reason on distributed cloud-native systems.
+- How developers, operators, Site Reliability Engineers (SRE), IT Engineers, and
+  other actors comprehend, process, and reason on distributed cloud-native
+  systems.
 - Projects that incorporate novel & insightful approaches to utilizing
   observability data such as:
   - ML, model training, Bayesian networks, and other data science techniques
     that enable anomaly & intrusion detection.
-  - correlating resource consumption with costing data to reduce the total cost
+  - Correlating resource consumption with costing data to reduce the total cost
     of cloud native infrastructure
   - Using observability data exposed by service meshes, orchestrators, and other
     metric sources to inform continuous deployment tooling (e.g. Canary
@@ -117,19 +118,19 @@ topics such as:
 - Best practices around observability and its continuous improvement, e.g. post
   mortems, runbooks
 - Provide guidance around and foster interoperability between observability
-  solutions without trying to enforce one specific standard
+  solutions without trying to enforce one specific standard.
 - Foster understanding of the prerequisites and corner-stones of observability
   like SLI/KPI, service objectives, and internal/external commitments.
 
 The following is a non-exhaustive sample list of activities and deliverables
-that are in-scope for this SIG
+that are **in-scope** for this SIG
 
 - Summary and overview of projects available in the community.
 - Catalog of reference architectures that draw from CNCF projects, combining
   them in useful and novel ways.
 - Definitions of implementations and patterns for best practices for
   delivering observability tooling at enterprise scale.
-- Tooling composition and tool chain creation based on existing projects.
+- Tooling composition and toolchain creation based on existing projects.
 - Best practices for operations and monitoring workflows using CNCF Projects.
 - Organizing and helping to provide visibility to Meetups, Blogs, and Podcasts
   related to the scope of the SIG.
@@ -138,11 +139,11 @@ that are in-scope for this SIG
 - Patterns for observing application delivery pipelines.
 - Education regarding instrumentation cloud native workloads.
 - Processing and Accessing relevant observability data at scale.
-- Policy and security controls for observabilty data.
+- Policy and security controls for observability data.
 - Creating artifacts as part of CI/CD pipelines that facilitate observation of
-  services.  Concrete examples might be:
-  - service profiles for Linkerd
-  - debug binaries or other diagnostic metadata.
+  services. Concrete examples might be:
+  - Service profiles for Linkerd.
+  - Debug binaries or other diagnostic metadata.
   - representative trace spans from failing CI tests.
 
 ## Areas considered out of Scope
@@ -156,7 +157,7 @@ Examples include:
 - Security aspects that need to be present when setting up cloud native
   infrastructure, these might be more relevant for SIG Security.
 - How cloud native applications that need observability are deployed; this would
-  fall in the scope of SIG App Delivery
+  fall in the scope of SIG App Delivery.`
 - Tools and projects that are used to run cloud native workloads that in some
   cases need observability would fall under the scope of SIG-Runtime.
 
@@ -183,16 +184,16 @@ Examples include:
 
 ## Operations
 
-- Formation of the SIG follows the [documented process][sigform].
+- The formation of the SIG follows the [documented process][sigform].
 
-_Note: all of the roles below are initial proposals and must accepted by the TOC per formation process_
+_Note: all of the roles below are initial proposals and must be accepted by the TOC per formation process_
 
 - Proposed [Roles][sigroles] for SIG Observability
   - TOC Liaison: *Jeff Brewer*\*
   - SIG Chairs: pending TOC guidance
-    - _Nominated by charter working group or self:_ Matt Young, Richard Hartmann, Steve Flanders, *Ricardo Aravena*\*
+    - _Nominated by the charter working group or self:_ Matt Young, Richard Hartmann, Steve Flanders, *Ricardo Aravena*\*
   - Tech Leads: pending TOC guidance
-    - _Nominated by charter working group or self:_ Bartłomiej Płotka, *Richard Hartmann*\*, Michael Hausenblas, Alois Reitbauer
+    - _Nominated by the charter working group or self:_ Bartłomiej Płotka, *Richard Hartmann*\*, Michael Hausenblas, Alois Reitbauer
 
 \*_**(need confirmation)**_
 
