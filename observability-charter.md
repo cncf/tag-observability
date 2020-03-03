@@ -190,7 +190,7 @@ _Note: all of the roles below are initial proposals and must accepted by the TOC
 - Proposed [Roles][sigroles] for SIG Observability
   - TOC Liaison: *Jeff Brewer*\*
   - SIG Chairs: pending TOC guidance
-    - _Nominated by charter working group or self:_ Matt Young, Richard Hartmann, *Ricardo Aravena*\*
+    - _Nominated by charter working group or self:_ Matt Young, Richard Hartmann, Steve Flanders, *Ricardo Aravena*\*
   - Tech Leads: pending TOC guidance
     - _Nominated by charter working group or self:_ Bartłomiej Płotka, *Richard Hartmann*\*, Michael Hausenblas, Alois Reitbauer
 
