@@ -184,12 +184,17 @@ Examples include:
 ## Operations
 
 - Formation of the SIG follows the [documented process][sigform].
-- [Roles][sigroles] for SIG Observability
-  - TOC Liaison: *Jeff Brewer*\*
-  - SIG Chairs: Matt Young, *Ricardo Aravena*\*
-  - Tech Leads: Michael Hausenblas, Bartłomiej Płotka, *Richard Hartmann*\*
 
-\*_**(TODO: need confirmation)**_
+_Note: all of the roles below are initial proposals and must accepted by the TOC per formation process_
+
+- Proposed [Roles][sigroles] for SIG Observability
+  - TOC Liaison: *Jeff Brewer*\*
+  - SIG Chairs: pending TOC guidance
+    - _Nominated by charter working group or self:_ Matt Young, Richard Hartmann, *Ricardo Aravena*\*
+  - Tech Leads: pending TOC guidance
+    - _Nominated by charter working group or self:_ Bartłomiej Płotka, *Richard Hartmann*\*, Michael Hausenblas, Alois Reitbauer
+
+\*_**(need confirmation)**_
 
 [sigform]: https://github.com/cncf/toc/tree/master/sigs#sig-formation-process
 [sigroles]: https://github.com/cncf/toc/blob/master/sigs/cncf-sigs.md#sig-member-roles
