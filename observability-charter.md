@@ -189,13 +189,11 @@ Examples include:
 _Note: all of the roles below are initial proposals and must be accepted by the TOC per formation process_
 
 - Proposed [Roles][sigroles] for SIG Observability
-  - TOC Liaison: *Jeff Brewer*\*
+  - TOC Liaison: [Brendan Burns](https://github.com/brendandburns) (bburns@microsoft.com)
   - SIG Chairs: pending TOC guidance
     - _Nominated by the charter working group or self:_ Matt Young, Richard Hartmann, Steve Flanders, *Ricardo Aravena*\*
   - Tech Leads: pending TOC guidance
     - _Nominated by the charter working group or self:_ Bartłomiej Płotka, *Richard Hartmann*\*, Michael Hausenblas, Alois Reitbauer
-
-\*_**(need confirmation)**_
 
 [sigform]: https://github.com/cncf/toc/tree/master/sigs#sig-formation-process
 [sigroles]: https://github.com/cncf/toc/blob/master/sigs/cncf-sigs.md#sig-member-roles
