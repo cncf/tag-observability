@@ -33,6 +33,7 @@ and [Umair Ishaq][Umair Ishaq].*
 [Alex Nauda]:                 @
 [Alois Reitbauer]:            https://github.com/aloisreitbauer
 [Bartłomiej (Bartek) Płotka]: https://github.com/bwplotka
+[Brendan Burns]:              https://github.com/brendandburns
 [Daniel Khan]:                @
 [Daniel Prata]:               @
 [Lincoln Sward]:              @
@@ -188,10 +189,12 @@ Examples include:
 
 _Note: all of the roles below are initial proposals and must be accepted by the TOC per formation process_
 
-- Proposed [Roles][sigroles] for SIG Observability
-  - TOC Liaison: [Brendan Burns](https://github.com/brendandburns) (bburns@microsoft.com)
-  - SIG Chairs: pending TOC guidance
-    - _Nominated by the charter working group or self:_ Matt Young, Richard Hartmann, Steve Flanders, *Ricardo Aravena*\*
+- [Roles][sigroles] for SIG Observability
+  - TOC Liaison: [Brendan Burns][Brendan Burns]
+  - SIG Chairs:
+    - [Matthew Young][matthew young]
+    - [Richard Hartmann][Richard Hartmann]
+    - TBD: _proposed Steve Flanders_
   - Tech Leads: pending TOC guidance
     - _Nominated by the charter working group or self:_ Bartłomiej Płotka, *Richard Hartmann*\*, Michael Hausenblas, Alois Reitbauer
 
