@@ -33,6 +33,7 @@ The best way to get involved is hanging around our channels of communication, jo
 If you want to tackle specific tasks, it's best to look at our [Kanban Board](https://github.com/cncf/sig-observability/projects/1#card-36042463) and pick out what you like.
 
 If you want to suggest a specific topic or action item, please do some basic research if this topic has already been tackled, or is currently being worked on, in some form. Good starting points are our [GitHub Issues](https://github.com/cncf/sig-observability/issues), reports, or meeting notes. If in doubt, asking on Slack is a good first step.
+
 ## Operations
 
 ### TOC Liaison
