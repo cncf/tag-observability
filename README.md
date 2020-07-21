@@ -51,7 +51,7 @@ If you want to suggest a specific topic or action item, please do some basic res
 | Name                | Email                  | CNCF Slack         | GitHub                                         | Company                                 | Open Source                                                                                              |
 |---------------------|------------------------|--------------------|------------------------------------------------|-----------------------------------------|----------------------------------------------------------------------------------------------------------|
 | Matt Young          | `myoung@everquote.com` | `@Matt Young`      | [@halcyondude](https://github.com/halcyondude) | [Everquote](https://www.everquote.com/) |                                                                                                          |
-| Richard Hartmann    | `richardhartmann.de`   | `@RichiH`          | [@RichiH](https://github.com/RichiH)           | [Grafana](https://grafana.com/)         |  Prometheus [Team](https://prometheus.io/governance/#team-members); [PromCon](https://promcon.io/) Lead  |
+| Richard Hartmann    | `richih@richih.org`   | `@RichiH`          | [@RichiH](https://github.com/RichiH)           | [Grafana](https://grafana.com/)         |  Prometheus [Team](https://prometheus.io/governance/#team-members); [PromCon](https://promcon.io/) Lead  |
 
 ### Tech Lead
 
