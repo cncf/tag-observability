@@ -53,6 +53,7 @@ If you want to suggest a specific topic or action item, please do some basic res
 |-------------------- | ----------------------- |-------------- | ------------- | ----------- | ---------------------------------- |
 | Matt Young          | `halcyondude@gmail.com` | `@Matt Young` | [halcyondude] | [EverQuote] |                                    |
 | Richard Hartmann    | `richih@richih.org`     | `@RichiH`     | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
+| TBD                 |                         |               |               |             |                                    |
 
 ### Tech Lead
 
