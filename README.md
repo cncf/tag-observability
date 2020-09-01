@@ -59,7 +59,7 @@ If you want to suggest a specific topic or action item, please do some basic res
 
 | Name              | Email               | CNCF Slack    | GitHub        | Company   | Open Source                        |
 |------------------ | ------------------- |------------   |--------       | --------- | ---------------------------------- |
-| Bartłomiej Płotka | bwplotka@gmail.com  | `@bwplotka`   | [bwplotka]    | [Red Hat] |                                    |
+| Bartłomiej Płotka | bwplotka@gmail.com  | `@bwplotka`   | [bwplotka]    | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] | 
 
 [EverQuote]: https://www.everquote.com
 [Grafana]:   https://grafana.com
