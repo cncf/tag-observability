@@ -9,14 +9,14 @@
   - [Governance](#governance)
   - [Operations](#operations)
 
-*Initially authored by [Matthew Young][matthew young] with grateful review and
-contributions from:
+*Review and contributions from:
 [Alex Nauda][Alex Nauda],
 [Alois Reitbauer][Alois Reitbauer],
 [Bartłomiej (Bartek) Płotka][Bartłomiej (Bartek) Płotka],
 [Daniel Khan][Daniel Khan],
 [Daniel Prata][Daniel Prata],
 [Lincoln Sward][Lincoln Sward],
+[Matthew Young][Matthew Young],
 [Matthias Loibl][Matthias Loibl],
 [Michael Hausenblas][Michael Hausenblas],
 [Ricardo Aravena][Ricardo Aravena],
@@ -29,7 +29,6 @@ contributions from:
 and [Umair Ishaq][Umair Ishaq].*
 
 <!-- TODO: please put github names here -->
-[Matthew Young]:              https://github.com/halcyondude
 [Alex Nauda]:                 @
 [Alois Reitbauer]:            https://github.com/aloisreitbauer
 [Bartłomiej (Bartek) Płotka]: https://github.com/bwplotka
@@ -37,6 +36,7 @@ and [Umair Ishaq][Umair Ishaq].*
 [Daniel Khan]:                @
 [Daniel Prata]:               @
 [Lincoln Sward]:              @
+[Matthew Young]:              https://github.com/halcyondude
 [Matthias Loibl]:             https://github.com/metalmatze
 [Michael Hausenblas]:         https://github.com/mhausenblas
 [Ricardo Aravena]:            https://github.com/raravena80
@@ -164,7 +164,7 @@ Examples include:
 
 ## Roadmap & Initial Efforts
 
-- Contribute to [due diligence reports][ddr] to assist the CNCF TOC for projects
+- Contribute to [due diligence reports][ddg] to assist the CNCF TOC for projects
   in the scope of the SIG.
 - Facilitate webinars and presentations from CNCF projects and domain experts in
   the scope of the SIG.
@@ -173,7 +173,7 @@ Examples include:
 
   > _SIGs may choose to spawn focussed and time-limited working groups to achieve some of their responsibilities (for example, to produce a specific educational white paper, or portfolio gap analysis report). Working groups should have a clearly documented charter, timeline (typically a few quarters at most), and set of deliverables. Once the timeline has elapsed, or the deliverables delivered, the working group dissolves, or is explicitly re-chartered._
 
-[ddr]: https://github.com/cncf/toc/blob/master/process/due-diligence-guidelines.md
+[ddg]: https://github.com/cncf/toc/blob/master/process/due-diligence-guidelines.md
 [sigwg]: https://github.com/cncf/toc/blob/master/sigs/cncf-sigs.md#responsibilities--empowerment-of-sigs
 
 ## Governance
@@ -187,19 +187,18 @@ Examples include:
 
 - The formation of the SIG follows the [documented process][sigform].
 
-_Note: all of the roles below are initial proposals and must be accepted by the TOC per formation process_
-
 - [Roles][sigroles] for SIG Observability
   - TOC Liaison: [Brendan Burns][Brendan Burns]
   - SIG Chairs:
     - [Matthew Young][matthew young]
     - [Richard Hartmann][Richard Hartmann]
-    - TBD: _proposed Steve Flanders_
-  - Tech Leads: pending TOC guidance
-    - _Nominated by the charter working group or self:_ Bartłomiej Płotka, *Richard Hartmann*\*, Michael Hausenblas, Alois Reitbauer
+    - TBD
+  - Tech Leads ([sigtlprocess])
+    - Bartłomiej Płotka
 
 [sigform]: https://github.com/cncf/toc/tree/master/sigs#sig-formation-process
 [sigroles]: https://github.com/cncf/toc/blob/master/sigs/cncf-sigs.md#sig-member-roles
+[sigtlprocess]: https://github.com/cncf/toc/blob/master/sigs/cncf-sigs.md#elections
 
 - Contact
   - Slack channel: #sig-observability @ [https://cloud-native.slack.com](https://cloud-native.slack.com)
