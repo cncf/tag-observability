@@ -67,6 +67,8 @@ If you want to suggest a specific topic or action item, please do some basic res
 [Red Hat]:   https://redhat.com
 
 [Prometheus Team]: https://prometheus.io/governance/#team-members
+[Thanos Team]: https://thanos.io
+[bwplotka-other]:  https://www.bwplotka.dev/about/#open-source-projects
 [PromCon]: https://promcon.io
 
 [bwplotka]:      https://github.com/bwplotka
