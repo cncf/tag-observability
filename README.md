@@ -19,7 +19,7 @@ Educate and inform users with unbiased, accurate, and pertinent information. Edu
 ## Officially sanctioned information channels
 
 * [Observability Charter Document](observability-charter.md)
-* Forthnightly SIG call on the 2nd + 4th Tuesday of the month @ 1600 UTC, see [CNCF community calendar](https://www.cncf.io/community/calendar/)
+* Forthnightly SIG calls @ 1600 UTC, see [CNCF community calendar](https://www.cncf.io/community/calendar/)
 * [Meeting Notes](https://docs.google.com/document/d/1_QoF-njScSuGFI3Ge5zu-G8SbL6scQ8AzT1hq57bRoQ/edit)
 * [In Progress Work Status and Roadmap](https://github.com/cncf/sig-observability/projects/1#card-36042463)
 * Mailing List: `cncf-sig-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-sig-observability))
