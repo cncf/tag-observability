@@ -11,8 +11,8 @@ supporting material and best practices for end-users and provides guidance and c
 
 * Foster, review and grow the ecosystem of observability related projects, users, and maintainers in open source, cloud-native technology.
 * Identify and report gaps in the CNCF's project portfolio on topics of observability to the TOC and the wider CNCF community.
-* Collect, curate, champion, and disseminate patterns and current best practices related to the observation of cloud-native systems that are effective and actionable. 
-Educate and inform users with unbiased, accurate, and pertinent information. Educate and help other CNCF projects regarding observability techniques and best current practices available within the CNCF.
+* Collect, curate, champion, and disseminate patterns and current best practices related to the observation of cloud-native systems that are effective and actionable.
+* Educate and inform users with unbiased, accurate, and pertinent information. Educate and help other CNCF projects regarding observability techniques and best current practices available within the CNCF.
 * Provide and maintain a vendor-neutral venue for relevant thought validation, discussion, and project feedback.
 * Provide a ladder for community members to become involved with the technical oversight of projects within the SIG's scope in an open, transparent, and inclusive way.
 
@@ -38,27 +38,43 @@ The best way to get involved is hanging around our channels of communication, jo
 If you want to tackle specific tasks, it's best to look at our [Kanban Board](https://github.com/cncf/sig-observability/projects/1#card-36042463) and pick out what you like.
 
 If you want to suggest a specific topic or action item, please do some basic research if this topic has already been tackled, or is currently being worked on, in some form. Good starting points are our [GitHub Issues](https://github.com/cncf/sig-observability/issues), reports, or meeting notes. If in doubt, asking on Slack is a good first step.
+
 ## Operations
 
 ### TOC Liaison
 
-| Name                | Email                  |  GitHub                                            | Company                                 |
-|---------------------|------------------------|----------------------------------------------------|-----------------------------------------|
-| Brendan Burns       | `bburns@microsoft.com` | [@brendandburns](https://github.com/brendandburns) | [Microsoft](https://www.microsoft.com/) |                                                                                                          |
+| Name          | Email                  |  GitHub         | Company     |
+| ------------- | ---------------------- | --------------- | ----------- |
+| Brendan Burns | `bburns@microsoft.com` | [brendandburns] | [Microsoft] |
 
-### Chairs, in alphabetical order
+### Chairs (alphabetical order)
 
-| Name                | Email                  | CNCF Slack         | GitHub                                         | Company                                 | Open Source                                                                                              |
-|---------------------|------------------------|--------------------|------------------------------------------------|-----------------------------------------|----------------------------------------------------------------------------------------------------------|
-| Matt Young          | `myoung@everquote.com` | `@Matt Young`      | [@halcyondude](https://github.com/halcyondude) | [Everquote](https://www.everquote.com/) |                                                                                                          |
-| Richard Hartmann    | `richih@richih.org`   | `@RichiH`          | [@RichiH](https://github.com/RichiH)           | [Grafana](https://grafana.com/)         |  Prometheus [Team](https://prometheus.io/governance/#team-members); [PromCon](https://promcon.io/) Lead  |
+| Name                | Email                   | CNCF Slack    | GitHub        | Company     | Open Source                        |
+|-------------------- | ----------------------- |-------------- | ------------- | ----------- | ---------------------------------- |
+| Matt Young          | `halcyondude@gmail.com` | `@Matt Young` | [halcyondude] | [EverQuote] |                                    |
+| Richard Hartmann    | `richih@richih.org`     | `@RichiH`     | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
+| TBD                 |                         |               |               |             |                                    |
 
 ### Tech Lead
 
-| Name                | Email                  | CNCF Slack         | GitHub                                         | Company                                 | Open Source              |
-|---------------------|------------------------|--------------------|------------------------------------------------|-----------------------------------------|--------------------------|
+| Name              | Email               | CNCF Slack    | GitHub        | Company   | Open Source                        |
+|------------------ | ------------------- |------------   |--------       | --------- | ---------------------------------- |
+| Bartłomiej Płotka | bwplotka@gmail.com  | `@bwplotka`   | [bwplotka]    | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] | 
 
-TBD
+[EverQuote]: https://www.everquote.com
+[Grafana]:   https://grafana.com
+[Microsoft]: https://www.microsoft.com
+[Red Hat]:   https://redhat.com
+
+[Prometheus Team]: https://prometheus.io/governance/#team-members
+[Thanos Team]: https://thanos.io
+[bwplotka-other]:  https://www.bwplotka.dev/about/#open-source-projects
+[PromCon]: https://promcon.io
+
+[bwplotka]:      https://github.com/bwplotka
+[brendandburns]: https://github.com/brendandburns
+[halcyondude]:   https://github.com/halcyondude
+[RichiH]:        https://github.com/RichiH
 
 ## Governance
 
