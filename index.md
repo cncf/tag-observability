@@ -28,8 +28,8 @@ The aim of this page is to categorize and to serve as an index for the ones that
 
 | Title                         | Author(s)                            | Publication date | Category  |
 |-------------------------------|--------------------------------------|------------------|-----------|
-| [Prometheus Docs](https://prometheus.io/docs/prometheus/latest/getting_started/) | Prometheus Authors  | Not applicable         | Docummentation    |
-| [Jaeger docs](https://www.jaegertracing.io/docs)  | Jaeger Authors                      | Not applicable      | Docummentation |
+| [Prometheus Docs](https://prometheus.io/docs/prometheus/latest/getting_started/) | Prometheus Authors  | Not applicable         | Documentation    |
+| [Jaeger docs](https://www.jaegertracing.io/docs)  | Jaeger Authors                      | Not applicable      | Documentation |
 
 
 ### Read time: more than 8 hours
