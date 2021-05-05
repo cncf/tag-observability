@@ -1,11 +1,11 @@
-# CNCF SIG Observability 🔭⚙️
+# CNCF TAG Observability 🔭⚙️
 
-Special Interest Group for Observability under the umbrella of [CNCF](https://www.cncf.io/).
+Technical Advisory Group for Observability under the umbrella of [CNCF](https://www.cncf.io/).
 
 ## Mission statement
 
-The SIG Observability focuses on topics pertaining to the observation of cloud native workloads. Additionally, it produces
-supporting material and best practices for end-users and provides guidance and coordination for CNCF projects working within the SIG’s scope.
+The TAG Observability focuses on topics pertaining to the observation of cloud native workloads. Additionally, it produces
+supporting material and best practices for end-users and provides guidance and coordination for CNCF projects working within the TAG’s scope.
 
 ### Scope
 
@@ -19,11 +19,11 @@ supporting material and best practices for end-users and provides guidance and c
 ## Officially sanctioned information channels
 
 * [Observability Charter Document](observability-charter.md)
-* Forthnightly SIG calls @ 1600 UTC, see [CNCF community calendar](https://www.cncf.io/community/calendar/)
+* Forthnightly TAG calls @ 1600 UTC, see [CNCF community calendar](https://www.cncf.io/community/calendar/)
 * [Meeting Notes](https://docs.google.com/document/d/1_QoF-njScSuGFI3Ge5zu-G8SbL6scQ8AzT1hq57bRoQ/edit)
-* [In Progress Work Status and Roadmap](https://github.com/cncf/sig-observability/projects/1#card-36042463)
-* Mailing List: `cncf-sig-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-sig-observability))
-* Chat: [CNCF Slack #sig-observability](https://slack.cncf.io)
+* [In Progress Work Status and Roadmap](https://github.com/cncf/tag-observability/projects/1#card-36042463)
+* Mailing List: `cncf-tag-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-tag-observability))
+* Chat: [CNCF Slack #tag-observability](https://slack.cncf.io)
 
 ## CNCF projects related to the SIG
 
@@ -43,9 +43,10 @@ If you want to suggest a specific topic or action item, please do some basic res
 
 ### TOC Liaison
 
-| Name          | Email                  |  GitHub         | Company     |
-| ------------- | ---------------------- | --------------- | ----------- |
-| Brendan Burns | `bburns@microsoft.com` | [brendandburns] | [Microsoft] |
+| Name          | Email                        |  GitHub         | Company       |
+| -------------- | --------------------------- | --------------- | ------------- |
+| Lei Zhang      | `lei.zhang@alibaba-inc.com` | [resouer]       | [Alibaba]     |
+| Cornelia Davis | `cornelia@weave.works`      | [cdavisafc]     | [WeaveWorks]  |
 
 ### Chairs (alphabetical order)
 
@@ -65,6 +66,8 @@ If you want to suggest a specific topic or action item, please do some basic res
 [Grafana]:   https://grafana.com
 [Microsoft]: https://www.microsoft.com
 [Red Hat]:   https://redhat.com
+[WeaveWorks]: https://www.weave.works/
+[Alibaba]: https://www.alibaba.com/
 
 [Prometheus Team]: https://prometheus.io/governance/#team-members
 [Thanos Team]: https://thanos.io
@@ -72,13 +75,14 @@ If you want to suggest a specific topic or action item, please do some basic res
 [PromCon]: https://promcon.io
 
 [bwplotka]:      https://github.com/bwplotka
-[brendandburns]: https://github.com/brendandburns
+[resouer]: https://github.com/resouer
+[cdavisafc]: https://github.com/cdavisafc
 [halcyondude]:   https://github.com/halcyondude
 [RichiH]:        https://github.com/RichiH
 
 ## Governance
 
-This SIG follows [the standard operating model provided by the TOC](https://github.com/cncf/toc/blob/master/sigs/cncf-sigs.md#operating-model).
+This TAG follows [the standard operating model provided by the TOC](https://github.com/cncf/toc/blob/master/sigs/cncf-tags.md#operating-model).
 
 ## Code of Conduct
 
