@@ -14,7 +14,7 @@ supporting material and best practices for end-users and provides guidance and c
 * Collect, curate, champion, and disseminate patterns and current best practices related to the observation of cloud-native systems that are effective and actionable.
 * Educate and inform users with unbiased, accurate, and pertinent information. Educate and help other CNCF projects regarding observability techniques and best current practices available within the CNCF.
 * Provide and maintain a vendor-neutral venue for relevant thought validation, discussion, and project feedback.
-* Provide a ladder for community members to become involved with the technical oversight of projects within the SIG's scope in an open, transparent, and inclusive way.
+* Provide a ladder for community members to become involved with the technical oversight of projects within the TAG's scope in an open, transparent, and inclusive way.
 
 ## Officially sanctioned information channels
 
@@ -25,7 +25,7 @@ supporting material and best practices for end-users and provides guidance and c
 * Mailing List: `cncf-tag-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-tag-observability))
 * Chat: [CNCF Slack #tag-observability](https://slack.cncf.io)
 
-## CNCF projects related to the SIG
+## CNCF projects related to the TAG
 
 ![projects](projects.png)
 
@@ -35,9 +35,9 @@ Interactive Landscape: [here](https://landscape.cncf.io/category=observability-a
 
 The best way to get involved is hanging around our channels of communication, joining our calls, and getting a feeling for how we operate.
 
-If you want to tackle specific tasks, it's best to look at our [Kanban Board](https://github.com/cncf/sig-observability/projects/1#card-36042463) and pick out what you like.
+If you want to tackle specific tasks, it's best to look at our [Kanban Board](https://github.com/cncf/tag-observability/projects/1#card-36042463) and pick out what you like.
 
-If you want to suggest a specific topic or action item, please do some basic research if this topic has already been tackled, or is currently being worked on, in some form. Good starting points are our [GitHub Issues](https://github.com/cncf/sig-observability/issues), reports, or meeting notes. If in doubt, asking on Slack is a good first step.
+If you want to suggest a specific topic or action item, please do some basic research if this topic has already been tackled, or is currently being worked on, in some form. Good starting points are our [GitHub Issues](https://github.com/cncf/tag-observability/issues), reports, or meeting notes. If in doubt, asking on Slack is a good first step.
 
 ## Operations
 
@@ -82,7 +82,7 @@ If you want to suggest a specific topic or action item, please do some basic res
 
 ## Governance
 
-This TAG follows [the standard operating model provided by the TOC](https://github.com/cncf/toc/blob/master/sigs/cncf-tags.md#operating-model).
+This TAG follows [the standard operating model provided by the TOC](https://github.com/cncf/toc/blob/master/tags/cncf-tags.md#operating-model).
 
 ## Code of Conduct
 
