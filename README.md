@@ -82,7 +82,7 @@ If you want to suggest a specific topic or action item, please do some basic res
 
 ## Governance
 
-This TAG follows [the standard operating model provided by the TOC](https://github.com/cncf/toc/blob/master/sigs/cncf-tags.md#operating-model).
+This TAG follows [the standard operating model provided by the TOC](https://github.com/cncf/toc/blob/master/tags/cncf-tags.md#operating-model).
 
 ## Code of Conduct
 
