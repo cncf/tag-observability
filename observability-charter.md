@@ -158,7 +158,7 @@ Examples include:
 - Security aspects that need to be present when setting up cloud native
   infrastructure, these might be more relevant for SIG Security.
 - How cloud native applications that need observability are deployed; this would
-  fall in the scope of SIG App Delivery.`
+  fall in the scope of SIG App Delivery.
 - Tools and projects that are used to run cloud native workloads that in some
   cases need observability would fall under the scope of SIG-Runtime.
 
