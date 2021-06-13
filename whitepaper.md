@@ -3,12 +3,7 @@
 __This is a Work in progress.__ Folks working on the whitepaper, please interact with the whitepaper with [Issues](https://github.com/cncf/tag-observability/issues/new) and [Pull Requests](https://github.com/cncf/tag-observability/pulls). Discussions are happening at [CNCF’s slack](https://slack.cncf.io/) (#tag-observability channel)
 
 ## Executive Summary
-### Purpose 
-### Problem Analysis
-### Lifecycle Phases
-#### Instrumentation
-#### Observation
-### Conclusion
+> _To be written_
 
 ## Introduction
 
@@ -159,9 +154,12 @@ Monitoring can be split into 2 categories:
 * Closedbox  monitoring
 
 Generally speaking, "closed" box monitoring refers to observing a system from the outside where the operator has no control or knowledge of the inner workings of the system. "open" box monitoring on the other hand, refers to the more “traditional” concept of monitoring an application or system that you control and understanding how it functions, so you’re able to make better decisions on how it should be observed through the Three Pillars of Observability.  
+
+> _To be improved_
  
 ### Data Visualization and Exploration
 
+> _To be written_
 
 ### Service Mesh
 
@@ -406,7 +404,11 @@ So, five percent of a 30-day error budget spent over one hour requires a burn ra
 
 ### Machine Learning, Anomaly Detection, and Analytics
 
+> _To be written_
+
 ### Monitoring Streaming APIs
+
+> _To be written_
 
 ### Multi-signal correlation
 
@@ -442,11 +444,19 @@ Grafana is pioneering in multi-signal links, but many other UIs would use better
 
 ### eBPF
 
+> _To be written_
+
 ### Observing short-lived systems
+
+> _To be written_
 
 ## Conclusion
 
+> _To be written_
+
 ## References
+
+> _To be improved_
 
 1. https://archive.fosdem.org/2019/schedule/event/on_observability_2019/
 1. https://www.oreilly.com/library/view/distributed-systems-observability/9781492033431/ch04.html
