@@ -31,6 +31,10 @@ __This is a Work in progress.__ Folks working on the whitepaper, please interact
   * [Multi-signal correlation](#multi-signal-correlation)
   * [eBPF](#ebpf)
   * [Observing short-lived systems](#observing-short-lived-systems)
+* [Conclusion](#conclusion)
+* [References](#references)
+* [Contributors](#contributors)
+* [Contributing](#contributing)
 
 
 
@@ -484,11 +488,26 @@ Grafana is pioneering in multi-signal links, but many other UIs would use better
 1. https://sre.google/workbook/implementing-slos/
 1. Kalman R. E., "On the General Theory of Control Systems", Proc. 1st Int. Cong. of IFAC, Moscow 1960 1481, Butterworth, London 1961. <https://www.sciencedirect.com/science/article/pii/S1474667017700948?via%3Dihub>
 
-## Colaborators
+## Contributors
 
-Extensive list of colaborators of this whitepaper goes here:
+From the first words written until its completion, this whitepaper was a community effort. From synchronous discussion during our bi-weekly meeting, asynchronous discussions on [#tag-observability slack-channel](https://cloud-native.slack.com/archives/CTHCQKK7U) or comments and suggestions on our draft document, we had way more contributors that we have ever expected. Here is an alphabetic order of contributors that have helped us during those several months.
 
 *
 *
 *
 * 
+
+Thanks all of you!
+
+## Contributing
+
+This whitepaper is still incomplete! If you want to help us, there are a few topic that we still want to include:
+
+* Use cases
+  * [Monitoring](#monitoring) - Monitoring is one of the very basic use-cases for Observability. We'd like to explain the different methodologies such as USE and RED methods, "Open box" and "Closed box" monitoring and why they are so important.
+  * [Data Visualization and Exploration](#data-visualization-and-exploration) - Building dashboards is pretty easy, but building **good** dashboards is another story. We'd like to tell best practices for dashboard-building, and explain how the way we build them differs depending on what we want to achieve. E.g., analyze historical data, real-time monitoring.
+* Gaps around Observability
+  * [Machine Learning, Anomaly Detection, and Analytics](#machine-learning-anomaly-detection-and-analytics) - There are some pretty strong and opposing oppinions on whether ML/Analytics can be useful on the Observability space. We need someone with experience to explain to the community where and why it can be useful and where and why it cannot.
+  * [Monitoring Streaming APIs](#monitoring-streaming-apis) - There are two very well known monitoring methodologies today. USE method to monitor compute resources and RED method to monitor request-based services. Both methodologies do not apply for Streaming APIs and, with the popularization of Remote Procedure Calls(RPC), we need to come up with a clear methodology to monitor them.
+  * [eBPF](#ebpf) - eBPF is a revolutionary technology that can run sandboxed programs in the Linux kernel without changing kernel source code or loading a kernel module. With some creativity it can help us achieve the long-time dream of observing systems without adding extra instrumentation. Even though the possibilities are endless, eBPF is not that popular. We'd like to tell our readers how eBPF and related tools can be a game-changer in the Observability space and why they're still not that popular.
+  * [Observing short-lived systems](#observing-short-lived-systems) - Observability in the FaaS/Serverless space is still very weak, we'd like to tell our readers why it's so difficult to observe this kind of systems. How does Pull vs Push based models can interact with them and why performance overhead has been an issue for so long.
