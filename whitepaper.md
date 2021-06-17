@@ -14,16 +14,15 @@ __This is a Work in progress.__ Folks working on the whitepaper, please interact
   * [Traces](#traces)
   * [Profiles](#profiles)
   * [Dumps](#dumps)
-* [Ways to observe a system](#ways-to-observe-a-system)
-  * [Monitoring](#monitoring)
-  * [Data Visualization and Exploration](#data-visualization-and-exploration)
-  * [Service Mesh](#service-mesh)
 * [Correlating Observability Signals](#correlating-observability-signals)
   * [Achieving multi-signal observability](#achieving-multi-signal-observability)
   * [Signal correlation](#signal-correlation)
   * [Practical applications](#practical-applications)
   * [Practical implementations](#practical-implementations)
+* [Improving your Observability - "Return on Investment"](#improving-your-observability---"return-on-investment")
 * [Use cases](#use-cases)
+  * [Monitoring](#monitoring)
+  * [Data Visualization and Exploration](#data-visualization-and-exploration)
   * [Implementing SLIs, SLOs and SLAs](#implementing-slis-slos-and-slas)
   * [Alerting on Observability data](#alerting-on-observability-data)
 * [Gaps around Observability](#gaps-around-observability)
@@ -178,39 +177,6 @@ As of today, the cloud-native community still struggles with the collection of t
 
 An RFC of approximately 5 years (https://lore.kernel.org/patchwork/patch/643798/) requested namespaced core_pattern support in the Linux kernel community, instead of having it as a global system setting. Also, the Docker community has an issue open with around the same age (https://github.com/moby/moby/issues/19289) asking for core_pattern support in Docker.
 
-## Ways to observe a system
-
-### Monitoring
-
-Monitoring can be split into 2 categories:
-* Openbox  monitoring
-* Closedbox  monitoring
-
-Generally speaking, "closed" box monitoring refers to observing a system from the outside where the operator has no control or knowledge of the inner workings of the system. "open" box monitoring on the other hand, refers to the more “traditional” concept of monitoring an application or system that you control and understanding how it functions, so you’re able to make better decisions on how it should be observed through the Three Pillars of Observability.  
-
-> _To be improved_
- 
-### Data Visualization and Exploration
-
-> _To be written_
-
-### Service Mesh
-
-A service mesh works by injecting a proxy alongside the applications in your cluster. Together those proxies, which we’ll refer to as sidecars going forward, make up the data plane of the mesh. Those sidecar proxies are able to collect data on your applications, your cluster, and your traffic in a standardized way. 
-
-A service mesh provides security, observability, and reliability features. Things like: mTLS for encrypted and authenticated connections between pods, standardized metrics for every application in a language agnostic fashion, detailed metadata about all inter app traffic, etc. A service mesh can make it simple to surface “golden” signals about your apps and simplify diagnosing issues. It can also provide for intelligent, and context aware, retries and timeouts to help you achieve higher availability targets.
-
-A service mesh can also help progate tracing information or, depending on your use case, provide enough information that you can avoid implementing tracing.
-
-Service meshes can solve many challenges when you want to run microservices at scale efficiently, when you need additional features, like fine-grained policies, traffic routing and enhanced telemetry. Although leveraging service meshes will lead to a more complex system design to operate by adding another level of abstraction, and it will also have increased resource usage, using them can reduce some of the limitations you would encounter during designing and operating applications at scale.
-
-Adopting service meshes can make your infrastructure and applications more observable by providing built-in features to tackle this last point. With a service mesh, you can obtain additional telemetry data for your services, thus making setting up SLOs/SLAs easier.
-
-Most of the service meshes currently out there are exposing their own metrics, and these can be scraped like any other Prometheus target.
-
-To get a more detailed insight into your microservices, adopting distributed tracing can extend your options during debugging live issues. Tracing can help you to follow certain requests as they are traversing through your services, usually extended with context logging, making it easier to solve complex bugs or issues.
-Service meshes offer easier tracing onboarding with addons, best practices, endpoints and by supporting the de facto tracing backends.
-
 ## Correlating Observability Signals
 
 Undoubtedly the Observability space is complex. As you learned from previous sections, to know more about the state and behaviour of the software we run, we collect different data types, from different angles, with different intervals and pipelines:
@@ -364,7 +330,25 @@ Of course, that’s just the basics. There is whole infrastructure and logic in 
 
 It’s also worth mentioning that OpenTelemetry also inherited some form of exemplars from OpenCensus. Those are very similar to OpenMetrics one, just only attachable to histogram buckets. Yet, we are not aware of anyone using or relying on this part of Otel metric protocol anywhere, including relevant implementations like [Go](https://github.com/open-telemetry/opentelemetry-go/issues/559). This means that if you want to have a stable correlation, and an already working ecosystem, OpenMetrics might be the way forward. Plus, [OpenTelemetry slowly adopts OpenMetrics too](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/metrics/semantic_conventions/openmetrics-guidelines.md).
 
+## Improving your Observability - "Return on Investment"
+
+> _To be written_
+
 ## Use Cases
+
+### Monitoring
+
+Monitoring can be split into 2 categories:
+* Openbox monitoring
+* Closedbox monitoring
+
+Generally speaking, "closed" box monitoring refers to observing a system from the outside where the operator has no control or knowledge of the inner workings of the system. "open" box monitoring on the other hand, refers to the more “traditional” concept of monitoring an application or system that you control and understanding how it functions, so you’re able to make better decisions on how it should be observed through the Three Pillars of Observability.  
+
+> _To be improved_
+ 
+### Data Visualization and Exploration
+
+> _To be written_
 
 ### Implementing SLIs, SLOs and SLAs
 
