@@ -2,6 +2,39 @@
 
 __This is a Work in progress.__ Folks working on the whitepaper, please interact with the whitepaper with [Issues](https://github.com/cncf/tag-observability/issues/new) and [Pull Requests](https://github.com/cncf/tag-observability/pulls). Discussions are happening at [CNCF’s slack](https://slack.cncf.io/) (#tag-observability channel)
 
+## Table of Contents
+* [Executive Summary](#executive-summary)
+* [Introduction](#introduction)
+  * [Target Audience](#target-audience)
+  * [Goals](#goals)
+* [What is Observability?](#what-is-observability)
+* [Observability Signals](#observability-signals)
+  * [Metrics](#metrics)
+  * [Logs](#logs)
+  * [Traces](#traces)
+  * [Profiles](#profiles)
+  * [Dumps](#dumps)
+* [Ways to observe a system](#ways-to-observe-a-system)
+  * [Monitoring](#monitoring)
+  * [Data Visualization and Exploration](#data-visualization-and-exploration)
+  * [Service Mesh](#service-mesh)
+* [Correlating Observability Signals](#correlating-observability-signals)
+  * [Achieving multi-signal observability](#achieving-multi-signal-observability)
+  * [Signal correlation](#signal-correlation)
+  * [Practical applications](#practical-applications)
+  * [Practical implementations](#practical-implementations)
+* [Use cases](#use-cases)
+  * [Implementing SLIs, SLOs and SLAs](#implementing-slis-slos-and-slas)
+  * [Alerting on Observability data](#alerting-on-observability-data)
+* [Gaps around Observability](#gaps-around-observability)
+  * [Machine Learning, Anomaly Detection, and Analytics](#machine-learning-anomaly-detection-and-analytics)
+  * [Monitoring Streaming APIs](#monitoring-streaming-apis)
+  * [Multi-signal correlation](#multi-signal-correlation)
+  * [eBPF](#ebpf)
+  * [Observing short-lived systems](#observing-short-lived-systems)
+
+
+
 ## Executive Summary
 > _To be written_
 
@@ -90,7 +123,7 @@ It's possible to forward the logs in multiple ways. The first suggestion is to c
 
 Security is something we must have in mind when planning a logging solution. Encrypt log-related files or information at rest and in transit when sending it to a central repository. Do not store any personally identifiable information (PII) in any log. Finally, data that is truly important should not be kept solely in logs. Despite the usefulness of log statements, they are not guaranteed to be delivered. 
 
-## Traces
+### Traces
 
 Distributed tracing is the technique of understanding what happened during a distributed transaction, such as a request initiated by an end-user and its effects across all downstream microservices that were touched as a result.
 
@@ -111,7 +144,7 @@ Instrumentation then has two main purposes for distributed tracing: context prop
 ![image](https://user-images.githubusercontent.com/24193764/121788568-9502dd00-cba4-11eb-9014-8fc8a9c31f05.png)
 (Source: https://opentracing.io/docs/overview/)
 
-## Profiles
+### Profiles
 
 As companies continue to optimize for cloud-native applications, it becomes increasingly important to understand performance metrics at the most granular level possible. Other tools will often show that a performance issue exists (i.e. latency, memory leak, etc.) Continuously collecting profiles allows us to drill down and see why a particular system is experiencing such issues.
 
@@ -135,7 +168,7 @@ Profiling data produced by runtimes typically includes statistics down to the li
 
 ___Insert an example image of a profile somewhere in the text___
 
-## Dumps
+### Dumps
 
 In software development, coredump files are used to troubleshoot a program, i.e., a process that crashed. Classically, the operating system, with help of some configuration such as location, name convention or file size, writes an image of the process's memory at the time of the crash for analysis. In cloud-native, however, coredump files’ collection of a large cluster can easily create a bottleneck in terms of storage or even network, depending on how the cluster’s storage is attached to the cluster nodes. For example, processing-intensive applications could end up generating coredump files of double-digit Gigabyte size.
 
@@ -218,7 +251,7 @@ Given the multi-signal pipeline, it’s often desired to supplement each system 
 
 Similarly, on the “reading” level, it would be very useful to navigate quickly into another observability signal representing the same or related event. This is what we called the correlation of signals. Let’s focus on this opportunity in detail. What’s achievable right now?
 
-### Correlation of Signals
+### Signal Correlation
 
 In order to link observability data together, let’s look at common (as mentioned before, sometimes duplicated) data attached to all signals.
 
@@ -259,7 +292,7 @@ We talked about ways you can navigate between signals, but is it really useful? 
 
 * We debug slow requests. We manually triggered requests with trace sampling and obtained __trace ID__. Thanks to tracing view, we can see among a few processes on the way of requests it was an ABC-1 request that is surprisingly slow for basic operations. Thanks to target metadata and time, we select relevant CPU usage metrics. We see high CPU usage, close to the machine limits, indicating CPU saturation. To learn why the CPU is so heavily used (especially if it’s the only process in the container), we navigate to the CPU profile using the same __target metadata__ and __time__ selection. 
 
-### Practical Implementations
+### Practical implementations
 
 Is it achievable in practice? Yes, but in our experience, not many know how to build it. The fragmentation and vast amount of different vendors and projects fighting for this space might obfuscate the overview and hide some simple solutions. Fortunately, there is a big effort in open source communities to streamline and commoditise those approaches. Let’s look at some open-source ways of achieving such a smooth, multi-signal correlation setup. For simplicity, let’s assume you have chosen and defined some metrics, logging and tracing stack already (in practice, it’s common to skip logging or tracing for cost efficiency).
 
