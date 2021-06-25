@@ -19,18 +19,11 @@ __This is a Work in progress.__ Folks working on the whitepaper, please interact
   * [Signal correlation](#signal-correlation)
   * [Practical applications](#practical-applications)
   * [Practical implementations](#practical-implementations)
-* [Improving your Observability - "Return on Investment"](#improving-your-observability---"return-on-investment")
 * [Use cases](#use-cases)
-  * [Monitoring](#monitoring)
-  * [Data Visualization and Exploration](#data-visualization-and-exploration)
   * [Implementing SLIs, SLOs and SLAs](#implementing-slis-slos-and-slas)
   * [Alerting on Observability data](#alerting-on-observability-data)
 * [Gaps around Observability](#gaps-around-observability)
-  * [Machine Learning, Anomaly Detection, and Analytics](#machine-learning-anomaly-detection-and-analytics)
-  * [Monitoring Streaming APIs](#monitoring-streaming-apis)
   * [Multi-signal correlation](#multi-signal-correlation)
-  * [eBPF](#ebpf)
-  * [Observing short-lived systems](#observing-short-lived-systems)
 * [Conclusion](#conclusion)
 * [References](#references)
 * [Contributors](#contributors)
@@ -467,12 +460,67 @@ Grafana is pioneering in multi-signal links, but many other UIs would use better
 
 From the first words written until its completion, this whitepaper was a community effort. From synchronous discussion during our bi-weekly meeting, asynchronous discussions on [#tag-observability slack-channel](https://cloud-native.slack.com/archives/CTHCQKK7U) or comments and suggestions on our draft document, we had way more contributors that we have ever expected. Here is an alphabetic order of contributors that have helped us during those several months.
 
-*
-*
-*
-* 
+* [Alex Jones][Alex Jones]
+* [Arthur Silva Sens][Arthur Silva Sens]
+* [Bartłomiej Płotka][Bartłomiej Płotka]
+* [Charles Pretzer][Charles Pretzer]
+* [Daniel Khan][Daniel Khan]
+* [David Grizzanti][David Grizzanti]
+* [Debashish Ghatak][Debashish Ghatak]
+* [Dominic Finn][Dominic Finn]
+* [Frederic Branczyk][Frederic Branczyk]
+* [Gibbs Cullen][Gibbs Cullen]
+* [Jason Morgan][Jason Morgan]
+* [Jonah Kowall][Jonah Kowall]
+* [Juraci Paixão Kröhling][Juraci Paixão Kröhling]
+* [Ken Finnigan][Ken Finnigan]
+* [Krisztian Fekete][Krisztian Fekete]
+* [Liz Fong-Jones][Liz Fong-Jones]
+* [Matt Young][Matt Young]
+* [Michael Hausenblas][Michael Hausenblas]
+* [Rafael Natali][Rafael Natali]
+* [Richard Anton][Richard Anton]
+* [RichiH Hartmann][RichiH Hartmann]
+* [Rob Skillington][Rob Skillington]
+* [Ryan Perry][Ryan Perry]
+* [Shelby Spees][Shelby Spees]
+* [Shobhit Srivastava][Shobhit Srivastava]
+* [Simone Ferlin][Simone Ferlin]
+* [Tim Tischler][Tim Tischler]
+* [Wiard van Rjj][Wiard van Rjj]
 
 Thanks, all of you!
+
+<!-- Please add other contributors here -->
+[Alex Jones]:             https://github.com/AlexsJones
+[Arthur Silva Sens]:      https://github.com/ArthurSens
+[Bartłomiej Płotka]:      https://github.com/bwplotka
+[Charles Pretzer]:        https://github.com/cpretzer
+[Daniel Khan]:            https://github.com/danielkhan
+[David Grizzanti]:        https://github.com/dgrizzanti
+[Debashish Ghatak]:       @
+[Dominic Finn]:           @
+[Frederic Branczyk]:      https://github.com/brancz
+[Gibbs Cullen]:           https://github.com/gibbscullen
+[Jason Morgan]:           https://github.com/wmorgan
+[Jonah Kowall]:           https://github.com/jkowall
+[Juraci Paixão Kröhling]: https://github.com/jpkrohling
+[Ken Finnigan]:           https://github.com/kenfinnigan
+[Krisztian Fekete]:       @
+[Liz Fong-Jones]:         https://github.com/lizthegrey
+[Matt Young]:             https://github.com/halcyondude
+[Michael Hausenblas]:     https://github.com/mhausenblas
+[Rafael Natali]:          https://github.com/rafaelmnatali
+[Richard Anton]:          @
+[RichiH Hartmann]:        https://github.com/RichiH
+[Rob Skillington]:        https://github.com/robskillington
+[Ryan Perry]:             https://github.com/Rperry2174
+[Shelby Spees]:           https://github.com/shelbyspees
+[Shobhit Srivastava]:     @
+[Simone Ferlin]:          https://github.com/sferlin
+[Tim Tischler]:           @
+[Wiard van Rjj]:          https://github.com/wiardvanrij
+
 
 ## Contributing
 
@@ -484,6 +532,6 @@ This whitepaper is still incomplete! If you want to help us, there are a few top
 * Gaps around Observability
   * *Machine Learning, Anomaly Detection, and Analytics* - There are some pretty strong and opposing opinions on whether ML/Analytics can be useful in the Observability space. We need someone with experience to explain to the community where and why it can be useful and where and why it cannot. 
   * *Monitoring Streaming APIs* - There are two very well known monitoring methodologies today. USE method to monitor compute resources and RED method to monitor request-based services. Both methodologies do not apply for Streaming APIs and, with the popularization of Remote Procedure Calls(RPC), we need to come up with a clear methodology to monitor them.
-  * *eBPF* - eBPF is a revolutionary technology that can run sandboxed programs in the Linux kernel without changing kernel source code or loading a kernel module. It can help us achieve the long-time dream of observing systems without adding extra instrumentation with some creativity. Even though the possibilities are endless, eBPF is not that popular. We'd like to tell our readers how eBPF and related tools can be a game-changer in the Observability space and why they're still not that popular.
+  * *eBPF* - eBPF is a revolutionary technology that can run sandboxed programs in the Linux kernel without changing kernel source code or loading a kernel module. With some creativity, it can help us achieve the long-time dream of observing systems without adding extra instrumentation. Even though the possibilities are endless, eBPF is not that popular. We'd like to tell our readers how eBPF and related tools can be a game-changer in the Observability space and why they're still not that popular.
   * *Observing short-lived systems* - Observability in the FaaS/Serverless space is still very weak, we'd like to tell our readers why it's so difficult to observe this kind of systems. How does Pull vs Push based models can interact with them and why performance overhead has been an issue for so long.
 
