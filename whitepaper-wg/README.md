@@ -1,6 +1,6 @@
 # Observability Whitepaper
 
-__This is a Work in progress.__ Folks working on the whitepaper, please interact with the whitepaper with [Issues](https://github.com/cncf/tag-observability/issues/new) and [Pull Requests](https://github.com/cncf/tag-observability/pulls). Discussions are happening at [CNCF’s slack](https://slack.cncf.io/) (#tag-observability channel)
+**We're in the public review phase!** Please read it, share your thoughts and suggest modifications. If you're feeling capable and generous, there is also a contributing section with instructions to what we still want to add to this whitepaper!
 
 ## Table of Contents
 * [Executive Summary](#executive-summary)
