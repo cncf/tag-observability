@@ -87,7 +87,7 @@ ___insert image with all 5 signals here___
 
 ### Metrics
 
-Metrics are numeric representations of data. They fall into two main categories: Data that is already numeric and data distilled into numbers. A typical example of the former would be temperature and a process counter for the latter. This differs from logs or traces, which focus on records or information about individual events.
+Metrics are numeric representations of data. They fall into two main categories: data that is already numeric and data distilled into numbers. A typical example of the former would be temperature and a process counter for the latter. This differs from logs or traces, which focus on records or information about individual events.
 
 Distilled data loses details, e.g. a process counter fails information about when specific increments happened. This trade-off makes metrics one of the most efficient signals: Subject matter experts chose what to distil and how. This reduces the load for retaining, emitting, transmitting, storing, and processing. It also reduces mental overload for human operators as they can get a quick overview of a situation.
 
@@ -106,7 +106,7 @@ A log is a stream of textual entries describing usage patterns, activities, and 
 
 Logs can be categorized into different categories such as:
 * __Application Logs__ - an application log is created when an event takes place inside an application. These logs help developers understand and measure how applications are behaving during development and after release.
-Security Log - security logs are created in response to security events that take place on the system. These can include a variety of events such as failed log-ins, password changes, failed authentication requests, resource access, resource changes including files, devices, users, or other administrative changes. System Administrators can often configure which types of events are included in the security log.
+* __Security Log__ - security logs are created in response to security events that take place on the system. These can include a variety of events such as failed log-ins, password changes, failed authentication requests, resource access, resource changes including files, devices, users, or other administrative changes. System Administrators can often configure which types of events are included in the security log.
 * __System Log__ - system logs record events that occur within the operating system itself, such as kernel-level messages dealing with physical and logical devices, boot sequences, user or application authentication, and other activities, including faults and status messages.
 * __Audit log__ - also called an audit trail, is essentially a record of events and changes. Typically, they capture events by recording who performed an activity, what activity was performed, and how the system responded. Often the system administrator will determine what is collected for the audit log based on business requirements.
 * __Infrastructure log__ - is a vital part of infrastructure management, which involves managing the physical and logical equipment that affect an organization's IT foundation. This can be either on-premises or in the cloud and are obtained via APIs, Syslog, or other collected using host-based agents.
@@ -204,7 +204,7 @@ Multi-signal observability is doable, and many have already accomplished it. Sti
 
 1. Different operational effort.
 
-Unless you are willing to spend money on a SaaS solution, which will do some of the work for you, it's hard these days to have one team managing all observability systems. It's not uncommon to have a separate specialized team for installing, managing, and maintaining each observability signals, e.g. one for metrics system, one for logging stack, one for tracing. This is due to different design patterns, technologies, storage systems and installation methods each system requires. The fragmentation here is huge. This is what we aim to improve with open-source initiatives like [OpenTelemetry](https://opentelemetry.io/) for instrumenting and forwarding parts and [Obsevatorium](https://observatorium.io/) for scalable multi-signal backends.
+Unless you are willing to spend money on a SaaS solution, which will do some of the work for you, it's hard these days to have one team managing all observability systems. It's not uncommon to have a separate specialized team for installing, managing, and maintaining each observability signals, e.g. one for metrics system, one for logging stack, one for tracing. This is due to different design patterns, technologies, storage systems and installation methods each system requires. The fragmentation here is huge. This is what we aim to improve with open-source initiatives like [OpenTelemetry](https://opentelemetry.io/) for instrumenting and forwarding parts and [Observatorium](https://observatorium.io/) for scalable multi-signal backends.
 
 2. Duplication of effort.
 
