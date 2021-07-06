@@ -358,7 +358,8 @@ Error budget: tolerance for failed events over a period of time determined by SL
 
 In order for a proposed SLO to be useful and effective, you will need to get all stakeholders to agree to it. The product managers have to agree that this threshold is good enough for users—performance below this value is unacceptably low and worth spending engineering time to fix. The product developers need to agree that if the error budget has been exhausted, they will take some steps to reduce risk to users until the service is back in budget. The team responsible for the production environment who are tasked with defending this SLO have agreed that it is defensible without Herculean effort, excessive toil, and burnout—all of which are damaging to the long-term health of the team and service.
 
-![image](https://user-images.githubusercontent.com/24193764/121790610-64786e80-cbb7-11eb-921d-6d82c8c7f906.png)
+![sli:o:a](https://user-images.githubusercontent.com/8470415/124545037-ede13080-de45-11eb-860f-d314625aebed.png)
+
 
 ### Alerting on Observability data
 
