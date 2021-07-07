@@ -41,7 +41,7 @@ With the popularization of cloud computing, microservices and distributed system
 
 Applications need to be designed and built to include and facilitate mechanisms that make them observable by some entity, e.g., whether this entity is another application or a human without access to the datacenter. The effort must be made early, beginning with design, and it often requires extra code or infrastructure automation and instrumentation. These cultural and process changes are often challenges or blockers for many organizations. On top of that, there are many methods and tools out in the market that suggest different approaches to reach a reasonable level of observability.
 
-Community research[4] conducted by ClearPath Strategies and Honeycomb.io show that "Three in four teams have yet to begin or are early in their observability journeys" and that "There is momentum behind the shift toward achieving more observable systems". Once one reaches a satisfactory level of observability, there is no doubt of its benefits, but getting started can feel like a daunting task! Cultural changes, different tools, different objectives, different methods. So many details that need to be taken into consideration can make this journey quite confusing and painful. The purpose of this paper is to provide clarity so that more software and operations teams can gain the benefits of observability in their systems.
+Community research conducted by ClearPath Strategies and Honeycomb.io show that "Three in four teams have yet to begin or are early in their observability journeys" and that "There is momentum behind the shift toward achieving more observable systems". Once one reaches a satisfactory level of observability, there is no doubt of its benefits, but getting started can feel like a daunting task! Cultural changes, different tools, different objectives, different methods. So many details that need to be taken into consideration can make this journey quite confusing and painful. The purpose of this paper is to provide clarity so that more software and operations teams can gain the benefits of observability in their systems.
 
 ### Target Audience
 
@@ -67,7 +67,7 @@ Even though there are several new challenges, such as culture change, capacity p
 
 There is no doubt that observability is a desirable property of a system nowadays. Everybody is saying that, right? Some of you may have already started your observability journey, while others are reading this whitepaper right now just because everyone is saying that you should make your systems observable. The fact is that "Observability" has become a buzzword, and like every other buzzword, everyone wants to leave their mark while advocating for it, and what you have heard may have a different meaning from what it originated from. If you're going to level up your game on observability, let's try to make it clear its original purpose.
 
-"In control theory, observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs" [9]. Being less theoretical, it is a function of a system with which humans and machines can observe, understand and act on the state of said system. So yes, observability, by definition, looks simple, but it gets complicated to decide which output(s) a system should have when implementing without an objective in mind. That's when things start to go sideways.
+"In control theory, observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs". Being less theoretical, it is a function of a system with which humans and machines can observe, understand and act on the state of said system. So yes, observability, by definition, looks simple, but it gets complicated to decide which output(s) a system should have when implementing without an objective in mind. That's when things start to go sideways.
 
 When getting started, it's easy just to copy someone else's work. That is one of the blessings and, at the same time, one of the curses of Open Source. There are so many examples online; helm charts, Ansible playbooks, Terraform modules, one can just run one of those scripts, and you have an observability stack up and running in just a couple of minutes. It is easy, and it works for others. Therefore it should work for me, right? Well, we're not trying to encourage you not to use those types of script, but you must keep in mind that observability is not just using all the pretty and shiny tools. You must be conscious about what outputs are coming out of your system and, more important than everything, you need to have an objective in mind! You may think: "Oh, I want to collect this particular data because you never know, I may need that in the future." and you repeat this thought for another data, and another, and another, and then you realize that you are building a data lake instead.
 
@@ -383,10 +383,10 @@ This has the advantage of being simple and straightforward to see what's happeni
 
 Alerting on burn rate is a more sophisticated method and one that will likely yield more actionable alerts. First, let's define what burn rate and error budgets are in a bit more detail.
 
-Inherent in all SLO definitions is the concept of an error budget. By stating an SLO of 99.9%, you're saying that a .1% failure rate (i.e. your error budget) is acceptable for some predefined amount of time (your SLO window). "Burn rate is how fast, relative to the SLO, the service consumes the error budget" [8]. So, for example, if a "service uses a burn rate of 1, it means it's consuming error budget at a rate that leaves you with exactly 0 budget at the end of the SLO's time window. With an SLO of 99.9% over a time window of 30 days, a constant 0.1% error rate uses exactly all of the error budget: a burn rate of 1." [8]
+Inherent in all SLO definitions is the concept of an error budget. By stating an SLO of 99.9%, you're saying that a .1% failure rate (i.e. your error budget) is acceptable for some predefined amount of time (your SLO window). "Burn rate is how fast, relative to the SLO, the service consumes the error budget". So, for example, if a "service uses a burn rate of 1, it means it's consuming error budget at a rate that leaves you with exactly 0 budget at the end of the SLO's time window. With an SLO of 99.9% over a time window of 30 days, a constant 0.1% error rate uses exactly all of the error budget: a burn rate of 1."
 
 ![image](https://user-images.githubusercontent.com/24193764/121790715-74448280-cbb8-11eb-9b66-ea432377449f.png)
-(Errors relative to burn rate[8])
+(Errors relative to burn rate)
 
 
 | Burn rate | Error rate for a 99.9% SLO | time to exhaustion |
@@ -395,7 +395,7 @@ Inherent in all SLO definitions is the concept of an error budget. By stating an
 | 2         | 0.2%                       | 15 days            |
 | 10        | 1%                         | 3 days             |
 | 1000      | 100%                       | 43 minutes         |
-(Burn rates and time to complete budget exhaustion[8])
+(Burn rates and time to complete budget exhaustion)
 
 The burn rate will allow us to reduce the size of our window and create an alert with good detection time and high precision. For our example, assume keeping the alert window fixed at one hour and deciding that a 5% error budget spend is significant enough to notify someone, you can derive the burn rate to use for the alert.
 
