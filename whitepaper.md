@@ -153,9 +153,9 @@ Instrumentation then has two main purposes for distributed tracing: context prop
 As companies continue to optimize for cloud-native applications, it becomes increasingly important to understand performance metrics at the most granular level possible. Other tools will often show that a performance issue exists (i.e. latency, memory leak, etc.) Continuously collecting profiles allows us to drill down and see why a particular system is experiencing such problems.
 
 There are several different profilers that can be used for other use cases/resources:
-* CPU Profilers
-* Heap Profilers
-* GPU Profilers
+* CPU profilers
+* Heap profilers
+* GPU profilers
 * Mutex profilers
 * IO profilers
 * Language-specific profilers (e.g. JVM Profiler)
@@ -238,7 +238,7 @@ But this is not the end. We sometimes have further details that are sometimes at
 
 ![image](https://user-images.githubusercontent.com/24193764/121791219-e2d80f00-cbbd-11eb-8696-09dfd226aff1.png)
 
-While such a level of correlation might be good enough for some use cases, we might be missing an important one: Large Scale! Processes in such large systems do not handle a few requests. They perform trillions of operations for vastly different purposes and effects. Even if we can get all log lines or traces from a single process, even for a single second, how do you find the request, operation or trace ID that is relevant to your goal from thousands of concurrent requests being processed at that time? Powerful logging languages (e.g. [LogQL](https://grafana.com/docs/loki/latest/logql/)) allow you to grep logs for details like log levels, error statuses, message, code file, etc. However, this requires you to understand the available fields, their format, and how it maps to the situation in the process. 
+While such a level of correlation might be good enough for some use cases, we might be missing an important one: Large Scale! Processes in such large systems do not handle a few requests. They perform trillions of operations for vastly different purposes and effects. Even if we can get all log lines or traces from a single process, even for a single second, how do you find the request, operation or trace ID that is relevant to your goal from thousands of concurrent requests being processed at that time? Powerful log query languages (e.g. [LogQL](https://grafana.com/docs/loki/latest/logql/)) allow you to grep logs for details like log levels, error statuses, message, code file, etc. However, this requires you to understand the available fields, their format, and how it maps to the situation in the process. 
 
 Wouldn't it be better if the alert for a high number of certain errors or high latency of some endpoint let you know all the request IDs that were affected? Such alerts are probably based on __metrics__ and such metrics were incremented during some request flow, which most likely also produced a __log line or trace__ and had its __request, operation or trace ID__ assigned, right?
 
@@ -257,7 +257,7 @@ In theory, we could have exemplars attached to profiles too, but given its speci
 We talked about ways you can navigate between signals, but is it really useful? Let's go through two basic examples, very briefly:
 
 ![image](https://user-images.githubusercontent.com/24193764/121791411-03a16400-cbc0-11eb-8183-e8124cf0947f.png)
-* We got an alert about an unexpectedly high error rate exceeding our SLO. Alert is based on a counter of errors, and we see a spike of requests resulting in 501 errors. We take __exemplar__ to navigate to the example log line to learn the exact human-friendly error message. It appears the error is coming from an internal microservice behind many hops, so we navigate to traces thanks to the existence of a __request ID__ that is matching __trace ID__. Thanks to that, we know exactly what service/process is responsible for the problem and dig there more.
+* We got an alert about an unexpectedly high error rate exceeding our SLO. Alert is based on a counter of errors, and we see a spike of requests resulting in 501 errors (see also [Alerting on Observability data](#alerting-on-observability-data)). We take __exemplar__ to navigate to the example log line to learn the exact human-friendly error message. It appears the error is coming from an internal microservice behind many hops, so we navigate to traces thanks to the existence of a __request ID__ that is matching __trace ID__. Thanks to that, we know exactly what service/process is responsible for the problem and dig there more.
 
 ![image](https://user-images.githubusercontent.com/24193764/121791428-1c117e80-cbc0-11eb-9f12-39a2de1366f1.png)
 
@@ -415,7 +415,7 @@ So, five percent of a 30-day error budget spent over one hour requires a burn ra
 
 ### Multi-signal correlation
 
-Hopefully, the above write up explains well how to think about observability correlation, what it means and what is achievable right now. Yet let's quickly enumerate the pitfalls of today's multi-signal observability linking:
+Hopefully, the section [Correlating Observability Signals](#correlating-observability-signals) explains well how to think about observability correlation, what it means and what is achievable right now. Yet let's quickly enumerate the pitfalls of today's multi-signal observability linking:
 
 * Inconsistent metadata
 
@@ -506,7 +506,7 @@ Thanks, all of you!
 [Jonah Kowall]:           https://github.com/jkowall
 [Juraci Paixão Kröhling]: https://github.com/jpkrohling
 [Ken Finnigan]:           https://github.com/kenfinnigan
-[Krisztian Fekete]:       @
+[Krisztian Fekete]:       https://github.com/fktkrt
 [Liz Fong-Jones]:         https://github.com/lizthegrey
 [Matt Young]:             https://github.com/halcyondude
 [Michael Hausenblas]:     https://github.com/mhausenblas
