@@ -42,7 +42,7 @@ _本白皮书正在编撰中。请编撰者在_[Issues](https://github.com/cncf/
 
 在构建应用的时候，我们要为外部实体的观测提供便利，这个外部实体可以是另一个应用，也可以是一个不在数据中心内部的人员。这需要在程序构建的早期阶段就开始考虑，这通常意味着编写更多的代码，自动化基础设施的操作，还有对关键指标的监控。 对于多数组织而言，这种工作理念和流程的转换往往充满挑战、困难重重。 尽管如此，市面上有很多工具和方案能从不同的角度把软件的可观测性提高到一个合理的水平。
 
-ClearPath Strategies 和 Honeycomb.io 进行的社区研究[4]报告显示 “ 75%的团队尚未开始或刚开始提高他们系统的可观测性努力”以及在“就目前的趋势看来，越来越多的人把提高可观测性作为他们系统设计的目标之一”。能够系统的可观测能力能够达到了一个令人满意的水平，这带来的益处是显而易见的。不过，着手构建高可观测行的系统绝非一日之功。工作理念的改变，工具、目标、工作方法的变化，诸如此类细节都需要考虑到位，进而增加了项目的难度。这篇白皮书旨在提供清晰的说明，以便更多的软件开发和运维团队可以从提高他们系统的可观测性中获益。
+ClearPath Strategies 和 Honeycomb.io 进行的社区研究[4]报告显示 “75%的团队尚未开始或刚开始提高他们系统的可观测性”以及在“就目前的趋势看来，越来越多的人把提高可观测性作为他们系统设计的目标之一”。一旦系统的可观测能力能够达到一个令人满意的水平，这带来的益处是显而易见的。不过，着手构建高可观测性的系统绝非一日之功。工作理念的改变，工具、目标、工作方法的变化，诸如此类细节都需要考虑到位，进而增加了项目的难度。这篇白皮书旨在提供清晰的说明，以便更多的软件开发和运维团队可以从提高他们系统的可观测性中获益。
 
 ### 目标受众
 
@@ -55,7 +55,7 @@ ClearPath Strategies 和 Honeycomb.io 进行的社区研究[4]报告显示 “ 7
 * 基础设施工程师
 * 软件开发者
 
-本白皮书可以帮助上述岗位的人员为客户交付一套既本身具有高度的可观测性，同时又能和客户已有的监控系统集成的，具有实用级的可靠性，安全性和透明度的软件产品。负责设计和实现这类软件的其他人员，例如项目经理、产品经理和架构师，也可能对这篇 白皮书 感兴趣。因为可观测性是一个多学科主题，计算机科学、信息系统、工程学(或相关学科)的学生和对可观测性领域感兴趣的人也可以在这里找到有用的信息。
+本白皮书可以帮助上述岗位的人员为客户交付一套既具有高度的可观测性，同时又能和客户已有的监控系统集成的，具有生产级的可靠性，安全性和透明度的软件产品。负责设计和实现这类软件的其他人员，例如项目经理、产品经理和架构师，也可能对这篇 白皮书 感兴趣。因为可观测性是一个多学科主题，计算机科学、信息系统、工程学(或相关学科)的学生和对可观测性领域感兴趣的人也可以在这里找到有用的信息。
 
 ### 目标内容
 
@@ -66,23 +66,23 @@ ClearPath Strategies 和 Honeycomb.io 进行的社区研究[4]报告显示 “ 7
 
 ## 可观测性是什么
 
-毫无疑问，可观测性是当今系统的一个令人向往的特性。每个人都在说，对吧？你们当中的一些人可能已经开始了你的可观测旅程，而其他人正在阅读这份儿白皮书，因为每个人都在说你应该让你的系统具备可观测性。事实上，“可观测性”已经成为一个流行的词汇，就像其他的词汇一样，每个人都希望在提议它的同时再其之上留下自己的印记，你听到的可能和他的起源有一些不同的定义。如果你想让你的游戏更具备可观测性，让我们来试着明确它的最初目的。
+毫无疑问，可观测性是当今系统的一个令人向往的特性。每个人都在说，对吧？你们当中的一些人可能已经开始了你的可观测旅程，而其他人正在阅读这份儿白皮书，因为每个人都在说你应该让你的系统具备可观测性。事实上，“可观测性”已经成为一个流行的词汇，就像其他的词汇一样，每个人都希望在提议它的同时在其之上留下自己的印记，因此你听到的可能和它起初的含义有所不同。如果你想加深在可观测性上的理解，让我们先来试着明确它的最初目的。
 
-“在控制论中，可观测性是衡量一个系统仅凭对其外部的输出来判断其内部运行状态的精确程度的指标。”[9]。通俗地讲，这是系统提供给人员或者机器用来观察理解系统状态并作出反应的功能。要实现这个定义上看似简单的”可观测性“， 对于缺乏明确目标的人而言，选取哪些系统输出的确是令人头疼的问题。
+“在控制论中，可观测性是衡量一个系统仅凭其外部的输出来判断其内部运行状态的精确程度的指标。”[9]通俗地讲，这是系统提供给人员或者机器用来观察理解系统状态并作出反应的功能。要实现这个定义上看似简单的”可观测性“， 对于缺乏明确目标的人而言，选取哪些系统输出的确是令人头疼的问题。
 
-在一开始的时候，抄袭别人的作品是很容易的，这是开源带来的好处之一，同时也是缺点之一。 在网上有很多这样的例子:  helm charts, Ansible playbooks, Terraform modules。仅仅运行其中一个脚本, 你就可以在几分钟之内完成一套可观测性技术栈的搭建并让他运行起来。这很简单，对其他人来说也有用，所以对我也是有用的，对吗？ 我们并不是想要鼓励你不要使用这些脚本，但是你需要注意的是: 可观测性不仅仅是去使用这些看起来好看和闪亮的工具。你必须意识到你的系统会产生什么样的结果，更加重要的是，你需要在脑海里有一个目标。你可能会想：“ 噢, 我想收集这个特殊的数据, 因为你永远不知道, 可能在未来会需要它。”  然后你对另外一些数据有类似的想法，一个接着一个，然后你意识到你正在建立一个数据湖。
+在一开始的时候，抄袭别人的作品是很容易的，这是开源带来的好处之一，同时也是缺点之一。 在网上有很多这样的例子:  helm charts, Ansible playbooks, Terraform modules。仅仅运行其中一个脚本, 你就可以在几分钟之内完成一套可观测性技术栈的搭建并让他运行起来。这很简单，对其他人来说也有用，所以对我也是有用的，对吗？ 我们并不是想要鼓励你不要使用这些脚本，但是你需要注意的是：可观测性不仅仅是去使用这些看似光鲜亮丽的工具。你必须意识到你的系统会产生什么样的结果，更加重要的是，你需要在脑海里有一个目标。你可能会想：“噢， 我想收集这个特殊的数据， 因为你永远不知道， 可能在未来会需要它。”  然后你对另外一些数据有类似的想法，一个接着一个，最后你才意识到你正在建立一个数据湖。
 
 可观测性可以用在系统开发生命周期内的所有阶段: 测试新功能，监测生产环境的韧性，了解客户的使用习惯，或者根据统计数据规划产品路线图。 一旦目标明确，我们就可以考虑选取输出的数据，或者称为“信号”。
 
 ## 可观测性信号
 
-如之前所述，信号是由系统产生的输出数据，人类或机器可以从中推断内容。这些信号是什么会因为系统而异，也取决于你想要达成的目标。它可能是你想要在某个时刻测量的东西，例如温度或者 RAM 使用情况，或者在分布式系统中你想要追踪的众多组件发生的事件。你可能想知道在某个随机时间点，系统的哪个功能消耗了较多的 CPU、Mem 或者磁盘等资源，或者在特定的时间点，系统是如何崩溃的。虽然一些信号可能一起来还原业务现场，但是其他信号在系统的某些方面非常专业。他们可以一起使用，提供观察同一个技术的不同方式。或者正如我们对初学者的建议，你可以从一个或几个信号开始，然后逐步完善其他技术。
+如之前所述，信号是由系统产生的输出数据，人类或机器可以从中推断内容。这些信号是什么会因系统而异，也取决于你想要达成的目标。它可能是你想要在某个时刻测量的东西，例如温度或者 RAM 使用情况，或者在分布式系统中你想要追踪的众多组件发生的事件。你可能想知道在某个随机时间点，系统的哪个功能消耗了较多的 CPU、Mem 或者磁盘等资源，或者在特定的时间点，系统是如何崩溃的。有些信号提供的信息可能会有所冗余，而另一些信号则更适合用来观测系统的某些方面。他们可以一起使用，以提供不同的视角来观察同一个技术。或者正如我们对初学者的建议，你可以从一个或几个信号开始，进而逐步完善对多种信号的认知。
 
 你可能听过“可观测性三大支柱”， 即 metrics, logs, traces。 我们喜欢把它们当作是“主要的信号”，而不是“三大支柱”，原因有两个：（1）支柱隐含的意义是如果有一个缺失，整个结构就会蜕化而崩溃，这是不正确的。人们可以安全的使用两个甚至于一个信号, 仍然可以实现可观测性目标。（2）去年开始，越来越多的信号在开源社区流行起来，比如应用 profiles 和 crash dumps，而现存的工具和方法仍旧不能满足科技行业的所有需求。在不久的将来可能会出现新的信号，对这个话题感兴趣的人应该密切关注。
 
 ![image](https://user-images.githubusercontent.com/24193764/121773601-55f86b80-cb53-11eb-8c8b-262a5aad781f.png)
 
-所有的信号都有不同的收集和测量方式，他们花费不同的资源来获取、存储和分析。同时提供不同的方法来观测相同的系统。选择其中一部分或者全部选择，就像工程学中的其他任务一样，是一个权衡的游戏。在下一节中, 我们将深入研究每个信号, 从人们最喜欢的 metrics，logs 和 traces 开始，然后是两个存在可能性的新的信号:  applicaiton profiles 和 crash dumps。
+所有的信号都有不同的收集和测量方式，他们花费不同的资源来获取、存储和分析，同时提供不同的方法来观测相同的系统。选择其中一部分还是全部选择，就像工程设计中的其他任务一样，是一个权衡的游戏。在下一节中, 我们将深入研究每个信号， 从人们最喜欢的 metrics，logs 和 traces 开始，然后是两个新的可能出现的信号:  应用 profiles 和 crash dumps。
 
 ___insert image with all 5 signals here___
 
@@ -90,7 +90,7 @@ ___insert image with all 5 signals here___
 
 Metrics是数据的数值表现。他们主要分为两类: 已经是数值的数据和被转换为数值的数据。前者的典型案例是 温度，后者则是 process counter。这与 logs 或者 traces 不同，后者侧重于单个事件的记录或信息。
 
-转换过的数据丢失了细节，例如 process counter 会丢失有关特定增量发生时间的信息，这种权衡使 metrics 变成最有效的信号之一：你可以选择提取什么以及如何去提取，这减少了关于为保留、发射、转发、存储和处理的负载，还减少了人们的心里压力，因为可以简明地展示当前状况， 它大大减轻了运维人员的思考负担。
+转换过的数据丢失了细节，例如 process counter 会丢失有关特定增量发生时间的信息，但这种权衡使 metrics 变成最有效的信号之一：领域专家需要选择提取什么以及如何去提取，而这减轻了关于如何保留、转换、传输、存储和处理数据的负担。同时它还减轻了运维人员的心理负担，因为人们可以借此快速的了解当前状况。
 
 Metrics 还表示系统在某个时刻的可观测状态，与 logs 和 traces 不同，后者更侧重于单个 Event 的记录和信息.
 
@@ -99,7 +99,7 @@ Metrics 通常是结构化或者半结构化的, 通常以两种方式使用:
 * _实时的监控和告警_ - Metrics 最常见的用途是构建概览和各项细节指标的图表集，以及发出警告或通知给人员或者自动化系统，报告超过阈值的指标或系统的异常。
 * _趋势和分析_ - Metrics 也用于长期的趋势分析和长期计划，同时也在事件发生后提供解决和监控潜在问题的建议，杜绝相关情况再次发生。
 
-Metrics 提供的信息用于衡量关于系统整体行为和健康状态。Metrics 通常在 “发生了什么”中扮演重要角色，有时候是“为什么”。例如，某个指标可以告诉你每秒钟 HTTP 请求量的大小，但通常不可以告诉你为什么请求出现了峰值或者下降。不过，它可以告诉你为什么 负载均衡过重。换句话说，metrics 通常不会告诉你根本原因，通常提供了一个需要定位的高级视角和问题产生的根本原因的开始。
+Metrics 提供的信息用于衡量关于系统整体行为和健康状态。Metrics 通常在 “发生了什么”中扮演重要角色，有时候是“为什么”。例如，某个指标可以告诉你每秒钟 HTTP 请求量的大小，但通常不可以告诉你为什么请求出现了峰值或者下降。不过，它可以告诉你为什么 负载均衡过重。换句话说，metrics 通常不会告诉你根本原因，而是提供了定位问题所需的概要信息，并作为排查问题产生的根本原因的出发点。
 
 ### Logs
 
@@ -115,9 +115,9 @@ logs可以被分为不同的种类：
 
 logs在不同的场景下都很有用 - metrics, traces, 安全, debug。保存关于应用和系统相关的所有事件记录，可以确定甚至重现出导致出现特定情况的分步操作。这些记录在去做根因分析时非常有价值，这些分析提供了在故障发生时应用或者系统的状态。
 
-存储在logs中的信息与文本内容无关，所以很难从中获取到有意义的信息。在过去的30年里，很多人尝试将 schema 应用到logs里，但是都没有特别成功。原因在于 schema 让提供一些相关信息变得更加容易。 一般是将logs文件中的文本信息通过解析、分段 和分析来实现的。logs里的数据也可以转换成其他的可观测性信号，包括 metrics 和 traces。一旦数据被转换为 metrics，就可以用来了解随着时间变化的内容。logs数据还可以通过logs分析技术来进行可视化和分析。
+存储在logs中的信息与文本内容无关，所以很难从中获取到有意义的信息。在过去的30年里，很多人尝试将 schema 应用到logs里，但是都没有特别成功。在于 schema 使得提供一些相关信息变得更加容易。 一般是将logs文件中的文本信息通过解析、分段 和分析来实现的。logs里的数据也可以转换成其他的可观测性信号，包括 metrics 和 traces。一旦数据被转换为 metrics，就可以用来了解随着时间变化的内容。logs数据还可以通过logs分析技术来进行可视化和分析。
 
-logs级别是可以用来标识每条logs数据的重要性。其中一组logs级别是 ERROR，INFO 和 DEBUG。其中 ERROR 是最不详细的logs级别，DEBUG 则是最详细的logs级别。
+logs级别是可以用来标识每条logs数据的重要性。一些常见的logs级别有 ERROR，WARNING，INFO 和 DEBUG。其中 ERROR 是最不详细的logs级别，DEBUG 则是最详细的logs级别。
 
 1. __ERROR__  报告故障的发生及其原因、细节。
 2. __WARNING__  是一个需要注意的高级别消息, 虽然它不是一个故障。
@@ -138,7 +138,7 @@ Traces 通常是一组被称为 “tracing 数据点”或者是一组可以用�
 
 ![image](https://user-images.githubusercontent.com/24193764/121788584-b82d8c80-cba4-11eb-94d3-b1dd74ccf482.png)
 
-Traces 通常用于表示事务的一个具体实例，使它们成为可观测性中的高分辨率信号。Spans 是高度上下文的，其中包含了关于初始化它的 span 的信息。这使得在分布式系统的不同参与者(例如服务，队列，数据库等)之间建立因果关系成为一种可能。
+Traces 通常用于表示事务的一个具体实例，这使它们成为可观测性中的高分辨率信号。Spans 是高度上下文相关的，其中包含了关于初始化它的 span 的信息。这使得在分布式系统的不同参与者(例如服务，队列，数据库等)之间建立因果关系成为一种可能。
 
 虽然很多监控系统实现了他们自己独有的 trace context 透传的方式，但业内达成了广泛的共识：trace context 传播应该以标准化的方式去执行。这促进了成立了 W3C 分布式追踪工作小组和制定并更新了 W3C Trace Context 规范的后续版本。借鉴OpenZipkin项目既成行业事实标准的B3后， W3C Trace Context 定义了包含标准 HTTP Header 和值的格式来传播 context 信息，从而支持分布式跟踪的场景。该规范规定了如何在 services 之间发送和修改 context 信息。Context 信息唯一标识了分布式系统内的各个请求，还定义了添加和传播 provider-specific 的 context 信息的方式。
 
@@ -146,14 +146,14 @@ Traces 通常用于表示事务的一个具体实例，使它们成为可观测�
 
 插桩(组件埋点)在分布式追踪中扮演者重要的角色，它负责创建数据点本身以及将 context 在服务间进行传递。如果没有 context 传播，我们就无法将传入的 HTTP 请求与它的下游 HTTP 请求或消息的生产者及消费者连接起来。
 
-插桩在分布式追踪有两个主要目的：Context 传播 和 span mapping。大多数情况下, 通常可以使用与 Http 客户端/服务器端 集成的库透明地进行传播。在这一部分中，项目、工具和技术可以使用像 OpenTelemetry API/SDKS 、Open Tracing 及 Open Census 等都可以使用。
+插桩在分布式追踪有两个主要目的：Context 传播 和 span mapping。大多数情况下, 通常可以使用与 Http 客户端/服务器端 集成的库透明地进行传播。在这一部分中，可以使用像 OpenTelemetry API/SDKS 、Open Tracing 及 Open Census 等项目、工具和技术。
 
 ![image](https://user-images.githubusercontent.com/24193764/121788568-9502dd00-cba4-11eb-9014-8fc8a9c31f05.png)
 (Source: https://opentracing.io/docs/overview/)
 
 ### Profiles
 
-随着公司对云原生应用程序不断的进行优化，在越来越细小的颗粒度上对性能指标进行理解也愈发重要。其他工具通常会明显存在性能问题(例如延迟、内存泄漏等)。 持续收集 profiles 使我们可以深入了解某个特定的系统会遇到这样问题的原因。
+随着公司对云原生应用程序不断的进行优化，尽可能地在细粒度上理解性能指标也愈发重要。一些工具通常会帮助我们发现存在的性能问题(例如延迟、内存泄漏等)。 而持续收集 profiles 使我们可以更深入了解某个特定的系统会遇到这样问题的原因。
 
 有一些不同的profiles 可以用在不同的用例和资源上:
 
@@ -178,7 +178,7 @@ ___Insert an example image of a profile somewhere in the text___
 
 ### Dumps
 
-在软件开发中，核心的 dump 文件是用于排除程序故障。例如，一个崩溃的进程。通常，操作系统会在一些配置(例如位置、命名约定或文件大小)的帮助下，会写入进程崩溃时的内存镜像中用于分析。然而，在云原生中，大型集群的核心 dump 文件集合很容易在存储甚至网络方面存在瓶颈，具体取决于集群的存储是如何连接到集群节点中去的。例如，处理密集型的应用程序最终可能会生成两位数 Gb 大小的核心 dump 文件。
+在软件开发中，核心的 dump 文件被用于排除程序故障，例如，一个崩溃的进程。通常，操作系统会根据一些配置(例如位置、命名约定或文件大小)，把进程崩溃时的内存镜像写入 dump 文件，以用于后续分析。然而，在云原生环境中，大型集群的核心 dump 文件集合很容易在存储甚至网络方面存在瓶颈，具体取决于集群的存储是如何连接到集群节点中去的。例如，处理密集型的应用程序最终可能会生成数十 Gb 大小的核心 dump 文件。
 
 基于 Linux 衍生的系统中, 可以通过全局系统变量(/proc/sys/kernel/core_parrern)将核心的 dump file 设置和写入到系统中的任何位置。从内核2.6以后，有一种处理核心 dump file 的新方法，即所谓的核心 dump 处理程序。这意味着，不是将文件的收集工作下发给操作系统，而是将崩溃的进程输出推送到负责写入文件的应用程序的标准输入流中。例如，在基于Ubuntu 的发行版中，这些可以在 systemd 或 abort 的支持下完成。基于 RedHat 的发行版去使用所谓的 ABRT。
 
@@ -198,17 +198,16 @@ ___Insert an example image of a profile somewhere in the text___
 
 * Continues Profiling: 随着时间的推移, 跨越不同程序不同功能的各项资源的 Code-level 数字消耗值(例如: 使用的内存、消耗的 CPU 时间)。
 
-我们想到的第一个问题是，为什么我们要创造这么多类型(的数据)呢？我们为什么不能只有一个 “抓到所有(包含所有特性)”的数据吗？ 问题的答案在于：我们做不到，类似的，我们不能有一辆既可以在柏油路又能在越野路上都可以很好骑的自行车，每一种信号都有他们独特的用途。_Metrics_ 以实时、可靠、廉价的监控为中心，是支持快速、可靠告警的基础。我们收集 _log lines_，是为了让我们更加深入的了解运行时系统的细节以便获得更多的上下文(细节)。 在某些时候，更多的细节来自于请求树，所以_distributed tracing_ 开始发挥其 spans 和 跨进程 context 传播的作用。另外一些时候，我们会跳到 _应用性能profiles_ 来检查哪些代码效率低下并使用了意想不到数量的资源。
+我们想到的第一个问题是，为什么我们要创造这么多类型(的数据)呢，我们可以只有一个 “抓到所有(包含所有特性)”的数据吗？ 问题的答案在于：我们做不到，就像我们不能有一辆既可以在柏油路又能在越野路上都可以很好骑的自行车一样，每一种信号都有他们独特的用途。_Metrics_ 以实时、可靠、廉价的监控为中心，是支持快速、可靠告警的基础。我们收集 _log lines_，是为了让我们更加深入的了解运行时系统的细节以便获得更多的上下文(细节)。 在某些时候，更多的细节来自于请求树，所以_distributed tracing_ 开始发挥其 spans 和 跨进程 context 传播的作用。另外一些时候，我们会跳到 _应用性能profiles_ 来检查哪些代码效率低下并使用了超出预期的资源。
 
-正如你可能已经注意到的那些一样，只有一个种类的信号对于一个具备完整性、方便性的可观测性故事来说是不够的。例如，吧太多的细节放入到 _metrics_ (基数)中成本过高，并且在告警所需要操作的的接近实时延迟的情况下，较为可靠的 _trace_ 比较昂贵。 这也就是为什么我们看到许多组织致力于去为他们的可观测性接入和使用多个信号的原因。
-
+正如你可能已经注意到的，只使用一个种类的信号对于一个具备完整性、方便性的可观测性故事来说是远远不够的。例如，把太多的细节放入到 _metrics_ (基数)中成本过高，并且在告警所需要操作的的接近实时延迟的情况下，较为可靠的 _trace_ 比较昂贵。 这也就是为什么我们看到许多组织致力于去为他们的可观测性接入和使用多个信号的原因。
 ### 实现多信号的可观测性
 
 具备多信号的可观测性是可行的，已经有很多人实现了它。然而，当你后退一步去查看实现这一目标必须做些什么的时候，你会发现一些主要的挑战、错失掉的机会或者低效率的代码:
 
 1. 不同的运维方式。
 
-除非你愿意购买SaaS解决方案来辅助完成部分工作，不然仅仅依靠单个团队的力量管理好所有观测系统困难重重。拥有一个独立且专业的团队来安装、管理和维护每个可观测性信号的情况并不少见，例如一些人用于 metrics 系统(的日常迭代和维护),  一些人用于 logging 技术栈， 一些在 tracing 上。这源于每个系统需要不同的设计模式、技术、存储系统和安装方式。这种分裂是巨大的。这就是我们意在通过开源计划改进的目标, 例如用于检测和转发组件的 [OpenTelemetry](https://opentelemetry.io/)和用于可扩展多信号的 [Obsevatorium](https://observatorium.io/) 后端。
+除非你愿意购买SaaS解决方案来辅助完成部分工作，不然仅仅依靠单个团队的力量管理好所有观测系统困难重重。拥有一个独立且专业的团队来安装、管理和维护每个可观测性信号的情况并不少见，例如一些人负责 metrics 系统(的日常迭代和维护),  一些人负责 logging 技术栈， 一些则负责 tracing 上。这源于每个系统需要不同的设计模式、技术、存储系统和安装方式。而这之间的差别是巨大的。这就是我们意在通过开源计划改进的目标, 例如用于检测和转发组件的 [OpenTelemetry](https://opentelemetry.io/)和用于可扩展多信号的 [Obsevatorium](https://observatorium.io/) 后端。
 
 2. 重复的工作。
 
@@ -220,7 +219,7 @@ ___Insert an example image of a profile somewhere in the text___
 
 3. 在摄取/收集层面上的信号集成。
 
-鉴于多信号管道，通常希望使用来自另外一个信号的额外数据来补充每个系统。诸如，从与典型的 metrics 协议 (例如OpenMetrics/Prometheus)兼容的特定 traces 和 logs 集合创建 metrics，或类似将 logs 合并到采集路径上的 trace 中。诸如 [OpenTelemetry collector's processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/spanmetricsprocessor) 之类的倡议，它从 trace spans 和 [Loki](https://grafana.com/blog/2020/10/28/loki-2.0-released-transform-logs-as-youre-querying-them-and-set-up-alerts-within-loki/) 将 traces 和 logs 转换为 metrics，这些都是现在这个领域在这方面正在做的一些事情。
+鉴于多信号管道，通常希望使用来自另外一个信号的额外数据来补充每个系统。诸如，从特定 traces 和 logs 中创建与典型的 metrics 协议 (例如OpenMetrics/Prometheus)兼容的 metrics，或类似将 logs 合并到采集路径上的 trace 中。诸如 [OpenTelemetry collector's processor](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/spanmetricsprocessor) 之类的倡议，它可以从 trace spans 中产生 RED metrics，另外[Loki](https://grafana.com/blog/2020/10/28/loki-2.0-released-transform-logs-as-youre-querying-them-and-set-up-alerts-within-loki/) 提供将 logs 转换为 metrics 的能力，这些都是现在这个领域在这方面正在做的一些事情。
 
 4. 在使用层面上的信号集成。
 
@@ -236,7 +235,7 @@ ___Insert an example image of a profile somewhere in the text___
 
 ![image](https://user-images.githubusercontent.com/24193764/121791201-b15f4380-cbbd-11eb-9dd6-be55400d08a6.png)
 
-就这一种方式就已经非常强大,因为它允许我们通过从每个信号中选择与某个进程或代码组件和时间相关的选项来快速导航到每个信号。一些前端，如 Grafana 已经允许我们创建这样的链接和 side views。
+就这一种方式就已经非常强大,因为它允许我们通过从每个信号中选择与某个进程或代码组件和时间相关的选项来快速跳转到每个信号。一些前端，如 Grafana 已经允许我们创建这样的链接和 side views。
 
 但这还不是最后，我们有时候会有更多的细节，这些细节有时候会被附加到 traces 和 logs 中。特别是，分布式链路追踪强大之处在于将所有 span 限定在一个 _trace ID_下。 对于同一个用户请求，这个信息会从函数到函数、从进程传播到另外一个进程，用于链接相同用户请求的操作。在 logs 中共享与请求相关的相同信息并不罕见，有时候被称为 _Request ID_ 或 _Operation ID_。通过确保 logs 和 traces 之间的 id 完全相同的简单技巧，我们可以在这样低级别的范围内将彼此紧密的联系起来。这使得我们能够轻松的在绑定到单个请求中的 logs, trace spans and tags 之间相互跳转。
 
@@ -252,9 +251,9 @@ ___Insert an example image of a profile somewhere in the text___
 
 ![image](https://user-images.githubusercontent.com/24193764/121791244-2a5e9b00-cbbe-11eb-82f5-aa4d87faa3f3.png)
 
-我们可以在一个完美的可观测性系统中使用 已经混合了的 links，这使得我们在多个信号/veiwpoints 方面具备平滑的灵活性。
+我们可以在一个完美的可观测性系统中使用各种各样的链接进行跳转，这使得我们通过多个信号或视角来观测系统时更加的灵活和平滑。
 
-理论上，我们可以将 exampars 也附加到 profiles 中，但是考虑到它的专业性和用途(进程性能调试)，实际上我们很少需要链接到单个请求的 trace 或 log 上。
+理论上，我们可以将 exemplars 也附加到 profiles 中，但是考虑到它的专业性和用途(进程性能调试)，在实际应用中我们很少需要将 profiles 链接到单个请求的 trace 或 log 上。
 
 ### 实际应用
 
@@ -262,11 +261,11 @@ ___Insert an example image of a profile somewhere in the text___
 
 ![image](https://user-images.githubusercontent.com/24193764/121791411-03a16400-cbc0-11eb-8183-e8124cf0947f.png)
 
-* 我们收到了一个关于超出 SLO (service level objectives) 的意外高错误率的告警。告警来源于错误的计数器值，我们看到请求暴增导致 501 errors。我们使用_exemplar_ 导航到事例的 logs 以了解准确的可供人类阅读的错误消息中。 错误似乎来自于依赖深层次的内部微服务系统，由于存在与 _trace ID_ 匹配的 _request ID_，所以可以跳转到 traces。多亏了这一点，我们确切的了解到哪个 service/process 导致了这个问题，并进一步挖掘更多的信息。
+* 我们收到了一个关于超出 SLO (service level objectives) 的意外高错误率的告警。告警来源于错误的计数器值，我们看到请求暴增导致 501 errors。我们使用_exemplar_ 跳转到事例的 logs 以了解准确的可供人类阅读的错误消息中。 错误似乎来自于依赖深层次的内部微服务系统，由于存在与 _trace ID_ 匹配的 _request ID_，所以可以跳转到 traces。多亏了这一点，我们确切的了解到哪个 service/process 导致了这个问题，并进一步挖掘更多的信息。
 
 ![image](https://user-images.githubusercontent.com/24193764/121791428-1c117e80-cbc0-11eb-9f12-39a2de1366f1.png)
 
-* 我们去 debug 慢请求，我们使用 trace 采样手动触发请求并获得 _trace ID_。多亏了 tracing view，我们可以在请求方式的几个进程中看到，对于基本操作而说，ABC-1 请求的速度非常的慢。由于目标元数据和时间，我们选择了相关的 CPU 使用率 metrics。 我们看到 CPU 使用率很高，接近了机器的限制值，表明 CPU 已经饱和。为了了解 CPU 使用率高的原因(特别是当它是容器中仅存的进程)，我们使用相同的 _目标元数据_ 和 _time_ 选择导航到 CPU profile。
+* 我们去 debug 慢请求，我们使用 trace 采样手动触发请求并获得 _trace ID_。多亏了 tracing view，我们可以在请求方式的几个进程中看到，对于基本操作而说，ABC-1 请求的速度非常的慢。由于目标元数据和时间，我们选择了相关的 CPU 使用率 metrics。 我们看到 CPU 使用率很高，接近了机器的限制值，表明 CPU 已经饱和。为了了解 CPU 使用率高的原因(特别是当它是容器中仅存的进程)，我们使用相同的 _目标元数据_ 和 _time_ 选择跳转到 CPU profile。
 
 ### 实际操作
 
@@ -285,13 +284,13 @@ ___Insert an example image of a profile somewhere in the text___
 
 2. 使用相同的 Operation ID, Request ID 或 Trace ID, 并附加到 logging 系统中。
 
-这部分必须在测量层面上得到保证。多亏了 Open Telemetry context 传播和 APIs， 我们可以通过获取 trace ID(理想情况下, 仅当trace 被采样时)并将其添加到与这类请求相关的所有 logs 中，在代码中非常容易的可以做到这一点，实现统一的一个好方法是利用中间件 (HTTP) 和 [拦截器](https://github.com/grpc-ecosystem/go-grpc-middleware) gRPC 代码案例。值得注意的是，即使你不想用 trace 系统，或者你的 trace 采样非常严格，在 logs 中生成和传播 request ID 仍然是有用的，这允许将单个 request 下的所有 logs 关联在一起。
+这部分必须在代码层面上得到保证。多亏了 Open Telemetry context 传播和 APIs， 我们可以通过获取 trace ID(理想情况下, 仅当trace 被采样时)并将其添加到与这类请求相关的所有 logs 中，在代码中非常容易的可以做到这一点，实现统一的一个好方法是利用中间件 (HTTP) 和 [拦截器](https://github.com/grpc-ecosystem/go-grpc-middleware) gRPC 代码案例。值得注意的是，即使你不想用 trace 系统，或者你的 trace 采样非常严格，在 logs 中生成和传播 request ID 仍然是有用的，这允许将单个 request 下的所有 logs 关联在一起。
 
 3. Exemplars
 
 Exemplars 在开源领域有点儿新颖，所以让我们来看看目前有哪些可能的，以及如何去采用他们。向 log 系统添加 exemplar 是非常简单的，我们可以以 `exemplar-request=<traceID>` key-value 的格式为聚合多个请求的 logs 添加一个 exemplar。
 
-为 metrics 系统添加 exemplars 则是另外一回事儿了，可能值得我将来单独去写一篇文章，但是你可以想象，我们通常不能直接将 request ID 或 trace ID 立即添加到 metrics series 元数据中(例如 prometheus labels)。 这是因为它会用一个 sample 创建另外一个具备一次性并且独特性的 series(导致没有边界的“基数”)。然而，在开源中，最近我们可以使用[OpenMetrics 称为 Exemplar](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#exemplars) 定义的一种相当新颖的模式。它是可以附加到 (任何) series sample中去，在主(高度indexed)标签之外的内容。 这是它在 Open Metrics 文本格式中的样子, 如Prometheus：
+为 metrics 系统添加 exemplars 则是另外一回事儿了，可能值得我将来单独去写一篇文章，但是你可以想象，我们通常不能直接将 request ID 或 trace ID 添加到 metrics series 的元数据中(例如 prometheus labels)。 因为这样做意味着我们仅仅为了记录一个 sample，而创建了另外一个只是一次性并且唯一的 series(从而导致“基数”无限增长)。然而，在开源中，最近我们可以使用[OpenMetrics 称为 Exemplar](https://github.com/OpenObservability/OpenMetrics/blob/main/specification/OpenMetrics.md#exemplars) 定义的一种相当新颖的模式。它可以附加到 (任何) series sample中去，并且是在主(高度indexed)标签之外的内容。 这是它在 Open Metrics 文本格式中的样子, 如Prometheus：
 
 ```
 # TYPE foo histogram
@@ -336,9 +335,9 @@ curl -g 'http://localhost:9090/api/v1/query_exemplars?query=test_exemplar_metric
 
 这个API 很快就被 Grafana 采用了，即使现在，在AGPLv3许可证下的最新版本的 Grafana 就能生成 exemplar 并且可以通过它快速跳转到 trace 视图中。
 
-当然，这只是最基本的。Prometheus 在2021年初完成了完成的基础涉及和逻辑的建设以便支持 scraping， 存储,，查询甚至于在 remote write 中去复制这些数据。[Thanos][Thanos](http://thanos.io/) 已经开始支持 exemplars，Grafana 也是。
+当然，这只是最基本的。Prometheus 在2021年初完成了完成的基础设计和逻辑的建设以便支持 scraping，存储，查询甚至于在 remote write 中去复制这些数据。[Thanos](http://thanos.io/) 已经开始支持 exemplars，Grafana 也是。
 
-值得一提的是,OpenTelemtry 也从 Open Census 那里继承了一些 exemplars。这些与 Open Metrics one 非常相似，只是仅仅附加到了 histogrm buckets 中。然而，我们目前还不知道有谁在使用或者依赖于 Otel metrics 协议中的这一部分，以及相关实现。 像[GO](https://github.com/open-telemetry/opentelemetry-go/issues/559)。这意味着，如果你想拥有稳定的相关性，一个已经运行的生态系统，Open Metrics 可能是前进的方向。另外，[Open Telemetry 也慢慢采用了 [Open Metrics](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/metrics/semantic_conventions/openmetrics-guidelines.md)。
+值得一提的是,OpenTelemtry 也从 Open Census 那里继承了一些 exemplars。这些与 Open Metrics one 非常相似，只是仅仅附加到了 histogrm buckets 中。然而，我们目前还不知道有谁在使用或者依赖于 Otel metrics 协议中的这一部分，以及相关实现。 像[GO](https://github.com/open-telemetry/opentelemetry-go/issues/559)。这意味着，如果你想拥有稳定的相关性，一个已经运行的生态系统，Open Metrics 可能是前进的方向。另外，Open Telemetry 也慢慢采用了 [Open Metrics](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/metrics/semantic_conventions/openmetrics-guidelines.md)。
 
 ## 用户案例
 
@@ -418,7 +417,7 @@ SLI，SLO 和 SLA metrics 可以让你客观的衡量服务质量和客户满意
 (消耗率 * 告警窗口大小) / 时间周期
 ```
 
-所以，如果30天内的错误预算花费超过1小时，那么5%的消耗率就需要达到36。 告警规则变为：
+所以，以时间周期为30天，告警窗口大小为一小时来计算，那么一小时内5%的错误预算消耗，就意味着消耗率需达到36(5% * 30 days * 24 hours)。 告警规则变为：
 
 ```
 (sum(rate(http_requests_total{code=~"5.*"}[1h])) / sum(rate(http_requests_total[1h]))) > 36 * .001
@@ -440,13 +439,13 @@ SLI，SLO 和 SLA metrics 可以让你客观的衡量服务质量和客户满意
 
 * 棘手的 trace 采样案例
 
-去收集所有请求的全部 trace 和 span 可能代价巨大。因此，项目定义了不同的采样规则，只允许“采样”(去收集)那些以后可能有用的 trace。因为分辨重要样本难度很大，所以常常出现复杂的采样规则。主要的问题是确保 log 系统中的样本（Examplar）或直接的 trace ID 等关联点指向采样的 traces。如果我们的前端给了一个没有任何trace留存的 exemplar 链接，那将用户体验就很糟糕了。
+去收集所有请求的全部 trace 和 span 可能代价巨大。因此，项目定义了不同的采样规则，只允许“采样”(去收集)那些以后可能有用的 trace。因为分辨重要样本难度很大，所以常常出现复杂的采样规则。主要的问题是确保 log 系统中的样本（Exemplar）或直接的 trace ID 等关联点指向采样的 traces。如果我们的前端给了一个没有任何trace留存的 exemplar 链接，那将用户体验就很糟糕了。
 
-虽然可以在 UI 方面去改进这种体验(例如在展示 exemplar之前检查 trace 是否存在)，但这是本不应该发生的状况，而且增加了系统的复杂性。理想情况是，我们先检查样本（examplar）的相关trace都被记录在案，然后再将 样本（exemplar） 注入到 metrics 系统。使用了预先采样法时，OpenTelemetry API 允许通过诸如 “IsSampled” 方法来获取采样信息。如果我们讨论滞后采样（tail-based）或后期分析筛选有用的trace的时候，这个问题就出现了。我们还没有更好的想法来解决这个烦人的小问题。如果你采用全采样或预先决策采样(通过比例采样，或者用户制定规则采样)，这就不是问题了。
+虽然可以在 UI 方面去改进这种体验(例如在展示 exemplar之前检查 trace 是否存在)，但这是本不应该发生的状况，而且增加了系统的复杂性。理想情况是，我们先检查样本（exemplar）的相关trace都被记录在案，然后再将 样本（exemplar） 注入到 metrics 系统。使用了预先采样法时，OpenTelemetry API 允许通过诸如 “IsSampled” 方法来获取采样信息。如果我们讨论滞后采样（tail-based）或后期分析筛选有用的trace的时候，这个问题就出现了。我们还没有更好的想法来解决这个烦人的小问题。如果你采用全采样或预先决策采样(通过比例采样，或者用户制定规则采样)，这就不是问题了。
 
 * Exemplars 是这个生态系统中的新事物
 
-Prometheus 的用户体验特别好，因为应用程序开放 Prometheus/OpenMetrics 接口已经是标准做法。各类软件都用这种简单的机制来添加大量有用的 metrics。然而 Prometheus exemplars 和 OpenTelemetry tracing 方兴未艾，所以人们需要时间来适应 exemplar 的用法，这是一种二级插桩测量法（用二级监视点 Examplar 来汇总一级监视点采集的数据，比如metric, log, trace等）。
+Prometheus 的用户体验特别好，因为应用程序开放 Prometheus/OpenMetrics 接口已经是标准做法。各类软件都用这种简单的机制来添加大量有用的 metrics。然而 Prometheus exemplars 和 OpenTelemetry tracing 方兴未艾，所以人们需要时间来适应 exemplar 的用法，这是一种二级插桩测量法（用二级监视点 Exemplar 来汇总一级监视点采集的数据，比如metric, log, trace等）。
 
 但是，你可以从自己的案例开始，将 Prometheus exemplars 支持添加到你的应用中。这种关联模式正在成为一种新的标准 (例如在 Thanos 中进行检测)，所以你和你的用户可以将上述方法结合在一起，从而轻松的将 tracing 和 metrics 联系起来。
 
@@ -539,6 +538,8 @@ Thanks, all of you!
 [chenmudu(陈晨)](https://github.com/chenmudu)
 
 [JohnWu20](https://github.com/JohnWu20)
+
+[just1900](https://github.com/just1900)
 
 [lubingfeng](https://github.com/lubingfeng)
 
