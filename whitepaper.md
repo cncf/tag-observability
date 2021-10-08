@@ -500,7 +500,7 @@ Thanks, all of you!
 [Daniel Khan]:            https://github.com/danielkhan
 [David Grizzanti]:        https://github.com/dgrizzanti
 [Debashish Ghatak]:       @
-[Dominic Finn]:           @
+[Dominic Finn]:           https://github.com/dofinn
 [Frederic Branczyk]:      https://github.com/brancz
 [Gibbs Cullen]:           https://github.com/gibbscullen
 [Jason Morgan]:           https://github.com/wmorgan
