@@ -90,7 +90,7 @@ ___insert image with all 5 signals here___
 
 Metrics是数据的数值表现。他们主要分为两类: 已经是数值的数据和被转换为数值的数据。前者的典型案例是 温度，后者则是 process counter。这与 logs 或者 traces 不同，后者侧重于单个事件的记录或信息。
 
-转换过的数据丢失了细节，例如 process counter 会丢失有关特定增量发生时间的信息，但这种权衡使 metrics 变成最有效的信号之一：领域专家需要选择提取什么以及如何去提取，而这减轻了关于如何保留、转换、传输、存储和处理数据的负担。同时它还减轻了运维人员的心理负担，因为人们可以借此快速的了解当前状况。
+转换过的数据丢失了细节，例如 process counter 会丢失有关特定增量发生时间的信息，但这种权衡使 metrics 变成最有效的信号之一：领域专家需要选择提取什么以及如何去提取，而这减轻了关于如何保留、转换、传输、存储和处理数据的负担。同时它还减轻了运维人员的心智负担，因为人们可以借此快速的了解当前状况。
 
 Metrics 还表示系统在某个时刻的可观测状态，与 logs 和 traces 不同，后者更侧重于单个 Event 的记录和信息.
 
@@ -511,7 +511,7 @@ Thanks, all of you!
 [Daniel Khan]:            https://github.com/danielkhan
 [David Grizzanti]:        https://github.com/dgrizzanti
 [Debashish Ghatak]:       @
-[Dominic Finn]:           @
+[Dominic Finn]:           https://github.com/dofinn
 [Frederic Branczyk]:      https://github.com/brancz
 [Gibbs Cullen]:           https://github.com/gibbscullen
 [Jason Morgan]:           https://github.com/wmorgan
