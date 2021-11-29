@@ -499,7 +499,7 @@ Thanks, all of you!
 [Charles Pretzer]:        https://github.com/cpretzer
 [Daniel Khan]:            https://github.com/danielkhan
 [David Grizzanti]:        https://github.com/dgrizzanti
-[Debashish Ghatak]:       @
+[Debashish Ghatak]:       https://github.com/wallydrag
 [Dominic Finn]:           https://github.com/dofinn
 [Frederic Branczyk]:      https://github.com/brancz
 [Gibbs Cullen]:           https://github.com/gibbscullen
@@ -517,7 +517,7 @@ Thanks, all of you!
 [Rob Skillington]:        https://github.com/robskillington
 [Ryan Perry]:             https://github.com/Rperry2174
 [Shelby Spees]:           https://github.com/shelbyspees
-[Shobhit Srivastava]:     @
+[Shobhit Srivastava]:     https://github.com/SinisterLight
 [Simone Ferlin]:          https://github.com/sferlin
 [Tim Tischler]:           @
 [Wiard van Rjj]:          https://github.com/wiardvanrij
