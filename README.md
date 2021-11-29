@@ -19,7 +19,7 @@ supporting material and best practices for end-users and provides guidance and c
 ## Officially sanctioned information channels
 
 * [Observability Charter Document](observability-charter.md)
-* Forthnightly TAG calls @ 1600 UTC, see [CNCF community calendar](https://www.cncf.io/community/calendar/)
+* TAG meetings @ 1600 UTC, 1st and 3rd Tuesdays of each month.  See [CNCF community calendar](https://www.cncf.io/community/calendar/) for invite links.
 * [Meeting Notes](https://docs.google.com/document/d/1_QoF-njScSuGFI3Ge5zu-G8SbL6scQ8AzT1hq57bRoQ/edit)
 * [In Progress Work Status and Roadmap](https://github.com/cncf/tag-observability/projects/1#card-36042463)
 * Mailing List: `cncf-tag-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-tag-observability))
@@ -29,7 +29,7 @@ supporting material and best practices for end-users and provides guidance and c
 
 ![projects](projects.png)
 
-Interactive Landscape: [here](https://landscape.cncf.io/category=observability-and-analysis&format=card-mode&grouping=category&project=hosted)
+Interactive Landscape: [here](https://landscape.cncf.io/card-mode?category=observability-and-analysis&grouping=category&project=hosted)
 
 ## How to get involved
 
@@ -43,41 +43,43 @@ If you want to suggest a specific topic or action item, please do some basic res
 
 ### TOC Liaison
 
-| Name          | Email                        |  GitHub         | Company       |
-| -------------- | --------------------------- | --------------- | ------------- |
-| Lei Zhang      | `lei.zhang@alibaba-inc.com` | [resouer]       | [Alibaba]     |
-| Cornelia Davis | `cornelia@weave.works`      | [cdavisafc]     | [WeaveWorks]  |
+| Name           | Email                     |  GitHub         | Company      |
+| -------------- | ------------------------- | --------------- | ------------ |
+| Lei Zhang      | lei.zhang@alibaba-inc.com | [resouer]       | [Alibaba]    |
+| Cornelia Davis | cornelia@weave.works      | [cdavisafc]     | [WeaveWorks] |
 
 ### Chairs (alphabetical order)
 
-| Name                | Email                   | CNCF Slack    | GitHub        | Company     | Open Source                        |
-|-------------------- | ----------------------- |-------------- | ------------- | ----------- | ---------------------------------- |
-| Matt Young          | `halcyondude@gmail.com` | `@Matt Young` | [halcyondude] | [EverQuote] |                                    |
-| Richard Hartmann    | `richih@richih.org`     | `@RichiH`     | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
-| TBD                 |                         |               |               |             |                                    |
+| Name           | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
+|--------------- | -------------------------- |---------------- | ------------- | ----------  | ---------------------------------- |
+| Alolita Sharma | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Amazon]    |                                    |
+| Matt Young     | halcyondude@gmail.com      | @Matt Youn      | [halcyondude] | [EverQuote] |                                    |
+| Richard Hartma | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
 
-### Tech Lead
+### Tech Leads
 
-| Name              | Email               | CNCF Slack    | GitHub        | Company   | Open Source                        |
-|------------------ | ------------------- |------------   |--------       | --------- | ---------------------------------- |
-| Bartłomiej Płotka | bwplotka@gmail.com  | `@bwplotka`   | [bwplotka]    | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] | 
+| Name              | Email               | CNCF Slack  | GitHub     | Company   | Open Source                        |
+|------------------ | ------------------- |------------ |--------    | --------- | ---------------------------------- |
+| Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka | [bwplotka] | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
 
-[EverQuote]: https://www.everquote.com
-[Grafana]:   https://grafana.com
-[Microsoft]: https://www.microsoft.com
-[Red Hat]:   https://redhat.com
-[WeaveWorks]: https://www.weave.works/
-[Alibaba]: https://www.alibaba.com/
+[Alibaba]:    https://www.alibaba.com
+[Amazon]:        https://aws.amazon.com
+[EverQuote]:  https://www.everquote.com
+[Grafana]:    https://grafana.com
+[Microsoft]:  https://www.microsoft.com
+[Red Hat]:    https://redhat.com
+[WeaveWorks]: https://www.weave.works
 
 [Prometheus Team]: https://prometheus.io/governance/#team-members
-[Thanos Team]: https://thanos.io
+[Thanos Team]:     https://thanos.io
 [bwplotka-other]:  https://www.bwplotka.dev/about/#open-source-projects
-[PromCon]: https://promcon.io
+[PromCon]:         https://promcon.io
 
+[alolita]:       https://github.com/alolita
 [bwplotka]:      https://github.com/bwplotka
-[resouer]: https://github.com/resouer
-[cdavisafc]: https://github.com/cdavisafc
+[cdavisafc]:     https://github.com/cdavisafc
 [halcyondude]:   https://github.com/halcyondude
+[resouer]:       https://github.com/resouer
 [RichiH]:        https://github.com/RichiH
 
 ## Governance

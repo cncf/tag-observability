@@ -9,7 +9,7 @@
   - [Governance](#governance)
   - [Operations](#operations)
 
-*Review and contributions from:
+Review and contributions from:
 [Alex Nauda][Alex Nauda],
 [Alois Reitbauer][Alois Reitbauer],
 [Bartłomiej (Bartek) Płotka][Bartłomiej (Bartek) Płotka],
@@ -51,7 +51,8 @@ and [Umair Ishaq][Umair Ishaq].*
 ## Introduction
 
 This document describes the purpose and operations of the Cloud Native
-Computing Foundation ([CNCF]) Special Interest Group ([TAG]) on Observability.
+
+Computing Foundation ([CNCF]) Technical Interest Group ([TAG]) on Observability.
 
 This [TAG] focuses on topics pertaining to the observation
 of [cloud native][cn-def] workloads. Additionally, it produces supporting
@@ -124,6 +125,7 @@ topics such as:
   like SLI/KPI, service objectives, and internal/external commitments.
 
 The following is a non-exhaustive sample list of activities and deliverables
+
 that are **in-scope** for this TAG
 
 - Summary and overview of projects available in the community.
@@ -157,8 +159,8 @@ Examples include:
   might be in the scope of TAG Storage.
 - Security aspects that need to be present when setting up cloud native
   infrastructure, these might be more relevant for TAG Security.
-- How cloud native applications that need observability are deployed; this would
-  fall in the scope of TAG App Delivery.`
+- How cloud native applications that need observability are deployed; this would fall in the scope of TAG App Delivery.
+
 - Tools and projects that are used to run cloud native workloads that in some
   cases need observability would fall under the scope of TAG-Runtime.
 
@@ -195,6 +197,7 @@ Examples include:
     - TBD
   - Tech Leads ([tagtlprocess])
     - Bartłomiej Płotka
+    - TBD more
 
 [tagform]: https://github.com/cncf/toc/tree/master/tags#tag-formation-process
 [tagroles]: https://github.com/cncf/toc/blob/master/tags/cncf-tags.md#tag-member-roles
@@ -204,5 +207,5 @@ Examples include:
   - Slack channel: #tag-observability @ [https://cloud-native.slack.com](https://cloud-native.slack.com)
   - Email List: [cncf-tag-observability@lists.cncf.io](mailto:cncf-tag-observability@lists.cncf.io)
 - Meeting Schedule:
-  - TBD - pending feedback from TAG members
   - [https://www.cncf.io/community/calendar](https://www.cncf.io/community/calendar/)
+
