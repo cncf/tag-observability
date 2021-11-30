@@ -19,7 +19,7 @@ supporting material and best practices for end-users and provides guidance and c
 ## Officially sanctioned information channels
 
 * [Observability Charter Document](observability-charter.md)
-* Forthnightly TAG calls @ 1600 UTC, see [CNCF community calendar](https://www.cncf.io/community/calendar/)
+* TAG meetings @ 1600 UTC, 1st and 3rd Tuesdays of each month.  See [CNCF community calendar](https://www.cncf.io/community/calendar/) for invite links.
 * [Meeting Notes](https://docs.google.com/document/d/1_QoF-njScSuGFI3Ge5zu-G8SbL6scQ8AzT1hq57bRoQ/edit)
 * [In Progress Work Status and Roadmap](https://github.com/cncf/tag-observability/projects/1#card-36042463)
 * Mailing List: `cncf-tag-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-tag-observability))
@@ -35,49 +35,51 @@ Interactive Landscape: [here](https://landscape.cncf.io/card-mode?category=obser
 
 The best way to get involved is hanging around our channels of communication, joining our calls, and getting a feeling for how we operate.
 
-If you want to tackle specific tasks, it's best to look at our [Kanban Board](https://github.com/cncf/sig-observability/projects/1#card-36042463) and pick out what you like.
+If you want to contribute to the TAG's activities or propose new ones, please visit our [Kanban Board](https://github.com/cncf/tag-observability/projects/1#card-36042463).
 
-If you want to suggest a specific topic or action item, please do some basic research if this topic has already been tackled, or is currently being worked on, in some form. Good starting points are our [GitHub Issues](https://github.com/cncf/sig-observability/issues), reports, or meeting notes. If in doubt, asking on Slack is a good first step.
+If you would like to suggest a specific topic or action item, please determine if there are ongoing activites or prior art. Good starting points are our [GitHub Issues](https://github.com/cncf/tag-observability/issues), reports, or meeting notes. Please visit us on CNCF Slack for any questions or just to say hello :)
 
 ## Operations
 
 ### TOC Liaison
 
-| Name          | Email                        |  GitHub         | Company       |
-| -------------- | --------------------------- | --------------- | ------------- |
-| Lei Zhang      | `lei.zhang@alibaba-inc.com` | [resouer]       | [Alibaba]     |
-| Cornelia Davis | `cornelia@weave.works`      | [cdavisafc]     | [WeaveWorks]  |
+| Name           | Email                     |  GitHub         | Company      |
+| -------------- | ------------------------- | --------------- | ------------ |
+| Lei Zhang      | lei.zhang@alibaba-inc.com | [resouer]       | [Alibaba]    |
+| Cornelia Davis | cornelia@weave.works      | [cdavisafc]     | [WeaveWorks] |
 
 ### Chairs (alphabetical order)
 
-| Name                | Email                   | CNCF Slack    | GitHub        | Company     | Open Source                        |
-|-------------------- | ----------------------- |-------------- | ------------- | ----------- | ---------------------------------- |
-| Matt Young          | `halcyondude@gmail.com` | `@Matt Young` | [halcyondude] | [EverQuote] |                                    |
-| Richard Hartmann    | `richih@richih.org`     | `@RichiH`     | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
-| TBD                 |                         |               |               |             |                                    |
+| Name           | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
+|--------------- | -------------------------- |---------------- | ------------- | ----------  | ---------------------------------- |
+| Alolita Sharma | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Amazon]    |                                    |
+| Matt Young     | halcyondude@gmail.com      | @Matt Youn      | [halcyondude] | [EverQuote] |                                    |
+| Richard Hartma | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
 
-### Tech Lead
+### Tech Leads
 
-| Name              | Email               | CNCF Slack    | GitHub        | Company   | Open Source                        |
-|------------------ | ------------------- |------------   |--------       | --------- | ---------------------------------- |
-| Bartłomiej Płotka | bwplotka@gmail.com  | `@bwplotka`   | [bwplotka]    | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] | 
+| Name              | Email               | CNCF Slack  | GitHub     | Company   | Open Source                        |
+|------------------ | ------------------- |------------ |--------    | --------- | ---------------------------------- |
+| Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka | [bwplotka] | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
 
-[EverQuote]: https://www.everquote.com
-[Grafana]:   https://grafana.com
-[Microsoft]: https://www.microsoft.com
-[Red Hat]:   https://redhat.com
-[WeaveWorks]: https://www.weave.works/
-[Alibaba]: https://www.alibaba.com/
+[Alibaba]:    https://www.alibaba.com
+[Amazon]:        https://aws.amazon.com
+[EverQuote]:  https://www.everquote.com
+[Grafana]:    https://grafana.com
+[Microsoft]:  https://www.microsoft.com
+[Red Hat]:    https://redhat.com
+[WeaveWorks]: https://www.weave.works
 
 [Prometheus Team]: https://prometheus.io/governance/#team-members
-[Thanos Team]: https://thanos.io
+[Thanos Team]:     https://thanos.io
 [bwplotka-other]:  https://www.bwplotka.dev/about/#open-source-projects
-[PromCon]: https://promcon.io
+[PromCon]:         https://promcon.io
 
+[alolita]:       https://github.com/alolita
 [bwplotka]:      https://github.com/bwplotka
-[resouer]: https://github.com/resouer
-[cdavisafc]: https://github.com/cdavisafc
+[cdavisafc]:     https://github.com/cdavisafc
 [halcyondude]:   https://github.com/halcyondude
+[resouer]:       https://github.com/resouer
 [RichiH]:        https://github.com/RichiH
 
 ## Governance
