@@ -27,7 +27,7 @@ supporting material and best practices for end-users and provides guidance and c
 
 ## CNCF projects related to the SIG
 
-![projects](projects.png)
+![projects](cncf-landscape-observability-2022-03-04.png)
 
 Interactive Landscape: [here](https://landscape.cncf.io/card-mode?category=observability-and-analysis&grouping=category&project=hosted)
 
