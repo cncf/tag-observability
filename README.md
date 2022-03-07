@@ -29,7 +29,7 @@ supporting material and best practices for end-users and provides guidance and c
 
 ![projects](cncf-landscape-observability-2022-03-04.png)
 
-Interactive Landscape: [here](https://landscape.cncf.io/card-mode?category=observability-and-analysis&grouping=category&project=hosted)
+[Interactive Landscape](https://landscape.cncf.io/card-mode?category=observability-and-analysis&project=graduated,incubating,sandbox)
 
 ## How to get involved
 
