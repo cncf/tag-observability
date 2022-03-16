@@ -4,7 +4,7 @@ Technical Advisory Group for Observability under the umbrella of [CNCF](https://
 
 ## Mission statement
 
-The TAG Observability focuses on topics pertaining to the observation of cloud native workloads. Additionally, it produces
+TAG Observability focuses on topics pertaining to the observation of cloud native workloads. Additionally, it produces
 supporting material and best practices for end-users and provides guidance and coordination for CNCF projects working within the TAG’s scope.
 
 ### Scope
