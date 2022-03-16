@@ -9,6 +9,8 @@ supporting material and best practices for end-users and provides guidance and c
 
 ### Scope
 
+Excerpts from the [Observability Charter Document](observability-charter.md):
+
 * Foster, review and grow the ecosystem of observability related projects, users, and maintainers in open source, cloud-native technology.
 * Identify and report gaps in the CNCF's project portfolio on topics of observability to the TOC and the wider CNCF community.
 * Collect, curate, champion, and disseminate patterns and current best practices related to the observation of cloud-native systems that are effective and actionable.
@@ -16,16 +18,16 @@ supporting material and best practices for end-users and provides guidance and c
 * Provide and maintain a vendor-neutral venue for relevant thought validation, discussion, and project feedback.
 * Provide a ladder for community members to become involved with the technical oversight of projects within the SIG's scope in an open, transparent, and inclusive way.
 
-## Officially sanctioned information channels
+## How we communicate
 
-* [Observability Charter Document](observability-charter.md)
-* TAG meetings @ 1600 UTC, 1st and 3rd Tuesdays of each month.  See [CNCF community calendar](https://www.cncf.io/community/calendar/) for invite links.
-* [Meeting Notes](https://docs.google.com/document/d/1_QoF-njScSuGFI3Ge5zu-G8SbL6scQ8AzT1hq57bRoQ/edit)
-* [In Progress Work Status and Roadmap](https://github.com/cncf/tag-observability/projects/1#card-36042463)
-* Mailing List: `cncf-tag-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-tag-observability))
 * Chat: [CNCF Slack #tag-observability](https://slack.cncf.io)
+* TAG meetings @ 1600 UTC, 1st and 3rd Tuesdays of each month
+    * See [CNCF community calendar](https://www.cncf.io/community/calendar/) for invite links
+    * [Meeting Notes](https://docs.google.com/document/d/1_QoF-njScSuGFI3Ge5zu-G8SbL6scQ8AzT1hq57bRoQ/edit)
+* [In Progress Work](https://github.com/cncf/tag-observability/projects/1#card-36042463), Status, and Roadmap
+* Mailing List: `cncf-tag-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-tag-observability))
 
-## CNCF projects related to the SIG
+## CNCF projects related to the TAG
 
 ![projects](cncf-landscape-observability-2022-03-04.png)
 
