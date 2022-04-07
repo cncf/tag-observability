@@ -47,6 +47,9 @@ collaborators:
   # and organization members with read permissions to the repository. For more information, see "Access permissions on GitHub."
   #
   # using push so that we don't have the hurdle of github.com/cncf org membership to assign issues.
+  - username: dominickblue
+    permission: push
+  
   - username: henrikrexed
     permission: push
 
