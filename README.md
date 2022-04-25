@@ -54,7 +54,7 @@ If you would like to suggest a specific topic or action item, please determine i
 
 | Name           | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
 |--------------- | -------------------------- |---------------- | ------------- | ----------  | ---------------------------------- |
-| Alolita Sharma | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Amazon]    |                                    |
+| Alolita Sharma | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Amazon]    | [OpenTelemetry Team]               |
 | Matt Young     | halcyondude@gmail.com      | @Matt Youn      | [halcyondude] | [EverQuote] |                                    |
 | Richard Hartma | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
 
@@ -71,7 +71,7 @@ If you would like to suggest a specific topic or action item, please determine i
 [Microsoft]:  https://www.microsoft.com
 [Red Hat]:    https://redhat.com
 [WeaveWorks]: https://www.weave.works
-
+[OpenTelemetry Team]: https://github.com/open-telemetry/community/blob/main/community-members.md
 [Prometheus Team]: https://prometheus.io/governance/#team-members
 [Thanos Team]:     https://thanos.io
 [bwplotka-other]:  https://www.bwplotka.dev/about/#open-source-projects
