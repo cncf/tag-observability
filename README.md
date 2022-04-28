@@ -90,4 +90,4 @@ This TAG follows [the standard operating model provided by the TOC](https://gith
 
 ## Code of Conduct
 
-We follow the [CNCF](https://www.cncf.io/)'s [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md).
+We follow the [CNCF](https://www.cncf.io/)'s [Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md).  
