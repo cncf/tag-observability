@@ -54,7 +54,7 @@ If you would like to suggest a specific topic or action item, please determine i
 
 | Name           | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
 |--------------- | -------------------------- |---------------- | ------------- | ----------  | ---------------------------------- |
-| Alolita Sharma | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Amazon]    | [OpenTelemetry Team]               |
+| Alolita Sharma | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [-]    | [OpenTelemetry Team]               |
 | Matt Young     | halcyondude@gmail.com      | @Matt Youn      | [halcyondude] | [EverQuote] |                                    |
 | Richard Hartma | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
 
