@@ -56,7 +56,7 @@ If you would like to suggest a specific topic or action item, please determine i
 |--------------- | -------------------------- |---------------- | ------------- | ----------  | ---------------------------------- |
 | Alolita Sharma | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [-]    | [OpenTelemetry Team]               |
 | Matt Young     | halcyondude@gmail.com      | @Matt Youn      | [halcyondude] | [EverQuote] |                                    |
-| Richard Hartma | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
+| Richard Hartmann | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
 
 ### Tech Leads
 
