@@ -52,10 +52,10 @@ If you would like to suggest a specific topic or action item, please determine i
 
 ### Chairs (alphabetical order)
 
-| Name           | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
-|--------------- | -------------------------- |---------------- | ------------- | ----------  | ---------------------------------- |
-| Alolita Sharma | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [-]    | [OpenTelemetry Team]               |
-| Matt Young     | halcyondude@gmail.com      | @Matt Youn      | [halcyondude] | [EverQuote] |                                    |
+| Name             | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
+| ---------------- | -------------------------- | --------------- | ------------- | ----------  | ---------------------------------- |
+| Alolita Sharma   | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Apple]     | [OpenTelemetry Team]               |
+| Matt Young       | halcyondude@gmail.com      | @Matt Youn      | [halcyondude] | [Apple]     |                                    |
 | Richard Hartmann | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
 
 ### Tech Leads
@@ -65,8 +65,8 @@ If you would like to suggest a specific topic or action item, please determine i
 | Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka | [bwplotka] | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
 
 [Alibaba]:    https://www.alibaba.com
-[Amazon]:        https://aws.amazon.com
-[EverQuote]:  https://www.everquote.com
+[Amazon]:     https://aws.amazon.com
+[Apple]:      https://opensource.apple.com
 [Grafana]:    https://grafana.com
 [Microsoft]:  https://www.microsoft.com
 [Red Hat]:    https://redhat.com
