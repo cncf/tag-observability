@@ -55,14 +55,14 @@ If you would like to suggest a specific topic or action item, please determine i
 | Name             | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
 | ---------------- | -------------------------- | --------------- | ------------- | ----------  | ---------------------------------- |
 | Alolita Sharma   | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Apple]     | [OpenTelemetry Team]               |
-| Matt Young       | halcyondude@gmail.com      | @Matt Youn      | [halcyondude] | [Apple]     |                                    |
+| Matt Young       | halcyondude@gmail.com      | @Matt Young     | [halcyondude] | [Apple]     |                                    |
 | Richard Hartmann | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
 
 ### Tech Leads
 
 | Name              | Email               | CNCF Slack  | GitHub     | Company   | Open Source                        |
 |------------------ | ------------------- |------------ |--------    | --------- | ---------------------------------- |
-| Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka | [bwplotka] | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
+| Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka   | [bwplotka] | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
 
 [Alibaba]:    https://www.alibaba.com
 [Amazon]:     https://aws.amazon.com
