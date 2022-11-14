@@ -207,6 +207,6 @@ Examples include:
   - Slack channel: #tag-observability @ [https://cloud-native.slack.com](https://cloud-native.slack.com)
   - Email List: [cncf-tag-observability@lists.cncf.io](mailto:cncf-tag-observability@lists.cncf.io)
 - Meeting Schedule:
-  - Every 1st and 3rd Tuesday, 4pm - 5pm UTC, 12-1pm ET ([CNCF Calendar][cncfcal] for details)
+  - Every 1st and 3rd Tuesday, 4pm - 5pm UTC, 12-1pm ET 9-10am PT ([CNCF Calendar][cncfcal] for details)
 
 [cncfcal]: https://www.cncf.io/calendar
