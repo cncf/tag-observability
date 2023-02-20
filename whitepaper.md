@@ -38,6 +38,8 @@ See [the contributing section](#contributing) on proposing changes to this paper
   * [Standardized query layer](#standardized-query-layer)
   * [More Observability Databases in OSS](#more-observability-databases-in-oss)
   * [Monitoring for Streaming APIs](#monitoring-for-streaming-apis)
+* [In practice](#in-practice)
+  * [Common source of useful metadata](#common-source-of-useful-metadata)
 * [References](#references)
 * [Contributors](#contributors)
 * [Contributing](#contributing)
@@ -492,6 +494,19 @@ There are a few very well-known monitoring methodologies today. For example, the
 
 Unfortunately, both methodologies are hard to implement for Streaming APIs. With the popularization of streaming Remote Procedure Calls (RPC), e.g. gRPC, we must develop a new or updated methodology and tools to monitor those.
 
+## In practice
+
+### Common source of useful metadata
+
+The main source of metadata are dimensions in metrics, span tags in traces and so on in your observability stack. Additional to the metadata in your observability signals, other metadata become important when you work in bigger distributed applications. 
+
+Think about a bigger web shop, there might be a team providing services for customer data, an other team providing services for stock allocation and so on. You might even depend on some external services for billing.
+
+In order to quickly respond to any problem you need the contact data for each service.
+Or you found a problem in a container image and you want to inform the other teams that use the same image.
+
+In practice a common source of metadata is important to store additional metadata like support contacts, links to knowledged bases and more. Tools like [backstage](https://backstage.io/) are helpful to collect the metadata from different source and make easy them accessible.  
+ 
 ## References
 
 1. HARTMANN, Richard. Talk given at Fosdem (Brussels), Feb 2019. Available at: https://archive.fosdem.org/2019/schedule/event/on_observability_2019/. Accessed on: June 24, 2021.
@@ -533,6 +548,7 @@ From the first words written until its completion, this whitepaper was a communi
 * [Matt Young](https://github.com/halcyondude)
 * [Michael Hausenblas](https://github.com/mhausenblas)  
 * [Nicolas Takashi](https://github.com/nicolastakashi)
+* [Oliver Edelmann][Oliver Edelmann]
 * [Rafael Natali](https://github.com/rafaelmnatali) 
 * [Richard Anton](https://github.com/ranton256) 
 * [RichiH "RichiH" Hartmann](https://github.com/RichiH)
@@ -546,6 +562,37 @@ From the first words written until its completion, this whitepaper was a communi
 * [Wiard van Rjj](https://github.com/wiardvanrij)  
 
 Thanks, all of you!
+<!-- Please add other contributors here -->
+[Alex Jones]:             https://github.com/AlexsJones
+[Arthur Silva Sens]:      https://github.com/ArthurSens
+[Bartłomiej Płotka]:      https://github.com/bwplotka
+[Charles Pretzer]:        https://github.com/cpretzer
+[Daniel Khan]:            https://github.com/danielkhan
+[David Grizzanti]:        https://github.com/dgrizzanti
+[Debashish Ghatak]:       https://github.com/wallydrag
+[Dominic Finn]:           https://github.com/dofinn
+[Frederic Branczyk]:      https://github.com/brancz
+[Gibbs Cullen]:           https://github.com/gibbscullen
+[Jason Morgan]:           https://github.com/wmorgan
+[Jonah Kowall]:           https://github.com/jkowall
+[Juraci Paixão Kröhling]: https://github.com/jpkrohling
+[Ken Finnigan]:           https://github.com/kenfinnigan
+[Krisztian Fekete]:       @
+[Liz Fong-Jones]:         https://github.com/lizthegrey
+[Matt Young]:             https://github.com/halcyondude
+[Michael Hausenblas]:     https://github.com/mhausenblas
+[Rafael Natali]:          https://github.com/rafaelmnatali
+[Richard Anton]:          @
+[RichiH Hartmann]:        https://github.com/RichiH
+[Rob Skillington]:        https://github.com/robskillington
+[Ryan Perry]:             https://github.com/Rperry2174
+[Shelby Spees]:           https://github.com/shelbyspees
+[Shobhit Srivastava]:     https://github.com/SinisterLight
+[Simone Ferlin]:          https://github.com/sferlin
+[Tim Tischler]:           @
+[Wiard van Rjj]:          https://github.com/wiardvanrij
+[Oliver Edelmann]:        https://github.com/Olli73773
+
 
 ## Contributing
 
