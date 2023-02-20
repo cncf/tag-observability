@@ -24,6 +24,8 @@ __This is a Work in progress.__ Folks working on the whitepaper, please interact
   * [Alerting on Observability data](#alerting-on-observability-data)
 * [Gaps around Observability](#gaps-around-observability)
   * [Multi-signal correlation](#multi-signal-correlation)
+* [In practice](#in-practice)
+  * [Common source of useful metadata](#common-source-of-useful-metadata)
 * [Conclusion](#conclusion)
 * [References](#references)
 * [Contributors](#contributors)
@@ -307,7 +309,7 @@ curl -g 'http://localhost:9090/api/v1/query_exemplars?query=test_exemplar_metric
 {
     "status": "success",
     "data": [
-        {
+        {https://github.com/Olli73773/tag-observability.git
             "seriesLabels": {
                 "__name__": "test_exemplar_metric_total",
                 "instance": "localhost:8090",
@@ -446,6 +448,19 @@ Something that is yet to be added is the ability to add exemplars for recording 
 
 Grafana is pioneering in multi-signal links, but many other UIs would use better correlation support given the ways shared in this article. Before the Grafana, the space was pretty fragmented (each signal usually had its own view, rarely thinking about other signals). Prometheus UI is no different. Extra support for linking to other signals or rendering exemplars are to be [added](https://github.com/prometheus/prometheus/issues/8797) there too.
 
+## In practice
+
+### Common source of useful metadata
+
+The main source of metadata are dimensions in metrics, span tags in traces and so on in your observability stack. Additional to the metadata in your observability signals, other metadata become important when you work in bigger distributed applications. 
+
+Think about a bigger web shop, there might be a team providing services for customer data, an other team providing services for stock allocation and so on. You might even depend on some external services for billing.
+
+In order to quickly respond to any problem you need the contact data for each service.
+Or you found a problem in a container image and you want to inform the other teams that use the same image.
+
+In practice a common source of metadata is important to store additional metadata like support contacts, links to knowledged bases and more. Tools like [backstage](https://backstage.io/) are helpful to collect the metadata from different source and make easy them accessible.  
+ 
 ## References
 
 <!-- TODO: please add extra references here -->
@@ -479,6 +494,7 @@ From the first words written until its completion, this whitepaper was a communi
 * [Liz Fong-Jones][Liz Fong-Jones]
 * [Matt Young][Matt Young]
 * [Michael Hausenblas][Michael Hausenblas]
+* [Oliver Edelmann][Oliver Edelmann]
 * [Rafael Natali][Rafael Natali]
 * [Richard Anton][Richard Anton]
 * [RichiH Hartmann][RichiH Hartmann]
@@ -521,6 +537,7 @@ Thanks, all of you!
 [Simone Ferlin]:          https://github.com/sferlin
 [Tim Tischler]:           @
 [Wiard van Rjj]:          https://github.com/wiardvanrij
+[Oliver Edelmann]:        https://github.com/Olli73773
 
 
 ## Contributing
