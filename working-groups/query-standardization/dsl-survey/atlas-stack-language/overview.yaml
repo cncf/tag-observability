@@ -1,0 +1,125 @@
+title: Atlas Stack Language
+
+abbreviation: ASL
+
+copyright: Netflix, Inc.
+
+license: Apache License V2
+
+isOSS: true
+
+paradigms:
+  - stack
+  - declarative
+
+supportedTelemetryTypes:
+  - type: metrics
+    callouts:
+      - title: Consolidation
+        description: >
+          Atlas processes and stores data at pre-configured and fixed intervals rather
+          than at individual timestamps. All queries must use the default or include
+          a valid "step" size that determines the interval window of each value returned
+          from a query. The majority of data is stored at a 60 second step (at Netflix).
+          
+          Wider query time ranges automatically increase the step size to reduce the
+          number of data points in a graph or output. Users can choose custom step
+          sizes at regular multiples of the base step size. The default consolidation function 
+          is chosen based on the aggregation function used in the expression. In general 
+          we want the consolidation function and aggregation function to be associative so 
+          that we can choose whether to perform consolidation or aggregation first. There 
+          are overrides if that is not true, e.g. using max consolidation with sum aggregation, 
+          but then we have to delay consolidation until all aggregation is complete to 
+          avoid incorrect results.
+
+          However, the consolidation behavior does vary based on the type for average. 
+          When doing an average consolidation for counters intervals with no data will 
+          be treated a 0 and included in the count for the denominator of the average. 
+          This is because they typically represent no activity for that interval and it gives 
+          a correct rate across the consolidated interval. For gauges the intervals with 
+          no data are ignored and do not contribute to the count. This avoids reducing 
+          something like a temperature reading with 0 values that wouldn't actually be possible.
+
+      - title: Default Aggregation
+        description: >
+          Data matching the predicate is aggregated via `sum` by default. Groupings must
+          be applied to drill down into individual time series.
+
+inspirations:
+  - RRDTool
+
+description: >
+  An RPN-style stack based DSL for the open source Atlas metrics system from Netflix. 
+  The design was meant to ease transition from an RRDtool based system to a more 
+  flexible, dimension based distributed store. A rich syntax allows for simple single 
+  line filtering, grouping and aggregation of metrics while also supporting complex 
+  data analysis. The DSL includes presentation aspects as the API is capable of 
+  generating PNG graph images for storing and sharing similar to the previous RRDtool.
+
+designCallouts:
+  - goal: URI friendly
+    description: >
+      During a production incident, users want to share graphs with each other quickly
+      and via various methods. Including the entire query in a URI means that any 
+      technology (email, messaging, text, etc) can quickly and easily pass the relevant
+      data on to others. Recipients can then modify the query without affecting other
+      users. Extracting the query and using it in other tools is simple as well.
+
+  - goal: Reusability
+    description: >
+      Coinciding with the goal of being URI friendly, the language does not include
+      a time range in the grammar. Rather the time is supplied via URI so that the
+      same query can be saved in a dashboard, alert or other source and various times
+      applied without having to re-write the query.
+      
+      Query templates can also be extended with the addition of filters (`:cq`) and
+      grouping (`:cg`) without modifying the original basis.
+
+  - goal: Ease of Aggregating Multiple Metrics
+    description: >
+      The DSL does not require a user to select a metric name before executing a 
+      query. Instead, the metric is considered another dimension so the same grammar
+      that applies to filtering dimensions applies to the metrics as well. This 
+      allows for quick aggregation of multiple metrics.
+
+  - goal: Presentation Grammar
+    description: >
+      Since ASL is focused on generating visualizations, it made sense to incorporate
+      presentation operators in the grammar so users could generate a graph to their
+      liking in a portable query.
+
+  - goal: Backend Vs. Streaming Queries
+    description: >
+      Most ASL with a few exceptions like offset and filters can be executed against a 
+      backend store or in a streaming context. This allows us to schedule most queries 
+      where we want for things like alerts and the user typically doesn't need to worry 
+      about which context it is running in.
+
+  - goal: Operator Categorization
+    description: >
+      For ASL we categorize the operations, roughly into choosing, aggregation, math, 
+      presentation (CAMP). Some contexts like queries on metadata to project the set 
+      of keys or values for a given key just support the choosing category. For data 
+      queries choosing/aggregation can be pushed to the data layer and be distributed 
+      similar to basic map/reduce operations. The math operations are also broken up 
+      into basic, stateful, and filters depending on what is needed for an operations. 
+      For example, stateful operations keep history and would put restrictions on the 
+      execution order of the expression if partitioning computation across time.
+caveats:
+  - issue: RPN and Stack
+    description: >
+      Reverse Polish Notation and stack languages are very simple to parse and implement
+      but difficult for end users to understand. However it does allow for easy extensibility
+      without modifying the core syntax.
+
+  - issue: Lack of Query Scope
+    description: >
+      Because a metric is not specifically required to execute a query, a vast amount
+      of data may wind up matching the given predicate. In turn, such a query may
+      consume an inordinate amount of resources or confuse users with the data
+      retrieved. The query engine implements a number of restrictions that require
+      users to scope their predicates to a smaller set.
+
+references:
+  - https://oss.oetiker.ch/rrdtool/doc/rrdgraph.en.html
+  - https://netflix.github.io/atlas-docs/asl/tutorial/

@@ -1,0 +1,19 @@
+title: Trace Latency Metrics
+
+description: >
+  Tracing measure operation latencies and common operation is to convert the span
+  latencies into time series metrics. These aggregations can then re-use existing 
+  metrics infrastructure (alerting systems, dashboards, etc).
+  Query results may also include exemplars for drilling into details.
+
+inputs:
+  - trace spans
+
+uses:
+  - type: Visualization
+    description: >
+      Values may be bucketed into a heatmap view such as that offered by Honeycomb.
+      Percentiles, average and max latencies may also be extracted for line graphs.
+
+examples:
+  - language: TODO

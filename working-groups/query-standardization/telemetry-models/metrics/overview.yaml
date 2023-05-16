@@ -1,0 +1,95 @@
+description: >
+  Metrics are numeric measurements of some aspect. In observability it is often a 
+  measurement of a system or applications behavior. Many metrics are summaries of 
+  or distillations of behavior over a small period of time. 
+  
+attributes:
+  - attribute: identifier
+    description: >
+      A means of uniquely identifying the measurement amongst a group of measurements 
+      from other systems, sources or measurements. 
+      
+      Earlier identifiers consist of a single string that is often partitioned by a 
+      character such as the period to create a hierarchy of data. E.g. 
+      `sys.cpu.idle.percent.us-east-1.i-1234`
+      
+      Later identifiers consisted of a metric name with a set of key/value tags or 
+      dimensions. For example `sys.cpu.idle.percent region=us-east-1 instance=i-1234`.
+      Variations on dimensional identifiers include merging the metric name with
+      the dimensions, multi-value dimension values and key-only dimensions.
+
+  - attribute: timestamp
+    description: >
+      A point in time associated with the measurement. This may be the time when the
+      measurement was taken or reported. It may also be the start or end of an
+      interval the measurement represents.
+
+  - attribute: value
+    description: >
+      Most commonly a single numeric value, particularly from instrumentation sources.
+      Some systems support integer values, others IEEE 754 single or double precision
+      floating point values. Some systems include multiple numeric values as summaries
+      for an interval. E.g. sum, min, max, count, avg, etc. Others may include special
+      mergable structures for estimation of quantiles or cardinalities.
+
+uses:
+  - title: Control Plane
+    description: >
+      Since metrics are well defined and easily machine readable, metrics are often
+      used in control planes to perform automated tasks such as scaling resources,
+      canaries, squeeze tests and distributing work.
+
+  - title: Alerting
+    description: >
+      Since metrics are well defined and easily machine readable, metrics are 
+      used to alert observability consumers of aberrant behavior that may require 
+      intervention. 
+
+  - title: Visualization
+    description: >
+      Metrics are often visualized in various ways though most often in the form of
+      line graphs where users can quickly pick out patterns or anomalies.
+
+archtypes:
+  - id: metric_dp
+    type: Single Value Metric Data Point
+    description: >
+      A single data point consisting of an identifier, a timestamp when the value was
+      recorded and a single numeric value.
+
+  - id: metric_summary_dp
+    type: Metric Summary Data Point
+    description: >
+      A single datum consisting of an identifier, a timestamp when the values were
+      recorded or computed and a set of numeric values reflecting summaries such as
+      sums, averages, mins or maxes.
+
+  - id: metric_custom_dp
+    type: Metric Custom Data Point
+    description: >
+      A single datum consisting of an identifier, a timestamp when the data was
+      recorded or computed, and a custom payload such as a T-Digest or Data Sketch.
+
+subtypes:
+  - id: gauge
+    type: Gauge
+    description: >
+      Gauges are often snapshots of behavior in time. For example, capturing the number
+      of items present in a processing queue.
+
+  - id: monotonic_counter
+    type: Monotonic Counter
+    description: >
+      One means of tracking behavior is to increment an integer each time an operation
+      occurs since an app or device starts. The value grows during the lifetime of 
+      the counter and never decreases. Some systems record the raw counter value
+      periodically. Users or front-ends must then compute the delta between measurements
+      to extract useful information. Aggregations on counters must account for rollover
+      and restarts.
+
+  - id: delta
+    type: Delta
+    description: >
+      Often a monotonic counter that has been converted at the measurement source or
+      ingress into the delta from the previous measurement. Aggregations on deltas 
+      are much simpler than monotonic counters.
