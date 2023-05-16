@@ -43,12 +43,13 @@ If you would like to suggest a specific topic or action item, please determine i
 
 ## Operations
 
-### TOC Liaison
+### TOC Liaisons
 
 | Name           | Email                     |  GitHub         | Company      |
 | -------------- | ------------------------- | --------------- | ------------ |
-| Lei Zhang      | lei.zhang@alibaba-inc.com | [resouer]       | [Alibaba]    |
-| Cornelia Davis | cornelia@weave.works      | [cdavisafc]     | [WeaveWorks] |
+| Cathy Zhang    | cathy.h.zhang@intel.com   | [cathyhongzhang]| [Intel]      |
+| Erin Boyd      | eboyd@redhat.com          | [erinaboyd]     | [RedHat]     |
+| Ricardo Rocha  | rocha.porto@gmail.com     | [rochaporto]    | [CERN].      |
 
 ### Chairs (alphabetical order)
 
