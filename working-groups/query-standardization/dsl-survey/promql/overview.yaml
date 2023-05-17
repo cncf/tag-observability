@@ -33,3 +33,4 @@ caveats: TODO
 
 references:
   - https://prometheus.io/docs/prometheus/latest/querying/basics/
+  - https://sre.google/sre-book/practical-alerting/#:~:text=Borgmon
