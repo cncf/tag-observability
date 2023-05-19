@@ -39,9 +39,12 @@ this group is complete.
 ## How we communicate
 
 * Chat: [CNCF Slack #tag-observability](https://slack.cncf.io)
-* Meetings **TBD**
+* Meetings:
+    * Meetings at 0400 UTC, 1st and 3rd Tuesdays of each month, same day as the Observability Tag.
+    * Meetings at 1600 UTC, 2nd and (when applicable) 4th Tuesdays of each month.
+    * Zoom: https://zoom.us/j/91486841153?pwd=TmxaczdPWXNna1BISDhLOVY0VjFidz09
     * See [CNCF community calendar](https://www.cncf.io/community/calendar/) for invite links
-    * Meeting Notes **TBD**
+    * Meeting Notes: https://docs.google.com/document/d/1pS6zhRXpP9HgqltW70595kRhC2idBo80MUMhHjKi5vM/
 * Mailing List: `cncf-tag-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-tag-observability))
     * Sharing the main Observability list.
 
