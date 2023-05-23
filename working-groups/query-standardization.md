@@ -38,7 +38,7 @@ this group is complete.
 
 ## How we communicate
 
-* Chat: [CNCF Slack #tag-observability](https://slack.cncf.io)
+* Chat: [CNCF Slack #obs-query-standard-wg](https://slack.cncf.io)
 * Meetings:
     * Meetings at 0400 UTC, 1st and 3rd Tuesdays of each month, same day as the Observability Tag.
     * Meetings at 1600 UTC, 2nd and (when applicable) 4th Tuesdays of each month.
