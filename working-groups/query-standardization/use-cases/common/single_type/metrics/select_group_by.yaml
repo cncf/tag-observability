@@ -6,15 +6,15 @@ description: >
   results into a single value for each unit of time.
 
 inputs:
-  - metric series
+  - metrics
 
-uses:
-  - type: Alerting
+outputs:
+  - title: Alerting
     description: >
       Commonly used when each group has similar behavior and the same static threshold
       can apply to all groups.
 
-  - type: Visualization
+  - title: Visualization
     description: >
       Typically plotted in line graphs where patterns can be extracted to determine if
       various groups of groups have similar behaviors or if one or more group exhibit

@@ -57,7 +57,7 @@ description: >
   generating PNG graph images for storing and sharing similar to the previous RRDtool.
 
 designCallouts:
-  - goal: URI friendly
+  - title: URI friendly
     description: >
       During a production incident, users want to share graphs with each other quickly
       and via various methods. Including the entire query in a URI means that any 
@@ -65,7 +65,7 @@ designCallouts:
       data on to others. Recipients can then modify the query without affecting other
       users. Extracting the query and using it in other tools is simple as well.
 
-  - goal: Reusability
+  - title: Reusability
     description: >
       Coinciding with the goal of being URI friendly, the language does not include
       a time range in the grammar. Rather the time is supplied via URI so that the
@@ -75,27 +75,27 @@ designCallouts:
       Query templates can also be extended with the addition of filters (`:cq`) and
       grouping (`:cg`) without modifying the original basis.
 
-  - goal: Ease of Aggregating Multiple Metrics
+  - title: Ease of Aggregating Multiple Metrics
     description: >
       The DSL does not require a user to select a metric name before executing a 
       query. Instead, the metric is considered another dimension so the same grammar
       that applies to filtering dimensions applies to the metrics as well. This 
       allows for quick aggregation of multiple metrics.
 
-  - goal: Presentation Grammar
+  - title: Presentation Grammar
     description: >
       Since ASL is focused on generating visualizations, it made sense to incorporate
       presentation operators in the grammar so users could generate a graph to their
       liking in a portable query.
 
-  - goal: Backend Vs. Streaming Queries
+  - title: Backend Vs. Streaming Queries
     description: >
       Most ASL with a few exceptions like offset and filters can be executed against a 
       backend store or in a streaming context. This allows us to schedule most queries 
       where we want for things like alerts and the user typically doesn't need to worry 
       about which context it is running in.
 
-  - goal: Operator Categorization
+  - title: Operator Categorization
     description: >
       For ASL we categorize the operations, roughly into choosing, aggregation, math, 
       presentation (CAMP). Some contexts like queries on metadata to project the set 
@@ -105,14 +105,15 @@ designCallouts:
       into basic, stateful, and filters depending on what is needed for an operations. 
       For example, stateful operations keep history and would put restrictions on the 
       execution order of the expression if partitioning computation across time.
+
 caveats:
-  - issue: RPN and Stack
+  - title: RPN and Stack
     description: >
       Reverse Polish Notation and stack languages are very simple to parse and implement
       but difficult for end users to understand. However it does allow for easy extensibility
       without modifying the core syntax.
 
-  - issue: Lack of Query Scope
+  - title: Lack of Query Scope
     description: >
       Because a metric is not specifically required to execute a query, a vast amount
       of data may wind up matching the given predicate. In turn, such a query may

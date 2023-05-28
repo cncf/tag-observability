@@ -1,3 +1,5 @@
+id: metrics
+
 description: >
   Metrics are numeric measurements of some aspect. In observability it is often a 
   measurement of a system or applications behavior. Many metrics are summaries of 

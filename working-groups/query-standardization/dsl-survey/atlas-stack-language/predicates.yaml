@@ -1,6 +1,7 @@
 grammar:
 
-  - term: :eq
+  - title: Equals
+    term: :eq
     description: >
       Performs an exact, case sensitive match on the value with the given case sensitive
       key.
@@ -24,7 +25,8 @@ grammar:
       - name,sys.cpu.busy,:eq
       - name,sys.cpu.busy,:eq,node,i-1234,:eq,:and
 
-  - term: :re
+  - title: Regular Expression
+    term: :eq
     description: >
       Matches the value of a dimension key with a regular expression. A subset of the 
       [Java](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)

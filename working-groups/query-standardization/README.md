@@ -34,3 +34,5 @@ for all common use cases and as many uncommon cases as possible.
 YAML is a nice format for a GIT repo in that it has a structure, has wide programmatic
 support, and allows for multi-line fields that we can use for verbose descriptions
 containing Markdown for display purposes.
+
+Note that all YAML files should adhere to roughly 100 characters as the max line width.
