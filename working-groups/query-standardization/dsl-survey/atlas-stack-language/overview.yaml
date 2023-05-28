@@ -106,6 +106,13 @@ designCallouts:
       For example, stateful operations keep history and would put restrictions on the 
       execution order of the expression if partitioning computation across time.
 
+  - title: Cross Context
+    description: >
+      ASL queries operate almost identically across streaming, offline and online querying
+      use cases. This makes it easier for users to port queries between contexts such as
+      alerts that operate on streamed data vs data store queries. 
+      TODO - caveats around windowing.
+
 caveats:
   - title: RPN and Stack
     description: >
@@ -120,6 +127,11 @@ caveats:
       consume an inordinate amount of resources or confuse users with the data
       retrieved. The query engine implements a number of restrictions that require
       users to scope their predicates to a smaller set.
+
+contexts:
+  - streaming
+  - online
+  - offline
 
 references:
   - https://oss.oetiker.ch/rrdtool/doc/rrdgraph.en.html

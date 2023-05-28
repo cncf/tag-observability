@@ -34,6 +34,9 @@ like `predicates`, `logical`, `aggregations`, etc.
   or decisions. The `title` should be the name of the goal or decision.
 * **caveats:** _List of Objects_ - A list of [Callouts] describing caveats, limitations or
   issues that commonly trip up users of the DSL.
+* **contexts:** _List of Strings_ - A list of contexts in which the DSL is used. E.g.
+  `streaming` for stream processing of data, `online` for low latency real-time queries against a
+  data store and `offline` for batch or big-data queries.
 * **references:** _List of Strings_ - A list of references to documentation, papers, etc.
   that describe the DSL.
 
