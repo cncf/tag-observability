@@ -1,0 +1,155 @@
+common_attributes:
+  - attribute: identifier
+    description: >
+      A key/value map of strings describing the time series. The metric name is _not_ a top level 
+      field, rather it is included in the map with the key `name`.
+    specification:
+      - Only characters in the set `-._A-Za-z0-9^~` are allowed. Characters outside the set are replaced with `_`.
+      - A `name` key is required with a value from 2 to 255 characters in length.
+      - Keys must be from 2 to 60 characters in length.
+      - Values must be from 1 to 120 characters in length.
+      - Null keys or values are not allowed.
+      - Duplicate keys are not allowed.
+      - Keys starting with `atlas.`, `nf.` and `statistic` are reserved for internal use.
+      - >
+        Generally, users may include 18 custom tags for a metric, enforced by data collectors. Instrumentation 
+        libraries typically add the `name` and `statistic` but may also include other tags depending on the 
+        metric type.
+  - attribute: timestamp
+    description: >
+      Timestamps are always Unix Epoch milliseconds in 64 bit signed integer format. Atlas metrics are pushed 
+      from clients to the Atlas backend on a regular reporting interval. The timestamp is the end of the 
+      reporting interval with the interval start being inclusive and the end exclusive.
+
+types:
+  - id: spectator_counter
+    languages:
+      - asl
+    generators:
+      - Spectator instrumentation library
+      - Spectatord metrics collector
+    archtype: metric_dp
+    subtype: null
+    description: >
+      Reports the rate at which an operation occurs during a reporting interval. Records increments as a
+      monotonic counter in the library or sidecar but reports the delta between the current and previous
+      reporting intervals divided by the number of seconds in the interval to produce a rate of increments
+      per second.
+    attributes:
+      identifier:
+        - See common attributes
+        - Sets `statistic=count` and `atlas.dstype=rate`
+      timestamp:
+        - Unix Epoch timestamp in milliseconds as a 64 bit signed integer.
+      value:
+        - 64 bit floating point value for each output.
+    references:
+      - https://netflix.github.io/atlas-docs/spectator/core/meters/counter/
+
+  - id: spectator_distribution_summary
+    languages:
+      - asl
+    generators:
+      - Spectator instrumentation library
+      - Spectatord metrics collector
+    archtype: metric_dp
+    subtype: null
+    description: >
+      Similar to a `spectator_timer` without requiring the measurement to be a duration. Generates 4 
+      `metric_dp` time series for query time analysis.
+    attributes:
+      identifier:
+        - See common attributes
+        - >
+          Reports 4 series with the same `name`:
+          * The sum of the measurements has a tag `statistic=totalAmount` and `atlas.dstype=sum`.
+          * The _rate_ of the count of the measurements is tagged `statistic=count` and `atlas.dstype=sum`.
+          * The maximum of the measurements is tagged `statistic=max` and `atlas.dstype=gauge`.
+          * The sum of squares of the measurements is tagged `statistic=totalOfSquares` and `atlas.dstype=sum`.
+      timestamp:
+        - Unix Epoch timestamp in milliseconds as a 64 bit signed integer.
+      value:
+        - 64 bit floating point value for each output.
+    references:
+      - https://netflix.github.io/atlas-docs/spectator/core/meters/dist-summary/
+
+  - id: spectator_guage
+    languages:
+      - asl
+    generators:
+      - Spectator instrumentation library
+      - Spectatord metrics collector
+    archtype: metric_dp
+    subtype: gauge
+    description: >
+      Reports the last updated value for a measurement within the reporting interval.
+      Values can be polled at reporting time or updated by client code.
+    attributes:
+      identifier:
+        - See common attributes
+        - Sets `statistic=gauge` and `atlas.dstype=gauge`
+      timestamp:
+        - Unix Epoch timestamp in milliseconds as a 64 bit signed integer.
+      value:
+        - 64 bit floating point value for each output.
+    references:
+      - https://netflix.github.io/atlas-docs/spectator/core/meters/gauge/
+
+  - id: spectator_percentile_timer
+    languages:
+      - asl
+    generators:
+      - Spectator instrumentation library
+      - Spectatord metrics collector
+    archtype: metric_dp
+    subtype: null
+    description: >
+      Measures the latency of an operation and `spectator_timer` time series as well as non-cumulative bucketed
+      histogram time series to enable computing percentiles at query time. Only buckets with values incremented
+      within a reporting interval are reported.
+      Bucket boundaries are fixed though users can explicitly omit some buckets.
+    attributes:
+      identifier:
+        - See common attributes
+        - Reports the same 4 series as `spectator_timer`
+        - Percentile buckets are labeled with "statistic=percentile" and "percentile=<BUCKET_ID>"
+      timestamp:
+        - Unix Epoch timestamp in milliseconds as a 64 bit signed integer.
+      value:
+        - 64 bit floating point value for each output.
+        - >
+          The sum, max, and sum of squares are in seconds. The count is the number of measurements divided by 
+          seconds in the interval. Percentile buckets are the count for that bucket divided by the total seconds
+          in the interval.
+    references:
+      - https://netflix.github.io/atlas-docs/spectator/patterns/percentile-timer/
+
+  - id: spectator_timer
+    languages:
+      - asl
+    generators:
+      - Spectator instrumentation library
+      - Spectatord metrics collector
+    archtype: metric_dp
+    subtype: null # TODO - timer should be a sub type? Common?
+    description: >
+      Measures the latency of an operation and generates 4 `metric_dp` series that selected at query
+      time based on the aggregations users wish to extract.
+    attributes:
+      identifier:
+        - See common attributes
+        - >
+          Reports 4 series with the same `name`:
+          * The sum of the measurements has a tag `statistic=totalTime` and `atlas.dstype=sum`.
+          * The _rate_ of the count of the measurements is tagged `statistic=count` and `atlas.dstype=sum`.
+          * The maximum of the measurements is tagged `statistic=max` and `atlas.dstype=gauge`.
+          * The sum of squares of the measurements is tagged `statistic=totalOfSquares` and `atlas.dstype=sum`.
+      timestamp:
+        - Unix Epoch timestamp in milliseconds as a 64 bit signed integer.
+      value:
+        - 64 bit floating point value for each output.
+        - The sum, max, and sum of squares are in seconds. The count is the number of measurements divided by seconds in the interval.
+    references:
+      - https://netflix.github.io/atlas-docs/spectator/core/meters/timer/
+
+
