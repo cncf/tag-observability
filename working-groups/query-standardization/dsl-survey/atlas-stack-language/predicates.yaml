@@ -26,7 +26,7 @@ grammar:
       - name,sys.cpu.busy,:eq,node,i-1234,:eq,:and
 
   - title: Regular Expression
-    term: :eq
+    term: :re
     description: >
       Matches the value of a dimension key with a regular expression. A subset of the 
       [Java](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
@@ -48,3 +48,11 @@ grammar:
         type: String
         description: >
           A regular expression to run on values for the key to find matches.
+    outputs:
+      - name: output
+        type: Expression
+        description: A Query expression
+    since: 1.0
+    examples:
+      - name,sys.cpu..*,:re
+      - name,sys.cpu.busy,:eq,node,i-[a-f0-9]+,:re,:and
