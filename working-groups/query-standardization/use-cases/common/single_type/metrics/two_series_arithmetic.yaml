@@ -1,0 +1,59 @@
+title: Two Series Arithmetic
+
+description: >
+  A common operation operation involves combining two or more time series into a single
+  aggregate. Used most often in systems that require a single explicit metric name 
+  during query time with optional filters on tags. 
+
+inputs:
+  - metric series
+
+uses:
+  - type: Alerting
+    description: >
+      Used for simple, single threshold alerting on a combination of series. 
+
+  - type: Visualization
+    description: >
+      Compute averages or ratios, e.g. average latency or percentage of failed requests.
+
+example_description: >
+  Selects two time series, `http_requests_errors` and `http_requests_success`,
+  filtering both where the tag `handler` has the value `/api/comments`, then
+  adding the results
+
+examples:
+  - language: PromQL
+    query: >
+      sum(http_requests_errors{handler="/api/comments"}) + 
+      sum(http_requests_success{handler="/api/comments"})
+    references:
+      - https://prometheus.io/docs/prometheus/latest/querying/examples/#simple-time-series-selection
+      - https://prometheus.io/docs/prometheus/latest/querying/examples/#using-functions-operators-etc
+
+  - language: ASL
+    query: >
+      name,http_requests_errors,:eq,handler,/api/comments,:eq,:and,
+      name,http_requests_success,:eq,handler,/api/comments,:eq,:and,
+      :add
+    references:
+      - https://netflix.github.io/atlas-docs/asl/ref/and/
+      - https://netflix.github.io/atlas-docs/asl/ref/eq/
+      - https://netflix.github.io/atlas-docs/asl/ref/add/
+
+  - language: ANSI SQL
+    query: >
+      TODO
+
+  - language: UQL
+    query: >
+      (
+        metric http_requests_error;
+        metric http_requests_success
+      )
+      | filter handler == "/api/comments"
+      | group_by [], sum
+      | join right / (left + right)
+    references:
+      - https://docs.lightstep.com/docs/uql-reference
+      - https://docs.lightstep.com/docs/uql-reference

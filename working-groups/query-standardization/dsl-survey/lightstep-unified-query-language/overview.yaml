@@ -1,0 +1,30 @@
+title: Lightstep Unified Query Language
+
+abbreviation: UQL
+
+copyright: Lightstep, Inc.
+
+license: Proprietary
+
+isOSS: false
+
+paradigms:
+  - pipeline
+  - declarative
+
+supportedTelemetryTypes:
+  - type: metrics
+  - type: traces
+
+inspirations: TODO
+
+description: >
+  A pipeline based language to analyze time series from metrics and traces in a
+  single query. 
+
+designCallouts: TODO
+
+caveats: TODO
+
+references:
+  - https://docs.lightstep.com/docs/uql-reference
