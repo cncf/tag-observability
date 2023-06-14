@@ -92,6 +92,8 @@ number.
    1. Are dimensions typed?
 1. Are regular expressions supported on identifier components (and which ones)?
    1. If so, what dialect and features are supported? E.g. POSIX, PCRE, etc.
+   1. Are extraction groups to pull values or substrings out of labels supported? 
+      1. If so can they be used in joins?
 
 ### Logs
 
@@ -108,6 +110,7 @@ number.
    1. If so, what types of queries are supported? E.g. proximity, phrase, fuzzy, etc.
 1. Are regular expressions supported?
    1. If so, what dialect and features are supported? E.g. POSIX, PCRE, etc.
+   1. Are extraction groups to pull values or substrings out of labels or lines supported?
 1. Can users generate metrics from logs?
    1. Can basic graphs be generated based on log level, fingerprint frequencies, etc.?
    1. Or can users write extraction queries to parse fields from logs and apply aggregations to them?
@@ -162,6 +165,7 @@ metric tag or a list of extracted keys in a log index.
    1. If not, in what ways do the APIs or DSL differ when querying for metadata?
 1. Are regular expressions supported?
    1. If so, what dialect and features are supported? E.g. POSIX, PCRE, etc.
+   1. Are extraction groups to pull values or substrings out of the metadata supported?
 
 ## Permissions
 
