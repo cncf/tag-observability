@@ -57,3 +57,8 @@ examples:
     references:
       - https://docs.lightstep.com/docs/uql-reference
       - https://docs.lightstep.com/docs/uql-reference
+
+  - langage: DQL
+    query: >
+      timeseries left=sum(http_requests_error) , right=sum(http_requests_success),   filter:isTrueOrNull( handler == "/api/comments")
+      | fieldsadd calculated=right / (left + right)

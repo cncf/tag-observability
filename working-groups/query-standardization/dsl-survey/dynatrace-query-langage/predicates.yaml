@@ -1,0 +1,48 @@
+grammar:
+
+  - term: :eq
+    description: >
+      Performs an exact, case sensitive match on the value with the given case sensitive
+      key.
+    inputs:
+      - name: input
+        type: Expression
+        description: In Atlas, a Query expression type.
+    arguments:
+      - name: Key
+        type: String
+        description: The dimension key. Exact case sensitive match.
+      - name: Value
+        type: String
+        description: The value to match. Exact case sensitive match.
+    outputs:
+      - name: output
+        type: Expression
+        description: A Query expression
+    since: 1.0
+    examples:
+      - name,sys.cpu.busy,:eq
+      - name,sys.cpu.busy,:eq,node,i-1234,:eq,:and
+
+  - term: :re
+    description: >
+      Matches the value of a dimension key with a regular expression. A subset of the 
+      [Java](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
+      syntax is supported.
+    callouts:
+      - title: anchoring
+        description: >
+          Note that the regular expression is implicitly anchored at the start to improve
+          performance. E.g an expression `cpu.*` will be treated as `^cpu.*`.
+    inputs:
+      - name: input
+        type: Expression
+        description: In Atlas, a Query expression type.
+    arguments:
+      - name: Key
+        type: String
+        description: The dimension key. Exact case sensitive match.
+      - name: Regex
+        type: String
+        description: >
+          A regular expression to run on values for the key to find matches.
