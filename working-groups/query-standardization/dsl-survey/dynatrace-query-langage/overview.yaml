@@ -1,0 +1,112 @@
+title: Dynatrace Query Language
+
+abbreviation: DQL
+
+copyright: Dynatrace
+
+license: Proprietary
+
+isOSS: false
+
+paradigms:
+  - pipeline
+  - declarative
+
+supportedTelemetryTypes:
+  - type: metrics
+    description:
+      Metrics is targeting all the data stored in a timeseries database .
+      That includes the core dynatrace metrics collected by the various dynatrace component, the data ingest through the metric
+      ingest api or the OpenTelemetry metric ingest api
+    callouts:
+      - title: Aggregation
+        description: >
+        DQL on timeseries provides serveral aggregation func:
+          - avg
+          - max
+          - min
+          - sum
+        every aggregation function can be combined with the command by that will split the metric into one or several dimensions ( labels)
+
+      - title: Various operator
+        description: >
+        DQL allow the enduser to  :
+        - filter: the operator will filter the metric by applying a condition on the value
+        - from, to : those operator can filter the extraction of the metric on a specific timeframe
+        - interval : allow us to change the granularity of the data.
+        - timeframe: creates a timeframe structure from the given start and end timestamps.
+
+      - title: metric dimensions
+        description: >
+          all the other signals ( event, traces, logs...) requires to fetch data to a specific data source
+          fetch logs
+          timeseries is the specific term to retrieve data stored in the timeseries format.
+
+  - type: traces, logs, events, bizents, smartscape
+    description:
+      - spans is targeting all the data representing a distributed trace.
+        That includes the dynatrace traces ( named purepath) collected by the oneagent,and the data ingest through the OpenTelemetry ingest api
+      - logs correspond to log data collected by the oneagent or sent to the log ingest api or the opentelemtry logs apî
+      - events corresponds to all the events collected by the Dynatrace components ( such as the kubernetes events) , but it also include any
+        send to the events api of dynatrace
+      - bizzvents is a dynatrace concept created to create event business events from data present in http request ( header, payload, url parameters...Etc). the purpose of
+        bizz events is to keep track of a business flow of a given application or platform. the bizzevents are mainly created by the oneagent, but it is also possible to
+        ingest external bizz events with the api
+      - smartscape is a specific dynatrace concept to collect data on the dependency map.
+      - dynatrace entities to collect object reference of dynatrace entities
+    callouts:
+      - title: Aggregation
+        description: >
+        DQL on timeseries provides serveral aggregation func:
+          - avg
+          - max
+          - min
+          - sum
+          - count
+          - countif
+          - countDistinct
+          - median
+          - percentile
+          - takeFirst
+          - takeLast
+          - collectDistinct
+          - takeMin
+          - takeMax
+          - stddev
+          - variance
+          - correlation
+          - takeany
+        every aggregation function can be combined with the command by that will split the metric into one or several dimensions ( labels)
+
+      - title: Various operator
+        description: >
+        DQL allow the enduser to:
+          - filter: the operator will filter the metric by applying a condition on one or several keys of the data
+          - parse: parse provide the option to parse the content of the data( logs) , you parse specific keys and convert them into new
+            attributes that can be used later in the pipeline as filter , or aggreation
+          - fields: the query can add extra keys to the data, remove keys to reduce the data, rename..etc
+          - lookup: lookup is powerfule feature where the query can start creating a JOIN to another datatype. for example i can collect the traces and then extract the cpu usage of hte
+            pod hosting a given span. lookup will create a sub query in the main query. lookup needs to defined how to link the data source by creating a condition based on keys
+            present on both data.
+          - summarize: create aggreagation to generate a metric or dashboard out of the data
+
+inspirations:
+  - TODO
+
+description:
+  A DQL query contains at least one or more commands ( fetch, filter, limit, parse,data, fields,summarize, lookup ...) each of
+  which returns tabular output containing records (lines or rows) and fields (columns).
+  All commands are sequenced by a | (pipe). The data flows or is funneled from one command to the next.
+
+designCallouts:
+  - goal: Reusability
+    description: >
+      Coinciding with the goal of being URI friendly, the language does not include
+      a time range in the grammar. Rather the time is supplied via URI so that the
+      same query can be saved in a dashboard, alert or other source and various times
+      applied without having to re-write the query.
+      
+
+
+references:
+  - https://www.dynatrace.com/support/help/observe-and-explore/query-data/dynatrace-query-language
