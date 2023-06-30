@@ -2,8 +2,9 @@
 
 The following is a list of questions we would like query language designers to answer to
 the best of their abilities. The goal is to share design goals, tradeoffs and implicit 
-assumptions or behaviors that may be used to inform a standardization recommendation. Some
-questions are open-ended as we're looking for subtle discussions about design decisions.
+assumptions or behaviors that may be used to inform a standardization recommendation. We're
+also looking at behavior when the query is invalid or encounters unexpected data issues. Some
+questions are open-ended as we're looking for subtle descriptions of design decisions.
 
 Please answer to the existing query language as available to end users. Upcoming work
 or features can be included but please call that out clearly. Ideas about a future standard
@@ -29,18 +30,25 @@ in an open source repo.
       databases, etc.?
    1. If joining of various time series sources is available, how are differing retentions 
       handled? 
+1. How tightly coupled is the DSL to the data store model? (1 to 10 with 10 being extremely)
+   tightly coupled)
+   1. Is the DSL flexible enough to operate on data in different storage formats or contexts?
+1. What character sets are supported by the DSL?
+   1. What characters are special or reserved in the DSL?
+1. Does the DSL allow for writing data or configuring the backing store or is it for querying only?
 
 ## Data Models
 
 Please answer any of the following questions about telemetry and data models that pertain to the
-DSL.
+DSL. Include information about what models are supported by the DSL and any aspects of the DSL
+that are tightly coupled to the models.
 
 ### Metrics
 
 For the purpose of this interview, metrics are defined as numerical measurements associated with
-an identifier (typically a metric name and key/value pair dimensions or tags) and a timestamp
-(sometimes a time range). Metric query results are generally numerical time series or a single
-number.
+an identifier (typically a metric name and key/value pair dimensions or tags; see the 
+[identifiers](#identifiers) section) and a timestamp (sometimes a time range). Metric query results 
+are generally numerical time series or a single number.
 
 1. What metric measurement types are supported? E.g. monotonic counters, gauges, deltas, rates,
    bucketed histograms, digests, booleans, etc.
@@ -64,7 +72,7 @@ number.
       sampling, 1 hour sampling, etc.)?
    1. If automatically selected, what rules determine the correct aggregate to query?
 
-**Interpolation**
+#### Interpolation
 
 1. For DSLs that can aggregate "raw" data with misaligned timestamps:
    1. What interpolation scheme is used for various aggregation functions when series do not align
@@ -79,7 +87,7 @@ number.
 1. If data retentions can differ between series, how does the DSL handle querying across series that
    span different retention cutoffs? E.g. series A has data but B has already been truncated.
 
-**Identifiers**
+#### Identifiers
 
 1. What components constitute a time series identifier? E.g. metric name, namespace, tags, etc.
 1. What character sets are supported by the identifiers?
@@ -96,6 +104,9 @@ number.
       1. If so can they be used in joins?
 
 ### Logs
+
+Logs are typically structured (e.g. JSON) or unstructured strings associated with a single timestamp
+when the log entry was generated. 
 
 1. What does the incoming log event model look like for the DSL? 
    1. A timestamp and a message field? 
@@ -123,15 +134,20 @@ number.
 1. What kind of output formats are supported? Raw log lines, tables, etc.?
 1. Is enrichment supported, e.g. merging data from external sources to replace, say, customer IDs.
 
-**Correlation**
+#### Correlation
 
 1. Can log lines (particularly exceptions) be grouped based on automatic "fingerprinting" of content or
    can users provide a template? E.g. "user bob failed auth from IP 0.0.0.0" and "user alice failed auth from IP 1.2.3.4"
-   should have the same finger print though the parameters (user and IP) differ.
+   should have the same fingerprint though the parameters (user and IP) differ.
 1. Does the DSL support "diffing" meaning over two periods of time, were the more or fewer entries, more or fewer
-   of a particular finger print, etc.
+   of a particular fingerprint, etc.
 
 ### Events
+
+Events are typically structured similarly to logs but are different in that they have a start time
+and end time. Examples include holidays, software builds, deployments, incidents, etc. Queries for
+a time range return all events that overlap with the range and are often overlayed with other telemetry
+results such as metrics.
 
 1. What is the maximum duration of events supported? Days, months, years?
 1. What model must events follow?
@@ -139,21 +155,36 @@ number.
 
 ### Traces
 
-1. What is the maximum duration of traces supported? Minutes to hours to days?
-1. Are multiple roots supported in traces or only one?
-1. Are there limits to the # of spans per trace or dimensions per span?
+For this interview, traces refer to distributed tracing where an originating operation passes a context
+to downstream processes that emit spans recording the duration of the operation and associated metadata.
+The trace is composed of the spans and their relationships to each other.
+
+1. What tracing models are supported by the query language? 
+1. What is the maximum duration of traces supported for querying? Minutes to hours to days?
+1. Are span links supported for supporting multiple traces that actually compose a longer trace?
+1. Are there limits to the # of spans per trace or dimensions per span in the model?
+   1. Are there limits to the # of spans or traces at query time?
 1. Can users query for sub graphs of traces? E.g. say select only traces that visited service A then
    B then fanned out to C and E but not D and called B at least 5 times.
+1. Are compound predicates supported such as traces that queried B from A with latencies over Xms?
 1. Can traces with different models be joined? E.g. one measures in seconds, another measures in millis.
 1. Can incomplete traces be queried or only those that are considered or assumed complete?
+1. What aggregations are available for traces and spans? Histograms, percentiles, max, min, sum? 
 1. Can attributes be typed at query time for analysis (sums, count bys, etc)
    1. If so, what happens to spans missing the attribute or have attributes with values of the wrong type?
 
 ### Profiles
 
+Profiles are measurements of CPU, memory, disk, network, or other system resources by a process or set of
+processes. They typically have a start and end time during which measurements are sampled so as not to
+impact the process under measurement. 
+
+1. What kind of profiles and models are supported by the language?
 1. What kind of filters are allowed? E.g. by duration, core, thread, function, environment variables?
 1. Can users query by DAG, e.g. only show profiles where a user function wound up calling a sys call?
-2. Can users create "diffs" with previous intervals based on similar attributes?
+1. Can users create "diffs" with previous intervals based on similar attributes?
+1. Can multiple profiles of the same type (cpu, memory, etc.) from different sources (instances) with
+   the same process be aggregated?
 
 ## Metadata
 
@@ -167,7 +198,7 @@ metric tag or a list of extracted keys in a log index.
    1. If so, what dialect and features are supported? E.g. POSIX, PCRE, etc.
    1. Are extraction groups to pull values or substrings out of the metadata supported?
 
-## Permissions
+## Permissions/Access Control
 
 1. How does a query respond if a user is not allowed to access one or more components of a query
    but they are allowed access to other portions?
