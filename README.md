@@ -35,11 +35,20 @@ Excerpts from the [Observability Charter Document](observability-charter.md):
 
 ## How to get involved
 
-The best way to get involved is hanging around our channels of communication, joining our calls, and getting a feeling for how we operate.
+There are many ways you can join in to participate in the Observability TAG’s activities.
 
-If you want to contribute to the TAG's activities or propose new ones, please visit our [Kanban Board](https://github.com/cncf/tag-observability/projects/1#card-36042463).
+Great ways to get involved include
+- Join our discussion channels on [CNCF Slack #tag-observability](https://slack.cncf.io)
+- Join our [bi-monthly calls](https://www.cncf.io/community/calendar/) where observability experts and practitioners present on and discuss Observability topics
+- Contribute to discussion threads on the O11y TAG [GitHub Issues](https://github.com/cncf/tag-observability/issues)
+- Participate in O11y TAG workgroups including
+    - [Observe K8s workgroup](https://github.com/cncf/tag-observability/blob/main/working-groups/observe-k8s.md)
+    - [Observability Query Language Specification (QLS) workgroup](https://github.com/cncf/tag-observability/blob/main/working-groups/query-standardization.md)
+- Come say Hi! at CNCF conferences including Kubecon NA, Kubecon EU and other open source conferences such as Open Source Summits.
 
-If you would like to suggest a specific topic or action item, please determine if there are ongoing activites or prior art. Good starting points are our [GitHub Issues](https://github.com/cncf/tag-observability/issues), reports, or meeting notes. Please visit us on CNCF Slack for any questions or just to say hello :)
+If you would like to suggest a specific topic or action item, please determine if there are ongoing activities or prior art. Good starting points are our [GitHub Issues](https://github.com/cncf/tag-observability/issues), reports, or [meeting notes](https://docs.google.com/document/d/1_QoF-njScSuGFI3Ge5zu-G8SbL6scQ8AzT1hq57bRoQ/edit). 
+
+If you want to propose new TAG activities or join in for existing ones, please take a look at our [Kanban Board](https://github.com/cncf/tag-observability/projects/1#card-36042463) or file a suggestion with a GitHub issue :-)
 
 ## Operations
 
