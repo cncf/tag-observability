@@ -78,6 +78,7 @@ If you want to propose new TAG activities or join in for existing ones, please t
 [Grafana]:    https://grafana.com
 [Microsoft]:  https://www.microsoft.com
 [Red Hat]:    https://redhat.com
+[Google]:     https://about.google/
 [OpenTelemetry Team]: https://github.com/open-telemetry/community/blob/main/community-members.md
 [Prometheus Team]: https://prometheus.io/governance/#team-members
 [Thanos Team]:     https://thanos.io
