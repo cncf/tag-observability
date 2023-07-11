@@ -57,7 +57,7 @@ If you want to propose new TAG activities or join in for existing ones, please t
 | Name           | Email                     |  GitHub         | Company      |
 | -------------- | ------------------------- | --------------- | ------------ |
 | Cathy Zhang    | cathy.h.zhang@intel.com   | [cathyhongzhang]| [Intel]      |
-| Erin Boyd      | eboyd@redhat.com          | [erinaboyd]     | [RedHat]     |
+| Erin Boyd      | eboyd@redhat.com          | [erinaboyd]     | [Red Hat]     |
 | Ricardo Rocha  | rocha.porto@gmail.com     | [rochaporto]    | [CERN].      |
 
 ### Chairs (alphabetical order)
@@ -72,27 +72,29 @@ If you want to propose new TAG activities or join in for existing ones, please t
 
 | Name              | Email               | CNCF Slack  | GitHub     | Company   | Open Source                        |
 |------------------ | ------------------- |------------ |--------    | --------- | ---------------------------------- |
-| Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka   | [bwplotka] | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
+| Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka   | [bwplotka] | [Google] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
 
-[Alibaba]:    https://www.alibaba.com
-[Amazon]:     https://aws.amazon.com
 [Apple]:      https://opensource.apple.com
 [Grafana]:    https://grafana.com
 [Microsoft]:  https://www.microsoft.com
 [Red Hat]:    https://redhat.com
-[WeaveWorks]: https://www.weave.works
+[Google]:     https://about.google/
 [OpenTelemetry Team]: https://github.com/open-telemetry/community/blob/main/community-members.md
 [Prometheus Team]: https://prometheus.io/governance/#team-members
 [Thanos Team]:     https://thanos.io
 [bwplotka-other]:  https://www.bwplotka.dev/about/#open-source-projects
 [PromCon]:         https://promcon.io
+[CERN]:       https://home.cern
+[Intel]:      https://www.intel.com
 
 [alolita]:       https://github.com/alolita
 [bwplotka]:      https://github.com/bwplotka
-[cdavisafc]:     https://github.com/cdavisafc
 [halcyondude]:   https://github.com/halcyondude
 [resouer]:       https://github.com/resouer
 [RichiH]:        https://github.com/RichiH
+[rochaporto]:    https://github.com/rochaporto 
+[erinaboyd]:     https://github.com/erinaboyd  
+[cathyhongzhang]: https://github.com/cathyhongzhang
 
 ## Governance
 
