@@ -72,7 +72,7 @@ If you want to propose new TAG activities or join in for existing ones, please t
 
 | Name              | Email               | CNCF Slack  | GitHub     | Company   | Open Source                        |
 |------------------ | ------------------- |------------ |--------    | --------- | ---------------------------------- |
-| Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka   | [bwplotka] | [Red Hat] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
+| Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka   | [bwplotka] | [Google] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
 
 [Apple]:      https://opensource.apple.com
 [Grafana]:    https://grafana.com
