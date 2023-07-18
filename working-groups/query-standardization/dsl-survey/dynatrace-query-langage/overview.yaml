@@ -21,12 +21,12 @@ supportedTelemetryTypes:
     callouts:
       - title: Aggregation
         description: >
-        DQL on timeseries provides serveral aggregation func:
+        DQL on timeseries provides several aggregation func:
           - avg
           - max
           - min
           - sum
-        every aggregation function can be combined with the command by that will split the metric into one or several dimensions ( labels)
+       Every aggregation function can be combined with the command "by" that will split the metric into one or several dimensions ( labels)
 
       - title: Various operator
         description: >
@@ -46,7 +46,7 @@ supportedTelemetryTypes:
     description:
       - spans is targeting all the data representing a distributed trace.
         That includes the dynatrace traces ( named purepath) collected by the oneagent,and the data ingest through the OpenTelemetry ingest api
-      - logs correspond to log data collected by the oneagent or sent to the log ingest api or the opentelemtry logs apî
+      - logs correspond to log data collected by the oneagent or sent to the log ingest api or the opentelemetry logs apî
       - events corresponds to all the events collected by the Dynatrace components ( such as the kubernetes events) , but it also include any
         send to the events api of dynatrace
       - bizzvents is a dynatrace concept created to create event business events from data present in http request ( header, payload, url parameters...Etc). the purpose of
@@ -57,7 +57,7 @@ supportedTelemetryTypes:
     callouts:
       - title: Aggregation
         description: >
-        DQL on timeseries provides serveral aggregation func:
+        DQL on timeseries provides several aggregation func:
           - avg
           - max
           - min
@@ -76,7 +76,7 @@ supportedTelemetryTypes:
           - variance
           - correlation
           - takeany
-        every aggregation function can be combined with the command by that will split the metric into one or several dimensions ( labels)
+        every aggregation function can be combined with the command "by" that will split the metric into one or several dimensions ( labels)
 
       - title: Various operator
         description: >
@@ -85,9 +85,7 @@ supportedTelemetryTypes:
           - parse: parse provide the option to parse the content of the data( logs) , you parse specific keys and convert them into new
             attributes that can be used later in the pipeline as filter , or aggreation
           - fields: the query can add extra keys to the data, remove keys to reduce the data, rename..etc
-          - lookup: lookup is powerfule feature where the query can start creating a JOIN to another datatype. for example i can collect the traces and then extract the cpu usage of hte
-            pod hosting a given span. lookup will create a sub query in the main query. lookup needs to defined how to link the data source by creating a condition based on keys
-            present on both data.
+          - lookup: lookup is powerful feature where the query can start creating a JOIN to another datatype.
           - summarize: create aggreagation to generate a metric or dashboard out of the data
 
 inspirations:
