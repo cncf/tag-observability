@@ -1,0 +1,52 @@
+types:
+  - id: pprof
+    languages:
+      - N/A
+    generators:
+      - runtime/pprof
+    archtype: call_graph
+    subtype: null
+    description: >
+      The profiling format associated with the Go computer language. It's a variant of
+      [Google's C++ profiler](https://github.com/gperftools/gperftools). It can trace
+      CPU utilization, heap, allocations, thread creation, synchronous blocking and mutex holders.
+    references:
+      - https://go.dev/doc/diagnostics
+      - https://github.com/google/pprof/blob/main/proto/profile.proto
+    attributes:
+      sample_type:
+        - The type of data sampled along with units, e.g. "cpu", "nanoseconds"
+        - Pair of indexes into the `string_table` for the name and unit of the sample type.
+      sample:
+        - The set of sample objects recorded.
+        - Sets of objects consisting of a series of location Ids, values and labels. Refer
+          to the proto definition.
+      mapping:
+        - The set of mappings from addresses to symbols.
+        - Refer to the proto definition.
+      location:
+        - The set of locations referenced by samples.
+        - Refer to the proto definition.
+      function:
+        - The set of functions referenced by locations.
+        - Refer to the proto definition.
+      string_table:
+        - Common table for strings referenced by other objects
+      drop_frames:
+        - An index into the `string_table` with an optional regex matching functions to drop
+          from the profile.
+      keep_frames:
+        - An index into the `string_table` with an optional regex matching functions to keep
+            in the profile.
+      time_nanos:
+        - Unix epoch nanos timestamp when the profile was collected.
+      duration_nanos:
+        - Length of profile recording in nanoseconds.
+      period_type:
+        - The kind of events between sampled occurrences. E.g. [ "cpu","cycles" ] or [ "heap","bytes" ]
+      period:
+        - The number of events between sampled occurrences.
+      comment:
+        - Optional comment about the profile. Index to the string table.
+      default_sample_type:
+        - Index into the string table of the prefered sample value.

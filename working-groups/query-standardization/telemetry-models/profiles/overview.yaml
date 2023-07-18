@@ -1,0 +1,18 @@
+id: profiles
+
+description: >
+  A view of CPU, GPU, memory or other compute resource usage by a process or set of
+  processes.
+
+uses:
+  - title: Performance Tuning
+    description: >
+      Often used when tuning the performance of a system to identify bottlenecks such
+      as inefficient methods, unexpected calls or memory leaks.
+
+archtypes:
+  - id: call_graph
+    type: Call Graph
+    description: >
+      A profile that tracks the call stack of a process or set of processes, measuring
+      CPU usage, function counts or memory allocations. Extremely useful for debugging.
