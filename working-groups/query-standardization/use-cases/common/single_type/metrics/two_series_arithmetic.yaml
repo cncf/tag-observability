@@ -56,7 +56,6 @@ examples:
       | join right / (left + right)
     references:
       - https://docs.lightstep.com/docs/uql-reference
-      - https://docs.lightstep.com/docs/uql-reference
 
   - langage: DQL
     query: >

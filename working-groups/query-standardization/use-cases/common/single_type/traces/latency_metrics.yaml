@@ -16,4 +16,9 @@ uses:
       Percentiles, average and max latencies may also be extracted for line graphs.
 
 examples:
-  - language: TODO
+  - language: DQL
+    query: >
+      fetch spans 
+      | summarize avg(duration) , by:{ bin(timestamp, 30s),service.name}
+    references:
+      - https://www.dynatrace.com/support/help/platform/grail/dynatrace-query-language/dql-guide

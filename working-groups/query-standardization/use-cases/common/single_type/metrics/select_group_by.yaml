@@ -59,7 +59,6 @@ examples:
       | group_by [job], sum
     references:
       - https://docs.lightstep.com/docs/uql-reference
-      - https://docs.lightstep.com/docs/uql-reference
 
   - language: DQL
     query: >
