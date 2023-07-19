@@ -1,0 +1,32 @@
+title: Join metrics on label strings
+
+description: >
+  A common operation operation involves combining dimensions of two or more series to allow 
+  filtering addition dimensions.
+
+inputs:
+  - metric series
+
+uses:
+  - type: Alerting
+    description: >
+      Add additional the abillity to filter on additional dimensions or get addtional demension 
+      to indentify the source of alert
+
+  - type: Visualization
+    description: >
+      Allow filter dashboards on additional dimensions to get relevant information 
+
+example_description: >
+  rabbitmq_queues has container, instance, job, namespace, pod labels.
+  rabbitmq_identity_info as additional labels one of them is the rabbitmq cluster name (rabbitmq_cluster).
+  The result is a metric with the value of rabbitmq_queues with the additional rabbitmq_cluster label.
+
+examples:
+  - language: PromQL
+    query: >
+      sum(rabbitmq_queues * on(instance) group_left(rabbitmq_cluster) rabbitmq_identity_info{rabbitmq_cluster="$rabbitmq_cluster"})
+    references:
+      - https://prometheus.io/docs/prometheus/latest/querying/operators/#many-to-one-and-one-to-many-vector-matches
+      - https://www.robustperception.io/exposing-the-software-version-to-prometheus/
+      - https://grafana.com/grafana/dashboards/10991-rabbitmq-overview/
