@@ -1,0 +1,45 @@
+title: Label Manipulations
+
+description: >
+  A common operation operation involves joining, extracting, or replacing
+  existing label values.
+
+inputs:
+  - metrics series
+
+uses:
+  - title: Alerting
+    description: >
+      Commonly used as an intermediary to simplify operations on the resulting 
+      metric set, for eg., creating "default" sets of label values, manipulating
+      labels only for the set of metrics that match the given vector, etc.
+
+  - title: Visualization
+    description: >
+      Commonly used to create visualizations where relations involving 
+      aggregated data are concerned.
+
+example_description: > 
+  The example below shows that for all metrics with empty `foo` and `bar` label
+  values, `foo` will assume the value of `otherFoo`. Futhermore, `bar` will be 
+  set to `zero` for resulting set of metrics that have an empty `bar` label 
+  value.
+
+examples:
+  - language: PromQL
+    query: >
+      label_replace(
+        label_join(
+          metric{foo="", bar=""},
+          "foo", 
+          "",
+          "otherFoo"
+        ),
+        "bar",
+        "0",
+        "bar",
+        ""
+      )
+    references:
+      - https://prometheus.io/docs/prometheus/latest/querying/functions/#label_join
+      - https://prometheus.io/docs/prometheus/latest/querying/functions/#label_replace
