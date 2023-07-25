@@ -1,8 +1,8 @@
 title: Join metrics on label strings
 
 description: >
-  A common operation operation involves combining dimensions of two or more series to allow 
-  filtering addition dimensions.
+  A common operation involves combining dimensions of two or more series to allow 
+  filtering additional dimensions.
 
 inputs:
   - metric series
@@ -19,7 +19,7 @@ uses:
 
 example_description: >
   rabbitmq_queues has container, instance, job, namespace, pod labels.
-  rabbitmq_identity_info as additional labels one of them is the rabbitmq cluster name (rabbitmq_cluster).
+  rabbitmq_identity_info has additional labels, one of them is the rabbitmq cluster name (rabbitmq_cluster).
   The result is a metric with the value of rabbitmq_queues with the additional rabbitmq_cluster label.
 
 examples:
