@@ -10,12 +10,11 @@ inputs:
 uses:
   - type: Alerting
     description: >
-      Add additional the abillity to filter on additional dimensions or get addtional demension 
-      to indentify the source of alert
-
+      Allows to set up alerts that are filtered by an additional dimension 
+      
   - type: Visualization
     description: >
-      Allow filter dashboards on additional dimensions to get relevant information 
+      Allow dashboards to be filtered by additional dimensions to get relevant information 
 
 example_description: >
   rabbitmq_queues has container, instance, job, namespace, pod labels.
