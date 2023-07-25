@@ -10,7 +10,7 @@ inputs:
 uses:
   - type: Alerting
     description: >
-      Allows to set up alerts that are filtered by an additional dimension 
+      Allows to set up alerts that are filtered by additional dimensions 
       
   - type: Visualization
     description: >
