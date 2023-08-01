@@ -495,6 +495,7 @@ Unfortunately, both methodologies are hard to implement for Streaming APIs. With
 From the first words written until its completion, this whitepaper was a community effort. From synchronous discussion during our bi-weekly meeting, asynchronous discussions on [#tag-observability slack-channel](https://cloud-native.slack.com/archives/CTHCQKK7U) or comments and suggestions on multiple draft documents, we had way more contributors than we have ever expected. Here is an alphabetic order of contributors that have helped us.
 
 * [Alex Jones][Alex Jones]
+* [Alois Reitbauers][Alois Reitbauer]
 * [Arthur Silva Sens][Arthur Silva Sens]
 * [Bartłomiej Płotka][Bartłomiej Płotka]
 * [Björn Rabenstein][Björn Rabenstein]
@@ -508,6 +509,7 @@ From the first words written until its completion, this whitepaper was a communi
 * [Gil Raphaelli][Gil Raphaelli]
 * [Goutham Veeramachaneni][Goutham Veeramachaneni]
 * [Gregor Zeitlinger][Gregor Zeitlinger]
+* [Jaana Dogan][Jaana Dogan]
 * [Jason Morgan][Jason Morgan]
 * [Jonah Kowall][Jonah Kowall]
 * [Juraci Paixão Kröhling][Juraci Paixão Kröhling]
@@ -532,9 +534,10 @@ From the first words written until its completion, this whitepaper was a communi
 Thanks, all of you!
 
 [Alex Jones]:             https://github.com/AlexsJones
+[Alois Reitbauer]:        https://github.com/AloisReitbauer
 [Arthur Silva Sens]:      https://github.com/ArthurSens
 [Bartłomiej Płotka]:      https://github.com/bwplotka
-[Björn Rabenstein]:	https://github.com/beorn7
+[Björn Rabenstein]:	      https://github.com/beorn7
 [Charles Pretzer]:        https://github.com/cpretzer
 [Daniel Khan]:            https://github.com/danielkhan
 [David Grizzanti]:        https://github.com/dgrizzanti
@@ -542,9 +545,10 @@ Thanks, all of you!
 [Dominic Finn]:           https://github.com/dofinn
 [Frederic Branczyk]:      https://github.com/brancz
 [Gibbs Cullen]:           https://github.com/gibbscullen
-[Gil Raphaelli]:		https://github.com/graphaelli
-[Goutham Veeramachaneni]:  https://github.com/gouthamve
-[Gregor Zeitlinger]:	https://github.com/zeitlinger
+[Gil Raphaelli]:		  https://github.com/graphaelli
+[Goutham Veeramachaneni]: https://github.com/gouthamve
+[Gregor Zeitlinger]:	  https://github.com/zeitlinger
+[Jaana Dogan]:            https://github.com/rakyll
 [Jason Morgan]:           https://github.com/wmorgan
 [Jonah Kowall]:           https://github.com/jkowall
 [Juraci Paixão Kröhling]: https://github.com/jpkrohling
@@ -553,7 +557,7 @@ Thanks, all of you!
 [Liz Fong-Jones]:         https://github.com/lizthegrey
 [Matt Young]:             https://github.com/halcyondude
 [Michael Hausenblas]:     https://github.com/mhausenblas
-[Nicolas Takashi]: 	https://github.com/nicolastakashi
+[Nicolas Takashi]: 	      https://github.com/nicolastakashi
 [Rafael Natali]:          https://github.com/rafaelmnatali
 [Richard Anton]:          https://github.com/ranton256
 [RichiH Hartmann]:        https://github.com/RichiH
@@ -563,7 +567,7 @@ Thanks, all of you!
 [Shobhit Srivastava]:     https://github.com/SinisterLight
 [Simone Ferlin]:          https://github.com/sferlin
 [Tim Tischler]:           https://github.com/tischler
-[Vijay Samuel]:	https://github.com/vjsamuel
+[Vijay Samuel]:	          https://github.com/vjsamuel
 [Wiard van Rjj]:          https://github.com/wiardvanrij
 
 ## Contributing
