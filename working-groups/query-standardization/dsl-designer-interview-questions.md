@@ -15,6 +15,13 @@ Please do not divulge proprietary information or anything that would be consider
 The results of these interview questions will be shared with the working group and the public
 in an open source repo.
 
+### Instructions
+
+Please copy this file and provide written answers under each bullet point. Use a shareable Google 
+Doc if possible with comment permissions open to all. Alternatively send responses to work group
+Slack channel or DM Chris Larsen or Vijay Samuel. Or email clarsen<->netflix->com. We'll copy the
+answers into a shared document and schedule a follow-up call to discuss the answers.
+
 ## Overview
 
 1. List any over-arching design goals for the DSL. For example URI friendliness, minimal syntax,
