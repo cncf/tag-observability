@@ -1,0 +1,38 @@
+title: Pipe Processing Language
+
+abbreviation: PPL
+
+copyright: The OpenSearch Org
+
+license: Apache License V2
+
+isOSS: true
+
+paradigms:
+  - pipeline
+  - declarative
+
+supportedTelemetryTypes:
+  - type: metrics
+  - type: traces
+  - type: logs
+
+inspirations:
+  - Splunk Query Language
+
+description: >
+  PPL (Pipe Processing Language) is a query language used in OpenSearch, allowing users to interact with their data in a more expressive and readable manner.
+  It features a structure similar to Unix's pipe commands, where operations are chained together using a pipe symbol (|).
+  This design enables users to perform complex queries in a more intuitive way, such as filtering, transforming, and aggregating data.
+  By leveraging PPL, developers can enhance their ability to extract insights from large datasets within the OpenSearch ecosystem.
+
+designCallouts: TODO
+
+caveats: TODO
+
+references:
+  - https://github.com/opensearch-project/sql/tree/main/docs/user/ppl
+  - https://github.com/opensearch-project/sql/tree/main/docs/user/ppl/cmd
+  - https://github.com/opensearch-project/sql/tree/main/docs/user/ppl/functions
+  - https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/general/datatypes.rst
+  - https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/admin/datasources.rst
