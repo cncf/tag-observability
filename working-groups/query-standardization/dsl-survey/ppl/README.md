@@ -1,6 +1,4 @@
-# PPL for CNCF Unified query language
-
-In Response to the [DSL Survey requirements](https://github.com/cncf/tag-observability/tree/main/working-groups/query-standardization/dsl-survey) the next document addresses these concerns and emphasize the advantages of PPL language that should become the best option matching the new Observability query language:
+# Piped Processing Language DSL Survey Response
 
 ### **Short Description:**
 
@@ -12,15 +10,35 @@ The PPL (Pipe Processing Language) architecture within OpenSearch is built to fa
 
 1. **Design Goals**:
 
-    * **URI Friendliness**: Enables intuitive querying through RESTful API.
-    * **Minimal Syntax**: Human-readable and concise.
-    * **Advanced Analytical Capabilities**: Supports aggregation, filtering, etc.
-    * **Easily extensible :** support simple and build in extension mechanics
+    * **URI Friendliness**: 
+      * Enables intuitive querying through RESTful API - Using [POST API](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/interfaces/endpoint.rst#post)
+    * **Minimal Syntax**:
+      * Human-readable and concise.
+    * **Advanced Analytical Capabilities**:
+      * Supports aggregation, filtering, etc. (See additional details in the following sections below)
+    * **Easily extensible :** 
+      * support simple and build in extension mechanics
 
-1. **Deficiencies in Other DSLs**:
+   1. **Deficiencies in Other DSLs**:
 
-    * A need for a simpler, more consistent querying language led to the design of PPL.
-    * Emphasize the pipe based data transformation patterns common to realtime analytics and batch procrssing
+       * Emphasize the pipe based data transformation patterns common to realtime analytics and batch processing
+       * A need for a simpler, more consistent querying language led to the design of PPL.
+
+       **Simplicity and Readability**: PPL introduces a more human-readable syntax, similar to the SQL language, allowing users to write queries in a more intuitive and straightforward manner.
+       This enhances the usability for both newcomers and seasoned professionals.
+
+       **Flexibility**: It offers various operators and functions that enable complex data processing tasks, like filtering, transforming, and aggregating data.
+       This allows for more sophisticated analyses without the need for additional tools.
+
+       **Performance Optimization**: PPL's query execution is optimized, enabling faster processing of large-scale data. It can leverage OpenSearch's distributed architecture to parallelize operations, thus speeding up query responses.
+        
+       [For Additional Info please review](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/RFC_%20Pipe%20Processing%20Language.pdf)
+    
+Integration with OpenSearch: Being tightly integrated with OpenSearch, PPL allows for seamless interaction with other features and plugins in the OpenSearch ecosystem.
+
+Consistency across Observability Tools: By standardizing the query language, PPL ensures a consistent experience across various observability tools within the OpenSearch suite, minimizing the learning curve when transitioning between different tools.
+
+Enhanced Debugging and Error Handling: PPL provides more informative error messages and debugging features, making it easier to identify and fix issues in queries.
 
 1. **Languages that Inspired the DSL**:
 
@@ -42,7 +60,22 @@ The PPL (Pipe Processing Language) architecture within OpenSearch is built to fa
 
 1. **Intended for At-Rest and/or Streaming Data**:
 
-    * Both.
+    1. _**At-Rest Data**:_
+       At-rest data refers to data that is stored persistently on disk, and it's not in active use or transit.
+
+       **Querying**: PPL enables querying this at-rest data, allowing users to perform analyses on historical data, generate reports, and derive insights.
+       
+       **Performance**: PPL's syntax and optimizations are designed to handle large-scale at-rest data efficiently.
+       
+       **Integration with OpenSearch**: Since PPL is integrated with OpenSearch, it can interact seamlessly with data indexed and stored within OpenSearch clusters.
+   2. _**Streaming Data:**_
+      Streaming data refers to data that is continuously generated, often by various sources like sensors, applications, or online services.
+
+       **Real-Time Analysis**: PPL can be used to analyze streaming data as it arrives. This is essential for real-time monitoring, alerting, and decision-making.
+       
+       **Combination with At-Rest Data**: PPL's ability to handle both streaming and at-rest data enables complex analyses that combine real-time data with historical data. This integration can lead to more comprehensive insights.
+       
+       **Adaptability**: Since streaming data often comes in unbounded and fast-paced, PPL's flexibility in query formulation helps in adapting to the dynamic nature of this data.
 
 1. **Source Specification**:
 
@@ -64,7 +97,7 @@ The PPL (Pipe Processing Language) architecture within OpenSearch is built to fa
 1. **Flexibility Across Different Storage Formats or Contexts**:
 
     * PPL is specific to OpenSearch and the underlying data structures it supports.
-    * Work in progress to allow data read from object storage
+    * Work in progress to allow data read from object storage 
 
 1. **Character Sets Supported**:
 
@@ -105,7 +138,7 @@ The PPL (Pipe Processing Language) architecture within OpenSearch is built to fa
 * **Boundaries**:
     *  Inclusive of the start, exclusive of the end.
 * **Aggregation Functions for Downsampling**:
-    * N/A - can use OpenSearch specific engine downsampling via [Index roolup](https://opensearch.org/docs/latest/im-plugin/index-rollups/index/)
+    * N/A - can use OpenSearch specific engine downsampling via [rollup](https://opensearch.org/docs/latest/im-plugin/index-rollups/index/)
 * **Determining Correct Aggregation Type if Fixed**:
     * Not applicable as it's not fixed.
 * **Querying Over Pre-Computed Temporal Aggregates**:
@@ -158,6 +191,13 @@ The PPL (Pipe Processing Language) architecture within OpenSearch is built to fa
     *  Not directly supported in PPL (supported within OpenSearch Dashboards ).
 * **Full Text Searching**:
     *  Supported, including proximity, phrase, fuzzy queries, etc.
+        * [MATCH](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/functions/relevance.rst#match)
+        * [MATCH_PHRASE](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/functions/relevance.rst#match-phrase)
+        * [MATCH_PHRASE_PREFIX](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/functions/relevance.rst#match-phrase-prefix)
+        * [MULTI_MATCH](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/functions/relevance.rst#multi-match)
+        * [SIMPLE_QUERY_STRING](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/functions/relevance.rst#simple-query-string)
+        * [MATCH_BOOL_PREFIX](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/functions/relevance.rst#match-bool-prefix)
+        * [QUERY_STRING](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/functions/relevance.rst#query-string)
 * **Regular Expressions:**
     * Supported
 * **Extraction Groups:**
@@ -207,6 +247,8 @@ The PPL (Pipe Processing Language) architecture within OpenSearch is built to fa
 * **Querying Sub Graphs:**
     *  Not direct API, possible through complex querying of the [span data](https://github.com/opensearch-project/opensearch-catalog/blob/main/schema/observability/traces/traces.mapping) index.
 * **Compound Predicates:**
+    * Predicates support:
+      * [Basic Operators](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/functions/expressions.rst#basic-predicate-operator)
     * Supported based on how trace data is stored - mostly using the [span data](https://github.com/opensearch-project/opensearch-catalog/blob/main/schema/observability/traces/traces.mapping) index
 * **Joining Different Models:**
     * Not directly supported - work in progress...
@@ -236,6 +278,7 @@ The PPL (Pipe Processing Language) architecture within OpenSearch is built to fa
 
 * **Applying DSL for Telemetry to Metadata:**
     * The DSL may be used to query metadata if it is stored and indexed in a compatible manner.
+    * Specifically PPL supports a pluggable extension for adding DSL support for a specific datasource - [See Prometheus connector](https://github.com/opensearch-project/sql/blob/main/docs/user/ppl/admin/prometheus_connector.rst#ppl-query-support-for-prometheus-connector)
 * **APIs or DSL Differences for Metadata:**
     * Might vary based on how metadata is managed and queried.
 * **Regular Expressions Supported:**
@@ -244,6 +287,10 @@ The PPL (Pipe Processing Language) architecture within OpenSearch is built to fa
     *  Supported as in logs and other query types.
 
 * * *
+
+**Advanced Features**
+ -  
+ - 
 
 ## References
 
