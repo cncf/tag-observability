@@ -461,4 +461,9 @@ metric tag or a list of extracted keys in a log index.
 
 1. How does a query respond if a user is not allowed to access one or more components of a query
    but they are allowed access to other portions?
+
+Currently, access is granted to a project and if a user has access to the project they can query any data source.
+
 1. Do permissions apply to both metadata and data queries?
+
+Yes.
