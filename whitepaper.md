@@ -50,7 +50,7 @@ With the popularization of cloud computing, microservices and distributed system
 
 Applications must be designed and built to include and facilitate mechanisms that make them observable by some entity, e.g., whether this entity is another application or a human without access to the data center. The effort must be made early, beginning with design, and it often requires extra code or infrastructure automation and instrumentation. These cultural and process changes are often challenges or blockers for many organizations. On top of that, many methods and tools out in the market suggest different approaches to reach a reasonable level of observability.
 
-Community research [6](#references) conducted by ClearPath Strategies and Honeycomb.io show that "Three in four teams have yet to begin or are early in their observability journeys" and that "There is momentum behind the shift toward achieving more observable systems". Once one reaches a satisfactory level of observability, there is no doubt of its benefits, but getting started can feel daunting! Cultural changes, different tools, different objectives, different methods. So many details that need to be considered can make this journey confusing and painful. This paper aims to provide clarity so that more software and operations teams can gain the benefits of observability in their systems.
+Once one reaches a satisfactory level of observability, there is no doubt of its benefits, but getting started can feel daunting! Cultural changes, different tools, different objectives, different methods. So many details that need to be considered can make this journey confusing and painful. This paper aims to provide clarity so that more software and operations teams can gain the benefits of observability in their systems.
 
 ### Target Audience
 
@@ -69,21 +69,21 @@ This paper relates to any of the above roles from organizations that wish to del
 
 Cloud computing adoption has helped small, big tech companies optimize cost, scale, and design more efficient products, but it came with its complexity. Since the infrastructure is now remote, temporary, and globally distributed, Sysadmins's control over data centers is now lost. Companies that once had a culture where Administrators and Developers had conflicting goals must change to a new culture where they now must work together as a single team aiming to build reliable software. Several new strategies and tools have emerged from observing the state of Cloud Native systems and helping such companies to keep their systems reliable in this new reality.
 
-During the design and development of an observable system, it must be instrumented to send or expose telemetry data to a third party, usually a set of tools, responsible for providing meaningful information out of the exposed data. That telemetry data frequently comes in the form of metrics and logs, long used by software engineering teams, as well as traces, structured events, profiles, and crash dumps. Each signal has its purpose and best practices, and their misuse can lead to new problems when running software at scale, such as "alert fatigue" and "high cost".
+During the design and development of an observable system, it must be instrumented to send or expose telemetry data to a third party, usually a set of tools, responsible for providing meaningful information out of the exposed data. An alternative can be autoinstrumentation, for example through the Java runtime, pprof, or eBPF. That telemetry data frequently comes in the form of metrics and logs, long used by software engineering teams, as well as traces, structured events, profiles, and crash dumps. Each signal has its purpose and best practices, and their misuse can lead to new problems when running software at scale, such as "alert fatigue" and "high cost".
 
 Even though there are several new challenges, such as culture change, capacity planning, legal issues, and others, many of them were already tackled and solved by innovative companies that entered this new era early. Beginners can learn from their findings and mistakes and follow their best practices to tackle those same issues. This paper will provide the difference between observability signals and how they should be handled, list several different methods that successful companies used when tackling common issues, present several tools that fall under the observability scope and where they should fit in your observability stack, as well as show commonly known gaps that are still unsolved or that a method still isn't very well consolidated in the market.
 
 ### Non Goals
 
-This document is not meant to provide low-level installation guides or configuration details for specific observability projects. It's also not meant to be a detailed deep dive into various standards like W3C context propagation or OpenTelemetry protocol.
+This document is not meant to provide low-level installation guides or configuration details for specific observability projects. It's also not meant to be a detailed deep dive into various standards like W3C context propagation, the Prometheus Exposition format (OpenMetrics), or OpenTelemetry protocol (OTLP).
 
 Instead, we give you a general overview and references to valuable materials like project documentation pieces.
 
 ## What is Observability?
 
-There is no doubt that observability is a desirable property of a system nowadays. Everybody is saying that, right? Some of you may have already started your observability journey, while others are reading this whitepaper right now just because everyone is saying that you should make your systems observable. The fact is that "Observability" has become a buzzword, and like every other buzzword, everyone wants to leave their mark while advocating for it, and what you have heard may have a different meaning from what it originated from. If you're going to level up your game on observability, let's try to make it clear its original purpose.
+There is no doubt that observability is a desirable property of a system. Everybody is saying that, right? Some of you may have already started your observability journey, while others are reading this whitepaper right now just because everyone is saying that you should make your systems observable. The fact is that "Observability" has become a buzzword, and like every other buzzword, everyone wants to leave their mark while advocating for it, and what you have heard may have a different meaning from what it originated from. If you're going to level up your game on observability, let's try to make it clear its original purpose.
 
-"In control theory, observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs" [7](#references). Being less theoretical, it is a function of a system with which humans and machines can observe, understand and act on the state of said system. So yes, observability, by definition, looks simple, but it gets complicated to decide which output(s) a system should have when implemented without an objective in mind. That's when things start to go sideways.
+In control theory, "observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs." [7](#references). Being less theoretical, it is a function of a system with which humans and machines can observe, understand and act on the state of said system. So yes, observability, by definition, looks simple, but it gets complicated to decide which output(s) a system should have when implemented without an objective in mind. That's when things start to go sideways.
 
 When getting started, copying someone else's work is easy. That is one of the blessings and, simultaneously, one of the curses of Open Source. There are many examples online; helm charts, Ansible playbooks, and Terraform modules. One can just run one of those scripts, and you have an observability stack up and running in just a few minutes. It is easy, and it works for others. Therefore it should work for me, right? While we're not trying to encourage you not to use those scripts, you must remember that observability is not just using all the pretty and shiny tools. You must be conscious about what outputs are coming out of your system, and, more important than everything, you need to have an objective in mind! You may think: "Oh, I want to collect this particular data because you never know, I may need that in the future." and you repeat this thought for another data, and another, and another, and then you realize that you are building a data lake instead.
 
@@ -95,7 +95,7 @@ As mentioned, signals are a system's outputs that a human or machine can infer k
 
 There is a really good chance that you have heard about the "Three Observability Pillars", which are metrics, logs, and traces. They are commonly mentioned and probably what you're going to start with. We like to think of them as the "primary signals" instead of "three pillars" for two reasons:
 
-Pillars carry an implicit meaning that if one of the pillars is missing, the whole structure is fated to topple, which is not valid. One can safely use just two or just one signal and still fulfil its observability goals. In fact, basing on one or two signals with a small mix of others is likely the recommended approach due to cost and simplicity (e.g. metrics and logs with ad-hoc tracing).
+Pillars carry an implicit meaning of being foundational. They are a safe place to start, yet are not always required at the same time. In fact, basing on one or two signals with a small mix of others can be a valid trade-off to improve cost efficiency (e.g. metrics and logs with ad-hoc tracing).
 Recently, more signals are becoming popular in open-source communities like application profiles (continuous profiling) and crash dumps. New signals with new semantics may also arise in the near future, and those interested in this topic should keep an eye open for them.
 
 ![Figure 1](/assets/primary-signals.png)
@@ -107,6 +107,8 @@ All signals have different ways of being collected or instrumented. They have di
 ### Metrics
 
 Metrics are numeric representations of data. They fall into two main categories: Already numeric data and data distilled (aggregated) into numbers. An example of the former would be temperature, for the latter– a counter of HTTP requests observed on the webserver.
+
+Numbers are the most efficient way to store data and all established industries trend towards metrics-first over time. As an example, your rent, water, heating, cooling, and power bills are metrics-only, and the bank account you pay them from is metrics-only as well.
 
 Let’s look at a typical example use case for metrics–a gauge that measures the heap memory usage of a host (e.g. virtual machine). Let’s call it “heap-memory-bytes”. The metric consists of a name, a set of labels (sometimes called attributes or tags) and a numerical value for each point in time (e.g. one value per second). Each metric instance, with a certain name and labels, is often called “timeseries” or “stream”.
 
@@ -145,9 +147,9 @@ In the CNCF ecosystem, we see two popular metric data models: [Prometheus](https
 
 #### Metric Cardinality
 
-The important characteristic of the metrics you collect about your workloads is their [cardinality](https://www.robustperception.io/cardinality-is-key/). Generally, for metrics, cardinality means the number of unique metric series collected over a certain period. Table 1 represents the cardinality of two for the t0-t1 period. However, if we had 100 data centers, with 10 000 hosts each, we would likely produce 1 million metric series (cardinality of 1 000 000) over the same duration.
+An important characteristic of the metrics you collect about your workloads is their [cardinality](https://www.robustperception.io/cardinality-is-key/). Generally, for metrics, cardinality means the number of unique metric series collected over a certain period. Table 1 represents the cardinality of two for the t0-t1 period. However, if we had 100 data centers, with 10 000 hosts each, we would likely produce 1 million metric series (cardinality of 1 000 000) over the same duration.
 
-While the 1 million number seems large for a single metric name, it can easily fit a single node database (e.g. Prometheus). It is also significantly cheaper to process than the number of logs or trace events representing every memory allocation.
+While the 1 million number seems large for a single metric name, it can easily fit a single node database. For example, Prometheus can scale into the tens of millions of active series. It is also significantly cheaper to process than the number of logs or trace events representing every memory allocation.
 
 Every efficient metric storage backend or vendor scales with metric cardinality, i.e. the true cost grows with cardinality. Given the typical interval for metrics varies between 1s and 1 minute, the number of samples could also represent cardinality for a certain duration. This is why you see some vendors and systems charging per sample. Many systems also have certain limits to how large cardinality can be over a specific time.
 
@@ -166,19 +168,19 @@ For example, let’s imagine that we want to expand our “heap-memory-bytes” 
 
 > Table 2 shows multiple time series for one example metric with an extra, potentially dangerous, PID label.
 
-This metric implementation goes into a grey area as the cardinality of such a metric could be practically unbounded (around 4 million PIDs are possible in 64-bit systems, and every application restart might take a new unique PID). Suppose we host 100 applications with three replicas on average in each datacenter for one day. In that case, the PID label might bring our metric cardinality for that single metric into a potential billion, if not hundreds of billion timeseries (worse case of many applications restarting often).
+This metric implementation goes into a grey area as the cardinality of such a metric could be practically unbounded (around 4 million PIDs are possible in 64-bit systems, and every application restart might take a new unique PID). Suppose we host 100 applications with three replicas on average in each zone for one day. In that case, the PID label might bring our metric cardinality for that single metric into the billions potentially.
 
 In our example, since we are interested in memory used by certain application replicas, we don’t need a PID as long as we can identify a certain application. If we would be able to identify a replica by some ID (e.g. like pod name in Kubernetes) and we add “replica ID” instead of “PID label”, we could reduce cardinality to a maximum of 300 million series for “heap-memory-bytes” (typically less). If we further remove the host label (do we care on which host the application’s replica uses how much memory?), we could reduce the cardinality (and thus cost) to just 30 000, so 300 (number of all replicas) * 100 (number of data centers)!
 
 Adding the “PID” label has the potential for unbounded cardinality, but it all depends on your infrastructure characteristics. It might be a decision worth the buck, but it might also be an accidental metric cardinality explosion (a surprising amount of series causing scalability issues or cost spikes).
 
-To summarise, metric cardinality is often called the Achilles heel of metrics. This can be misleading, as every piece of observability data has its cost. The efficiency of metrics comes from stable dimensions and their values over time.
+Metric cardinality is often called the Achilles heel of metrics. This can be misleading, as every piece of observability data has its cost. The efficiency of metrics comes from stable dimensions and their values over time.
 
 High cardinality problems often occur because users try to overuse their cheap and efficient metric storages and pipelines for observability data with non-metric characteristics. Suppose we end up with highly unique labels (high cardinality) that cause metrics to have short-living series (a few samples). In that case, we should consider emitting events (logs, traces or profiles) instead of metric samples.
 
 ### Logs
 
-A log is a stream of textual entries describing usage patterns, activities, and operations within an operating system, application, server, or another device.
+Logs are one or more textual entries describing usage patterns, activities, and operations within an operating system, application, server, or another device.
 
 Logs can be categorized into different categories, such as:
 * __Application Logs__ - an application log is created when an event occurs inside an application. These logs help developers understand and measure how applications behave during development and after release.
@@ -189,7 +191,7 @@ Logs can be categorized into different categories, such as:
 
 Logs can be useful in different scenarios - to derive metrics or traces, for security audits, or for debugging. Keeping a record of all application and system-related events makes it possible to understand and even reproduce step-by-step actions leading to a particular situation. These records are notably valuable when performing root-cause analysis providing information to understand the state of the application or system at the moment of the failure.
 
-Information stored in the logs is free from text, making it challenging to derive meaning. Many attempts have been at applying a schema to logs in the past 30 years, but they have yet to be particularly successful. The reason for a schema makes extracting relevant information more accessible. Typically this is done by parsing, segmenting, and analyzing the text in the log file. Log data can also be converted to other observability signals, including metrics and traces. Once the data is a metric, it can be used for understanding the change over time. Log data can also be visualized and analyzed through log analytics technologies.
+Information stored in the logs is freeform text, making it challenging to derive meaning. Many attempts have been at applying a schema to logs in the past 30 years, but they have yet to be particularly successful. The reason for a schema makes extracting relevant information more accessible. Typically this is done by parsing, segmenting, and analyzing the text in the log file. Log data can also be converted to other observability signals, including metrics and traces. Once the data is a metric, it can be used for understanding the change over time. Log data can also be visualized and analyzed through log analytics technologies.
 
 Log levels allow expressing the importance of each log statement. One set of such log levels would be ERROR, WARNING, INFO, and DEBUG. With ERROR being the least-detailed level and DEBUG being the highest-detailed.
 1. __ERROR__ communicates the occurrence and details why a failure happened.
@@ -213,11 +215,11 @@ Traces are typically trees of "tracing data-points", or spans as they are normal
 
 > Image 1 shows the Jaeger project UI, which visualisate spans for a given trace.
 
-Traces typically represent one concrete transaction instance, making them a high-resolution signal in observability. Spans are highly contextualized. Among other things, spans record information about the "parent" span that initiated it. This makes it possible to establish a causal relationship between the different actors of a distributed system, such as services, queues, databases, and so on.
+Traces typically represent one concrete transaction instance, the path a computer took through a specific program, making them a detailed and thus expensive signal in observability. Spans are highly contextualized. Among other things, spans record information about the "parent" span that initiated it. This makes it possible to establish a causal relationship between the different actors of a distributed system, such as services, queues, databases, and so on.
 
 The key mechanism to persist the relationship across different actors is context propagation. While many monitoring systems implemented their own proprietary way of trace context propagation, the industry agreed that trace-context propagation should be standardized. This led to the creation of the W3C Distributed Tracing Working Group and the subsequent release of the W3C Trace Context Specification. W3C Trace Context defines standard HTTP headers and a value format to propagate context information that enables distributed tracing scenarios. The specification standardizes how context information is sent and modified between services. Context information uniquely identifies individual requests in a distributed system and defines a means to add and propagate provider-specific context information.
 
-Today, projects like [OpenTelemetry](https://opentelemetry.io/) or platforms like .NET are using W3C Trace Context as their standard propagation format, and it's to be expected that also cloud infrastructure providers will start supporting W3C Trace Context so that context won't break when passing through managed services like service gateways.
+Today, projects like [OpenTelemetry](https://opentelemetry.io/) or platforms like .NET are using W3C Trace Context as their standard propagation format. Exemplars, trace and span IDs attached to logs and Prometheus metrics, also follow the same format. More cloud-native projects are following this path and in the absence of other design goals, the W3C standard is recommended for use. Once cloud infrastructure providers support it context won't break when passing through managed services like service gateways.
 
 Instrumentation is important for all observability signals, but given the complexity, it plays an essential role in distributed tracing. Instrumentation creates data points and propagates the context from service to service. Without context propagation, we cannot link an incoming HTTP request with its downstream HTTP requests or a message producer and its consumers.
 
@@ -237,7 +239,7 @@ There are several different profilers that can be used for other use cases/resou
 * GPU Profilers
 * Mutex profilers
 * IO profilers
-* Language-specific profilers (e.g. JVM Profiler)
+* Language-specific profilers (e.g. Go pprof, JVM Profiler, and the pprof support currently being added to Java)
 
 And within each of these, there are many sub-types of profiling, all sharing the same goal of understanding the distribution of how a resource is allocated in a system.
 
@@ -256,7 +258,7 @@ Profiling data produced by runtimes typically includes statistics down to the li
 ### Dumps
 
 In software development, core dump files are used to troubleshoot a program, i.e., a crashed process. Classically, the operating system, with the help of some configuration such as location, name convention or file size, writes an image of the process's memory at the time of the crash for analysis. In cloud-native, however, core dump files' collection of a large cluster can easily create a bottleneck in storage or even the network, depending on how the cluster's storage is attached to the cluster nodes. For example, processing-intensive applications could generate core dump files of double-digit Gigabyte size.
-In Linux-based systems, core dump files can be written anywhere via a global setting (/proc/sys/kernel/core_pattern). From kernel 2.6+, there is a new method of dealing with core dumps, with so-called core dump handlers. This means, in other words, that instead of delegating to the operating system the collecting of the file, the crashing process output is pushed to an application standard input, which is in charge of writing the file. For example, in Ubuntu-based distributions, this can be done with the support of both systemd or abort. RedHat-based distributions use the so-called ABRT.
+In Linux-based systems, core dump files can be written anywhere via a global setting (/proc/sys/kernel/core_pattern). From kernel 2.6+, there is a new method of dealing with core dumps, with so-called core dump handlers. This means, in other words, that instead of delegating to the operating system the collecting of the file, the crashing process output is pushed to an application standard input, which is in charge of writing the file. For example, in Debian-based distributions, this can be done with the support of both systemd or abort. RedHat-based distributions use the so-called ABRT.
 As of today, the cloud-native community still needs help with collecting the core dumps. We want to highlight at least two main reasons: Compared to a system where the application developer had access to all knobs to configure name convention, size or even file collection location, in cloud-native, the role of application and infrastructure owners is less clear and therefore (privileged) access to global system settings is less accessible. Further, data persistence is inherent to cloud-native environments: A crashing application, e.g., a pod, needs assistance collecting its core dump file to be written to a persistent volume before restarting.
 An RFC of approximately six years (https://lore.kernel.org/patchwork/patch/643798/) requested namespaced core_pattern support in the Linux kernel community instead of having it as a global system setting. Also, the Docker community has an issue open with people around the same age (https://github.com/moby/moby/issues/19289) asking for core_pattern support in Docker.
 
@@ -264,7 +266,7 @@ An RFC of approximately six years (https://lore.kernel.org/patchwork/patch/64379
 
 Undoubtedly the observability space is complex. As you learned from previous sections, to know more about the state and behaviour of the software we run, we collect different data types, from different angles, with different intervals and pipelines: metrics, logs, traces, profiles and core dumps.
 
-The first question that comes to mind is, why would we ever create so many types? Can't we have just one "catch-them-all" thing? The problem is we can't. In the same way, we can't have a single bicycle that works efficiently on both asphalt roads and off-roads. Each type of signal is highly specialized for its purpose. __Metrics__ are centered around real-time, reliable and cheap monitoring and analytics -- a foundation for the reliable system. We collect __log lines__ that give us more insight into smaller details about the running system for more context. At some point, the details form a request tree, so __distributed tracing__ comes into play with its spans and cross-process context propagation. Sometimes we must dive deeper and jump into __performance application profiles__ to check what piece of code is inefficient and uses an unexpected amount of resources. Capturing __core dumps__ offers valuable insights into application crashes.
+The first question that comes to mind is, why would we ever create so many types? Can't we have just one "catch-them-all" thing? The problem is we can't. In the same way, we can't have a single bicycle that works efficiently on both asphalt roads and off-roads. Each type of signal is highly specialized for its purpose. __Metrics__ are centered around reliable and cheap monitoring and analytics at scale -- a foundation for the reliable system. We collect __log lines__ that give us more insight into smaller details about the running system for more context. At some point, the details form a request tree, so __distributed tracing__ comes into play with its spans and cross-process context propagation. Sometimes we must dive deeper and jump into __performance application profiles__ to check what piece of code is inefficient and uses an unexpected amount of resources. Capturing __core dumps__ offers valuable insights into application crashes.
 
 Having just one signal is rarely enough for a full, convenient observability story. For example, it might be too expensive to put too many details into __metrics__ (cardinality), and it's too expensive to __trace__ every possible operation reliably with near-real-time latency required for alerting. That is why many organizations aim to install and leverage multiple signals for their observability story.
 
@@ -276,7 +278,11 @@ Instead of keeping each observability signal in a silo, there is a way to allow 
 
 ### Signal Correlation
 
-To link observability data together, let's look at common data attached to all signals:
+There are two basic ways to correlate data: By building correlations yourself, or by leveraging already existing data.
+
+Whenever you can, you should use the same metadata structure for all your obseravbility signals. For example, if you are using Kubernetes or Prometheus you're already using labels for your metrics. Use the same labels for your logs whenever you can.
+
+If you have to build it yourself, let's look at common data attached to all signals:
 
 ![Figure 3](/assets/correlation1.png)
 
@@ -343,7 +349,7 @@ Try to combine your tracing and logging client instrumentation so the tracing li
 
 3. Instrument exemplars.
 
-To enable examples, we typically have to change client instrumentation. This is because we must inject Trace ID (when valid) to related metrics, e.g. histogram of request latencies. Many Prometheus clients (e.g. [Go](https://github.com/prometheus/client_golang/blob/v1.16.0/examples/exemplars/main.go)) and [OpenTelemetry SDKs](https://opentelemetry.io/docs/specs/otel/metrics/data-model/#exemplars) support exemplars, so it's the matter of changing corresponding instrumentation code. In the future, we might see more libraries and auto-instrumentation solutions that inject exemplars automatically.
+To enable exameplars, we typically have to change client instrumentation. This is because we must inject Trace ID (when valid) to related metrics, e.g. histogram of request latencies. Many Prometheus clients (e.g. [Go](https://github.com/prometheus/client_golang/blob/v1.16.0/examples/exemplars/main.go)) and [OpenTelemetry SDKs](https://opentelemetry.io/docs/specs/otel/metrics/data-model/#exemplars) support exemplars, so it's the matter of changing corresponding instrumentation code. In the future, we might see more libraries and auto-instrumentation solutions that inject exemplars automatically.
 
 ## Use Cases
 
@@ -351,7 +357,7 @@ Let's go through more advanced use and categorization of observability and its s
 
 ### Box-based Monitoring Categories
 
-Monitoring could be thought of as a subset of observability. Typically we call monitoring a system that can detect known unknowns (as opposed to observability unknown unknowns).
+Sometimes monitoring is called a system that can detect known unknowns -- as opposed to observability which emphasizes being able to find and reason about unknown unknowns as well.
 
 Monitoring, traditionally, was a system admin or human operator (ops) concern. The software wasn't developed with monitoring in mind, and ops folks had to infer the state of the system from external signals (sometimes by "provoking" signals, AKA probing, e.g. with [blackbox exporter](https://github.com/prometheus/blackbox_exporter)). This is what we refer to as close-box monitoring.
 
@@ -390,7 +396,7 @@ Constructing alerts can be very complex, and it is easy to get overwhelmed with 
 
 There are also different severity of alerts–not every alert is equally important, e.g. there is a difference between "paging" and "ticketing" alerts. The terminology here varies a lot. Some people say "alerts" when they specifically mean "pages", i.e. human intervention needed urgently enough to wake somebody up.
 
-The usefulness of "ticketing" alerts is often underestimated, i.e. alerts that need attention eventually but not urgently (as things break in large-scale systems all the time, and they are designed to tolerate those breakages to a certain extent), so they can be part of the normal workflow (of replacing broken disks, for example).
+The usefulness of "ticketing" alerts is often underestimated, i.e. alerts that need attention eventually but not urgently (as things break in large-scale systems all the time, and they are designed to tolerate those breakages to a certain extent), so they can be part of normal work during business hours, for example replacing a broken non-critical disk.
 
 We'll look at three approaches below that you can implement, one being a simpler approach, the second based on burn rate and the last one based on ML models.
 
@@ -442,6 +448,7 @@ So, five percent of a 30-day error budget spent over one hour requires a burn ra
 
 ##### Anomaly Detection
 
+Let us start this section with a word of warning: You will find correlations in any sufficiently large data set. For example, for almost two hundred years the number of pirates on the seas and global warming were inversely proportional until the sharp rise in warming in recent years. 
 While threshold-based alerting provides users with a mechanism to configure alerts based on known values, they can be rigid and unable to adapt to variations in the data caused by seasonality, ongoing rollouts and other scenarios.
 
 The usage of machine learning techniques and statistical models helps understand several months' worth of behavioural patterns and use that to determine if the current sample that is observed is anomalous or not. Several scholarly works and open-source implementations exist to adopt anomaly detection as a mechanism to detect issues in the system that is being observed. See the [eBay user story](https://tech.ebayinc.com/engineering/sherlock.io-an-upgraded-machine-learning-monitoring-system) on this subject.
@@ -521,7 +528,7 @@ From the first words written until its completion, this whitepaper was a communi
 * [Nicolas Takashi][Nicolas Takashi]
 * [Rafael Natali][Rafael Natali]
 * [Richard Anton][Richard Anton]
-* [RichiH Hartmann][RichiH Hartmann]
+* [RichiH "RichiH" Hartmann][Richard Hartmann]
 * [Rob Skillington][Rob Skillington]
 * [Ryan Perry][Ryan Perry]
 * [Shelby Spees][Shelby Spees]
