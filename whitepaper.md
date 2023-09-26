@@ -276,6 +276,8 @@ Furthermore, given we might have up to four or more observability signals, the u
 
 Instead of keeping each observability signal in a silo, there is a way to allow seamless transitions between different signals. In this section, we will dive into signal correlations and how they can help with observability use experience.
 
+**Recommendation**: All of this can be a lot to take in. If you need to decide where to start today, start with what you already have. In any cloud-native or networking environments you can likely start with metrics and with logs in more traditional setups. Work towards getting metrics into good shape, and then branch out into other signal types. This will likely have both the shortest time to value and the best cost efficiency for you.
+
 ### Signal Correlation
 
 There are two basic ways to correlate data: By building correlations yourself, or by leveraging already existing data.
