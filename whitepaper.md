@@ -1,5 +1,8 @@
 # Observability Whitepaper
 
+> NOTE: This is a "tip" version of the observability whitepaper. This is where
+> we develop future v1.1+ versions with the community. For 1.0 version see [here](https://github.com/cncf/tag-observability/blob/whitepaper-v1.0.0/whitepaper.md).
+
 Welcome to the community-driven version 1.0 of the observability whitepaper.
 Led by TAG Observability in the CNCF ecosystem, it was released in October 2023.
 
