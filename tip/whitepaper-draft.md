@@ -1,6 +1,9 @@
 # Observability Whitepaper
 
-Welcome to the community-driven version 1.0 of the observability whitepaper. Led by TAG Observability in the CNCF ecosystem, it was released in August 2023.
+This is the tip version of the community-driven observability whitepaper. Feel free
+to propose PRs and fixes. At some point we will publish 1.X or 2.0 with those changes.
+
+Led by TAG Observability in the CNCF ecosystem, it was released in August 2023.
 
 This version of our whitepaper paper is only a start! There are many more topics to cover and things to add.
 
@@ -9,31 +12,31 @@ See [the contributing section](#contributing) on proposing changes to this paper
 ## Table of Contents
 * [Executive Summary](#executive-summary)
 * [Introduction](#introduction)
-  * [Target Audience](#target-audience)
-  * [Goals](#goals)
-  * [Non Goals](#non-goals)
+    * [Target Audience](#target-audience)
+    * [Goals](#goals)
+    * [Non Goals](#non-goals)
 * [What is Observability?](#what-is-observability)
 * [Observability Signals](#observability-signals)
-  * [Metrics](#metrics)
-    * [Metric Cardinality](#metric-cardinality)
-  * [Logs](#logs)
-  * [Traces](#traces)
-  * [Profiles](#profiles)
-  * [Dumps](#dumps)
+    * [Metrics](#metrics)
+        * [Metric Cardinality](#metric-cardinality)
+    * [Logs](#logs)
+    * [Traces](#traces)
+    * [Profiles](#profiles)
+    * [Dumps](#dumps)
 * [Correlating Observability Signals](#correlating-observability-signals)
-  * [Signal correlation](#signal-correlation)
-  * [Practical applications](#practical-applications)
-  * [Practical implementations](#practical-implementations)
+    * [Signal correlation](#signal-correlation)
+    * [Practical applications](#practical-applications)
+    * [Practical implementations](#practical-implementations)
 * [Use cases](#use-cases)
-  * [Box-based Monitoring Categories](#box-based-monitoring-categories)
-  * [Implementing SLIs, SLOs and SLAs](#implementing-slis-slos-and-slas)
-  * [Alerting on Observability data](#alerting-on-observability-data)
-  * [Root Cause Analysis](#root-cause-analysis)
+    * [Box-based Monitoring Categories](#box-based-monitoring-categories)
+    * [Implementing SLIs, SLOs and SLAs](#implementing-slis-slos-and-slas)
+    * [Alerting on Observability data](#alerting-on-observability-data)
+    * [Root Cause Analysis](#root-cause-analysis)
 * [Current Gaps around Observability](#current-gaps-around-observability)
-  * [Automatic and non-intrusive instrumentation in OSS](#automatic-and-non-intrusive-instrumentation-in-oss)
-  * [Standardized query layer](#standardized-query-layer)
-  * [More Observability Databases in OSS](#more-observability-databases-in-oss)
-  * [Monitoring for Streaming APIs](#monitoring-for-streaming-apis)
+    * [Automatic and non-intrusive instrumentation in OSS](#automatic-and-non-intrusive-instrumentation-in-oss)
+    * [Standardized query layer](#standardized-query-layer)
+    * [More Observability Databases in OSS](#more-observability-databases-in-oss)
+    * [Monitoring for Streaming APIs](#monitoring-for-streaming-apis)
 * [References](#references)
 * [Contributors](#contributors)
 * [Contributing](#contributing)
@@ -450,7 +453,7 @@ So, five percent of a 30-day error budget spent over one hour requires a burn ra
 
 ##### Anomaly Detection
 
-Let us start this section with a word of warning: You will find correlations in any sufficiently large data set. For example, for almost two hundred years the number of pirates on the seas and global warming were inversely proportional until the sharp rise in warming in recent years. 
+Let us start this section with a word of warning: You will find correlations in any sufficiently large data set. For example, for almost two hundred years the number of pirates on the seas and global warming were inversely proportional until the sharp rise in warming in recent years.
 
 While threshold-based alerting provides users with a mechanism to configure alerts based on known values, they can be rigid and unable to adapt to variations in the data caused by seasonality, ongoing rollouts and other scenarios.
 
@@ -512,25 +515,25 @@ From the first words written until its completion, this whitepaper was a communi
 * [Charles Pretzer](https://github.com/cpretzer)
 * [Daniel Khan](https://github.com/danielkhan)
 * [David Grizzanti](https://github.com/dgrizzanti)
-* [Debashish Ghatak](https://github.com/wallydrag) 
+* [Debashish Ghatak](https://github.com/wallydrag)
 * [Dominic Finn](https://github.com/dofinn)
-* [Frederic Branczyk](https://github.com/brancz)  
+* [Frederic Branczyk](https://github.com/brancz)
 * [Gibbs Cullen](https://github.com/gibbscullen)
-* [Gil Raphaelli](https://github.com/graphaelli) 
-* [Goutham Veeramachaneni](https://github.com/gouthamve) 
-* [Gregor Zeitlinger](https://github.com/zeitlinger)  
+* [Gil Raphaelli](https://github.com/graphaelli)
+* [Goutham Veeramachaneni](https://github.com/gouthamve)
+* [Gregor Zeitlinger](https://github.com/zeitlinger)
 * [Jaana Dogan](https://github.com/rakyll)
 * [Jason Morgan](https://github.com/wmorgan)
 * [Jonah Kowall](https://github.com/jkowall)
-* [Juraci Paixão Kröhling](https://github.com/jpkrohling)  
+* [Juraci Paixão Kröhling](https://github.com/jpkrohling)
 * [Ken Finnigan](https://github.com/kenfinnigan)
-* [Krisztian Fekete](https://github.com/krisztianfekete) 
-* [Liz Fong-Jones](https://github.com/lizthegrey)  
+* [Krisztian Fekete](https://github.com/krisztianfekete)
+* [Liz Fong-Jones](https://github.com/lizthegrey)
 * [Matt Young](https://github.com/halcyondude)
-* [Michael Hausenblas](https://github.com/mhausenblas)  
+* [Michael Hausenblas](https://github.com/mhausenblas)
 * [Nicolas Takashi](https://github.com/nicolastakashi)
-* [Rafael Natali](https://github.com/rafaelmnatali) 
-* [Richard Anton](https://github.com/ranton256) 
+* [Rafael Natali](https://github.com/rafaelmnatali)
+* [Richard Anton](https://github.com/ranton256)
 * [RichiH "RichiH" Hartmann](https://github.com/RichiH)
 * [Rob Skillington](https://github.com/robskillington)
 * [Ryan Perry](https://github.com/Rperry2174)
@@ -539,7 +542,7 @@ From the first words written until its completion, this whitepaper was a communi
 * [Simone Ferlin](https://github.com/sferlin)
 * [Tim Tischler](https://github.com/tischler)
 * [Vijay Samuel](https://github.com/vjsamuel)
-* [Wiard van Rjj](https://github.com/wiardvanrij)  
+* [Wiard van Rjj](https://github.com/wiardvanrij)
 
 Thanks, all of you!
 
@@ -550,5 +553,3 @@ Found a typo or misleading information in this paper? Looking for more informati
 * See existing [GH issues marked for v1.1 version](https://github.com/cncf/tag-observability/labels/cn-o11y-whitepaper-v1.1).
 * For ideas, typos, and contributions, create a PR or add [GH issue](https://github.com/cncf/tag-observability/labels/cn-o11y-whitepaper-v1.1) for `v1.1/wip` version of this document.
 * Feel free to join our [TAG Observability Meetings or Slack](https://github.com/cncf/tag-observability/#how-we-communicate) to share feedback and questions!
-
-All changes should be against the tip version we maintain in [here](tip/whitepaper-draft.md)
