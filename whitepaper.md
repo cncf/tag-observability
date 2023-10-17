@@ -1,6 +1,7 @@
 # Observability Whitepaper
 
-Welcome to the community-driven version 1.0 of the observability whitepaper. Led by TAG Observability in the CNCF ecosystem, it was released in August 2023.
+Welcome to the community-driven version 1.0 of the observability whitepaper.
+Led by TAG Observability in the CNCF ecosystem, it was released in October 2023.
 
 This version of our whitepaper paper is only a start! There are many more topics to cover and things to add.
 
@@ -548,7 +549,5 @@ Thanks, all of you!
 Found a typo or misleading information in this paper? Looking for more information? Help us to evolve and maintain this paper! Here is how you can get involved:
 
 * See existing [GH issues marked for v1.1 version](https://github.com/cncf/tag-observability/labels/cn-o11y-whitepaper-v1.1).
-* For ideas, typos, and contributions, create a PR or add [GH issue](https://github.com/cncf/tag-observability/labels/cn-o11y-whitepaper-v1.1) for `v1.1/wip` version of this document.
+* For ideas, typos, and contributions, create a PR or add [GH issue](https://github.com/cncf/tag-observability/labels/cn-o11y-whitepaper-v1.1) against this file. Make sure they are using US English grammar. Ideally run it through [Grammarly](https://www.grammarly.com/)(free version is fine) or similar tools. Make sure to have clear message goals in mind, what you want to share, focus on full OSS tools and avoid very short sections (try to integrate with existing ones if possible).
 * Feel free to join our [TAG Observability Meetings or Slack](https://github.com/cncf/tag-observability/#how-we-communicate) to share feedback and questions!
-
-All changes should be against the tip version we maintain in [here](tip/whitepaper-draft.md)
