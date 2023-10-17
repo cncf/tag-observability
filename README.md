@@ -7,6 +7,12 @@ Technical Advisory Group for Observability under the umbrella of [CNCF](https://
 TAG Observability focuses on topics pertaining to the observation of cloud native workloads. Additionally, it produces
 supporting material and best practices for end-users and provides guidance and coordination for CNCF projects working within the TAG’s scope.
 
+### Whitepaper
+
+See our [latest 1.0 observability whitepaper](https://github.com/cncf/tag-observability/blob/whitepaper-v1.0.0/whitepaper.md) to kickstart your observability journey or enhance what you know so far! 💪🏽
+
+[Contributions](./whitepaper.md) welcome to evolve it further.
+
 ### Scope
 
 Excerpts from the [Observability Charter Document](observability-charter.md):
