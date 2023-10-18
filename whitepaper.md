@@ -509,7 +509,7 @@ Unfortunately, both methodologies are hard to implement for Streaming APIs. With
 From the first words written until its completion, this whitepaper was a community effort. From synchronous discussion during our bi-weekly meeting, asynchronous discussions on [#tag-observability slack-channel](https://cloud-native.slack.com/archives/CTHCQKK7U) or comments and suggestions on multiple draft documents, we had way more contributors than we have ever expected. Here is an alphabetic order of contributors that have helped us.
 
 * [Alex Jones](https://github.com/AlexsJones)
-* [Alois Reitbauers](https://github.com/AloisReitbauer)
+* [Alois Reitbauer](https://github.com/AloisReitbauer)
 * [Arthur Silva Sens](https://github.com/ArthurSens)
 * [Bartłomiej Płotka](https://github.com/bwplotka)
 * [Björn Rabenstein](https://github.com/beorn7)
