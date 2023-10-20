@@ -458,7 +458,7 @@ Let us start this section with a word of warning: You will find correlations in 
 
 While threshold-based alerting provides users with a mechanism to configure alerts based on known values, they can be rigid and unable to adapt to variations in the data caused by seasonality, ongoing rollouts and other scenarios.
 
-The usage of machine learning techniques and statistical models helps understand several months' worth of behavioural patterns and use that to determine if the current sample that is observed is anomalous or not. Several scholarly works and open-source implementations exist to adopt anomaly detection as a mechanism to detect issues in the system that is being observed. See the [eBay user story](https://tech.ebayinc.com/engineering/sherlock.io-an-upgraded-machine-learning-monitoring-system) on this subject.
+The usage of machine learning techniques and statistical models helps understand several months' worth of behavioural patterns and use that to determine if the current sample that is observed is anomalous or not. Several scholarly works and open-source implementations exist to adopt anomaly detection as a mechanism to detect issues in the system that is being observed. See the [eBay user story](https://ebayinc.to/4840wUR) on this subject.
 
 With ML-based dynamic thresholds come complexities. There are disputes if such alerts can be reliable enough for paging humans or automatic remediations. However, there is no doubt they can be extremely valuable as troubleshooting suggestions and hints.
 
