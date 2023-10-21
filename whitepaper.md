@@ -87,7 +87,7 @@ Instead, we give you a general overview and references to valuable materials lik
 
 There is no doubt that observability is a desirable property of a system. Everybody is saying that, right? Some of you may have already started your observability journey, while others are reading this whitepaper right now just because everyone is saying that you should make your systems observable. The fact is that "Observability" has become a buzzword, and like every other buzzword, everyone wants to leave their mark while advocating for it, and what you have heard may have a different meaning from what it originated from. If you're going to level up your game on observability, let's try to make it clear its original purpose.
 
-In control theory, "observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs." [7](#references). Being less theoretical, it is a function of a system with which humans and machines can observe, understand and act on the state of said system. So yes, observability, by definition, looks simple, but it gets complicated to decide which output(s) a system should have when implemented without an objective in mind. That's when things start to go sideways.
+In control theory, "observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs."<sup>[[7]](#references)</sup> Being less theoretical, it is a function of a system with which humans and machines can observe, understand and act on the state of said system. So yes, observability, by definition, looks simple, but it gets complicated to decide which output(s) a system should have when implemented without an objective in mind. That's when things start to go sideways.
 
 When getting started, copying someone else's work is easy. That is one of the blessings and, simultaneously, one of the curses of Open Source. There are many examples online; helm charts, Ansible playbooks, and Terraform modules. One can just run one of those scripts, and you have an observability stack up and running in just a few minutes. It is easy, and it works for others. Therefore it should work for me, right? While we're not trying to encourage you not to use those scripts, you must remember that observability is not just using all the pretty and shiny tools. You must be conscious about what outputs are coming out of your system, and, more important than everything, you need to have an objective in mind! You may think: "Oh, I want to collect this particular data because you never know, I may need that in the future." and you repeat this thought for another data, and another, and another, and then you realize that you are building a data lake instead.
 
@@ -104,7 +104,7 @@ Recently, more signals are becoming popular in open-source communities like appl
 
 ![Figure 1](/assets/primary-signals.png)
 
-> Figure 1 shows three primary signals that help to categorize the data we can observe from the workloads. Note that not all metrics are semantically aggregatable, but they generally can be aggregatable in an easier way (or represent a group of events by itself). Lower volume scale also refers to typical volume–you can produce too much data with metrics, but it's a little harder than with logs and traces.
+_Figure 1 shows three primary signals that help to categorize the data we can observe from the workloads. Note that not all metrics are semantically aggregatable, but they generally can be aggregatable in an easier way (or represent a group of events by itself). Lower volume scale also refers to typical volume–you can produce too much data with metrics, but it's a little harder than with logs and traces._
 
 All signals have different ways of being collected or instrumented. They have different resource costs to obtain, store, and analyze while providing different ways to observe the same system. Choosing between them or all of them is a game of trade-offs like all other tasks in engineering. In the next sections, we will help you make this decision by digging deeper into each signal, starting with the people's favourites: metrics, logs, and traces, and then the two newly emerging signals: application profiles and crash dumps.
 
@@ -123,7 +123,7 @@ The “heap-memory-bytes” would allow us to view the heap memory usage of each
 | heap-memory-bytes | host      | host123     | data-center | c1          | 11231            | 11200    |
 | heap-memory-bytes | host      | host234     | data-center | c1          | 300203           | 412103   |
 
-> Table 1 shows two timeseries for one example metric. Their metric names, labels and values for certain timestamps are represented in a tabular view with columns.
+_Table 1 shows two timeseries for one example metric. Their metric names, labels and values for certain timestamps are represented in a tabular view with columns._
 
 Distilled data lose some details. Metrics represent point-in-time observations of the state of a system, which means that, in our "heap-memory-bytes" example, we don't know the heap value between the observed interval (between t0 and t1). We also cannot answer anything more granular than the host, e.g. what process IDs are used and how many heap bytes. This differs from logs or traces, which focus on records or information about individual events with more details (e.g. "the process A allocated 20 bytes on the host B").
 
@@ -170,7 +170,7 @@ For example, let’s imagine that we want to expand our “heap-memory-bytes” 
 | heap-memory-bytes | host      | host234     | PID       | 34          | data-center | c1          | 300203           | 412103   |
 | …                 |           |             |           |             |             |             |                  |          |
 
-> Table 2 shows multiple time series for one example metric with an extra, potentially dangerous, PID label.
+_Table 2 shows multiple time series for one example metric with an extra, potentially dangerous, PID label._
 
 This metric implementation goes into a grey area as the cardinality of such a metric could be practically unbounded (around 4 million PIDs are possible in 64-bit systems, and every application restart might take a new unique PID). Suppose we host 100 applications with three replicas on average in each zone for one day. In that case, the PID label might bring our metric cardinality for that single metric into the billions potentially.
 
@@ -217,7 +217,7 @@ Traces are typically trees of "tracing data-points", or spans as they are normal
 
 ![Image 1](/assets/tracing.png)
 
-> Image 1 shows the Jaeger project UI, which visualisate spans for a given trace.
+_Image 1 shows the Jaeger project UI, which visualisate spans for a given trace._
 
 Traces typically represent one concrete transaction instance, the path a computer took through a specific program, making them a detailed and thus expensive signal in observability. Spans are highly contextualized. Among other things, spans record information about the "parent" span that initiated it. This makes it possible to establish a causal relationship between the different actors of a distributed system, such as services, queues, databases, and so on.
 
@@ -231,7 +231,7 @@ Instrumentation has two main purposes for distributed tracing: context propagati
 
 ![Figure 2](/assets/trace-spans.png)
 
-> Figure 2 shows span relations across network calls.
+_Figure 2 shows span relations across network calls._
 
 ### Profiles
 
@@ -257,7 +257,7 @@ Profiling data produced by runtimes typically includes statistics down to the li
 
 ![Image 2](/assets/profile.png)
 
-> Image 2 shows an example icicle graph for a CPU profile of an application written in Go. It includes a kernel operation done by the Syscall call. This profile highlights that 35% of CPU time was used to compute hash, indicating potential optimization opportunities. [Source](https://pprof.me/9ce2c2d/).
+_Image 2 shows an example icicle graph for a CPU profile of an application written in Go. It includes a kernel operation done by the Syscall call. This profile highlights that 35% of CPU time was used to compute hash, indicating potential optimization opportunities. [Source](https://pprof.me/9ce2c2d/)._
 
 ### Dumps
 
@@ -292,13 +292,13 @@ If you have to build it yourself, let's look at common data attached to all sign
 
 ![Figure 3](/assets/correlation1.png)
 
-> Figure 3 shows common links between four observability signals.
+_Figure 3 shows common links between four observability signals._
 
 Thanks to the continuous collection of all observability signals, every piece of data is scoped to some timestamp. This allows us to filter data for signals within a __certain time window__, sometimes up to milliseconds. On the different dimension, thanks to the situation presented in the figure above, each of the observability signals is usually bound to a certain "target". To identify the target, __the target metadata__ has to be present, which in theory, allows us to see metrics, profiles, traces, and log lines from the target. To narrow it further, adding extra metadata to all signals about the __code component__ the observability data is gathered from, e.g. "factory", is not uncommon.
 
 ![Figure 4](/assets/correlation2.png)
 
-> Figure 4 shows how to jump across different observability signals using consistent target metadata.
+_Figure 4 shows how to jump across different observability signals using consistent target metadata._
 
 The flow presented in Figure 4 alone is quite powerful because it allows us to navigate quickly from each signal by selecting items from each signal related to a certain process or code component and time. With this in mind, some frontends like Grafana already allow such links and side views to be created.
 
@@ -306,7 +306,7 @@ But this is not the end. We sometimes have further details that are sometimes at
 
 ![Figure 5](/assets/correlation3.png)
 
-> Figure 5 shows how to jump between logs and traces using request or operation ID.
+_Figure 5 shows how to jump between logs and traces using request or operation ID._
 
 While such a level of correlation might be good enough for some use cases, we might be missing an important one: Large Scale! Processes in such large systems do not handle a few requests. They perform trillions of operations for vastly different purposes and effects. Even if we can get all log lines or traces from a single process, even for a second, how do you find the request, operation or trace ID relevant to your goal from thousands of concurrent requests being processed then? Powerful logging languages (e.g. [LogQL](https://grafana.com/docs/loki/latest/logql/)) allow you to grep logs for details like log levels, error statuses, messages, code files, etc. However, this requires you to understand the available fields, their format, and how it maps to the situation.
 
@@ -318,7 +318,7 @@ This sounds great, but as we know, such aggregated data, like metrics or some lo
 
 ![Figure 6](/assets/correlation4.png)
 
-> Figure 6 shows all possible links using target metadata, request or operation ID or exemplars.
+_Figure 6 shows all possible links using target metadata, request or operation ID or exemplars._
 
 We can use all links in the mix in a perfect observability system, giving us smooth flexibility in inspecting our system from multiple signals or viewpoints.
 
@@ -330,13 +330,13 @@ We discussed ways you can navigate between signals, but is it useful? Let's go t
 
 ![Figure 7](/assets/correlation5.png)
 
-> Figure 7 shows an example troubleshooting story that starts from the alert and utilizes smooth observability correlations.
+_Figure 7 shows an example troubleshooting story that starts from the alert and utilizes smooth observability correlations._
 
 * We got an alert about an unexpectedly high error rate exceeding our SLO. Alert is based on a counter of errors, and we see a spike of requests resulting in 501 errors. We take __exemplar__ to navigate to the example log line to learn the exact human-friendly error message. It appears the error is coming from an internal microservice behind many hops, so we navigate to traces thanks to the existence of a __request ID__ that matches __trace ID__. Thanks to that, we know exactly what service/process is responsible for the problem and dig deeper.
 
-![Figure 8](/assets/correlation6.png)
+   ![Figure 8](/assets/correlation6.png)
 
-> Figure 8 shows a different example troubleshooting story that starts from the trace and utilizes target metadata correlation.
+   _Figure 8 shows a different example troubleshooting story that starts from the trace and utilizes target metadata correlation._
 
 * We debug slow requests. We manually triggered requests with trace sampling and obtained __trace ID__. Thanks to the tracing view, we can see among a few processes in the way of requests, it was an ABC-1 request that is surprisingly slow for basic operations. Thanks to target metadata and time, we select relevant CPU usage metrics. We see high CPU usage, close to the machine limits, indicating CPU saturation. To learn why the CPU is so heavily used (especially if it's the only process in the container), we navigate to the CPU profile using the same __target metadata__ and __time__ selection.
 
@@ -347,15 +347,15 @@ Let's iterate on items we have to implement to ensure the links mentioned in Fig
 
 1. Consistent __target__ metadata is attached to all signals.
 
-We need consistent metadata to switch between observability signals from the same target (e.g., the same application). This might mean leveraging pull-based systems like Prometheus or OpenTelemetry Prometheus receiver (metrics), log tailing collectors (OpenTelemetry, Fluentd, Fluentbit etc.) and ensuring a set of consistent target labels or attributes, e.g. "cluster", "environment", "pod" and "container_name" are attached by your collector or agent. When dealing with push-based collections like [OTLP](https://opentelemetry.io/docs/specs/otel/protocol/) (metrics, logs and tracing), the instrumented application typically attaches the target information, thus ensuring consistency.
+   We need consistent metadata to switch between observability signals from the same target (e.g., the same application). This might mean leveraging pull-based systems like Prometheus or OpenTelemetry Prometheus receiver (metrics), log tailing collectors (OpenTelemetry, Fluentd, Fluentbit etc.) and ensuring a set of consistent target labels or attributes, e.g. "cluster", "environment", "pod" and "container_name" are attached by your collector or agent. When dealing with push-based collections like [OTLP](https://opentelemetry.io/docs/specs/otel/protocol/) (metrics, logs and tracing), the instrumented application typically attaches the target information, thus ensuring consistency.
 
 2. Consider making Operation ID, Request ID or Trace ID the same unique ID and attach it to the logging system (not only tracing!).
 
-Try to combine your tracing and logging client instrumentation so the tracing library generates Trace ID (which essentially represents a unique request coming through different microservices). The same Trace ID can be attached to your logline when logging an event connected to the request.
+   Try to combine your tracing and logging client instrumentation so the tracing library generates Trace ID (which essentially represents a unique request coming through different microservices). The same Trace ID can be attached to your logline when logging an event connected to the request.
 
 3. Instrument exemplars.
 
-To enable exameplars, we typically have to change client instrumentation. This is because we must inject Trace ID (when valid) to related metrics, e.g. histogram of request latencies. Many Prometheus clients (e.g. [Go](https://github.com/prometheus/client_golang/blob/v1.16.0/examples/exemplars/main.go)) and [OpenTelemetry SDKs](https://opentelemetry.io/docs/specs/otel/metrics/data-model/#exemplars) support exemplars, so it's the matter of changing corresponding instrumentation code. In the future, we might see more libraries and auto-instrumentation solutions that inject exemplars automatically.
+   To enable exameplars, we typically have to change client instrumentation. This is because we must inject Trace ID (when valid) to related metrics, e.g. histogram of request latencies. Many Prometheus clients (e.g. [Go](https://github.com/prometheus/client_golang/blob/v1.16.0/examples/exemplars/main.go)) and [OpenTelemetry SDKs](https://opentelemetry.io/docs/specs/otel/metrics/data-model/#exemplars) support exemplars, so it's the matter of changing corresponding instrumentation code. In the future, we might see more libraries and auto-instrumentation solutions that inject exemplars automatically.
 
 ## Use Cases
 
@@ -388,7 +388,7 @@ For a proposed SLO to be useful and effective, all stakeholders must agree to it
 
 ![Figure 9](/assets/slo.png)
 
-> Figure 9 shows the steps required to define SLI, SLO and SLAs.
+_Figure 9 shows the steps required to define SLI, SLO and SLAs._
 
 ### Alerting on Observability data
 
@@ -422,11 +422,11 @@ This has the advantage of being simple to see what's happening in the alert logi
 
 Alerting on burn rate is a more sophisticated method that will likely yield more actionable alerts. First, let's define burn rate and error budgets in more detail.
 
-Inherent in all SLO definitions is the concept of an error budget. By stating an SLO of 99.9%, you're saying that a .1% failure rate (i.e. your error budget) is acceptable for some predefined time (your SLO window). "Burn rate is how fast, relative to the SLO, the service consumes the error budget" [8](#references). So, for example, if a "service uses a burn rate of 1, it means it's consuming error budget at a rate that leaves you with exactly 0 budget at the end of the SLO's time window. With an SLO of 99.9% over a time window of 30 days, a constant 0.1% error rate uses exactly all of the error budget: a burn rate of 1." [8](#references)
+Inherent in all SLO definitions is the concept of an error budget. By stating an SLO of 99.9%, you're saying that a .1% failure rate (i.e. your error budget) is acceptable for some predefined time (your SLO window). "Burn rate is how fast, relative to the SLO, the service consumes the error budget"<sup>[[8]](#references)</sup>. So, for example, if a "service uses a burn rate of 1, it means it's consuming error budget at a rate that leaves you with exactly 0 budget at the end of the SLO's time window. With an SLO of 99.9% over a time window of 30 days, a constant 0.1% error rate uses exactly all of the error budget: a burn rate of 1."<sup>[[8]](#references)</sup>
 
 ![Figure 10](/assets/burn-rate.png)
 
-> Figure 10 shows errors relative to burn rate.
+_Figure 10 shows errors relative to burn rate._
 
 | Burn rate | Error rate for a 99.9% SLO | time to exhaustion |
 |-----------|----------------------------|--------------------|
@@ -435,19 +435,24 @@ Inherent in all SLO definitions is the concept of an error budget. By stating an
 | 10        | 1%                         | 3 days             |
 | 1000      | 100%                       | 43 minutes         |
 
-> Table 3 shows burn rates and time to complete budget exhaustion.
+_Table 3 shows burn rates and time to complete budget exhaustion._
 
 The burn rate will allow us to reduce the size of our window and create an alert with good detection time and high precision. For our example, assume keeping the alert window fixed at one hour and deciding that a 5% error budget spend is significant enough to notify someone; you can then derive the burn rate to use for the alert.
 
 For burn rate–based alerts, the time taken for an alert to fire is:
+
 ```
 (1 - SLO / error ratio) * alerting windows size * burn rate
 ```
+
 And the error budget consumed by the time the alert fires is:
+
 ```
 (burn rate * alerting window size) / time period
 ```
+
 So, five percent of a 30-day error budget spent over one hour requires a burn rate of 36. The alerting rule now becomes:
+
 ```
 (sum(rate(http_requests_total{code=~"5.*"}[1h])) / sum(rate(http_requests_total[1h]))) > 36 * .001
 ```
