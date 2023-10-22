@@ -6,7 +6,7 @@
 Welcome to the community-driven version 1.0 of the observability whitepaper.
 Led by TAG Observability in the CNCF ecosystem, it was released in October 2023.
 
-This version of our whitepaper paper is only a start! There are many more topics to cover and things to add.
+This version of our whitepaper is only a start! There are many more topics to cover and things to add.
 
 See [the contributing section](#contributing) on proposing changes to this paper and helping us grow this knowledge base for all the CNCF users.
 
