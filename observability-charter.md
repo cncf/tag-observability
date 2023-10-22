@@ -31,6 +31,7 @@ and [Umair Ishaq][Umair Ishaq].*
 <!-- TODO: please put github names here -->
 [Alex Nauda]:                 @
 [Alois Reitbauer]:            https://github.com/aloisreitbauer
+[Alolita Sharma]:             @
 [Bartłomiej (Bartek) Płotka]: https://github.com/bwplotka
 [Brendan Burns]:              https://github.com/brendandburns
 [Daniel Khan]:                @
@@ -51,7 +52,7 @@ and [Umair Ishaq][Umair Ishaq].*
 ## Introduction
 
 This document describes the purpose and operations of the Cloud Native
-Computing Foundation ([CNCF]) Technical Advisory Group([TAG]) on Observability.
+Computing Foundation ([CNCF]) Technical Advisory Group ([TAG]) on Observability.
 
 This [TAG] focuses on topics pertaining to the observation
 of [cloud native][cn-def] workloads. Additionally, it produces supporting
@@ -124,7 +125,7 @@ topics such as:
   like SLI/KPI, service objectives, and internal/external commitments.
 
 The following is a non-exhaustive sample list of activities and deliverables
-that are in-scope for this TAG
+that are in-scope for this TAG:
 
 - Summary and overview of projects available in the community.
 - Catalog of reference architectures that draw from CNCF projects, combining
@@ -158,7 +159,7 @@ Examples include:
 - Security aspects that need to be present when setting up cloud native
   infrastructure, these might be more relevant for TAG Security.
 - How cloud native applications that need observability are deployed; this would
-  fall in the scope of TAG App Delivery
+  fall in the scope of TAG App Delivery.
 - Tools and projects that are used to run cloud native workloads that in some
   cases need observability would fall under the scope of TAG-Runtime.
 
@@ -191,11 +192,11 @@ Examples include:
 - [Roles][tagroles] for TAG Observability
   - TOC Liaison: Lei Zhang, Cornelia Davis
   - TAG Chairs:
-    - [Alolita Sharma] [alolita]
-    - [Matthew Young][matthew young]
+    - [Alolita Sharma][Alolita Sharma]
+    - [Matthew Young][Matthew Young]
     - [Richard Hartmann][Richard Hartmann]
   - Tech Leads ([definition][tagtldefinition], [TL election][tagtlprocess])
-    - Bartłomiej Płotka
+    - [Bartłomiej Płotka][Bartłomiej (Bartek) Płotka]
     - TBD more
 
 [tagform]: https://github.com/cncf/toc/tree/main/tags#tag-formation-process
