@@ -37,7 +37,7 @@ answers into a shared document and schedule a follow-up call to discuss the answ
       databases, etc.?
    1. If joining of various time series sources is available, how are differing retentions 
       handled? 
-1. How tightly coupled is the DSL to the data store model? (1 to 10 with 10 being extremely)
+1. How tightly coupled is the DSL to the data store model? (1 to 10 with 10 being extremely
    tightly coupled)
    1. Is the DSL flexible enough to operate on data in different storage formats or contexts?
 1. What character sets are supported by the DSL?
@@ -86,7 +86,7 @@ are generally numerical time series or a single number.
       on timestamp?
    1. Can users select an interpolation scheme at query time?
 1. For DSLs that expect metrics to be bucketed at source:
-   1. How is missing data for an interval emitted in the final output? (e.g. graph or JSON)
+   1. How is missing data for an interval emitted in the final output? E.g. graph or JSON.
    2. How is missing data represented internally during processing? E.g. as a null, a NaN, etc.
    1. How is missing data handled for various aggregations? E.g. for a sum, if some series are missing
    data points are those missing points treated as zeros? Or the entire window omitted?
