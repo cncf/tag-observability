@@ -1,4 +1,4 @@
-# Google Monitoring Query Language DSL Survey Response
+# Q (KX) Query Language DSL Survey Response
 
 ### **Short Description:**
 
