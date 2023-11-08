@@ -19,23 +19,75 @@ in an open source repo.
 
 1. List any over-arching design goals for the DSL. For example URI friendliness, minimal syntax,
    advanced analytical capabilities, etc.
+
+   - Composability: A user can take a working query and use it as a direct building block of a more complex query (e.g. a metric query as an arm of a join).
+   - Linear Flow: The order of the query stages matches the order of operations performed by the query engine. Queries read left-to-right in a coherent way.
+   - Clarity: When in doubt, be explicit. This helps users author queries that do what they intend by reducing the amount of magic involved.
+
 1. What deficiencies or omissions in other DSLs lead to your decision to design a new language?
+
+   The characteristics above weren’t something we found in other DSLs.
+
+   We found other DSLs required a lot of work from the query author to calculate what they intend—particularly with aggregations and grouping. It was important to us that grouping be explicit and obvious to the user.
+
+   Most telemetry query engines that leverage SQL rely heavily on UDFs (user defined functions). The presence of these dialect-specific UDFs largely dilute the benefits of choosing a familiar language like SQL.
+
 1. Were there any languages that inspired the DSL?
+
+   MQL and its predecessor, mash, at Google.
+
 1. Are there specific observability use cases the language was designed for?
+
+   UQL aims to support metrics, spans and logs related queries. Over time it seeks to enable query patterns that span across the three telemetry data sources.
+
 1. Are there specific observability use cases that were intentionally _omitted_ in the design?
+
+   None specifically.
+
 1. Are there any particular strengths or weaknesses in the language after observing it in use?
+
+   UQL queries are authored in a way that loosely resembles a linear pipeline from left-to-right. This helps give UQL a more fluid feel when authoring queries. Users don't have to visually jump between earlier and later parts of the query when authoring. 
+
+   Once a user has a working query, they can use that query to build more complicated queries without augmenting the original query. This rewards experimentation.
+
 1. Is the language intended at-rest data and/or streaming data?
+
+   It’s intended for at-rest data.
+
 1. Can users specify a source in the query language? E.g. a specific table or database?
+
+   The first "stage" of a UQL query specifies the fetch data source. That can be a metric, span or log data.
+
    1. Can users join with other sources than the primary database? E.g. a CSV file, cloud 
       databases, etc.?
+
+      No, all queries read from the primary database. UQL currently limits join operations to like-kind data sources. However, enabling joins across telemetry types is an active discussion.
+
    1. If joining of various time series sources is available, how are differing retentions 
       handled? 
+
+      Join statements can include (optional) default values for when the arm of a join returns no data. If a metric’s data is out of retention, the default value will be used as part of the join.
+
 1. How tightly coupled is the DSL to the data store model? (1 to 10 with 10 being extremely)
    tightly coupled)
+
+   3
+
    1. Is the DSL flexible enough to operate on data in different storage formats or contexts?
+
+   In theory there’s nothing keeping us from compiling it to a different storage target, but only one is implemented today.
+
 1. What character sets are supported by the DSL?
+
+   UTF-8
+
    1. What characters are special or reserved in the DSL?
+
+      There are no reserved characters.
+
 1. Does the DSL allow for writing data or configuring the backing store or is it for querying only?
+   
+   No. UQL can only be used to query data.
 
 ## Data Models
 
