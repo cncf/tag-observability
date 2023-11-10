@@ -31,7 +31,7 @@ and [Umair Ishaq][Umair Ishaq].*
 <!-- TODO: please put github names here -->
 [Alex Nauda]:                 @
 [Alois Reitbauer]:            https://github.com/aloisreitbauer
-[Alolita Sharma]:             @
+[Alolita Sharma]:             https://github.com/alolita
 [Bartłomiej (Bartek) Płotka]: https://github.com/bwplotka
 [Brendan Burns]:              https://github.com/brendandburns
 [Daniel Khan]:                @
