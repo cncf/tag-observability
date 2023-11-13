@@ -140,6 +140,7 @@ when the log entry was generated.
    1. If tracing is supported, can users query with parent/child or flow relationships?
 1. What kind of output formats are supported? Raw log lines, tables, etc.?
 1. Is enrichment supported, e.g. merging data from external sources to replace, say, customer IDs.
+1. Can logs (with same or different structure) be joined?
 
 #### Correlation
 
