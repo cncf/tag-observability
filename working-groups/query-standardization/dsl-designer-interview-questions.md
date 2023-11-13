@@ -68,6 +68,11 @@ are generally numerical time series or a single number.
    windowing, consolidation) sizes?
    1. If so, are timestamps for the resulting values aligned to the start, end or middle of the
       window?
+   1. Downsampling support thinning mode (remove part of time series on a certain time windows)?
+      If so:
+      1. is time window for that kind of downsampling can be configured?
+      1. is number of removed time series can be configured?
+      1. are time series removed evenly over a specified time window, or from the beginning/end of the window?
    1. Are boundaries inclusive or exclusive? E.g. a window from `(01:00 to 01:01]`
    1. Are aggregation functions for downsampling fixed based on data types or are can users override
       the function? I.e. do queries focus on usability (user will get the correct answer for the data
