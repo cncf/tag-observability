@@ -15,7 +15,7 @@ Please do not divulge proprietary information or anything that would be consider
 The results of these interview questions will be shared with the working group and the public
 in an open source repo.
 
-### Instructions
+## Instructions
 
 Please copy this file and provide written answers under each bullet point. Use a shareable Google
 Doc if possible with comment permissions open to all. Alternatively send responses to work group
@@ -68,7 +68,7 @@ are generally numerical time series or a single number.
    windowing, consolidation) sizes?
    1. If so, are timestamps for the resulting values aligned to the start, end or middle of the
       window?
-   1. Are boundaries inclusive or exclusive? E.g. A window from `(01:00 to 01:01]`
+   1. Are boundaries inclusive or exclusive? E.g. a window from `(01:00 to 01:01]`
    1. Are aggregation functions for downsampling fixed based on data types or are can users override
       the function? I.e. do queries focus on usability (user will get the correct answer for the data
       they are querying) or flexibility (users could choose a function not appropriate for the data
