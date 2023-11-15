@@ -355,7 +355,7 @@ Try to combine your tracing and logging client instrumentation so the tracing li
 
 3. Instrument exemplars.
 
-To enable exameplars, we typically have to change client instrumentation. This is because we must inject Trace ID (when valid) to related metrics, e.g. histogram of request latencies. Many Prometheus clients (e.g. [Go](https://github.com/prometheus/client_golang/blob/v1.16.0/examples/exemplars/main.go)) and [OpenTelemetry SDKs](https://opentelemetry.io/docs/specs/otel/metrics/data-model/#exemplars) support exemplars, so it's the matter of changing corresponding instrumentation code. In the future, we might see more libraries and auto-instrumentation solutions that inject exemplars automatically.
+To enable exemplars, we typically have to change client instrumentation. This is because we must inject Trace ID (when valid) to related metrics, e.g. histogram of request latencies. Many Prometheus clients (e.g. [Go](https://github.com/prometheus/client_golang/blob/v1.16.0/examples/exemplars/main.go)) and [OpenTelemetry SDKs](https://opentelemetry.io/docs/specs/otel/metrics/data-model/#exemplars) support exemplars, so it's the matter of changing corresponding instrumentation code. In the future, we might see more libraries and auto-instrumentation solutions that inject exemplars automatically.
 
 ## Use Cases
 
