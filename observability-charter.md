@@ -53,7 +53,6 @@ and [Umair Ishaq][Umair Ishaq].*
 
 This document describes the purpose and operations of the Cloud Native
 Computing Foundation ([CNCF]) Technical Advisory Group ([TAG]) on Observability.
-Computing Foundation ([CNCF]) Technical Advisory Group ([TAG]) on Observability.
 
 This [TAG] focuses on topics pertaining to the observation
 of [cloud native][cn-def] workloads. Additionally, it produces supporting
