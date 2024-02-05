@@ -548,7 +548,7 @@ From the first words written until its completion, this whitepaper was a communi
 * [Matt Young](https://github.com/halcyondude)
 * [Michael Hausenblas](https://github.com/mhausenblas)  
 * [Nicolas Takashi](https://github.com/nicolastakashi)
-* [Oliver Edelmann][Oliver Edelmann]
+* [Oliver Edelmann](https://github.com/Olli73773)
 * [Rafael Natali](https://github.com/rafaelmnatali) 
 * [Richard Anton](https://github.com/ranton256) 
 * [RichiH "RichiH" Hartmann](https://github.com/RichiH)
@@ -562,37 +562,6 @@ From the first words written until its completion, this whitepaper was a communi
 * [Wiard van Rjj](https://github.com/wiardvanrij)  
 
 Thanks, all of you!
-<!-- Please add other contributors here -->
-[Alex Jones]:             https://github.com/AlexsJones
-[Arthur Silva Sens]:      https://github.com/ArthurSens
-[Bartłomiej Płotka]:      https://github.com/bwplotka
-[Charles Pretzer]:        https://github.com/cpretzer
-[Daniel Khan]:            https://github.com/danielkhan
-[David Grizzanti]:        https://github.com/dgrizzanti
-[Debashish Ghatak]:       https://github.com/wallydrag
-[Dominic Finn]:           https://github.com/dofinn
-[Frederic Branczyk]:      https://github.com/brancz
-[Gibbs Cullen]:           https://github.com/gibbscullen
-[Jason Morgan]:           https://github.com/wmorgan
-[Jonah Kowall]:           https://github.com/jkowall
-[Juraci Paixão Kröhling]: https://github.com/jpkrohling
-[Ken Finnigan]:           https://github.com/kenfinnigan
-[Krisztian Fekete]:       @
-[Liz Fong-Jones]:         https://github.com/lizthegrey
-[Matt Young]:             https://github.com/halcyondude
-[Michael Hausenblas]:     https://github.com/mhausenblas
-[Rafael Natali]:          https://github.com/rafaelmnatali
-[Richard Anton]:          @
-[RichiH Hartmann]:        https://github.com/RichiH
-[Rob Skillington]:        https://github.com/robskillington
-[Ryan Perry]:             https://github.com/Rperry2174
-[Shelby Spees]:           https://github.com/shelbyspees
-[Shobhit Srivastava]:     https://github.com/SinisterLight
-[Simone Ferlin]:          https://github.com/sferlin
-[Tim Tischler]:           @
-[Wiard van Rjj]:          https://github.com/wiardvanrij
-[Oliver Edelmann]:        https://github.com/Olli73773
-
 
 ## Contributing
 
