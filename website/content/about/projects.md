@@ -1,4 +1,4 @@
 ---
 title: Projects
-description: TAG Security projects.
+description: TAG Observability projects.
 ---

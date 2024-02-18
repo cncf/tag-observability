@@ -1,5 +1,5 @@
-baseURL = "https://tag-security.cncf.io/"
-title = "CNCF TAG Security"
+baseURL = "https://tag-observability.cncf.io/"
+title = "CNCF TAG Observability"
 
 # Language settings
 contentDir = "content"
@@ -47,8 +47,8 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = "CNCF TAG Security"
-description = "TAG Security facilitates collaboration to discover and produce resources that enable secure access, policy control, and safety for operators, administrators, developers, and end-users across the cloud native ecosystem."
+title = "CNCF TAG Observability"
+description = "TAG Observability facilitates collaboration to discover and produce resources that enable secure access, policy control, and safety for operators, administrators, developers, and end-users across the cloud native ecosystem."
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -72,7 +72,7 @@ copyright = "CNCF"
 privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
-image = "https://tag-security.cncf.io/images/cncf-security-share.jpg"
+image = "https://tag-observability.cncf.io/images/observability-social.jpg"
 
 # Menu title if your navbar has a versions selector to access old versions of your site.
 # This menu appears only if you have at least one [params.versions] set.
@@ -90,7 +90,7 @@ version = "0.0"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://security.cncf.io"
+url_latest_version = "https://observability.cncf.io"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 gcs_engine_id = "94caa124b871f4944"
@@ -107,7 +107,7 @@ prism_syntax_highlighting = false
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
 [params.github]
-  repo = "https://github.com/cncf/tag-security"
+  repo = "https://github.com/cncf/tag-observability"
   branch = "main"
   subdir = "website"
 
@@ -133,8 +133,8 @@ sidebar_search_disable = false
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-yes = 'Glad to hear it! Please <a href="https://github.com/cncf/tag-security/issues/new">tell us how we can improve</a>.'
-no = 'Sorry to hear that. Please <a href="https://github.com/cncf/tag-security/issues/new">tell us how we can improve</a>.'
+yes = 'Glad to hear it! Please <a href="https://github.com/cncf/tag-observability/issues/new">tell us how we can improve</a>.'
+no = 'Sorry to hear that. Please <a href="https://github.com/cncf/tag-observability/issues/new">tell us how we can improve</a>.'
 
 # Adds a reading time to the top of each doc.
 # If you want this feature, but occasionally need to remove the Reading time from a single page, 
