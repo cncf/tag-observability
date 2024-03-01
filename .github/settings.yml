@@ -11,56 +11,5 @@ repository:
   homepage: https://cncf.io/projects
 
   # Collaborators: give specific users access to this repository.
-  # see /governance/roles.md for details on write access policy
-  # note that the permissions below may provide wider access than needed for
-  # a specific role, and we trust these individuals to act according to their
-  # role. If there are questions, please contact one of the co-chairs.
-collaborators:
-
-  # note: please keep things alphabetized by GitHub id :)
-
-  # TOC Liasons
-  - username: cdavisafc
-    permission: admin
-
-  - username: resouer
-    permission: admin
-
-  # TAG Chairs 
-  - username: alolita
-    permission: admin
-
-  - username: halcyondude
-    permission: admin
-
-  - username: RichiH
-    permission: admin
-
-  # TAG Technical Leads (TL)
-  - username: bwplotka
-    permission: push
-
-  # TAG Contributors - Allow issues to be assigned.
-  # https://docs.github.com/en/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users#about-issue-and-pull-request-assignees
-  # You can assign up to 10 people to each issue or pull request, including yourself, 
-  # anyone who has commented on the issue or pull request, anyone with write permissions to the repository, 
-  # and organization members with read permissions to the repository. For more information, see "Access permissions on GitHub."
-  #
-  # using push so that we don't have the hurdle of github.com/cncf org membership to assign issues.
-  - username: dominickblue
-    permission: push
-  
-  - username: henrikrexed
-    permission: push
-
-  - username: kenfinnigan
-    permission: push
-  
-  - username: jsalinas29
-    permission: push
-
-  - username: mhausenblas
-    permission: push
-
-  # - username: your_github_id
-  #   permission: push
+  # Note that the permissions are controlled using CLOWarden in the https://github.com/cncf/people/blob/main/config.yaml file
+  # Please create a PR in the https://github.com/cncf/people/ repo to change user access
