@@ -60,16 +60,16 @@ If you want to propose new TAG activities or join in for existing ones, please t
 
 ### TOC Liaisons
 
-| Name           | Email                     |  GitHub         | Company      |
-| -------------- | ------------------------- | --------------- | ------------ |
-| Cathy Zhang    | cathy.h.zhang@intel.com   | [cathyhongzhang]| [Intel]      |
-| Erin Boyd      | eboyd@redhat.com          | [erinaboyd]     | [Red Hat]     |
-| Ricardo Rocha  | rocha.porto@gmail.com     | [rochaporto]    | [CERN].      |
+| Name           | Email                     |  GitHub          | Company      |
+| -------------- | ------------------------- | ---------------- | ------------ |
+| Cathy Zhang    | cathy.h.zhang@intel.com   | [cathyhongzhang] | [Intel]      |
+| Erin Boyd      | eboyd@redhat.com          | [erinaboyd]      | [Red Hat]    |
+| Ricardo Rocha  | rocha.porto@gmail.com     | [rochaporto]     | [CERN]       |
 
 ### Chairs (alphabetical order)
 
 | Name             | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
-| ---------------- | -------------------------- | --------------- | ------------- | ----------  | ---------------------------------- |
+| ---------------- | -------------------------- | --------------- | ------------- | ----------- | ---------------------------------- |
 | Alolita Sharma   | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Apple]     | [OpenTelemetry Team]               |
 | Matt Young       | halcyondude@gmail.com      | @Matt Young     | [halcyondude] | [Apple]     |                                    |
 | Richard Hartmann | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
@@ -77,8 +77,8 @@ If you want to propose new TAG activities or join in for existing ones, please t
 ### Tech Leads
 
 | Name              | Email               | CNCF Slack  | GitHub     | Company   | Open Source                        |
-|------------------ | ------------------- |------------ |--------    | --------- | ---------------------------------- |
-| Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka   | [bwplotka] | [Google] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
+| ----------------- | ------------------- | ----------- | ---------- | --------- | ---------------------------------- |
+| Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka   | [bwplotka] | [Google]  |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
 
 [Apple]:      https://opensource.apple.com
 [Grafana]:    https://grafana.com
@@ -93,13 +93,13 @@ If you want to propose new TAG activities or join in for existing ones, please t
 [CERN]:       https://home.cern
 [Intel]:      https://www.intel.com
 
-[alolita]:       https://github.com/alolita
-[bwplotka]:      https://github.com/bwplotka
-[halcyondude]:   https://github.com/halcyondude
-[resouer]:       https://github.com/resouer
-[RichiH]:        https://github.com/RichiH
-[rochaporto]:    https://github.com/rochaporto 
-[erinaboyd]:     https://github.com/erinaboyd  
+[alolita]:        https://github.com/alolita
+[bwplotka]:       https://github.com/bwplotka
+[halcyondude]:    https://github.com/halcyondude
+[resouer]:        https://github.com/resouer
+[RichiH]:         https://github.com/RichiH
+[rochaporto]:     https://github.com/rochaporto 
+[erinaboyd]:      https://github.com/erinaboyd  
 [cathyhongzhang]: https://github.com/cathyhongzhang
 
 ## Governance
