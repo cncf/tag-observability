@@ -1,8 +1,8 @@
-# TAG Security Website
+# TAG Observability Website
 
-This directory contains a [Hugo](https://gohugo.io) web site published via [Netlify](https://www.netlify.com/) to <https://tag-security.cncf.io/>.
+This directory contains a [Hugo](https://gohugo.io) web site published via [Netlify](https://www.netlify.com/) to <https://tag-observability.cncf.io/>.
 
-When the `main` branch of this repo is updated a fresh build and deploy of the website is executed. Recent Netlify builds and deployments are listed at <https://app.netlify.com/sites/tag-security>.
+When the `main` branch of this repo is updated a fresh build and deploy of the website is executed. Recent Netlify builds and deployments are listed at <https://app.netlify.com/sites/tag-observability>.
 
 Add content by adding Markdown files to directories in [./content](./content).
 
@@ -15,8 +15,8 @@ Configuration is set in [config.toml](./config.toml).
 To set up a local dev environment make sure you have [Hugo Extended](https://gohugo.io/installation/linux/#editions) and [npm](https://www.npmjs.com/) installed, then run the following:
 
 ```
-git clone git@github.com:cncf/tag-security.git
-cd tag-security
+git clone git@github.com:cncf/tag-observability.git
+cd tag-observability
 git submodule update --init --recursive
 cd website
 npm install
