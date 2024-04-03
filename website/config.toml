@@ -48,10 +48,11 @@ anchor = "smart"
 [languages]
 [languages.en]
 title = "CNCF TAG Observability"
-description = "TAG Observability facilitates collaboration to discover and produce resources that enable secure access, policy control, and safety for operators, administrators, developers, and end-users across the cloud native ecosystem."
 languageName ="English"
 # Weight used for sorting.
 weight = 1
+[languages.en.params]
+description = "TAG Observability facilitates collaboration to discover and produce resources that enable secure access, policy control, and safety for operators, administrators, developers, and end-users across the cloud native ecosystem."
 
 [markup]
   [markup.goldmark]
@@ -90,10 +91,10 @@ version = "0.0"
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://observability.cncf.io"
+# url_latest_version = "https://observability.cncf.io"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "94caa124b871f4944"
+# gcs_engine_id = "94caa124b871f4944"
 
 # Enable Algolia DocSearch
 algolia_docsearch = false
