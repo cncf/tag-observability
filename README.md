@@ -37,7 +37,7 @@ Excerpts from the [Observability Charter Document](observability-charter.md):
 
 ![projects](cncf-landscape-observability-2022-03-04.png)
 
-[Interactive Landscape](https://landscape.cncf.io/card-mode?category=observability-and-analysis&project=graduated,incubating,sandbox)
+[Interactive Landscape](https://landscape.cncf.io/?group=projects-and-products&project=cncf&tag=observability&view-mode=card&classify=maturity&sort-by=name&sort-direction=asc#maturity--graduated)
 
 ## How to get involved
 
