@@ -72,7 +72,6 @@ If you want to propose new TAG activities or join in for existing ones, please t
 | ---------------- | -------------------------- | --------------- | ------------- | ----------  | ---------------------------------- |
 | Alolita Sharma   | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Apple]     | [OpenTelemetry Team]               |
 | Matt Young       | halcyondude@gmail.com      | @Matt Young     | [halcyondude] | [Apple]     |                                    |
-| Richard Hartmann | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
 
 ### Tech Leads
 
@@ -101,6 +100,13 @@ If you want to propose new TAG activities or join in for existing ones, please t
 [rochaporto]:    https://github.com/rochaporto 
 [erinaboyd]:     https://github.com/erinaboyd  
 [cathyhongzhang]: https://github.com/cathyhongzhang
+
+### Emertius Chairs (alphabetical order)
+
+| Name             | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
+| ---------------- | -------------------------- | --------------- | ------------- | ----------  | ---------------------------------- |
+| Richard Hartmann | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
+
 
 ## Governance
 
