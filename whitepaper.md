@@ -373,7 +373,7 @@ While open-box monitoring requires more complex instrumentation, it allows more 
 
 ### Implementing SLIs, SLOs and SLAs
 
-Implementing SLI, SLO, and SLA metrics lets you objectively measure service quality and customer happiness. More so over, it provides a common set of terminologies between different functions like business, product and engineering within an org. Engineering time is a scarce resource within any organization, but everyone feels like their problem is a burning problem. SLOs make such conversations more data-driven because everyone understands the business consequences of breaching SLOs. While solving internal conflicts also makes you more customer-obsessed by providing meaningful abstractions that enable meaningful and actionable alerting.
+Implementing SLI, SLO, and SLA metrics lets you objectively measure service quality and customer happiness. More so over, it provides a common set of terminologies between different functions like business, product and engineering within an org. Engineering time is a scarce resource within any organization, but everyone feels like their problem is a burning problem. SLOs make such conversations more data-driven because everyone understands the business consequences of breaching SLOs, while solving internal conflicts also makes you more customer-obsessed by providing meaningful abstractions that enable meaningful and actionable alerting.
 
 Before diving deep into the implementation details, we should clarify the definitions as they can be fairly confusing and sometimes be used interchangeably.
 
