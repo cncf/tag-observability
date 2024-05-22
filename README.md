@@ -70,8 +70,8 @@ If you want to propose new TAG activities or join in for existing ones, please t
 
 | Name             | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
 | ---------------- | -------------------------- | --------------- | ------------- | ----------  | ---------------------------------- |
-| Alolita Sharma   | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Apple]     | [OpenTelemetry Team]               |
-| Matt Young       | halcyondude@gmail.com      | @Matt Young     | [halcyondude] | [Apple]     |                                    |
+| Alolita Sharma   | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Apple]     | [OpenTelemetry Team]; [Other][asharma-other]               |
+| Matt Young       | halcyondude@gmail.com      | @Matt Young     | [halcyondude] |             |                                    |
 
 ### Tech Leads
 
@@ -88,6 +88,7 @@ If you want to propose new TAG activities or join in for existing ones, please t
 [Prometheus Team]: https://prometheus.io/governance/#team-members
 [Thanos Team]:     https://thanos.io
 [bwplotka-other]:  https://www.bwplotka.dev/about/#open-source-projects
+[asharma-other]:   https://alolitasharma.com/about/
 [PromCon]:         https://promcon.io
 [CERN]:       https://home.cern
 [Intel]:      https://www.intel.com
