@@ -111,7 +111,7 @@ If you want to propose new TAG activities or join in for existing ones, please t
 
 ## Governance
 
-This TAG follows [the standard operating model provided by the TOC](https://github.com/cncf/toc/blob/master/tags/cncf-tags.md#operating-model).
+This TAG follows [the standard operating model provided by the TOC](https://github.com/cncf/toc/blob/master/tags#operating-model).
 
 ## Code of Conduct
 
