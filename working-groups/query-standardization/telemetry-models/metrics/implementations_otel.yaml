@@ -1,0 +1,347 @@
+notes: >
+  The OTel metrics model adheres to the Prometheus model wherein the primary concern is
+  capturing when a point value is defined.
+
+arch-types:
+  - id: Event/Timeseries Model
+    description: >
+      This is a collation and generalization of the OTel event and time series models.
+      For the actual protocol model, see the protobuf definitions.
+
+  - attributes:
+    - attribute: metric name
+      description: >
+        The name of the metric being measured.
+      specification:
+        - string
+
+    - attribute: description
+      description: >
+        A description of the metric useful in documentation
+      specification:
+        - string
+
+    - attribute: unit
+      description: >
+        The unit of measurement for the metric. See http://unitsofmeasure.org/ucum.html
+      specification:
+        - string
+
+    - attribute: data
+      description: >
+        One of the sub-types below.
+      specification:
+        - sub type
+
+sub-types:
+  - type: Number Data Point
+    description: >
+      A single numeric value, either double or signed int 64s.
+    attributes:
+      - attribute: value
+        description: >
+          The recorded value
+        specification:
+          - double or signed 64 bit integer.
+
+      - attribute: Attributes
+        description: >
+          Additional information about the log entry, different from the Resource in that
+          any log event from a source can have different tags.
+          See https://opentelemetry.io/docs/specs/otel/common/
+        specification:
+          - map<String, Any>
+
+      - attribute: start time
+        description: >
+          An optional start time representing the start of a collection interval
+        specification:
+          - fixed64 nanoseconds since Unix epoch
+
+      - attribute: time
+        description: >
+          A timestamp representing the end of a collection interval.
+        specification:
+          - fixed64 nanoseconds since Unix epoch
+
+      - attribute: exemplars
+        description: >
+          An optional set of example values optionally including trace information.
+        specification:
+          - Array of zero or more Exemplars
+
+      - attribute: flags
+        description: >
+          Optional flags related to the data point
+        specification:
+          - uint32
+
+  - type: Gauge
+    description: >
+      A snapshot of a measurement at a point in time.
+    attributes:
+      - attribute: data points
+        description: >
+          A set of Number Data Point representing the gauge values.
+        specification:
+          - Array of zero or more Number Data Points
+
+  - type: Sum
+    description: >
+      A snapshot of a measurement at a point in time.
+    attributes:
+      - attribute: data points
+        description: >
+          A set of Number Data Point representing the values.
+        specification:
+          - Array of zero or more Number Data Points
+
+      - attribute: monotonic
+        description: >
+          A boolean indicating if the sum is monotonic.
+        specification:
+          - boolean
+
+      - attribute: aggregation temporality
+        description: >
+          The temporality of the aggregation, cumulative or delta.
+        specification:
+          - enum. 1 = delta, 2 = cumulative. 0 = unspecified.
+
+  - type: Histogram
+    description: >
+      A bucketed distribution of measurements enabling the extraction of summaries like
+      percentiles.
+    attributes:
+      - attribute: data points
+        description: >
+          A set of Histogram Data Points representing the values.
+        specification:
+          - Array of zero or more Histogram Data Points
+
+      - attribute: aggregation temporality
+        description: >
+          The temporality of the aggregation, cumulative or delta.
+        specification:
+          - enum. 1 = delta, 2 = cumulative. 0 = unspecified.
+
+  - type: Exponential Histogram
+    description: >
+      A bucketed distribution of measurements enabling the extraction of summaries like
+      percentiles.
+    attributes:
+      - attribute: data points
+        description: >
+          A set of Exponential Data Points representing the values.
+        specification:
+          - Array of zero or more Exponential Data Points
+
+      - attribute: aggregation temporality
+        description: >
+          The temporality of the aggregation, cumulative or delta.
+        specification:
+          - enum. 1 = delta, 2 = cumulative. 0 = unspecified.
+
+  - type: Summary
+    description: >
+      A deprecated means of conveying quantiles
+    attributes:
+      - attribute: data points
+        description: >
+          A set of Summary Data Points representing the values.
+        specification:
+          - Array of zero or more Summary Data Points
+
+additional:
+  - type: Exemplar
+    description: >
+      An example value for a metric, optionally including trace information.
+    attributes:
+      - attribute: filtered attributes
+        description: >
+          A set of attributes that were filtered during aggregation, e.g. if grouping
+          on only attribute FOO, this would contain a list of the the attributes for the
+          sample other than FOO.
+        specification:
+          - map<String, Any>
+
+      - attribute: value
+        description: >
+          The value of the exemplar
+        specification:
+          - double or signed 64 bit integer
+
+      - attribute: span id
+        description: >
+          Optional Id of an associated span
+        specification:
+          - byte sequence
+
+      - attribute: trace id
+        description: >
+          Optional Id of an associated trace
+        specification:
+          - byte sequence
+
+  - type: HistogramDataPoint
+    description: >
+      A histogram data point representing a bucketed distribution of measurements.
+    specification:
+      - Extends the Numeric Data point.
+    attributes:
+      - attribute: count
+        description: >
+          The number of values in the population.
+        specification:
+          - unsigned 64 bit integer
+
+      - attribute: sum
+        description: >
+          The optional sum of the values in the population.
+        specification:
+          - double
+
+      - attribute: bucket counts
+        description: >
+          The number of values in each bucket.
+        specification:
+          - Array of unsigned 64 bit integers
+
+      - attribute: explicit bounds
+        description: >
+          The bounds of the buckets.
+        specification:
+          - Array of doubles
+
+      - attribute: min
+        description: >
+          The optional minimum value in the population.
+        specification:
+          - double
+
+      - attribute: max
+        description: >
+          The optional maximum value in the population.
+        specification:
+          - double
+
+  - type: ExponentialHistogramDataPoint
+    description: >
+      An exponential histogram data point representing a bucketed distribution of measurements.
+    specification:
+      - Extends the Numeric Data point.
+    attributes:
+      - attribute: count
+        description: >
+          The number of values in the population.
+        specification:
+          - unsigned 64 bit integer
+
+      - attribute: sum
+        description: >
+          The optional sum of the values in the population.
+        specification:
+          - double
+
+      - attribute: scale
+        description: >
+          The resolution of the histogram
+        specification:
+          - signed 32 bit integer
+
+      - attribute: zero count
+        description: >
+          The number of values that were zero.
+        specification:
+          - unsigned 64 bit integer
+
+      - attribute: positive
+        description: >
+          The positive range of exponential bucket counts.
+        specification:
+          - Buckets
+
+      - attribute: negative
+        description: >
+          The negative range of exponential bucket counts.
+        specification:
+          - Buckets
+
+      - attribute: min
+        description: >
+          The optional minimum value in the population.
+        specification:
+          - double
+
+      - attribute: max
+        description: >
+          The optional maximum value in the population.
+        specification:
+          - double
+
+      - attribute: zero_threshold
+        description: >
+          An optional setting to convey the width of the zero region.
+        specification:
+          - double
+
+  - type: Buckets
+    description: >
+      A descriptor of a set of positive or negative buckets based on the scale.
+    attributes:
+      - attribute: offset
+        description: >
+          The index of the first valid entry in the bucket counts array.
+        specification:
+          - signed 32 bit integer
+
+      - attribute: bucket counts
+        description: >
+          The number of values in each bucket.
+        specification:
+          - array of unsigned 64 bit integers
+
+  - type: SummaryDataPoint
+    description: >
+      A summary data point representing a quantile distribution of measurements.
+    specification:
+      - Extends the Numeric Data point.
+    attributes:
+      - attribute: count
+        description: >
+          The number of values in the population.
+        specification:
+          - unsigned 64 bit integer
+
+      - attribute: sum
+        description: >
+          The optional sum of the values in the population.
+        specification:
+          - double
+
+      - attribute: quantile values
+        description: >
+          The quantile values.
+        specification:
+          - Array of ValueAtQuantile objects
+
+
+  - type: ValueAtQuantile
+    description: >
+      A quantile value.
+    attributes:
+      - attribute: quantile
+        description: >
+          The quantile value in the interval [0.0, 1.0].
+        specification:
+          - double
+
+      - attribute: value
+        description: >
+          The value at the quantile.
+        specification:
+          - double
+
+references:
+  - https://opentelemetry.io/docs/specs/otel/metrics/data-model/
+  - https://github.com/open-telemetry/opentelemetry-proto/blob/main/opentelemetry/proto/metrics/v1/metrics.proto

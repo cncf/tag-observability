@@ -1,0 +1,25 @@
+title: Value Extraction
+
+description: >
+  While spans measure the latency of an operation, additional information can be stored
+  in dimensions or annotations. Querying systems can then extract these data for further
+  analysis such as counting distinct values or converting numerical values into metrics.
+
+inputs:
+  - trace spans
+
+uses:
+  - type: Visualization
+    description: >
+      Extracted values can be visualized in a table or chart. For example, a histogram
+      of the number of spans with a particular status code can be displayed.
+
+  - type: Actioning
+    description: >
+      Alerts can be configured to trigger if a particular value exceeds a threshold 
+      in a span, for example the number of records processed in a Spark task.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

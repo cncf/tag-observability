@@ -1,0 +1,25 @@
+title: Counts by Name or Dimensions
+
+description: >
+  A common operation is to count the number of times a particular dimension occurs in a trace.
+  This can be used to determine the frequency of a particular operation, or to identify the
+  most common paths through a system.
+
+inputs:
+  - trace spans
+
+uses:
+  - type: Visualization
+    description: >
+      For time based bucketing, often a stack or column chart. For ranges, a table, bar chart
+      or pie chart.
+
+  - type: Alerting
+    description: >
+      Alerts can be set up to trigger when a dimension occurs more than a certain number of times
+      within a period of time.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

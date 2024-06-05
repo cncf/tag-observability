@@ -1,10 +1,11 @@
 title: Trace Latency Metrics
 
 description: >
-  Tracing measure operation latencies and common operation is to convert the span
+  Tracing measure operation latencies and a common operation is to convert the span
   latencies into time series metrics. These aggregations can then re-use existing 
   metrics infrastructure (alerting systems, dashboards, etc).
-  Query results may also include exemplars for drilling into details.
+  Query results may also include exemplars for drilling into details or particular
+  traces.
 
 inputs:
   - trace spans
@@ -14,6 +15,17 @@ uses:
     description: >
       Values may be bucketed into a heatmap view such as that offered by Honeycomb.
       Percentiles, average and max latencies may also be extracted for line graphs.
+
+  - type: Actioning
+    description: >
+      Alerts can be set up to trigger when a service's latency exceeds a threshold.
+      This can be done by comparing the latency to a threshold or by comparing the
+      latency to the latency of another service.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true
 
 examples:
   - language: DQL

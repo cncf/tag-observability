@@ -1,0 +1,26 @@
+title: Ratio Calculation
+
+description: >
+  Ratios are commonly used in metric expressions to determine a time series and others in
+  a cohort or related series. For example, in a cluster of application nodes, a query can 
+  compute what percentage of requests each node is handling and look for outliers. (Similar
+  to the clustering use case). A common use is to express the percent of service requests
+  with errors compared to the total requests. 
+
+inputs:
+  - metrics
+
+uses:
+  - type: Visualization
+    description: >
+      Often used in line charts over time or pie charts for spatially aggregated values.
+
+  - type: Actioning
+    description: >
+      Ratios can be used to trigger alerts when a ratio exceeds a threshold. For example,
+      if the ratio of errors to total requests exceeds 1%, an alert can be triggered.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

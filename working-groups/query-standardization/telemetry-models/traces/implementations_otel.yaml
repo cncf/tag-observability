@@ -1,0 +1,235 @@
+
+archtypes:
+  - type: Span
+    description: >
+      A span represents a single unit of work in a trace. Spans can
+      be nested to form a directed trace graph or tree.
+    specification:
+      - Extends the base Span.
+    attributes:
+      - attribute: Trace State
+        description: >
+          The trace state of the span.
+        specification:
+          - string
+      - attribute: Flags
+        description: >
+          The flags that apply to the span.
+        specification:
+          - unsigned 32 bit integer
+      - attribute: Kind
+        description: >
+          The kind of span. The kind of span is used to describe the relationship between
+          the span and its parent span.
+        specification:
+          - SpanKind
+      - attribute: Start Time
+        description: >
+          Time when the operation started measured by the origin clock, i.e. the time at the
+          source. In Unix epoch nanoseconds.
+        specification:
+          - unsigned 64 bit integer
+      - attribute: End Time
+        description: >
+          Time when the operation ended measured by the origin clock, i.e. the time at the
+          source. In Unix epoch nanoseconds.
+        specification:
+          - unsigned 64 bit integer
+      - attribute: Attributes
+        description: >
+          A set of key-value pairs that describe the event.
+        specification:
+          - map of string to any
+      - attribute: Dropped Attributes Count
+        description: >
+          The number of attributes that were dropped from the span.
+        specification:
+          - uint32
+      - attribute: Events
+        description: >
+          A collection of events that occurred during the span.
+        specification:
+          - array of Event
+      - attribute: Dropped Events Count
+        description: >
+          The number of events that were dropped from the span.
+        specification:
+          - uint32
+      - attribute: Links
+        description: >
+          A collection of links to other spans.
+        specification:
+          - array of Link
+      - attribute: Dropped Links Count
+        description: >
+          The number of links that were dropped from the span.
+        specification:
+          - uint32
+      - attribute: Status
+        description: >
+          The status of the span.
+        specification:
+          - Status
+
+additional:
+  - type: Resource Spans
+    description: >
+      A collection of spans from a Resource.
+    attributes:
+      - attribute: Resource
+        description: >
+          The resource associated with the spans.
+        specification:
+          - Resource
+      - attribute: Scope Spans
+        description: >
+          A collection of spans from a Resource and InstrumentationLibrary.
+        specification:
+          - array of ScopeSpans
+      - attribute: Schema URL
+        description: >
+          An optional URL of the schema that describes the resource.
+        specification:
+          - string
+
+  - type: Scope Spans
+    description: >
+      A collection of spans produced by an instrumentation scope.
+    attributes:
+      - attribute: Instrumentation Scope
+        description: >
+          The instrumentation scope associated with the spans.
+        specification:
+          - InstrumentationScope
+      - attribute: Spans
+        description: >
+          A collection of spans.
+        specification:
+          - array of Span
+      - attribute: Schema URL
+        description: >
+          An optional URL of the schema where the spans were recorded.
+        specification:
+          - string
+
+  - type: SpanKind
+    description: >
+      The kind of span. The kind of span is used to describe the relationship between
+      the span and its parent span.
+    specification:
+      - enum
+    values:
+      - value: SpanKindUnspecified
+        description: >
+          Unspecified kind.
+      - value: SpanKindInternal
+        description: >
+          Indicates that the span is used internally.
+      - value: SpanKindServer
+        description: >
+          Indicates that the span covers server-side handling of an RPC or other
+          remote request.
+      - value: SpanKindClient
+        description: >
+          Indicates that the span covers the client-side handling of an RPC or other
+          remote request.
+      - value: SpanKindProducer
+        description: >
+          Indicates that the span describes producer sending a message to a broker.
+      - value: SpanKindConsumer
+        description: >
+          Indicates that the span describes consumer receiving a message from a broker.
+
+  - type: Event
+    description: >
+      A timestamped annotation of an event that occured during a span.
+    attributes:
+        - attribute: Time
+          description: >
+            The timestamp the event occurred in Unix epoch nanoseconds.
+          specification:
+            - unsigned 64 bit integer
+        - attribute: Name
+          description: >
+            A descriptive name of the event, non-empty.
+          specification:
+            - string
+        - attribute: Attributes
+          description: >
+            A set of key-value pairs that describe the event.
+          specification:
+            - map of string to any
+        - attribute: Dropped Attributes Count
+          description: >
+            The number of attributes that were dropped from the event.
+          specification:
+            - uint32
+
+  - type: Link
+    description: >
+      A pointer from one span to another in any trace.
+    attributes:
+        - attribute: Trace ID
+          description: >
+            The trace identifier of the linked span.
+          specification:
+            - byte sequence
+        - attribute: Span ID
+          description: >
+            The span identifier of the linked span.
+          specification:
+            - byte sequence
+        - attribute: Trace State
+          description: >
+            The trace state of the linked span.
+          specification:
+            - string
+        - attribute: Attributes
+          description: >
+            A set of key-value pairs that describe the link.
+          specification:
+            - map of string to any
+        - attribute: Dropped Attributes Count
+          description: >
+            The number of attributes that were dropped from the link.
+          specification:
+            - uint32
+        - attribute: Flags
+          description: >
+            The flags that apply to the link.
+          specification:
+            - unsigned 32 bit integer
+
+  - type: Status
+    description: >
+      The status of the span.
+    attributes:
+        - attribute: Code
+          description: >
+            The status code of the span.
+          specification:
+            - unsigned 32 bit integer
+        - attribute: Message
+          description: >
+            A message describing the status of the span.
+          specification:
+            - string
+
+  - type: Status Code
+    description: >
+      The status code of the span.
+    specification:
+      - enum
+    values:
+      - value: StatusCodeUnset
+        description: >
+          The status code is unset.
+      - value: StatusCodeOk
+        description: >
+          The operation has been validated by the application or the system.
+      - value: StatusCodeError
+        description: >
+          The operation has not been validated by the application or the system.
+
+references:
+  - https://github.com/open-telemetry/opentelemetry-proto/blob/main/opentelemetry/proto/trace/v1/trace.proto

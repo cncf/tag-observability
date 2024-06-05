@@ -52,7 +52,7 @@ uses:
       Metrics are often visualized in various ways though most often in the form of
       line graphs where users can quickly pick out patterns or anomalies.
 
-archtypes:
+arch-types:
   - id: metric_dp
     type: Single Value Metric Data Point
     description: >

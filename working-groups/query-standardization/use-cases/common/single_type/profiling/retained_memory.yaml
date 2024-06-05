@@ -1,0 +1,22 @@
+title: Retained Memory
+
+description: >
+  Retained memory is the amount of memory that is held by an object and its descendants
+  that cannot be garbage collected or deleted. Profiling retained memory can help identify objects
+  that are holding onto memory that is no longer needed, which can lead to memory leaks
+  and other performance problems. Profiles are able to list the type and size of retained
+  objects.
+
+inputs:
+  - memory profile
+
+uses:
+  - type: Visualization
+    description: >
+      Typically displayed nested table that can be drilled into for further details
+      for nested objects. May also be displayed as a line chart by object type and size.
+
+  - type: Actioning
+    description: >
+      Trend analysis can be applied to determine if a function is retaining more memory
+      over time and at risk of running out of memory.

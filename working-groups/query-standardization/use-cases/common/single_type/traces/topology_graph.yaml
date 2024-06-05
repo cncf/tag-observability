@@ -1,0 +1,28 @@
+title: Topology Graph
+
+description: >
+  Distributed traces are often used to build a topology of services involved in a 
+  transaction. As traces are often sampled, the data can be combined with netflow 
+  information for a more complete picture. 
+
+inputs:
+  - trace spans
+
+uses:
+- type: Visualization
+  description: >
+    Topology graphs are often displayed as a directed graph with nodes representing
+    services and edges representing the communication between services. The size of
+    the node can represent the number of spans or the latency of the service. The
+    color of the node can represent the error rate or the service name.
+
+- type: Actioning
+  description: >
+    Combining the topology with error rates and latencies, actions can walk the graph
+    to find the most likely service causing issues for upstream services, reducing
+    the number of alerts and improving MTTR.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

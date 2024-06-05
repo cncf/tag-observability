@@ -1,0 +1,26 @@
+id: logs
+
+description: >
+  The most generic and common form of telemetry is a log entry. At a minimun, a log
+  is composed of a timestamp and a string. When emitted from a system, logs are typically
+  enriched with additional metadata such as the process, location and node producing the log.
+
+attributes:
+  - attribute: timestamp
+    description: >
+      A point in time associated with the log entry. Typically the end of an event
+      when enough data is present to record useful results.
+
+  - attribute: body
+    description: >
+      The primary content of the log entry. This is typically a string but may be
+      a structured object encoded as JSON or another format.
+      discouraged.
+
+uses:
+  - title: Debugging
+    description: >
+      Logs are the most common form of telemetry used for debugging. They are often
+      used to record the state of a system at a particular point in time or to record
+      the flow of control through a system. Log storage and querying systems enable 
+      searching for logs that match a particular pattern within a time range.

@@ -1,0 +1,42 @@
+id: traces
+
+description: >
+  Distributed traces are a form of telemetry that records the flow of a request through
+  a distributed system. A trace is composed of a series of spans, each representing a
+  single operation within the system. Spans are linked together to form a directed trace
+  graph or tree. The following attributes are common to trace spans.
+
+attributes:
+  - attribute: Trace ID
+    description: >
+      Unique identifier of a trace. A trace groups multiple spans into a single unit of
+      work. This field is required.
+    specification:
+      - byte sequence
+
+  - attribute: Span ID
+    description: >
+      Unique identifier of a span. A span represents a single operation within a trace.
+      This field is required.
+    specification:
+      - byte sequence
+
+  - attribute: Parent Span ID
+    description: >
+      Unique identifier of the parent span. This field is required except for the root
+      span.
+    specification:
+      - byte sequence
+
+  - attribute: Name
+    description: >
+      A descriptive name of the span. This field is required.
+    specification:
+      - string
+
+  - attribute: Start Time
+    description: >
+      Time when the operation started measured by the origin clock, i.e. the time at the
+      source. This field is required.
+    specification:
+      - Generally a uint64 with the Unix epoch in micro or nano seconds.

@@ -1,0 +1,24 @@
+title: Error Rates
+
+description: >
+  While most inter-service spans will include a tage like `http.response.status_code`,
+  intra-service spans and non-standardized tag names may present errors in different ways.
+  Error rate tracking then comes down to being able to count the number of spans 
+  with errors in some dimension grouped by another dimension such as the service name.
+
+inputs:
+  - trace spans
+
+uses:
+  - type: Visualization
+    description: >
+      Generally displayed as percentages, line charts or numbers on a topology map.
+
+  - type: Actioning
+    description: >
+      Often used for alerting based on thresholds or trend analysis.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

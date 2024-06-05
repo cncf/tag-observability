@@ -1,0 +1,28 @@
+title: Forecasting
+
+description: >
+  Metrics are often used for forecasting due the ability to efficiently store metrics
+  over a long period of time. Incoming data is compared against the forecasted value
+  and deviations greater than a configured threshold are used to trigger actions.
+  Forecasts can be computed at query time, updated in real-time via streaming and
+  stateful stores or computed periodically in batch jobs.
+
+inputs:
+  - metrics
+
+uses:
+  - type: Visualization
+    description: >
+      Charts are often used with the observed data alongside the forecasted values.
+      If action thresholds are present, additional bounds can be drawn showing the upper
+      and lower limits.
+
+  - type: Actioning
+    description: >
+      Using a threshold and comparing observed values against forecasted values at the
+      proper timestamp, actions can be triggered to indicate potential errors.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

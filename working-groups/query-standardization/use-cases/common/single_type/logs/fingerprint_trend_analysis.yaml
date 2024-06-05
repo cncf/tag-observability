@@ -1,0 +1,33 @@
+title: Fingerprint Trend Analysis
+
+description: >
+  Fingerprinting is a means of normalizing and identifying log entries in order to 
+  extract various statistics regarding occurrences. For example, the log "Starting 
+  application A" at level INFO would have the same fingerprint regardless of what 
+  application version is deployed, how many nodes it is deployed on, etc. Given
+  the fingerprint, various analysis can be performed over time such as looking at
+  how often that line occurs over time or if the line has not been observed before.
+  Fingerprints can be granular or generalized. E.g. an log with place holders like
+  "Error processing request for user %s" can have a single fingerprint for all users.
+
+inputs:
+  - logs
+
+uses:
+  - type: Visualization
+    description: >
+      Fingerprint trends can be visualized in a time series chart showing the count of
+      each fingerprint over time. Two time periods can be selected and compared to show
+      deltas of fingerprint occurrences, helping users to spot new entries with a new
+      deployment
+
+  - type: Actioning
+    description: >
+      Alerts can be set up to trigger when a fingerprint count exceeds a threshold or
+      when a new fingerprint is observed. This can be used to detect new errors or
+      anomalies in the logs.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

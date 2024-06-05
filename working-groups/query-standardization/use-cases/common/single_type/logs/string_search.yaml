@@ -1,0 +1,25 @@
+Title: String Search
+
+description: >
+  By far the most common log query is to search for a string or set of strings in the 
+  formatted message, usually bounded by time. Searches can be case sensitive or 
+  insensitive and include whitespace or control characters. Regular expressions are 
+  often used to make more complex matches
+
+inputs:
+  - logs
+
+uses:
+  - type: Visualization
+    description: >
+      The output of a string search can be visualized in a table or a time series chart.
+
+  - type: Actioning
+    description: >
+      Actions can be set up based on the results of a string search. For example, if a
+      particular error message is found in the logs, an alert can be triggered.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

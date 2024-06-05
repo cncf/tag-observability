@@ -1,0 +1,72 @@
+
+arch-types:
+  - id: Span
+    description: >
+      A span represents a single operation within a trace. Spans are linked together to 
+      form a directed trace graph or tree.
+    specification:
+      - Extends the base Span.
+      - Attributes are named as tags.
+    attributes:
+      - attribute: Duration
+        description: >
+          The duration of the span in microseconds. Used in place of an end timestamp.
+        specification:
+          - uint64
+      - attribute: Annotations
+        description: >
+          A collection of events that occurred during the span.
+        specification:
+          - array of Annotation
+      - attribute: Remote Endpoint
+        description: >
+          The network address of the remote service.
+        specification:
+          - Endpoint
+      - attribute: Local Endpoint
+        description: >
+          The network address of the local service.
+        specification:
+        - Endpoint
+
+additional:
+  - type: Annotation
+    description: >
+      An event that occurred during the span.
+    attributes:
+      - attribute: Timestamp
+        description: >
+          Time when the event occurred measured by the origin clock, i.e. the time at the 
+          source.
+        specification:
+          - uint64 microseconds since the Unix epoch
+      - attribute: Value
+        description: >
+          A description of the event.
+        specification:
+          - string
+
+  - type: Endpoint
+    description: >
+      The network address of a service.
+    attributes:
+      - attribute: Service Name
+        description: >
+          The name of the service.
+        specification:
+          - string
+      - attribute: IPv4
+        description: >
+          The IPv4 address of the service.
+        specification:
+          - string
+      - attribute: IPv6
+        description: >
+          The IPv6 address of the service.
+        specification:
+          - string
+      - attribute: Port
+        description: >
+          The port number of the service.
+        specification:
+          - uint32

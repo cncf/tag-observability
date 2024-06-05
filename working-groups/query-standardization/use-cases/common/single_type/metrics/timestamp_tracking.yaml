@@ -1,0 +1,28 @@
+title: Timestamp Tracking
+
+description: >
+  Time sensitive contexts can be measured as metrics by publishing the time since an
+  event, a countdown to a future event, or Unix epoch timestamp as the metric value.
+  For example, an X.509 certificate used for TLS encryption has a start and end date.
+  The expiration can be tracked as a metric and alerts can be triggered when the 
+  certificate is close to expiration. Likewise, if an event hasn't occurred within a
+  certain period of time, action can be taken to investigate.
+
+inputs:
+  - metrics
+
+uses:
+  - type: Visualization
+    description: >
+      Often displayed as a large number with colored background such as green to
+      indicate within tolerance, yellow to indicate close to expiration, and red to
+      indicate expired. Can also be displayed as a countdown timer.
+
+  - type: Actioning
+    description: >
+      Used with static thresholds to trigger events based on age.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true
