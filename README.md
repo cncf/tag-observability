@@ -63,7 +63,6 @@ If you want to propose new TAG activities or join in for existing ones, please t
 | Name           | Email                     |  GitHub         | Company      |
 | -------------- | ------------------------- | --------------- | ------------ |
 | Cathy Zhang    | cathy.h.zhang@intel.com   | [cathyhongzhang]| [Intel]      |
-| Erin Boyd      | eboyd@redhat.com          | [erinaboyd]     | [Red Hat]     |
 | Ricardo Rocha  | rocha.porto@gmail.com     | [rochaporto]    | [CERN].      |
 
 ### Chairs (alphabetical order)
@@ -78,6 +77,12 @@ If you want to propose new TAG activities or join in for existing ones, please t
 | Name              | Email               | CNCF Slack  | GitHub     | Company   | Open Source                        |
 |------------------ | ------------------- |------------ |--------    | --------- | ---------------------------------- |
 | Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka   | [bwplotka] | [Google] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
+
+### Observability TAG Workgroups (WG) and WG Leads
+| Name              | Email               | CNCF Slack    | GitHub     | Company   | Open Source                        |
+|------------------ | ------------------- |-------------- |--------    | --------- | ---------------------------------- |
+| Chris Larsen      |                     | @Chris Larsen | [manolama] | Netflix   | O11y TAG QLS WG                    |
+| Vijay Samuel      |                     | @Vijay Samuel | [vjsamuel] | EBay      | O11y TAG QLS WG                    |
 
 [Apple]:      https://opensource.apple.com
 [Grafana]:    https://grafana.com
@@ -108,6 +113,12 @@ If you want to propose new TAG activities or join in for existing ones, please t
 | ---------------- | -------------------------- | --------------- | ------------- | ----------  | ---------------------------------- |
 | Richard Hartmann | richih@richih.org          | @RichiH         | [RichiH]      | [Grafana]   | [Prometheus Team]; [PromCon] Lead  |
 
+
+### Emeritus TOC Liaisons (alphabetical order)
+
+| Name           | Email                     |  GitHub         | Company      |
+| -------------- | ------------------------- | --------------- | ------------ |
+| Erin Boyd      | eboyd@redhat.com          | [erinaboyd]     | [Red Hat]    |
 
 ## Governance
 
