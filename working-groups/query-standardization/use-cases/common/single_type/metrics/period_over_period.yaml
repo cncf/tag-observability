@@ -1,0 +1,31 @@
+title: Period over Period Analysis
+
+description: >
+  Period over period analysis is a common operation in time series analysis where
+  the value of a metric is compared to the same metric at one or more previous time 
+  periods in the same chart or expression. This is useful for identifying trends, 
+  seasonality, and anomalies in the data. 
+  The query time range is often shifted by one week for diurnal seasonality. Accounting for
+  day light savings time or holidays can be included.
+  Aggregating previous periods can be feed into a forecast model to predict future values, accounting for seasonal behavior.
+
+inputs:
+  - metrics
+
+uses:
+  - type: Visualization
+    description: >
+      Line charts are commonly used to visualize the current period and previous periods
+      side by side with different colors, transparencies or line styles denoting earlier
+      periods.
+
+  - type: Actioning
+    description: >
+      Alerts can be triggered when the current period deviates from the expected level
+      based on the previous periods. This can be used to detect anomalies or predict future
+      values.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

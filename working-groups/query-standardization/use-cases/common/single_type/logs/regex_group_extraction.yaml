@@ -1,0 +1,29 @@
+title: Regular Expression Group Extraction
+
+description: >
+  Regular expressions are used to extract structured data from unstructured logs. The 
+  extracted data can then be used to generate metrics for visualization, correlate with
+  distributed traces or visualize distinct values in a table. For example, an access
+  log can be parsed to extract the HTTP status code, request path, and response time. 
+  Extracted values can also be used to enrich log metadata in an ETL pipeline.
+
+inputs:
+  - logs
+
+uses:
+  - type: Visualization
+    description: >
+      Depending on the type of data extract, metrics can be displayed in a chart or routed
+      to another system. Distinct strings can be visualized in a table with counts or in a
+      time chart displaying counts.
+
+  - type: Actioning
+    description: >
+      Actions can be triggered based on the extracted fields. For example, if the HTTP
+      status code is 500, developers can be notified of the error along with a stack trace
+      and context.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

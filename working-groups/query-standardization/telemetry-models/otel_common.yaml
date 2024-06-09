@@ -1,0 +1,21 @@
+types:
+  - type: Resource
+    description: >
+      A resource represents a physical or logical entity that can be the subject of telemetry.
+    attributes:
+      - attribute: Attributes
+        description: >
+          A collection of attributes that describe the resource.
+        specification:
+          - Attribute
+      - attribute: Dropped Attributes Count
+        description: >
+          The number of attributes that were dropped from the attribute collection.
+        specification:
+          - unsigned 32 bit integer
+
+  - type: Attributes
+    description: >
+      A set of key-value pairs that describe the telemetry.
+    specification:
+      - map of string to any

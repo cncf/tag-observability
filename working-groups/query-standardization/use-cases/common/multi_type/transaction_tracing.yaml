@@ -1,0 +1,22 @@
+title: Transaction Tracing
+
+description: >
+  Before distributed tracing libraries existed, transaction IDs would be logged in 
+  each system involved in order to correlate behavior. Today, some systems may not
+  be instrumented with tracing so a transaction ID can be added to a span tag of a
+  service calling a non-instrumented service. The service's logs can then be queried
+  for the transaction ID to generate spans to complete a tracing DAG.
+
+inputs:
+  - logs
+  - trace spans
+
+uses:
+  - type: Visualization
+    description: >
+      All tracing visualizations apply.
+
+  - type: Actioning
+    description: >
+      Similar tracing actions can be taken such as alerting if the service latency
+      has increased or transactions are failing.

@@ -1,0 +1,29 @@
+title: Clustering Analysis
+
+description: >
+  By grouping a metric or expression by various values and displaying lines on a chart
+  over time, users can identify clusters of similar behavior based on dimensions such as
+  the software version, node type or resource limits. Likewise, outliers are often 
+  visible as trending outside one ore more clusters. 
+  For programmatic analysis, clustering algorithms can be employed to determine the number
+  of clusters and time series that belong to each cluster.
+
+inputs:
+  - metrics
+
+uses:
+  - type: Visualization
+    description: >
+      Typically plotted in line charts over time where bands of lines represent clusters.
+      Heatmaps are also useful over time. For spatial aggregation, scatter plots can be 
+      used.
+
+  - type: Actioning
+    description: >
+      With the application of a clustering algorithm, alerts can be set up to trigger when
+      the number of clusters change or when a time series moves from one cluster to another.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

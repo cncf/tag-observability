@@ -1,0 +1,20 @@
+title: Mutex Contention
+
+description: >
+  Mutex contention is a common problem in multithreaded applications where multiple threads
+  are trying to acquire the same lock. This can lead to performance degradation as threads
+  are blocked waiting for the lock to be released. Profiling mutex contention can help
+  identify which locks are contended and which threads are waiting on them.
+
+inputs:
+  - contention profile
+
+uses:
+  - type: Visualization
+    description: >
+      Typically represented in a tabular format with drill down into call stacks.
+
+  - type: Actioning
+    description: >
+      Trend analysis can be applied to determine if a lock is contended more over time
+      or between releases.

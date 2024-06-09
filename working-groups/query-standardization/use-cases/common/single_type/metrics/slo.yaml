@@ -1,0 +1,26 @@
+title: Service Level Objective (SLO) Calculation
+
+description: >
+  Service Level Objectives (SLOs) are a key performance indicator for a service. They are
+  used to define the expected level of service and are often used to trigger alerts when
+  the service deviates from the expected level. SLOs are often defined as a ratio of
+  successful requests to total requests over a time period using metrics.
+
+inputs:
+  - metrics
+
+uses:
+  - type: Visualization
+    description: >
+      Often used in a line chart with lines indicating thresholds. Can also overlay burn
+      down data on the chart.
+
+  - type: Actioning
+    description: >
+      Alerts can be triggered when the SLO deviates from the expected level or a burn
+      down period is about to be exhausted.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

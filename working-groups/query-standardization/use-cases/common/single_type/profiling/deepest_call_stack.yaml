@@ -1,0 +1,20 @@
+title: Deepest Call Stack
+
+description: >
+  The deepest call stack is the maximum depth of the call stack for a particular function
+  in a profile. This can help identify functions that are called recursively and/or at
+  risk of overflowing the stack. 
+
+inputs:
+  - call stack profile
+
+uses:
+  - type: Visualization
+    description: >
+      Typically displayed in a flame graph or icicle graph where users can visually identify
+      the tallest or deepest tree. May be called out separately in a table or list.
+
+  - type: Actioning
+    description: >
+      Trend analysis can be applied to determine if a function is being called more deeply
+      over time or between releases.

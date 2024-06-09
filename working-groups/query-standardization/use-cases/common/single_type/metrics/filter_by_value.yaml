@@ -1,0 +1,25 @@
+title: Filter by Value
+
+description: >
+  Visualizations with many time series are often difficult to parse. By applying a filter 
+  with a predicate evaluated against the measurement instead of time series meta data,
+  data points or entire time series can be removed from charts.
+  Filtering by value also enables simple threshold based alerting by taking action on
+  any data points or series matching the predicate.
+
+inputs:
+  - metrics
+
+uses:
+  - type: Visualization
+    description: >
+      Any type of chart can be used to visualize the output of a filter operation.
+
+  - type: Actioning
+    description: >
+      An alert or action can be taken by a system based on the data matching the predicate.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

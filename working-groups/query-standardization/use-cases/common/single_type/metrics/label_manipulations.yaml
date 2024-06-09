@@ -8,7 +8,7 @@ inputs:
   - metrics series
 
 uses:
-  - title: Alerting
+  - title: Actioning
     description: >
       Commonly used as an intermediary to simplify operations on the resulting 
       metric set, for eg., creating "default" sets of label values, manipulating
@@ -18,6 +18,11 @@ uses:
     description: >
       Commonly used to create visualizations where relations involving 
       aggregated data are concerned.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true
 
 example_description: > 
   The example below shows that for all metrics with empty `foo` and `bar` label

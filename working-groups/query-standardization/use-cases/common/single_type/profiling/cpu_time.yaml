@@ -1,0 +1,26 @@
+title: CPU Time
+
+description: >
+  Most default profiles start by showing a percentage of CPU time spent executing
+  a particular function in a call stack for the duration of the profile. This lets
+  determine what functions may be candidates for optimization. Data can be aggregated
+  across instances and time to determine trends.
+
+inputs:
+  - CPU profile
+
+uses:
+  - type: Visualization
+    description: >
+      Typically displayed in a flame graph or icicle graph where the percent of time
+      spent in a function is represented by the width of the function's box. 
+
+  - type: Actioning
+    description: >
+      Trend analysis can be applied to determine if a function is taking more CPU time
+      over time or between releases.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

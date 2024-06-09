@@ -1,0 +1,82 @@
+common_attributes:
+  - attribute: Attributes
+    description: >
+      Additional information about the log entry, different from the Resource in that
+      any log event from a source can have different tags.
+      See https://opentelemetry.io/docs/specs/otel/common/
+    specification:
+      - map<String, Any>
+
+  - attribute: Timestamp
+    description: >
+      Time when the event occurred measured by the origin clock, i.e. the time at the 
+      source. This field is optional, it may be missing if the source timestamp is 
+      unknown.
+    specification:
+      - uint64 nanoseconds since the Unix epoch
+
+  - attribute: ObservedTimestamp
+    description: >
+      Time when the event was observed by the telemetry library or collection system.
+    specification:
+      - uint64 nanoseconds since the Unix epoch
+
+  - attribute: TraceId
+    description: >
+      Unique identifier of a trace. A trace groups multiple spans into a single 
+      unit of work. This field is optional.
+    specification:
+      - byte sequence
+
+  - attribute: SpanId
+    description: >
+      Unique identifier of a span. A span represents a single operation within a trace.
+      This field is optional.
+    specification:
+      - byte sequence
+
+  - attribute: TraceFlags
+    description: >
+      Flags that apply to the trace such as SAMPLED. This field is optional.
+    specification:
+      - byte
+
+  - attribute: SeverityText
+    description: >
+      The log level or severity of the log entry. This field is optional.
+    specification:
+      - string
+
+  - attribute: SeverityNumber
+    description: >
+      The log level or severity of the log entry encoded as a numeric value. This 
+      field is optional.
+    specification:
+      - number
+
+  - attribute: Body
+    description: >
+      The primary content of the log entry. This is typically a string but may be
+      a structured object encoded as JSON or another format. This field is optional.
+    specification:
+      - any
+
+  - attribute: Resource
+    description: >
+      The entity that produced the log entry. Multiple occurrences of events coming 
+      from the same event source can happen across time and they all have the same 
+      value of Resource. This field is optional.
+      See https://opentelemetry.io/docs/specs/semconv/resource/
+    specification:
+      - OTel Resource
+
+  - attribute: InstrumentationScope
+    description: >
+      The scope of the instrumentation that produced the log entry such as the library,
+      module, package or class. This field is optional.
+      See https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/common/mapping-to-non-otlp.md#instrumentationscope
+    specification:
+      - OTel Instrumentation Scope
+
+references:
+  - https://opentelemetry.io/docs/specs/otel/logs/data-model/

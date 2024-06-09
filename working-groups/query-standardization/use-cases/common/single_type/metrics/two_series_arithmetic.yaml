@@ -9,13 +9,18 @@ inputs:
   - metric series
 
 uses:
-  - type: Alerting
+  - type: Actioning
     description: >
       Used for simple, single threshold alerting on a combination of series. 
 
   - type: Visualization
     description: >
       Compute averages or ratios, e.g. average latency or percentage of failed requests.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true
 
 example_description: >
   Selects two time series, `http_requests_errors` and `http_requests_success`,

@@ -1,0 +1,119 @@
+arch-types:
+  - id: Span
+    description: >
+      A span represents a single operation within a trace. Spans are linked together to 
+      form a directed trace graph or tree.
+    specification:
+      - Different from the base Span.
+    attributes:
+      - attribute: Trace ID
+        description: >
+          The trace ID of the span.
+        specification:
+          - string
+      - attribute: Span ID
+        description: >
+          The span ID of the span.
+        specification:
+          - string
+      - attribute: Operation Name
+        description: >
+          The name of the operation or span.
+        specification:
+          - string
+      - attribute: Start Time
+        description: >
+          Time when the operation started measured by the origin clock, i.e. the time at the
+          source. In Unix epoch microseconds.
+        specification:
+          - uint64
+      - attribute: Duration
+        description: >
+          The duration of the span in microseconds.
+        specification:
+          - uint64
+      - attribute: References
+        description: >
+          A collection of references to other spans.
+        specification:
+          - array of Reference
+      - attribute: Tags
+        description: >
+          A collection of tags that describe the span.
+        specification:
+          - array of Tag
+      - attribute: Logs
+        description: >
+          A collection of logs that describe the span.
+        specification:
+          - array of Log
+      - attribute: Process ID
+        description: >
+          The ID of the process that the span was executed in.
+        specification:
+          - string
+      - attribute: Warnings
+        description: >
+          A collection of warnings that occurred during the span.
+        specification:
+          - array of string
+
+additional:
+  - type: Reference
+    description: >
+      A reference to another span.
+    attributes:
+      - attribute: Trace ID
+        description: >
+          The trace ID of the referenced span.
+        specification:
+          - string
+      - attribute: Span ID
+        description: >
+          The span ID of the referenced span.
+        specification:
+          - string
+      - attribute: Ref Type
+        description: >
+          The type of reference.
+        specification:
+          - string
+
+  - type: Tag
+    description: >
+      A key-value pair that describes the span.
+    attributes:
+      - attribute: Key
+        description: >
+          The key of the tag.
+        specification:
+          - string
+      - attribute: Value
+        description: >
+          The value of the tag.
+        specification:
+          - string
+      - attribute: Type
+        description: >
+          The type of the tag.
+        specification:
+          - string
+
+  - type: Log
+    description: >
+      An event that occurred during the span.
+    attributes:
+      - attribute: Timestamp
+        description: >
+          Time when the event occurred measured by the origin clock, i.e. the time at the 
+          source.
+        specification:
+          - uint64 microseconds?? since the Unix epoch
+      - attribute: Fields
+        description: >
+            A collection of Tags that describe the event.
+        specification:
+            - Array of Tags
+
+references:
+  - https://github.com/jaegertracing/jaeger/blob/main/model/json/fixture.json

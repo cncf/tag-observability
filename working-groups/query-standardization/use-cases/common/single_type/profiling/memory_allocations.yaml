@@ -1,0 +1,26 @@
+title: Memory Allocations
+
+description: >
+  Memory allocations are a common source of performance problems in applications. Profiling
+  memory allocations can help identify which functions are allocating the most memory and
+  which functions are responsible for the most allocations. This can help identify memory
+  leaks, inefficient memory usage, and other memory related performance problems.
+
+inputs:
+  - memory allocation profile
+
+uses:
+  - type: Visualization
+    description: >
+      Typically displayed in a flame graph or icicle graph where the number or size of
+      allocations in a function is represented by the width of the function's box. 
+
+  - type: Actioning
+    description: >
+      Trend analysis can be applied to determine if a function is allocating more memory
+      over time or between releases.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

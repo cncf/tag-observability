@@ -1,0 +1,28 @@
+title: Deserialization
+
+description: >
+  Logs are often used to transmit structured data in formats easy to parse by machines
+  while still being human readable. For example, stack traces are included in exception 
+  logs and payloads may be encoded as JSON. This data can be deserialized at query time,
+  giving the user the ability to work with aspects of the data in a more structured way
+  than having to craft complex regular expressions for extracting data. E.g. a JSON
+  payload could be queried using JSONPath.
+
+inputs:
+  - logs
+
+uses:
+  - type: Visualization
+    description: >
+      It's common to extract methods from these payloads for visualization in charts. 
+      Distinct strings are presented in tables or charts with counts and stack traces
+      may be enriched with source code links.
+
+  - type: Actioning
+    description: >
+      The output can often be used in actions similar to other extractions.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

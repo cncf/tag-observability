@@ -1,0 +1,30 @@
+title: Critical Path Analysis
+
+description: >
+  From project planning, critical path analysis is the process of scheduling dependent tasks
+  for efficient execution. Reversing the process and applying it to distributed traces 
+  allows for determining which aspects of call path impacted overall latency the most.
+  CPA is useful in that simply looking at the longest span in a trace (often the root) is
+  not indicative of dependencies that span may be waiting on. Instead, the longest 
+  critical path _segment_ is the most impactful to overall latency and a target for 
+  optimization.
+
+inputs:
+  - distributed traces
+
+Uses:
+  - type: Visualization
+    description: >
+      A view may show a waterfall or Gantt style chart with only the spans participating in
+      the critical path. Another can overlay critical path segments ontop of the of the full
+      trace.
+
+  - type: Visualization
+    description: >
+      A segment chart can show critical path segment time per service for a given trace or
+      aggregated for a series of similar traces.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true

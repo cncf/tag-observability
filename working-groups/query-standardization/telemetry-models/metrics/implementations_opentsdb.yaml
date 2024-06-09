@@ -1,0 +1,76 @@
+notes: >
+  OpenTSDB does not impose a type on simple numeric metrics, e.g. Gauge vs Counter 
+  vs monotonic value. Instead it is up to the user to interpret the data at query time.
+
+arch-types:
+  - id: metric
+    description: >
+      A single measurement.
+    attributes:
+      - attribute: Name
+        description: >
+          The name of the metric.
+        specification:
+          - string
+      - attribute: Value
+        description: >
+          The value of the metric.
+        specification:
+          - single or double precision floating point or integer
+      - attribute: Tags
+        description: >
+          A collection of key-value pairs that describe the metric.
+        specification:
+          - map of string to string
+      - attribute: Timestamp
+        description: >
+          The time when the metric was recorded.
+        specification:
+          - uint64 Unix epoch timestamp in seconds, milliseconds, or nanoseconds
+
+  - id: Histogram
+    description: >
+      A bucketed collection of counts for a metric.
+    specification:
+      - Extends the Metric type, replacing the value with the histogram buckets.
+    attributes:
+      - attribute: Underflow Count
+        description: >
+          The number of values that were less than the minimum bucket.
+        specification:
+          - integer
+      - attribute: Overflow Count
+        description: >
+          The number of values that were greater than the maximum bucket.
+        specification:
+          - integer
+      - attribute: Buckets
+        description: >
+          A collection of buckets that contain the counts of values.
+        specification:
+          - array of Bucket
+
+additional:
+  - type: Bucket
+    description: >
+      A single bucket in a histogram.
+    attributes:
+      - attribute: Upper Bound
+        description: >
+          The upper bound of the bucket.
+        specification:
+          - double
+      - attribute: Lower Bound
+        description: >
+          The lower bound of the bucket.
+        specification:
+          - double
+      - attribute: Count
+        description: >
+          The number of values that fall into the bucket.
+        specification:
+          - integer
+
+references:
+  - http://opentsdb.net/docs/build/html/api_telnet/put.html
+  - http://opentsdb.net/docs/build/html/api_telnet/histogram.html

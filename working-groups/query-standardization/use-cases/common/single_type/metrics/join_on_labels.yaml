@@ -2,13 +2,13 @@ title: Join metrics on label strings
 
 description: >
   A common operation involves combining dimensions of two or more series to allow 
-  filtering additional dimensions.
+  filtering on additional dimensions.
 
 inputs:
   - metric series
 
 uses:
-  - type: Alerting
+  - type: Actioning
     description: >
       Allows to set up alerts that are filtered by additional dimensions 
       
@@ -16,9 +16,14 @@ uses:
     description: >
       Allow dashboards to be filtered by additional dimensions to get relevant information 
 
+contexts:
+  streaming: true
+  real_time: true
+  batch: true
+
 example_description: >
-  rabbitmq_queues has container, instance, job, namespace, pod labels.
-  rabbitmq_identity_info has additional labels, one of them is the rabbitmq cluster name (rabbitmq_cluster).
+  `rabbitmq_queues` has container, instance, job, namespace, pod labels.
+  `rabbitmq_identity_info` has additional labels, one of them is the rabbitmq cluster name (`rabbitmq_cluster`).
   The result is a metric with the value of rabbitmq_queues with the additional rabbitmq_cluster label.
 
 examples:

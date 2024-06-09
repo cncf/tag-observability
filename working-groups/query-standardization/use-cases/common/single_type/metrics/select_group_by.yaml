@@ -9,7 +9,7 @@ inputs:
   - metrics
 
 outputs:
-  - title: Alerting
+  - title: Actioning
     description: >
       Commonly used when each group has similar behavior and the same static threshold
       can apply to all groups.
@@ -19,6 +19,11 @@ outputs:
       Typically plotted in line graphs where patterns can be extracted to determine if
       various groups of groups have similar behaviors or if one or more group exhibit
       outlying behavior.
+
+contexts:
+  streaming: true
+  real_time: true
+  batch: true
 
 example_description: > 
   Computes the sum of the metric `http_requests_total` where the tag `handler`
