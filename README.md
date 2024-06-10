@@ -63,14 +63,14 @@ If you want to propose new TAG activities or join in for existing ones, please t
 | Name           | Email                     |  GitHub         | Company      |
 | -------------- | ------------------------- | --------------- | ------------ |
 | Cathy Zhang    | cathy.h.zhang@intel.com   | [cathyhongzhang]| [Intel]      |
-| Ricardo Rocha  | rocha.porto@gmail.com     | [rochaporto]    | [CERN].      |
+| Ricardo Rocha  | rocha.porto@gmail.com     | [rochaporto]    | [CERN]       |
 
 ### Chairs (alphabetical order)
 
-| Name             | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
-| ---------------- | -------------------------- | --------------- | ------------- | ----------  | ---------------------------------- |
-| Alolita Sharma   | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Apple]     | [OpenTelemetry Team]; [Other][asharma-other]               |
-| Matt Young       | halcyondude@gmail.com      | @Matt Young     | [halcyondude] |             |                                    |
+| Name             | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                                  |
+| ---------------- | -------------------------- | --------------- | ------------- | ----------  | -------------------------------------------- |
+| Alolita Sharma   | alolita.sharma@gmail.com   | @Alolita Sharma | [alolita]     | [Apple]     | [OpenTelemetry Team]; [Other][asharma-other] |
+| Matt Young       | halcyondude@gmail.com      | @Matt Young     | [halcyondude] | Independent |                                              |
 
 ### Tech Leads
 
@@ -83,6 +83,7 @@ If you want to propose new TAG activities or join in for existing ones, please t
 |------------------ | ------------------- |-------------- |--------    | --------- | ---------------------------------- |
 | Chris Larsen      |                     | @Chris Larsen | [manolama] | Netflix   | O11y TAG QLS WG                    |
 | Vijay Samuel      |                     | @Vijay Samuel | [vjsamuel] | EBay      | O11y TAG QLS WG                    |
+| Ken Finnigan      |                     | @Ken Finnigan | [kenfinnigan] | Independent| O11y TAG Observe K8s WG        |
 
 [Apple]:      https://opensource.apple.com
 [Grafana]:    https://grafana.com
@@ -101,6 +102,9 @@ If you want to propose new TAG activities or join in for existing ones, please t
 [alolita]:       https://github.com/alolita
 [bwplotka]:      https://github.com/bwplotka
 [halcyondude]:   https://github.com/halcyondude
+[manolama]:   https://github.com/manolama
+[vjsamuel]:   https://github.com/vjsamuel
+[kenfinnigan]: https://github.com/kenfinnigan
 [resouer]:       https://github.com/resouer
 [RichiH]:        https://github.com/RichiH
 [rochaporto]:    https://github.com/rochaporto 
