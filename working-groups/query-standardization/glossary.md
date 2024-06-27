@@ -1,6 +1,6 @@
 # Glossary
 
-* **asl:** [Atlas Stack Language](dsl-survey/atlas-stack-language/overview.yaml) - A language created
+* **asl:** [Atlas Stack Language](dsls/atlas-stack-language/overview.yaml) - A language created
   by Netflix for the Atlas time series service.
 * **dsl:** [Domain Specific Language](https://en.wikipedia.org/wiki/Domain-specific_language) -
   A language specialized to a particular domain.
@@ -25,11 +25,11 @@
   data from different sources or for different purposes. 
 * **profile:** A view of CPU, GPU, memory or other compute resource usage by a process or set of
   processes.
-* **promql:** [Prometheus Query Language](dsl-survey/promql/overview.yaml) - The query language
+* **promql:** [Prometheus Query Language](dsls/promql/overview.yaml) - The query language
   for the Prometheus time series database.
 * **trace:** A collection of duration measurements across distributed systems. Traces are often
   used to understand the flow of a request through a system.
-* **uql:** Lightstep [Unified Query Language](dsl-survey/lightstep-unified-query-language/overview.yaml) -
+* **uql:** Lightstep [Unified Query Language](dsls/lightstep-unified-query-language/overview.yaml) -
   A language for joining different telemetry types in the Lightstep SAAS product
 * **dql:** [Dynatrace Query Langage](https://www.dynatrace.com/support/help/observe-and-explore/query-data/dynatrace-query-language)
   Query language for joining different telemetry types in Dynatrace Saas

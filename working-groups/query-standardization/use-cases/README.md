@@ -42,4 +42,4 @@ Each use case should have an individual file scoped to that specific use case.
 * **references:** _List of Strings_ - A list of references regarding the example such as 
   documentation or source code.
 
-[Callouts]: ../dsl-survey/README.md#callout-schema
+[Callouts]: ../dsls/README.md#callout-schema
