@@ -493,7 +493,7 @@ We acknowledge that not all observability signals are easy to implement using on
 
 ### Monitoring for Streaming APIs
 
-There are a few very well-known monitoring methodologies today. For example, the [USE method](https://www.brendangregg.com/usemethod.html) described by Brendan Gregg to monitor the compute resources and the [RED method](https://www.weave.works/blog/the-red-method-key-metrics-for-microservices-architecture/ invented by Tom Wilkie to monitor request-based services.
+There are a few very well-known monitoring methodologies today. For example, the [USE method](https://www.brendangregg.com/usemethod.html) described by Brendan Gregg to monitor the compute resources and the [RED method](https://www.weave.works/blog/the-red-method-key-metrics-for-microservices-architecture/) invented by Tom Wilkie to monitor request-based services.
 
 Unfortunately, both methodologies are hard to implement for Streaming APIs. With the popularization of streaming Remote Procedure Calls (RPC), e.g. gRPC, we must develop a new or updated methodology and tools to monitor those.
 
