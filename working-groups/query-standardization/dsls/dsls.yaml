@@ -1,0 +1,325 @@
+dsls:
+
+  - name: "Atlas Stack Language"
+    abbreviation: "ASL"
+    reference: "https://netflix.github.io/atlas-docs/asl/tutorial/"
+    type: observability
+    description: >
+      A stack based language for querying metrics, traces and logs from Netflix.
+    implementations:
+        - name: "Netflix Atlas"
+          notes: Reference implementation
+          reference: "https://netflix.github.io/atlas-docs/"
+
+  - name: "Dynatrace Query Language"
+    abbreviation: "DQL"
+    reference: "https://www.dynatrace.com/support/help/observe-and-explore/query-data/dynatrace-query-language"
+    type: observability
+    description: >
+      A query language for querying metrics, traces, logs, events, and other telemetry data from Dynatrace.
+    implementations:
+      - name: "Dynatrace Grail"
+        notes: Dynatrace internal data warehouse
+        reference: "https://docs.dynatrace.com/docs/platform/grail/dynatrace-grail"
+
+  - name: "Flux"
+    abbreviation: "flux"
+    reference: "https://docs.influxdata.com/flux/v0/"
+    type: observability
+    description: >
+      A functional data scripting language designed for querying, analyzing, and acting on time series data
+      from InfluxData.
+    implementations:
+      - name: "InfluxData"
+        notes: Original implementation
+        reference: "https://www.influxdata.com/"
+
+  - name: "InfluxQL"
+    abbreviation: ""
+    reference: "https://docs.influxdata.com/influxdb/clustered/query-data/influxql/"
+    type: observability
+    description: >
+      A SQL-like query language for querying time series data from InfluxData.
+    implementations:
+      - name: "InfluxData"
+        notes: Original implementation
+        reference: "https://www.influxdata.com/"
+
+  - name: "Logs Query Language"
+    abbreviation: "LogQL"
+    reference: "https://grafana.com/docs/loki/latest/query/"
+    type: observability
+    description: >
+      A query language for querying log data, typically in a structured format.
+    implementations:
+        - name: "Grafana Loki"
+          notes: Open source log aggregation system
+          reference: "https://grafana.com/oss/loki"
+
+  - name: "Google Monitoring Query Language"
+    abbreviation: "MQL"
+    reference: "https://cloud.google.com/monitoring/mql"
+    type: observability
+    description: >
+      A language for querying metrics data from Google Cloud Monitoring. Now deprecated 
+      externally in favor of PromQL.
+    implementations:
+      - name: "Google Monarch"
+        notes: Internal Google implementation
+        reference: ""
+      - name: "Google Cloud Monitoring"
+        notes: Original implementation
+        reference: "https://cloud.google.com/monitoring"
+
+  - name: "Graphite Render API"
+    abbreviation: ""
+    reference: "https://graphite.readthedocs.io/en/latest/render_api.html"
+    type: observability
+    description: >
+      A simple, nested function interface for querying metrics.
+    implementations:
+      - name: "Graphite"
+        notes: Original implementation
+        reference: "https://graphiteapp.org/"
+
+  - name: "Kibana Query Language"
+    abbreviation: "KQL"
+    reference: "https://www.elastic.co/guide/en/kibana/current/kuery-query.html"
+    type: general
+    description: >
+      A query language for querying logs and other data in Kibana.
+    implementations:
+      - name: "Elasticsearch"
+        notes: Original implementation
+        reference: "https://www.elastic.co/"
+
+  - name: "Kusto Query Language"
+    abbreviation: "KQL"
+    reference: "https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/"
+    type: general
+    description: >
+      A general purpose query language for Azure Data Explorer.
+    implementations:
+      - name: "Azure Data Explorer"
+        notes: Original implementation
+        reference: "https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/"
+      - name: "Clickhouse"
+        notes: Experimental implementation
+        reference: "https://clickhouse.com/docs/en/guides/developer/alternative-query-languages"
+
+  - name: "Kusto Query Language: Metrics"
+    abbreviation: "KQL-M"
+    reference: "https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/"
+    type: observability
+    description: >
+      A Microsoft internal variant of the Kusto query language for metrics.
+    implementations:
+        - name: "Internal Microsoft Observability"
+          notes: Original implementation
+          reference: ""
+
+  - name: "KX Query Language"
+    abbreviation: "Q"
+    reference: "https://code.kx.com/q/learn/startingkdb/language/"
+    type: analysis
+    description: >
+      A query language for the kdb+ database system.
+    implementations:
+      - name: "kdb+"
+        notes: Original implementation
+        reference: "https://kx.com/"
+
+  - name: "Lightstep Unified Query Language"
+    abbreviation: "UQL"
+    reference: "https://docs.lightstep.com/docs/uql-reference"
+    type: observability
+    description: >
+      A query language for querying distributed traces and logs from Lightstep.
+    implementations:
+      - name: "Lightstep"
+        notes: Original implementation
+        reference: "https://lightstep.com/"
+
+  - name: "Lucene Query Language"
+    abbreviation: ""
+    reference: "https://lucene.apache.org/core/2_9_4/queryparsersyntax.html"
+    type: general
+    description: >
+      A query language for querying document data in Lucene.
+    implementations:
+      - name: "Apache Lucene"
+        notes: Original implementation
+        reference: "https://lucene.apache.org/"
+      - name: "Elasticsearch"
+        notes: Uses Lucene under the hood, supports the language as an alternative to KQL.
+        reference: "https://www.elastic.co/guide/en/kibana/current/lucene-query.html"
+      - name: "MongoDB Atlas"
+        notes: Supports Lucene queries for full text search
+        reference: "https://www.mongodb.com/docs/atlas/atlas-search/?tck=docs_server_toc"
+
+  - name: "Metrics Query Language"
+    abbreviation: "metricsql"
+    reference: "https://docs.victoriametrics.com/metricsql/"
+    type: observability
+    description: >
+      A language for querying metrics data from Victoria Metrics, similar to PromQL.
+    implementations:
+      - name: "VictoriaMetrics"
+        notes: Original implementation
+        reference: "https://victoriametrics.com/"
+
+  - name: "New Relic Query Language"
+    abbreviation: "NRQL"
+    reference: "https://docs.newrelic.com/docs/query-your-data/nrql-new-relic-query-language/get-started/introduction-nrql-new-relics-query-language/"
+    type: observability
+    description: >
+      A query language for querying metrics, traces, logs, and other telemetry data from New Relic.
+    implementations:
+      - name: "New Relic One"
+        notes: Original implementation
+        reference: "https://newrelic.com/platform"
+
+  - name: "Piped Processing Language"
+    abbreviation: "PPL"
+    reference: "https://github.com/opensearch-project/sql/tree/main/docs/user/ppl"
+    type: general
+    description: >
+      A query language for processing data in OpenSearch.
+    implementations:
+      - name: "OpenSearch"
+        notes: Original implementation
+        reference: "https://opensearch.org/"
+
+  - name: "Pipelined Relational Query Language"
+    abbreviation: "PRQL"
+    reference: "https://prql-lang.org/book/"
+    type: general
+    description: >
+      A query language that extends SQL with pipelining capabilities.
+    implementations:
+      - name: "PRQL"
+        notes: Reference implementation
+        reference: "https://prql-lang.org/"
+      - name: "Clickhouse"
+        notes: Experimental implementation
+        reference: "https://clickhouse.com/docs/en/guides/developer/alternative-query-languages"
+      - name: "Databend"
+        notes: Data warehouse
+        reference: "https://www.databend.com/blog/2024-04-03-databend-integrates-prql/"
+
+  - name: "Prometheus Query Language"
+    abbreviation: "PromQL"
+    reference: "https://prometheus.io/docs/prometheus/latest/querying/basics/"
+    type: observability
+    description: >
+      A functional query language for selecting and aggregating time series metrics data.
+      It is designed to be easy to understand and use, and is particularly useful for monitoring and alerting.
+    implementations:
+      - name: "Prometheus"
+        notes: Original project that created and implemented PromQL
+        reference: "https://prometheus.io/"
+      - name: "VictoriaMetrics"
+        notes: Extends PromQL
+        reference: "https://victoriametrics.com/"
+      - name: "Thanos"
+        notes: Distributed PromQL
+        reference: "https://thanos.io/"
+      - name: "Cortex"
+        notes: Multi-tenant PromQL
+        reference: "https://cortexmetrics.io/"
+      - name: "M3DB"
+        notes: Time series database with PromQL support out of Uber
+        reference: "https://m3db.io/"
+      - name: "Mimir"
+        notes: Time series database with PromQL support from Grafana
+        reference: "https://grafana.com/oss/mimir/"
+      - name: "GrepTime"
+        notes: Time series database with PromQL support
+        reference: "https://docs.greptime.com/user-guide/query-data/promql"
+
+  - name: "Splunk Query Language"
+    abbreviation: "SPL"
+    reference: "https://docs.splunk.com/Documentation/Splunk/9.2.2/SearchTutorial/Usethesearchlanguage"
+    type: general
+    description: >
+      A language for querying logs and other data in Splunk.
+    implementations:
+      - name: "Splunk"
+        notes: Original implementation
+        reference: "https://www.splunk.com/"
+
+  - name: "Structured Query Language"
+    abbreviation: "SQL"
+    reference: "https://en.wikipedia.org/wiki/SQL"
+    type: general
+    description: >
+      A declarative language for manging structured data, particularly in relation database systems.
+      The language has been around for 50 years and is the most widely used database language.
+    implementations:
+      - name: "TimescaleDB"
+        notes: Time series solution built on Postgres
+        reference: "https://www.timescale.com/homepage"
+      - name: "Clickhouse"
+        notes: Columnar database for analytics using an extended SQL dialect
+        reference: "https://clickhouse.com/"
+      - name: "QuestDB"
+        notes: A time series DB with an extended SQL dialect
+        reference: "https://questdb.io"
+      - name: "InfluxData"
+        notes: Supported alongside of Flux and InfluxQL
+        reference: "https://docs.influxdata.com/influxdb/clustered/query-data/sql/"
+      - name: "Amazon CloudWatch"
+        notes: SQL-like query language for querying metrics
+        reference: "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-metrics-insights-querylanguage.html"
+      - name: "DuckDB"
+        notes: An embeddable SQL database for analytics
+        reference: "https://duckdb.org/"
+      - name: "GrepTime"
+        notes: Time series database with SQL support
+        reference: "https://docs.greptime.com/user-guide/query-data/sql"
+
+  - name: "SQL++"
+    abbreviation: "SQL++"
+    reference: "https://docs.couchbase.com/java-sdk/current/concept-docs/n1ql-query.html"
+    type: general
+    description: >
+      An extension of SQL from one of the originators of SQL.
+    implementations:
+      - name: "Couchbase"
+        notes: A distributed document database
+        reference: "https://www.couchbase.com/"
+
+  - name: "Time Series Language"
+    abbreviation: "TSL"
+    reference: "https://github.com/ovh/tsl"
+    type: observability
+    description: >
+      A query language for querying time series data from OVH. Compiles to Warpscript
+      or PromQL.
+    implementations:
+      - name: "TSL"
+        notes: Original implementation
+        reference: "https://github.com/ovh/tsl"
+
+  - name: "Trace Query Language"
+    abbreviation: "TraceQL"
+    reference: "https://grafana.com/docs/tempo/latest/traceql/"
+    type: observability
+    description: >
+      A query language for querying distributed trace data, able to handle some relationships
+      between spans.
+    implementations:
+      - name: "Grafana Tempo"
+        notes: Open source distributed tracing system
+        reference: "https://grafana.com/docs/tempo/latest/"
+
+  - name: "Warpscript"
+    abbreviation: ""
+    reference: "https://www.warp10.io/doc/"
+    type: observability
+    description: >
+      A stack based language for querying time series data from SenX.
+    implementations:
+      - name: "Warp10"
+        notes: Original implementation
+        reference: "https://www.warp10.io/"
