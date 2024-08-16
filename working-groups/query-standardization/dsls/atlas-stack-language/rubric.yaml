@@ -1,0 +1,571 @@
+primitives:
+  rubric:
+    - DT1:
+      supported: true
+      notes: Literals only, cast to doubles.
+    - DT2:
+      supported: false
+    - DT3:
+      supported: false
+    - DT4:
+      supported: true
+    - DT5:
+      supported: false
+    - DT6:
+      supported: false
+      notes: Conditionals convert their outputs to 1 or 0s as doubles.
+    - DT7:
+      supported: false
+    - DT8:
+      supported: false
+      notes: >
+        Supported for query time ranges. In a query, functions can emit numbers cast to
+        doubles for use in expressions.
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/time/
+    - DT9:
+      supported: false
+      notes: Some functions accept a duration, e.g. the `:offset` function.
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/offset/
+    - DT10:
+      supported: false
+    - DT11:
+      supported: true
+      notes: A custom bucketed histogram is supported and percentiles extracted using `:percentile`
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/percentiles/
+    - DT12:
+      supported: false
+    - DT13:
+      supported: false
+      notes: >
+        Only ASCII is accepted for metrics though logs can contain UTF-8 and requires escaping.
+    - DT14:
+      supported: false
+    - DT15:
+      supported: false
+    - DT16:
+      supported: false
+    - DT17:
+      supported: false
+    - DT18:
+      supported: false
+    - DT19:
+      supported: false
+    - UDT1:
+      supported: false
+
+predicates:
+  rubric:
+    - P1:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/eq/
+    - P2:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/not/
+    - P3:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/lt/
+    - P4:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/gt/
+    - P5:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/le/
+    - P6:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/ge/
+    - P7:
+      supported: false
+    - P8:
+      supported: false
+    - P9:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/in/
+    - P10:
+      supported: false
+    - P11:
+      supported: false
+    - P12:
+      supported: false
+    - P13:
+      supported: false
+    - P14:
+      supported: true
+      notes: >
+        Not a full glob or wildcard match like some systems, rather only supports starts with,
+        ends with and contains (some string in the middle)
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/contains/
+        - https://netflix.github.io/atlas-docs/asl/ref/starts/
+        - https://netflix.github.io/atlas-docs/asl/ref/ends/
+    - P15:
+      supported: true
+      notes: >
+        Supports a subset of regular expression functions. Supports both case and
+        case insensitive matching.
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/re/
+        - https://netflix.github.io/atlas-docs/asl/ref/reic/
+    - P16:
+      supported: false
+    - P17:
+      supported: false
+    - P18:
+      supported: false
+    - P19:
+      supported: false
+    - P20:
+      supported: false
+    - P21:
+      supported: false
+    - P22:
+      supported: false
+    - P23:
+      supported: false
+    - P24:
+      supported: false
+    - P25:
+      supported: true
+      notes: Only on traces and does not currently support bounds.
+    - P26:
+      supported: false
+    - P27:
+      supported: false
+    - P28:
+      supported: false
+    - P29:
+      supported: false
+    - P30:
+      supported: false
+    - P31:
+      supported: false
+    - P32:
+      supported: false
+    - P33:
+      supported: false
+    - P34:
+      supported: false
+    - P35:
+      supported: false
+    - P36:
+      supported: false
+    - P37:
+      supported: false
+    - P38:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/and/
+    - P39:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/or/
+    - P40:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/not/
+    - P41:
+      supported: false
+    - P42:
+      supported: false
+    - P43:
+      supported: false
+    - P44:
+      supported: false
+    - P45:
+      supported: false
+    - P46:
+      supported: false
+
+  additional:
+    - name: has
+      description: >
+        Whether or not the key in an attribute map exists. Shortcut for a query like
+        `attributes[key] != null`.
+    - name: true
+      description: >
+          A predicate that always returns true.
+    - name: false
+      description: >
+          A predicate that always returns false.
+
+Selection:
+  rubric:
+    - S1:
+      supported: true
+      notes: >
+        A namespace to query (equivalent of a table) can be set in the query as a regular 
+        dimensional predicate.
+    - S2:
+      supported: false
+      notes: >
+        Types are specified by querying different hosts at this time. Combining types in a
+        single query is not currently possible.
+    - S3:
+      supported: false
+      notes: Joining across namespaces for the same telemetry type is in progress.
+    - S4:
+      supported: true
+      notes: Metrics can be renamed in the output.
+
+Math:
+  rubric:
+    - M1:
+      supported: true
+      types:
+        - timeseries
+        - literals
+      notes: >
+        Inner joins only when dealing with time series. Or apply value to all entries in 
+        a series when combining literals with a series.
+      references:
+          - https://netflix.github.io/atlas-docs/asl/ref/add/
+    - M2:
+      supported: true
+      types:
+          - timeseries
+          - literals
+      notes: >
+          Inner joins only when dealing with time series. Or apply value to all entries in 
+          a series when combining literals with a series.
+      references:
+          - https://netflix.github.io/atlas-docs/asl/ref/sub/
+    - M3:
+      supported: true
+      types:
+          - timeseries
+          - literals
+      notes: >
+          Inner joins only when dealing with time series. Or apply value to all entries in 
+          a series when combining literals with a series.
+      references:
+          - https://netflix.github.io/atlas-docs/asl/ref/mul/
+    - M4:
+      supported: true
+      types:
+          - timeseries
+          - literals
+      notes: >
+          Inner joins only when dealing with time series. Or apply value to all entries in 
+          a series when combining literals with a series.
+      references:
+          - https://netflix.github.io/atlas-docs/asl/ref/div/
+    - M5:
+      supported: true
+      types:
+          - timeseries
+          - literals
+      notes: >
+        Inner joins only when dealing with time series. Or apply value to all entries in 
+        a series when combining literals with a series.
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/pow/
+    - M6:
+      supported: true
+      types:
+          - timeseries
+          - literals
+      notes: >
+          Inner joins only when dealing with time series. Or apply value to all entries in 
+          a series when combining literals with a series.
+      references:
+          - https://netflix.github.io/atlas-docs/asl/ref/neg/
+    - M7:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/sqrt/
+    - M8:
+      supported: false
+
+conversion:
+  rubric:
+    - TP1:
+      supported: false
+
+joins:
+  rubric:
+    - J1:
+      supported: false
+      notes: Only inner joins are supported.
+
+assignment:
+  rubric:
+    - A1:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/set/
+        - https://netflix.github.io/atlas-docs/asl/ref/get/
+
+presentation:
+  rubric:
+    - PR1:
+      supported: true
+      notes: >
+        A number of presentation functions are available to manipulate charts and output for
+        an Atlas query. The charts are emitted as PNGs and presentation details are available
+        as JSON for consumption by a dynamic UI.
+
+aggregation:
+  rubric:
+    - F1:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/sum/
+    - F2:
+      supported: true
+      note: >
+        Additionally supports a `:dist-avg` helper that divides the sum of measurements by
+        the count of measurements. Also has a `:eureka-avg` that computes an average based on
+        the status of reporting instances at the time of the measurement. This discards 
+        instances that were not in a "healthy" state.
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/avg/
+    - F3:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/min/
+    - F4:
+      supported: true
+      note: >
+        Also supports a `:dist-max` helper that selects the max statistic emitted by
+        the Spectator framework.
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/max/
+    - F5:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/count/
+    - F6:
+      supported: true
+      note: >
+        Additionally supports a `:dist-stdev` to account for measurement counts.
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/stddev/
+    - F7:
+      supported: true
+      note: >
+        Only works on the Spectator histogram data type.
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/percentile/
+
+grouping:
+  rubric:
+    - F8:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/by/
+    - F9:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/order/
+    - F10:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/limit/
+    - F11:
+      supported: false
+      notes: >
+        The system imposes hard limits that fail queries if the number of resultant
+        series are too high for metrics. For traces and logs, data can be paginated.
+        Pagination is handled via API, not via the query language.
+    - F12:
+      supported: true
+      notes: >
+        Projection is implicit for metrics when grouping, otherwise all data is aggregated
+        into a single series without grouping. For logs, a set of columns can be provided. 
+        Tracing reports all columns at this time if not aggregated.
+
+windowing:
+  rubric:
+    - F13:
+      supported: false
+      notes: >
+        Only supports an interval count. The interval time range changes with the
+        query time range to emit a reasonable number of values for a line chart.
+    - F14:
+      supported: true
+      notes: >
+        Applied post-consolidation/downsampling of values.
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/rolling-count/
+        - https://netflix.github.io/atlas-docs/asl/ref/rolling-max/
+        - https://netflix.github.io/atlas-docs/asl/ref/rolling-mean/
+        - https://netflix.github.io/atlas-docs/asl/ref/rolling-min/
+        - https://netflix.github.io/atlas-docs/asl/ref/rolling-sum/
+    - F15:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/concepts/time-series/#step-size
+    - F16:
+      supported: false
+    - F17:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/integral/
+    - F18:
+      supported: false
+    - F19:
+      supported: false
+    - F20:
+      supported: false
+    - F21:
+      supported: false
+      notes: >
+        Percentiles are supported across series for a time interval for histograms.
+    - F22:
+      supported: false
+    - F23:
+      supported: false
+
+conditional:
+  rubric:
+    - F24:
+      supported: false
+    - F25:
+      supported: false
+    - F26:
+      supported: false
+    - F27:
+      supported: false
+
+math:
+  rubric:
+    - F29:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/abs/
+    - F30:
+      supported: false
+    - F31:
+      supported: false
+    - F32:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/pow/
+    - F33:
+      supported: false
+    - F34:
+      supported: false
+    - F35:
+      supported: false
+    - F36:
+      supported: false
+    - F37:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/random/
+        - https://netflix.github.io/atlas-docs/asl/ref/srandom/
+    - F38:
+      supported: true
+      references:
+          - https://netflix.github.io/atlas-docs/asl/ref/time/
+          - https://netflix.github.io/atlas-docs/asl/ref/time-span/
+
+string:
+  rubric:
+    - F39:
+      supported: false
+    - F40:
+      supported: false
+    - F50:
+      supported: false
+    - F51:
+      supported: false
+    - F52:
+      supported: false
+    - F53:
+      supported: false
+    - F54:
+      supported: false
+    - F55:
+      supported: false
+    - F56:
+      supported: false
+    - F57:
+      supported: false
+
+datetime:
+  rubric:
+    - F58:
+      supported: false
+    - F59:
+      supported: false
+    - F60:
+      supported: false
+    - F61:
+      supported: false
+    - F62:
+      supported: false
+    - F63:
+      supported: false
+    - F64:
+      supported: false
+    - F65:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/api/graph/time-zone/
+    - F66:
+      supported: true
+      notes: >
+        Only for query selection, converting various strings to absolute or relative
+        timestamps.
+      references:
+        - https://netflix.github.io/atlas-docs/api/graph/graph/#time
+    - F67:
+      supported: false
+    - F68:
+      supported: false
+    - F69:
+      supported: false
+
+data_type_formatting:
+  rubric:
+    - F67:
+      supported: false
+    - F68:
+      supported: false
+    - F69:
+      supported: false
+
+user_defined_functions:
+  rubric:
+    - UDF1:
+      supported: false
+
+observability_features:
+  rubric:
+    - F70:
+      supported: true
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/offset/
+    - F71:
+      supported: false
+    - F72:
+      supported: true
+      note: >
+        By default, all math operators are lenient, meaning they will return non-infectious
+        results to prioritize readable charts over accuracy. Strict versions are available.
+      references:
+          - https://netflix.github.io/atlas-docs/asl/ref/fadd/
+          - https://netflix.github.io/atlas-docs/asl/ref/fdiv/
+          - https://netflix.github.io/atlas-docs/asl/ref/fmul/
+          - https://netflix.github.io/atlas-docs/asl/ref/fsub/
+    - F73:
+      supported: true
+      note: >
+        Besides summaries over the entire query window, the stats are also available
+        within expressions for features like filtering.
+      references:
+        - https://netflix.github.io/atlas-docs/asl/ref/stat/
+    - F74:
+      supported: false
+    - F75:
+      supported: false
