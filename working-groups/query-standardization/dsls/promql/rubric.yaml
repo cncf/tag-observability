@@ -461,3 +461,9 @@ observability_features:
           - https://prometheus.io/docs/prometheus/latest/querying/operators/#logical-set-binary-operators
     - F73:
         supported: false
+    - F74:
+        supported: false
+    - F75:
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#rate()
+        supported: true
