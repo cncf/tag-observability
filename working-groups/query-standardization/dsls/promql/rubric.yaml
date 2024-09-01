@@ -367,13 +367,19 @@ math:
     - F29:
         supported: true
         references:
-          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#abs
     - F30:
-        supported: false
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#ceil
     - F31:
-        supported: false
+       supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#floor
     - F32:
-        supported: false
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#log2
     - F33:
         supported: false
     - F34:
