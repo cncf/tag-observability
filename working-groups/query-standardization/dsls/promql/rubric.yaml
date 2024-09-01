@@ -1,0 +1,463 @@
+primitives:
+  rubric:
+    - DT1:
+        supported: true
+        notes: Literals only, cast to floats (double precision).
+    - DT2:
+        supported: false
+    - DT3:
+        supported: false
+    - DT4:
+        supported: true
+    - DT5:
+        supported: false
+    - DT6:
+        supported: false
+    - DT7:
+        supported: false
+    - DT8:
+        supported: false
+    - DT9:
+        supported: false
+    - DT10:
+        supported: false
+    - DT11:
+        supported: false
+    - DT12:
+        supported: false
+    - DT13:
+        supported: false
+        notes: >
+          Only ASCII is accepted for labels, but output can contain UTF-8.
+    - DT14:
+        supported: false
+    - DT15:
+        supported: false
+    - DT16:
+        supported: false
+    - DT17:
+        supported: false
+    - DT18:
+        supported: false
+    - DT19:
+        supported: false
+    - UDT1:
+        supported: false
+
+predicates:
+  rubric:
+    - P1:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#instant-vector-selectors
+    - P2:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#instant-vector-selectors
+    - P3:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#instant-vector-selectors
+    - P4:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#instant-vector-selectors
+    - P5:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#instant-vector-selectors
+    - P6:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#instant-vector-selectors
+    - P7:
+        supported: false
+    - P8:
+        supported: false
+    - P9:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#instant-vector-selectors
+    - P10:
+        supported: false
+    - P11:
+        supported: false
+    - P12:
+        supported: false
+    - P13:
+        supported: false
+    - P14:
+        supported: true
+        notes: >
+          Supports regular expression matches for label values.
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#instant-vector-selectors
+    - P15:
+        supported: true
+        notes: >
+          Supports regular expression matches for label values.
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#instant-vector-selectors
+    - P16:
+        supported: false
+    - P17:
+        supported: false
+    - P18:
+        supported: false
+    - P19:
+        supported: false
+    - P20:
+        supported: false
+    - P21:
+        supported: false
+    - P22:
+        supported: false
+    - P23:
+        supported: false
+    - P24:
+        supported: false
+    - P25:
+        supported: false
+    - P26:
+        supported: false
+    - P27:
+        supported: false
+    - P28:
+        supported: false
+    - P29:
+        supported: false
+    - P30:
+        supported: false
+    - P31:
+        supported: false
+    - P32:
+        supported: false
+    - P33:
+        supported: false
+    - P34:
+        supported: false
+    - P35:
+        supported: false
+    - P36:
+        supported: false
+    - P37:
+        supported: false
+    - P38:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#binary-operators
+    - P39:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#binary-operators
+    - P40:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/basics/#binary-operators
+    - P41:
+        supported: false
+    - P42:
+        supported: false
+    - P43:
+        supported: false
+    - P44:
+        supported: false
+    - P45:
+        supported: false
+    - P46:
+        supported: false
+
+  additional:
+    - name: true
+      description: >
+        A predicate that always returns true.
+    - name: false
+      description: >
+        A predicate that always returns false.
+
+selection:
+  rubric:
+    - S1:
+        supported: true
+        notes: >
+          Prometheus supports querying metrics via instant and range vector selectors.
+    - S2:
+        supported: false
+        notes: >
+          Prometheus does not support querying different types (e.g., logs, traces) within the same query.
+    - S3:
+        supported: false
+    - S4:
+        supported: true
+        notes: >
+          Metrics can be renamed using the `label_replace` function.
+
+math:
+  rubric:
+    - M1:
+        supported: true
+        types:
+          - timeseries
+        notes: >
+          Supports addition of two vectors or a vector and a scalar.
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/operators/#arithmetic-binary-operators
+    - M2:
+        supported: true
+        types:
+          - timeseries
+        notes: >
+          Supports subtraction of two vectors or a vector and a scalar.
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/operators/#arithmetic-binary-operators
+    - M3:
+        supported: true
+        types:
+          - timeseries
+        notes: >
+          Supports multiplication of two vectors or a vector and a scalar.
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/operators/#arithmetic-binary-operators
+    - M4:
+        supported: true
+        types:
+          - timeseries
+        notes: >
+          Supports division of two vectors or a vector and a scalar.
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/operators/#arithmetic-binary-operators
+    - M5:
+        supported: true
+        types:
+          - timeseries
+        notes: >
+          Supports exponentiation of a vector by a scalar.
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/operators/#arithmetic-binary-operators
+    - M6:
+        supported: true
+        types:
+          - timeseries
+        notes: >
+          Supports negation of a vector.
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/operators/#arithmetic-binary-operators
+    - M7:
+        supported: false
+    - M8:
+        supported: false
+
+conversion:
+  rubric:
+    - TP1:
+        supported: false
+
+joins:
+  rubric:
+    - J1:
+        supported: false
+        notes: Prometheus does not support traditional joins but supports binary operators to combine vectors.
+
+assignment:
+  rubric:
+    - A1:
+        supported: false
+
+presentation:
+  rubric:
+    - PR1:
+        supported: false
+        notes: >
+          Presentation aspects are handled outside PromQL, typically in visualization tools like Grafana.
+
+aggregation:
+  rubric:
+    - F1:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F2:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F3:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F4:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F5:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F6:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F7:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+
+grouping:
+  rubric:
+    - F8:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/operators/#aggregation-operators
+    - F9:
+        supported: false
+    - F10:
+        supported: false
+    - F11:
+        supported: false
+    - F12:
+        supported: true
+        notes: >
+          Supports implicit projection by metric name and labels.
+
+windowing:
+  rubric:
+    - F13:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F14:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F15:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F16:
+        supported: false
+    - F17:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F18:
+        supported: false
+    - F19:
+        supported: false
+    - F20:
+        supported: false
+    - F21:
+        supported: false
+    - F22:
+        supported: false
+    - F23:
+        supported: false
+
+conditional:
+  rubric:
+    - F24:
+        supported: false
+    - F25:
+        supported: false
+    - F26:
+        supported: false
+    - F27:
+        supported: false
+
+math:
+  rubric:
+    - F29:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#aggregation_over_time
+    - F30:
+        supported: false
+    - F31:
+        supported: false
+    - F32:
+        supported: false
+    - F33:
+        supported: false
+    - F34:
+        supported: false
+    - F35:
+        supported: false
+    - F36:
+        supported: false
+    - F37:
+        supported: false
+    - F38:
+        supported: false
+
+string:
+  rubric:
+    - F39:
+        supported: false
+    - F40:
+        supported: false
+    - F50:
+        supported: false
+    - F51:
+        supported: false
+    - F52:
+        supported: false
+    - F53:
+        supported: false
+    - F54:
+        supported: false
+    - F55:
+        supported: false
+    - F56:
+        supported: false
+    - F57:
+        supported: false
+
+datetime:
+  rubric:
+    - F58:
+        supported: false
+    - F59:
+        supported: false
+    - F60:
+        supported: false
+    - F61:
+        supported: false
+    - F62:
+        supported: false
+    - F63:
+        supported: false
+    - F64:
+        supported: false
+    - F65:
+        supported: false
+    - F66:
+        supported: false
+
+data_type_formatting:
+  rubric:
+    - F67:
+        supported: false
+    - F68:
+        supported: false
+    - F69:
+        supported: false
+
+user_defined_functions:
+  rubric:
+    - UDF1:
+        supported: false
+
+observability_features:
+  rubric:
+    - F70:
+        supported: true
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/functions/#offset
+    - F71:
+        supported: false
+    - F72:
+        supported: true
+        notes: >
+          PromQL handles absent data by defaulting to NaN or zero in some contexts.
+        references:
+          - https://prometheus.io/docs/prometheus/latest/querying/operators/#logical-set-binary-operators
+    - F73:
+        supported: false
