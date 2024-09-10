@@ -1,0 +1,583 @@
+primitives:
+  rubric:
+    - DT1:
+        supported: true
+        notes: Supports integers of various sizes.
+    - DT2:
+        supported: true
+        notes: Supports unsigned integers.
+    - DT3:
+        supported: true
+        notes: Supports floating-point numbers.
+    - DT4:
+        supported: true
+        notes: Supports double-precision floating-point numbers.
+    - DT5:
+        supported: true
+        notes: Supports decimal data type.
+    - DT6:
+        supported: true
+        notes: Supports boolean data type.
+    - DT7:
+        supported: true
+        notes: Supports byte data type.
+    - DT8:
+        supported: true
+        notes: Supports DateTime data type.
+    - DT9:
+        supported: true
+        notes: Supports TimeSpan (duration) data type.
+    - DT10:
+        supported: true
+        notes: Supports null values.
+    - DT11:
+        supported: false
+    - DT12:
+        supported: false
+    - DT13:
+        supported: true
+        notes: Supports both ASCII and UTF-8 strings.
+    - DT14:
+        supported: true
+        notes: Supports binary data.
+    - DT15:
+        supported: true
+        notes: Supports arrays.
+    - DT16:
+        supported: true
+        notes: Supports dictionaries (maps).
+    - DT17:
+        supported: true
+        notes: Supports dynamic data type, allowing for nested structures.
+    - DT18:
+        supported: true
+        notes: Supports JSON data type.
+    - DT19:
+        supported: false
+    - UDT1:
+        supported: true
+        notes: Supports user-defined types via custom serialization.
+
+predicates:
+  rubric:
+    - P1:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/equalityoperator
+    - P2:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/notequaltooperator
+    - P3:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/lessthanoperator
+    - P4:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/greaterthanoperator
+    - P5:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/lessthanorequaltooperator
+    - P6:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/greaterthanorequaltooperator
+    - P7:
+        supported: true
+    - P8:
+        supported: true
+    - P9:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/inoperator
+    - P10:
+        supported: true
+    - P11:
+        supported: true
+    - P12:
+        supported: true
+    - P13:
+        supported: true
+    - P14:
+        supported: true
+        notes: >
+          Supports pattern matching using `has`, `!has`, `hasprefix`, `hassuffix`, and `contains`.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/stringoperators
+    - P15:
+        supported: true
+        notes: >
+          Supports regular expression matching using `matches regex`.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/regexpmatchfunction
+    - P16:
+        supported: true
+    - P17:
+        supported: true
+    - P18:
+        supported: true
+    - P19:
+        supported: true
+    - P20:
+        supported: true
+    - P21:
+        supported: true
+    - P22:
+        supported: true
+    - P23:
+        supported: true
+    - P24:
+        supported: true
+    - P25:
+        supported: true
+    - P26:
+        supported: true
+    - P27:
+        supported: true
+    - P28:
+        supported: true
+    - P29:
+        supported: true
+    - P30:
+        supported: true
+    - P31:
+        supported: true
+    - P32:
+        supported: true
+    - P33:
+        supported: true
+    - P34:
+        supported: true
+    - P35:
+        supported: true
+    - P36:
+        supported: true
+    - P37:
+        supported: true
+    - P38:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/andoperator
+    - P39:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/oroperator
+    - P40:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/notoperator
+    - P41:
+        supported: true
+    - P42:
+        supported: true
+    - P43:
+        supported: true
+    - P44:
+        supported: true
+    - P45:
+        supported: true
+    - P46:
+        supported: true
+
+  additional:
+    - name: true
+      description: >
+        A predicate that always returns true.
+    - name: false
+      description: >
+        A predicate that always returns false.
+
+selection:
+  rubric:
+    - S1:
+        supported: true
+        notes: >
+          Supports selection of data from tables, including time series data.
+    - S2:
+        supported: false
+    - S3:
+        supported: true
+        notes: >
+          Supports joining across different tables.
+    - S4:
+        supported: true
+        notes: >
+          Supports renaming columns using `project` and `extend`.
+
+math:
+  rubric:
+    - M1:
+        supported: true
+        types:
+          - timeseries
+          - literals
+        notes: >
+          Supports addition of two columns or a column and a scalar.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/additionoperator
+    - M2:
+        supported: true
+        types:
+          - timeseries
+          - literals
+        notes: >
+          Supports subtraction of two columns or a column and a scalar.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/subtractionoperator
+    - M3:
+        supported: true
+        types:
+          - timeseries
+          - literals
+        notes: >
+          Supports multiplication of two columns or a column and a scalar.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/multiplicationoperator
+    - M4:
+        supported: true
+        types:
+          - timeseries
+          - literals
+        notes: >
+          Supports division of two columns or a column and a scalar.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/divisionoperator
+    - M5:
+        supported: true
+        types:
+          - timeseries
+          - literals
+        notes: >
+          Supports exponentiation using the `pow` function.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/powfunction
+    - M6:
+        supported: true
+        types:
+          - timeseries
+          - literals
+        notes: >
+          Supports negation of a column or a scalar.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/unaryminusoperator
+    - M7:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sqrtfunction
+    - M8:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/modulusoperator
+
+conversion:
+  rubric:
+    - TP1:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/todatetimefunction
+
+joins:
+  rubric:
+    - J1:
+        supported: true
+        notes: Supports inner, leftouter, rightouter, and fullouter joins.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/joinoperator
+
+assignment:
+  rubric:
+    - A1:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/letstatement
+
+presentation:
+  rubric:
+    - PR1:
+        supported: true
+        notes: >
+          Supports various presentation functions, including rendering charts in the Azure Data Explorer web UI.
+
+aggregation:
+  rubric:
+    - F1:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/summarizeoperator
+    - F2:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/avg-aggfunction
+    - F3:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/min-aggfunction
+    - F4:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/max-aggfunction
+    - F5:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/count-aggfunction
+    - F6:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/stdev-aggfunction
+    - F7:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/percentiles-aggfunction
+
+grouping:
+  rubric:
+    - F8:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/summarizeoperator
+    - F9:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/orderoperator
+    - F10:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/takeoperator
+    - F11:
+        supported: true
+        notes: >
+          Supports pagination using `skip` and `take`.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/skipoperator
+    - F12:
+        supported: true
+        notes: >
+          Supports projection using `project`.
+
+windowing:
+  rubric:
+    - F13:
+        supported: true
+        notes: >
+          Supports time windowing using `bin`.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/binfunction
+    - F14:
+        supported: true
+        notes: >
+          Supports moving averages and sums.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/moving-avgfunction
+    - F15:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/binfunction
+    - F16:
+        supported: false
+    - F17:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sumfunction
+    - F18:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/row_numberfunction
+    - F19:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/rankfunction
+    - F20:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/cdf-aggfunction
+    - F21:
+        supported: true
+    - F22:
+        supported: true
+    - F23:
+        supported: true
+
+conditional:
+  rubric:
+    - F24:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/coalescefunction
+    - F25:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/casefunction
+    - F26:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/tostringfunction
+    - F27:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/least-greatestfunctions
+
+math:
+  rubric:
+    - F29:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/absfunction
+    - F30:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/ceilfunction
+    - F31:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/floorfunction
+    - F32:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/logfunction
+    - F33:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/lnfunction
+    - F34:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/roundfunction
+    - F35:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/truncatefunction
+    - F36:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/trigonometricfunctions
+    - F37:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/randfunction
+    - F38:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/maketimefunction
+
+string:
+  rubric:
+    - F39:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/concatfunction
+    - F40:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/trimfunction
+    - F50:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/tolowerfunction
+    - F51:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/padleft-padrightfunctions
+    - F52:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/indexoffunction
+    - F53:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/substringfunction
+    - F54:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/regexpmatchfunction
+    - F55:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/replacefunction
+    - F56:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/splitfunction
+    - F57:
+        supported: true
+
+datetime:
+  rubric:
+    - F58:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/addtimespanfunction
+    - F59:
+        supported: true
+    - F60:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/nowfunction
+    - F61:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/binfunction
+    - F62:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/todatetimefunction
+    - F63:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/startofdayfunction
+    - F64:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/makedatetimefunction
+    - F65:
+        supported: true
+    - F66:
+        supported: true
+        notes: >
+          Supports converting strings to absolute or relative timestamps.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/todatetimefunction
+
+data_type_formatting:
+  rubric:
+    - F67:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/tostringfunction
+    - F68:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/tonumberfunction
+    - F69:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/todatetimefunction
+
+user_defined_functions:
+  rubric:
+    - UDF1:
+        supported: true
+        notes: >
+          Supports user-defined functions using the `function` keyword.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/functions/user-defined-functions
+
+observability_features:
+  rubric:
+    - F70:
+        supported: true
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/ago-function
+    - F71:
+        supported: true
+        notes: >
+          Supports interpolation using `make-series`.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/makeseriesoperator
+    - F72:
+        supported: true
+        notes: >
+          KustoQL handles absent data by defaulting to null or zero in some contexts.
+        references:
+          - https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/coalescefunction
