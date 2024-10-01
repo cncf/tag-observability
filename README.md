@@ -36,9 +36,11 @@ Excerpts from the [Observability Charter Document](observability-charter.md):
 * [In Progress Work](https://github.com/cncf/tag-observability/projects/1#card-36042463), Status, and Roadmap
 * Mailing List: `cncf-tag-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-tag-observability))
 
-## CNCF projects related to the TAG
+## CNCF projects related to the Observability TAG
 
-![projects](cncf-landscape-observability-2022-03-04.png)
+![projects](https://github.com/cncf/tag-observability/blob/main/cncf-landscape-tag-o11y-10012024-01.png)
+![projects](https://github.com/cncf/tag-observability/blob/main/cncf-landscape-tag-o11y-10012024-02.png)
+![projects](https://github.com/cncf/tag-observability/blob/main/cncf-landscape-tag-o11y-10012024-03.png)
 
 [Interactive Landscape](https://landscape.cncf.io/?group=projects-and-products&project=cncf&tag=observability&view-mode=card&classify=maturity&sort-by=name&sort-direction=asc#maturity--graduated)
 
