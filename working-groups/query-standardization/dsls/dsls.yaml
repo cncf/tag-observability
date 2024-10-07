@@ -179,6 +179,17 @@ dsls:
         notes: Original implementation
         reference: "https://newrelic.com/platform"
 
+  - name: "Oximeter Query Language"
+    abbreviation: "OxQL"
+    reference: "https://rfd.shared.oxide.computer/rfd/0463"
+    type: observability
+    description: >
+      A query language for analyzing metrics data from Oxide hardware components.
+    implementations:
+      - name: "Oxide"
+        notes: Original implementation
+        reference: "https://rfd.shared.oxide.computer/rfd/0463"
+
   - name: "Piped Processing Language"
     abbreviation: "PPL"
     reference: "https://github.com/opensearch-project/sql/tree/main/docs/user/ppl"
@@ -323,3 +334,14 @@ dsls:
       - name: "Warp10"
         notes: Original implementation
         reference: "https://www.warp10.io/"
+
+  - name: "ZetaSQL"
+    abbreviation: ""
+    reference: "https://github.com/google/zetasql"
+    type: general
+    description: >
+      A piped based SQL syntax with full SQL compatability.
+    implementations:
+      - name: "ZetaSQL"
+        notes: Original implementation
+        reference: "https://github.com/google/zetasql"
