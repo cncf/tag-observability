@@ -4,7 +4,7 @@ Technical Advisory Group for Observability under the umbrella of [CNCF](https://
 
 ## Mission statement
 
-TAG Observability focuses on topics pertaining to the observation of cloud native workloads. Additionally, it produces
+TAG Observability focuses on topics pertaining to the observation of cloud-native workloads. Additionally, it produces
 supporting material and best practices for end-users and provides guidance and coordination for CNCF projects working within the TAG’s scope.
 
 ### Whitepaper
@@ -17,7 +17,7 @@ See our [latest 1.0 observability whitepaper](https://github.com/cncf/tag-observ
 
 Excerpts from the [Observability Charter Document](observability-charter.md):
 
-* Foster, review and grow the ecosystem of observability related projects, users, and maintainers in open source, cloud-native technology.
+* Foster, review, and grow the ecosystem of observability-related projects, users, and maintainers in open source, cloud-native technology.
 * Identify and report gaps in the CNCF's project portfolio on topics of observability to the TOC and the wider CNCF community.
 * Collect, curate, champion, and disseminate patterns and current best practices related to the observation of cloud-native systems that are effective and actionable.
 * Educate and inform users with unbiased, accurate, and pertinent information. Educate and help other CNCF projects regarding observability techniques and best current practices available within the CNCF.
@@ -84,6 +84,7 @@ If you want to propose new TAG activities or join in for existing ones, please t
 | Bartłomiej Płotka | bwplotka@gmail.com  | @bwplotka   | [bwplotka] | [Google] |  [Prometheus Team]; [Thanos Team]; [Other][bwplotka-other] |
 
 ### Observability TAG Workgroups (WG) and WG Leads
+
 | Name              | Email               | CNCF Slack    | GitHub     | Company   | Open Source                        |
 |------------------ | ------------------- |-------------- |--------    | --------- | ---------------------------------- |
 | Chris Larsen      |                     | @Chris Larsen | [manolama] | Netflix   | O11y TAG QLS WG                    |
@@ -116,7 +117,7 @@ If you want to propose new TAG activities or join in for existing ones, please t
 [erinaboyd]:     https://github.com/erinaboyd  
 [cathyhongzhang]: https://github.com/cathyhongzhang
 
-### Emertius Chairs (alphabetical order)
+### Emeritus Chairs (alphabetical order)
 
 | Name             | Email                      | CNCF Slack      | GitHub        | Company     | Open Source                        |
 | ---------------- | -------------------------- | --------------- | ------------- | ----------  | ---------------------------------- |
