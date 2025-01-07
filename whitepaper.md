@@ -23,6 +23,7 @@ See [the contributing section](#contributing) on proposing changes to this paper
   * [Logs](#logs)
   * [Traces](#traces)
   * [Profiles](#profiles)
+  * [Baggage](#baggage)
   * [Dumps](#dumps)
 * [Correlating Observability Signals](#correlating-observability-signals)
   * [Signal correlation](#signal-correlation)
@@ -258,6 +259,17 @@ Profiling data produced by runtimes typically includes statistics down to the li
 ![Image 2](/assets/profile.png)
 
 > Image 2 shows an example icicle graph for a CPU profile of an application written in Go. It includes a kernel operation done by the Syscall call. This profile highlights that 35% of CPU time was used to compute hash, indicating potential optimization opportunities. [Source](https://pprof.me/9ce2c2d/).
+
+### Baggage
+
+OpenTelemetry Baggage is a mechanism for propagating small key-value pairs throughout a distributed system. It allows you to attach contextual information to a request as it flows through various services. While Baggage is not primarily designed for debugging or monitoring like the other signals, it complements them by enabling advanced context-sharing capabilities.
+
+Baggage consists of:
+- Key-Value Pairs: Lightweight metadata (e.g., user_id=12345, region=us-west-1).
+- Global Context: Shared across services as part of the request context.
+- Cross-Service Propagation: Automatically carried by OpenTelemetry propagators.
+
+Checkout [OpenTelemetry Baggage](https://opentelemetry.io/docs/concepts/signals/baggage/) for detail.
 
 ### Dumps
 
