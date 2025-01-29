@@ -1,0 +1,312 @@
+types:
+  - id: otel
+    languages:
+      - N/A
+    generators:
+      - OpenTelemetry
+    archtype: call_graph
+    subtype: null
+    description: >
+      The in-development profiling format associated with the OpenTelemetry project.
+    references:
+      - https://opentelemetry.io/blog/2024/profiling/
+      - https://github.com/open-telemetry/opentelemetry-proto/blob/main/opentelemetry/proto/profiles/v1development/profiles.proto
+
+archtypes:
+  - type: Profile
+    description: >
+      A common stacktrace format.
+    attributes:
+      - attribute: Sample Type
+        description: >
+          A list of the types of data sampled along with units. Must be one entry for
+          each "sample" entry.
+        specification:
+          - List of Value Type
+      - attribute: Sample
+        description: >
+          A list of sample objects recorded.
+        specification:
+          - List of Sample entries
+      - attribute: Mapping Table
+        description: >
+          A list of mappings from addresses to symbols.
+        specification:
+          - List of Mapping entries
+      - attribute: Location Table
+        description: >
+          A list of locations referenced by samples.
+        specification:
+          - List of Location entries
+      - attribute: Location Indices
+        description: >
+          A list of indices into the location table by the samples.
+        specification:
+          - List of int32
+      - attribute: Function Table
+        description: >
+          A list of functions referenced by locations.
+        specification:
+          - List of Function entries
+      - attribute: Attribute Table
+        description: >
+          A set of key-value pairs that describe the event.
+        specification:
+          - map of string to any
+      - attribute: Link Table
+        description: >
+          A list of links to other profiles.
+        specification:
+          - List of Link entries
+      - attribute: String Table
+        description: >
+          A common table for strings referenced by other objects.
+        specification:
+          - List of strings
+      - attribute: Time Nanos
+        description: >
+          The timestamp of the profile collection, unix epoch nanos.
+        specification:
+          - int64
+      - attribute: Duration Nanos
+        description: >
+          The duration of the profile collection in nanos.
+        specification:
+          - int64
+      - attribute: Period Type
+        description: >
+          The kind of events between sampled occurrences.
+        specification:
+          - List of Value Type
+      - attribute: Period
+        description: >
+          The number of events between sampled occurrences.
+        specification:
+          - int64
+      - attribute: Comment Str Indices
+        description: >
+          A list of indices into the string table for the comments of the profile.
+        specification:
+          - List of int32
+      - attribute: Default Sample Type
+        description: >
+          Index into the string table of the preferred sample value.
+        specification:
+          - int32
+      - attribute: Profile ID
+        description: >
+          The unique identifier of the profile, 16 byte array
+        specification:
+          - byte sequence
+      - attribute: Dropped Attributes Count
+        description: >
+          The number of attributes that were dropped from the profile.
+        specification:
+          - uint32
+      - attribute: Original Payload Format
+        description: >
+          The original payload format of the profile.
+        specification:
+          - string
+      - attribute: Attribute Indices
+        description: >
+          A list of indices into the attributes table for the attributes of the profile.
+        specification:
+          - List of int32
+
+additional:
+  - type: Value Type
+    description: >
+      Describes the type and units of a value with an optional aggregation temporality.
+    attributes:
+        - attribute: Type String index
+          description: >
+            And index into the string table for the type of the value.
+          specification:
+          - int32
+        - attribute: Unit String Index
+          description: >
+            An index into the string table for the unit of the value.
+          specification:
+          - int32
+        - attribute: Aggregation Temporality
+          description: >
+              The optional aggregation temporality of the value.
+          specification:
+          - Aggregation Temporality
+
+  - type: Aggregation Temporality
+    description: >
+      Describes the aggregation temporality of a value.
+    specification:
+      - enum
+    values:
+      - value: TemporalityUnspecified
+        description: >
+          The temporality of the value is unspecified.
+      - value: TemporalityCumulative
+        description: >
+          The value is cumulative.
+      - value: TemporalityDelta
+        description: >
+          The value is a delta.
+
+  - type: Sample
+    description: >
+      A sample recording of program context.
+    attributes:
+      - attribute: Locations Start Index
+        description: >
+          Reference to a slice in the profile location indices
+        specification:
+          - int32
+      - attribute: Locations Length
+        description: >
+          How much data to read from the locations index slice
+        specification:
+          - int32
+      - attribute: Value
+        description: >
+          A list of measurements of the type and unit from the profile sample type.
+        specification:
+          - List of int64
+      - attribute: Attribute Indices
+        description: >
+          A list of indices into the string table for the labels of the sample.
+        specification:
+          - List of int32
+      - attribute: Link Index
+        description: >
+          An optional index into the string table for a link to another profile.
+        specification:
+          - int32
+      - attribute: Timestamps Unix Nano
+        description: >
+          The timestamps of the samples in Unix epoch nanos.
+        specification:
+          - List of uint64
+
+  - type: Mapping
+    description: >
+      A mapping from addresses to symbols for a binary.
+    attributes:
+      - attribute: Memory Start
+        description: >
+          The start address of the mapping.
+        specification:
+          - uint64
+      - attribute: Memory Limit
+        description: >
+          The limit of the address range occupied by this mapping.
+        specification:
+          - uint64
+      - attribute: File Offset
+        description: >
+          The offset in the binary that corresponds to the first mapped adress.
+        specification:
+          - uint64
+      - attribute: File Str Index
+        description: >
+          The index into the string table for the file name.
+        specification:
+          - int32
+      - attribute: Attribute Indices
+        description: >
+          A list of indices into the string table for the attributes of the mapping.
+        specification:
+          - List of int32
+      - attribute: Has Functions
+        description: >
+          Whether the mapping has functions.
+        specification:
+          - bool
+      - attribute: Has Filenames
+        description: >
+          Whether the mapping has filenames.
+        specification:
+          - bool
+      - attribute: Has Line Numbers
+        description: >
+          Whether the mapping has line numbers.
+        specification:
+          - bool
+      - attribute: Has Inline Frames
+        description: >
+          Whether the mapping has inline frames.
+        specification:
+          - bool
+
+  - type: Location
+    description: >
+      Describes the function and line table debug information.
+    attributes:
+      - attribute: Mapping index
+        description: >
+          Optional index into the mapping table.
+        specification:
+          - int32
+      - attribute: Address
+        description: >
+          The address of the location in the mapping table.
+        specification:
+          - uint64
+      - attribute: Line
+        description: >
+          The line or list of inlined functions.
+        specification:
+          - List of int32
+      - attribute: Is Folded
+        description: >
+          Whether multiple symbols point to the same location
+        specification:
+          - bool
+      - attribute: Attribute Indices
+        description: >
+          A list of indices into the string table for the attributes of the location.
+        specification:
+          - List of int32
+
+  - type: Line
+    description: >
+      Describes the line number and function name in source code.
+    attributes:
+      - attribute: Function Index
+        description: >
+          Reference to a function in the function table.
+        specification:
+          - int32
+      - attribute: Line
+        description: >
+          The line number in source code
+        specification:
+          - int64
+      - attribute: Column
+        description: >
+          The column number in source code
+        specification:
+          - int64
+
+  - type: Function
+    description: >
+      Describes the function name and debug information.
+    attributes:
+      - attribute: Name Str Index
+        description: >
+          Index into the string table for the human readable function name.
+        specification:
+          - int32
+      - attribute: System Name Str Index
+        description: >
+          Index into the strint table for the system name of the function.
+        specification:
+          - int32
+      - attribute: Filename Str Index
+        description: >
+          Index into the string table for the filename of the function.
+        specification:
+          - int32
+      - attribute: Start Line
+        description: >
+            The line number in the source file
+        specification:
+            - int64
