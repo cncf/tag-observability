@@ -9,7 +9,7 @@ archtypes:
     attributes:
       - attribute: Trace State
         description: >
-          The trace state of the span.
+          The trace state headers of the span from the W3C recommendations.
         specification:
           - string
       - attribute: Flags
@@ -181,7 +181,7 @@ additional:
             - byte sequence
         - attribute: Trace State
           description: >
-            The trace state of the linked span.
+            The trace state of the linked span from the W3C recommendations.
           specification:
             - string
         - attribute: Attributes
@@ -233,3 +233,4 @@ additional:
 
 references:
   - https://github.com/open-telemetry/opentelemetry-proto/blob/main/opentelemetry/proto/trace/v1/trace.proto
+  - https://www.w3.org/TR/trace-context/#tracestate-header
