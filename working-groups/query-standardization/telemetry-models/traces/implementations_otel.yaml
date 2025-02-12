@@ -35,6 +35,11 @@ archtypes:
           source. In Unix epoch nanoseconds.
         specification:
           - unsigned 64 bit integer
+      - attribute: Name
+        description: >
+          The descriptive name of the span
+        specification:
+          - string
       - attribute: Attributes
         description: >
           A set of key-value pairs that describe the event.
