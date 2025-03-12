@@ -30,9 +30,9 @@ Excerpts from the [Observability Charter Document](observability-charter.md):
 * TAG Meetings Schedule:
    * US/EU friendly meetings @ 1600 UTC, 1st and 3rd Tuesdays of each month
       * See [CNCF community calendar](https://www.cncf.io/community/calendar/) for invite links
-      * [Meeting Notes](https://docs.google.com/document/d/1_QoF-njScSuGFI3Ge5zu-G8SbL6scQ8AzT1hq57bRoQ/edit)
+      * [Meeting Notes](https://docs.google.com/document/d/12mnMXQSrcS75eJS-5AGroX7xBpRPxhBlLzoYbXq49kk/edit)
    * NEW! US (PT)/ APAC friendly meeting @12:00 AM UTC, 2nd Tuesdays of each month
-      * [Meeting Notes](https://docs.google.com/document/d/1_QoF-njScSuGFI3Ge5zu-G8SbL6scQ8AzT1hq57bRoQ/edit)
+      * [Meeting Notes](https://docs.google.com/document/d/12mnMXQSrcS75eJS-5AGroX7xBpRPxhBlLzoYbXq49kk/edit)
 * [In Progress Work](https://github.com/cncf/tag-observability/projects/1#card-36042463), Status, and Roadmap
 * Mailing List: `cncf-tag-observability@lists.cncf.io` ([join here](https://lists.cncf.io/g/cncf-tag-observability))
 
