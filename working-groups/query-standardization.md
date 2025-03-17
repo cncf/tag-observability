@@ -4,6 +4,8 @@ A working group to research and analyze exising observability query languages wi
 recommending a standard, unified language for following teams and projects to implement.
 
 * [Charter Document](https://docs.google.com/document/d/1JRQ4hoLtvWl6NqBu_RN8T7tFaFY5jkzdzsB9H-V370A/edit#)
+* [DRAFT Semantic Specification Document](https://docs.google.com/document/d/1KIGkZowg4O9_GaRc8jn29QVpSDUtLlXwXLQY_y8tNXY)
+* [DRAFT Context Document](https://docs.google.com/document/d/1A_r7tpLVELIhF1g6xnkmF3RNkX5_XWrSkEU0gKXKIK0)
 
 ## Mission
 
